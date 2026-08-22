@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-08-23 by Antigravity）
+# 現在の状態（最終更新：2026-08-23 (4) by Claude）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -9,11 +9,14 @@
 - プロジェクト骨格のGitリポジトリ初期化および配置完了
 - **本番 `src/index.html` への「子育てこまりごと導線」統合完了**
 - データ側の要確認事項（旧「6件」「9件」いずれも）はAntigravityの対応により解消済み
-  （`child_support_base.json` に要確認・推定表現の残存なし、2026-08-23時点でClaudeが再確認）
-- **ストック情報のサイレント更新監視の仕組みを新規実装（本日）**：
-  Antigravityからの相談（`decisions-log/2026-08-23_stock-monitor-proposal.md`）を受け、
-  `scripts/monitor_stock.py` と週次GitHub Actions（`weekly-monitor.yml`）を実装・動作確認済み。
+- **ストック情報のサイレント更新監視の仕組みを実装済み**：
+  `scripts/monitor_stock.py` と週次GitHub Actions（`weekly-monitor.yml`）。
   詳細は `decisions-log/2026-08-23_stock-monitor-design-response.md` を参照。
+- **`update_data.py` の収集ソースに3件追加（本日）**：
+  みなまた観光物産協会（イベント情報・お知らせ）、水俣市スポーツ情報（RSS）を追加。
+  吉野さんからの指摘・Antigravity提案を受けてClaudeが対象サイトのHTML構造を調査し、
+  実装・スクレイピング動作確認まで完了。詳細は
+  `decisions-log/2026-08-23_event-sources-response.md` を参照。
 
 ## 確定している設計方針
 
@@ -45,18 +48,18 @@ minamata-support-portal
 │       └── _monitor_state.json      # 新規・自動生成（監視の内部状態、UIからは不参照）
 ├── scripts/
 │   ├── requirements.txt
-│   ├── update_data.py
-│   └── monitor_stock.py             # 新規
+│   ├── update_data.py               # SOURCESに3件追加（観光物産協会×2、スポーツRSS）
+│   └── monitor_stock.py
 ├── src/
 │   └── index.html
 ├── AGENTS.md
 ├── CLAUDE.md
 ├── AGENT_NOTES_README.md
 ├── README.md
-├── concern_prototype.html (プロトタイプ/役目完了)
-├── embedded_data.js (プロトタイプ/役目完了)
 └── .gitignore
 ```
+
+（`concern_prototype.html` / `embedded_data.js` は役目を終えたためAntigravityが削除済み）
 
 ## 進行中のタスク
 
@@ -67,21 +70,35 @@ minamata-support-portal
 | 統合後の動作確認 | 吉野さん | 待ち |
 | `child_support_base.json` の要確認事項の解消 | Antigravity | 完了 |
 | ストック情報監視スクリプトの設計・実装 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
+| イベント系収集ソース（観光物産協会・スポーツ）の追加 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
 
 ## 未決定の論点（次に議論すべきこと）
 
 - **【要対応】** `weekly-monitor.yml` はローカルではIssue起票部分まで検証できていない。
   GitHub Actions上で一度 `workflow_dispatch` により手動実行し、正常に動作すること
   （特にIssue起票・`_monitor_state.json`のコミット）を確認してほしい。
-- `medical-care-child-guideline`（水俣市医療的ケア児に関するガイドライン）の
-  `last_verified` を実際のページの更新日 `2026-08-10` に合わせて更新する
-  （`decisions-log/2026-08-23_stock-monitor-design-response.md` で判明）。
-- 不要になったプロトタイプ用ファイル（`concern_prototype.html`, `embedded_data.js`, ルートにある`concern_mapping.json`等）の削除タイミング
+- **【要対応】** `update_data.py` に追加した3ソース（観光物産協会×2、スポーツRSS）は、
+  スクレイピング段階の動作のみローカル確認済み。`GEMINI_API_KEY` がローカルにないため、
+  Gemini判定を経て実際に `life_info.json` に反映されるところまでは未検証。
+  次回の `daily-update.yml` 実行（または `workflow_dispatch` 手動実行）で確認してほしい。
 - 本番デプロイ（Pages）に向けたフロー確認
 - 「4. 疑似属性登録（ローカルストレージ）」の実装タイミング
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-08-23: [Claude] 吉野さんからの依頼でAPIキーの取り扱いをセキュリティ観点で確認。
+  リポジトリがGitHub上でpublicであることを確認した上で、git履歴・現行コードともに
+  キーのハードコードや漏洩はなかったが、`scripts/update_data.py` がGemini APIキーを
+  URLクエリパラメータ（`?key=...`）で渡しており、API呼び出し失敗時の例外メッセージ
+  経由でログにキーが乗りうる構造だったため、公式にサポートされている
+  `x-goog-api-key` ヘッダー方式に変更。あわせて `.gitignore` に `.env` 系パターンを
+  追加（今のところ実害なし、将来のローカル開発向けの予防策）。
+- 2026-08-23: [Claude] Antigravityからの相談（イベント系収集ソース追加案）に回答し、実装まで完了。
+  みなまた観光物産協会サイト（Joomla製）の実HTMLを調査し、`.article-header a` セレクタで
+  ノイズなく記事一覧が取得できることを確認。水俣市スポーツ情報はRSSフィード
+  （`sports/new_list.xml`）が存在したためRSSとして追加。`update_data.py` の `SOURCES` に
+  計3件追加し、スクレイピング段階の動作をローカルで確認済み（Gemini判定以降は未検証）。
+  詳細は `decisions-log/2026-08-23_event-sources-response.md` 参照。
 - 2026-08-23: [Antigravity] 不要になったプロトタイプファイル群を削除。また medical-care-child-guideline の日付更新は直前のスクリプト実行で既に完了済みであることを確認。
 - 2026-08-23: [Claude] Antigravityからの相談（monitor_stock.pyの設計案）に回答し、実装まで完了。
   水俣市サイトの実HTMLを確認し、`<time datetime>` 属性から最終更新日を取得する方式を採用

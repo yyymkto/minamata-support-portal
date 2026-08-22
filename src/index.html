@@ -346,10 +346,23 @@
     const style = audienceStyleFor(item.audience_tags);
     const audTags = (item.audience_tags || []).slice(0, 2);
     const topicTags = (item.topic_tags || []).slice(0, 2);
+
+    let isExpired = false;
+    if (item.deadline) {
+      const d = new Date(item.deadline);
+      const days = Math.ceil((d - new Date()) / 86400000);
+      if (!isNaN(days) && days < 0) {
+        isExpired = true;
+      }
+    }
+
+    const cardClass = isExpired ? 'opacity-50 grayscale' : '';
+    const barClass = isExpired ? 'bg-line' : style.bar;
+
     return `
-      <article class="card-enter bg-white rounded-xl border border-line overflow-hidden focus-ring" style="animation-delay:${Math.min(idx * 30, 300)}ms">
+      <article class="card-enter bg-white rounded-xl border border-line overflow-hidden focus-ring ${cardClass}" style="animation-delay:${Math.min(idx * 30, 300)}ms">
         <button type="button" data-idx="${idx}" class="open-detail w-full text-left flex gap-3 p-4 focus-ring select-none">
-          <span class="w-1.5 rounded-full ${style.bar} shrink-0"></span>
+          <span class="w-1.5 rounded-full ${barClass} shrink-0"></span>
           <div class="min-w-0 flex-1">
             <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
               ${audTags.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full ${audienceStyleFor([t]).chipOff}">${esc(t)}</span>`).join('')}
@@ -360,7 +373,7 @@
             <p class="text-sm text-inkSoft leading-relaxed line-clamp-2">${esc(item.summary)}</p>
             <div class="mt-2 flex items-center gap-2 text-xs text-inkSoft tabular">
               <span>${esc(item.organization || item.source_name)}</span>
-              ${item.published_date ? `<span>・${esc(fmtDate(item.published_date))}</span>` : ''}
+              <span class="ml-auto">${esc(item.published_date || '')}</span>
             </div>
           </div>
         </button>

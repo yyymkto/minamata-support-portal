@@ -104,6 +104,35 @@ SOURCES: list[Source] = [
         list_selector="a",
         base_url="https://www.city.minamata.lg.jp",
     ),
+    # 水俣市 スポーツ情報の新着（RSSが提供されているためRSSとして取得。
+    # 「水俣市 新着情報」にも一部重複するが、source_urlキーでマージされるため問題ない）
+    Source(
+        name="水俣市 スポーツ情報",
+        url="https://www.city.minamata.lg.jp/sports/new_list.xml",
+        type="rss",
+    ),
+    # みなまた観光物産協会 イベント情報（市公式サイトの新着情報フィードに載らない、
+    # 独自サイト発のイベント告知を拾うために追加。2026-08-23、吉野さんからの指摘・
+    # Antigravity提案を受けてClaudeが調査。
+    # サイトはJoomla製で、記事一覧は `.article-header` 配下に <a> を持つ構造
+    # （実HTMLで確認済み。1ページあたり3件のみ表示されるブログレイアウトのため、
+    # 日次収集を続けることで新着分を取りこぼしなく拾える）。
+    # ページ内の関連記事ウィジェット（`.com-content-blog__link`）は掲載時期が
+    # 不定でノイズになりやすいため、意図的に対象外としている。
+    Source(
+        name="みなまた観光物産協会 イベント情報",
+        url="https://www.go-minamata.jp/news-events/",
+        type="html",
+        list_selector=".article-header a",
+        base_url="https://www.go-minamata.jp",
+    ),
+    Source(
+        name="みなまた観光物産協会 お知らせ",
+        url="https://www.go-minamata.jp/news-information/",
+        type="html",
+        list_selector=".article-header a",
+        base_url="https://www.go-minamata.jp",
+    ),
 ]
 
 # 事前フィルタは「取りこぼし防止」のため最小限にする。
@@ -333,9 +362,14 @@ def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
         },
     }
 
-    url = f"{GEMINI_ENDPOINT}?key={GEMINI_API_KEY}"
+    # APIキーはURLのクエリパラメータではなくヘッダー（x-goog-api-key）で渡す。
+    # クエリパラメータに含めると、HTTPエラー時の例外メッセージにURL全体が
+    # 含まれてしまい、ログ出力経由でキーが漏れるリスクがあるため。
+    headers = {"x-goog-api-key": GEMINI_API_KEY}
     try:
-        resp = requests.post(url, json=payload, timeout=REQUEST_TIMEOUT)
+        resp = requests.post(
+            GEMINI_ENDPOINT, headers=headers, json=payload, timeout=REQUEST_TIMEOUT
+        )
         resp.raise_for_status()
     except requests.RequestException as e:
         log.warning("Gemini API 呼び出し失敗: %s (%s)", candidate.title, e)
