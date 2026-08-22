@@ -1,0 +1,79 @@
+name: 水俣市くらしナビ ストック情報 監視
+
+on:
+  schedule:
+    - cron: "0 23 * * 0" # 毎週月曜 8:00 JST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: "stock-monitor"
+  cancel-in-progress: false
+
+jobs:
+  monitor-stock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存関係インストール
+        run: pip install -r scripts/requirements.txt
+
+      - name: ストック情報のページを監視
+        id: run-monitor
+        continue-on-error: true
+        run: python scripts/monitor_stock.py
+
+      - name: 状態ファイルの変更を検出
+        id: git-check
+        run: |
+          if git diff --quiet -- public/data/_monitor_state.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 状態ファイルをコミット・push
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "stock-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data/_monitor_state.json
+          git commit -m "chore: ストック監視の状態を更新 ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
+          git push
+
+      - name: 監視スクリプトの失敗をワークフローに反映
+        if: steps.run-monitor.outcome == 'failure'
+        run: |
+          echo "::error::ストック情報の監視処理が失敗しました（全ページ取得失敗など）。ログを確認してください。"
+          exit 1
+
+      - name: Issue用の情報を準備
+        if: steps.run-monitor.outcome == 'success' && steps.run-monitor.outputs.has_findings == 'true'
+        run: |
+          echo "RUN_DATE=$(TZ=Asia/Tokyo date +'%Y-%m-%d %H:%M JST')" >> "$GITHUB_ENV"
+          echo "RUN_URL=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> "$GITHUB_ENV"
+          echo "FINDINGS_COUNT=${{ steps.run-monitor.outputs.findings_count }}" >> "$GITHUB_ENV"
+          {
+            echo "REPORT<<STOCK_MONITOR_REPORT_EOF"
+            cat scripts/.monitor_report.md
+            echo "STOCK_MONITOR_REPORT_EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: 更新の可能性をIssueとして起票（既存Issueがあれば更新）
+        if: steps.run-monitor.outcome == 'success' && steps.run-monitor.outputs.has_findings == 'true'
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/workflow-templates/stock-update-detected-issue.md
+          update_existing: true

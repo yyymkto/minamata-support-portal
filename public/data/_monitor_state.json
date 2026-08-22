@@ -1,0 +1,86 @@
+{
+  "items": {
+    "child-allowance": {
+      "last_page_date": "2024-11-28"
+    },
+    "child-medical-subsidy": {
+      "last_page_date": "2026-07-17"
+    },
+    "child-rearing-allowance": {
+      "last_page_date": "2026-07-24"
+    },
+    "special-child-rearing-allowance": {
+      "last_page_date": "2026-03-16"
+    },
+    "prenatal-checkup-support": {
+      "last_page_date": "2026-07-15"
+    },
+    "postpartum-care": {
+      "last_page_date": "2026-07-15"
+    },
+    "childcare-education-free": {
+      "last_page_date": "2026-06-01"
+    },
+    "nursery-enrollment": {
+      "last_page_date": "2025-12-22"
+    },
+    "sick-child-care": {
+      "last_page_date": "2025-12-26"
+    },
+    "school-attendance-assistance": {
+      "last_page_date": "2025-10-31"
+    },
+    "gakudo-club": {
+      "last_page_date": "2025-12-01"
+    },
+    "foster-care": {
+      "last_page_date": "2026-06-23"
+    },
+    "universal-childcare-access": {
+      "last_page_date": "2026-06-01"
+    },
+    "premature-infant-medical-care": {
+      "last_page_date": "2026-05-02"
+    },
+    "chronic-disease-daily-supplies": {
+      "last_page_date": "2025-08-29"
+    },
+    "family-support-center": {
+      "last_page_date": "2024-04-01"
+    },
+    "single-parent-welfare-loan": {
+      "last_page_date": "2018-07-09"
+    },
+    "single-parent-medical-subsidy": {
+      "last_page_date": "2018-06-14"
+    },
+    "single-parent-guidebook": {
+      "last_page_date": "2025-11-07"
+    },
+    "women-consultation": {
+      "last_page_date": "2024-08-09"
+    },
+    "pregnancy-notification-mchb": {
+      "last_page_date": "2024-04-01"
+    },
+    "infant-checkup": {
+      "last_page_date": "2026-04-01"
+    },
+    "medical-care-child-guideline": {
+      "last_page_date": "2026-08-10"
+    },
+    "online-pediatric-obgyn-consultation": {
+      "last_page_date": "2026-06-02"
+    },
+    "general-consultation-portal": {
+      "last_page_date": "2026-04-14"
+    },
+    "child-family-center": {
+      "last_page_date": "2026-07-03"
+    },
+    "single-parent-training-subsidy": {
+      "last_page_date": "2025-02-03"
+    }
+  },
+  "last_run": "2026-08-23T00:13:05.065072+09:00"
+}

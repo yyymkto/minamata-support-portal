@@ -4,6 +4,9 @@ __pycache__/
 .venv/
 venv/
 
+# monitor_stock.py の一時レポート（Issue本文生成用、CI内でのみ使用）
+scripts/.monitor_report.md
+
 # OS
 .DS_Store
 Thumbs.db
