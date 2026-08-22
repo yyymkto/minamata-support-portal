@@ -1,0 +1,260 @@
+{
+  "_note": "UI上の「困りごと」入り口と、child_support_base.json の base_id を紐付けるマッピング定義。related_topic_tags は life_info.json（動的データ）の中から関連する最新記事を併記表示するために使う。 category_id/category_label/priorityを追加（2026-08-15、Gemini提案の4グループ構成を採用）。 ②お金・手当・医療費カテゴリを解像度アップ（2026-08-15、Gemini提案）。単一の大きすぎるチップを廃止し、具体的な4つの入り口に分解。school-cost-money/single-parent-allowance-moneyは他カテゴリと意図的にbase_idが重複（課題解決型UIの設計として複数入り口から同じ制度に到達できることを許容）。",
+  "concerns": [
+    {
+      "concern_id": "pregnancy-checkup-cost",
+      "label": "妊娠・出産の費用について知りたい",
+      "base_ids": [
+        "prenatal-checkup-support",
+        "postpartum-care",
+        "pregnancy-notification-mchb",
+        "birth-childcare-support-grant"
+      ],
+      "related_topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "category_id": "pregnancy",
+      "category_label": "妊娠・出産",
+      "priority": 1
+    },
+    {
+      "concern_id": "infant-health-check",
+      "label": "赤ちゃん・子どもの健診や予防接種について知りたい",
+      "base_ids": [
+        "infant-checkup"
+      ],
+      "related_topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "category_id": "pregnancy",
+      "category_label": "妊娠・出産",
+      "priority": 2
+    },
+    {
+      "concern_id": "premature-birth-support",
+      "label": "早産・低出生体重で生まれた子の医療費が心配",
+      "base_ids": [
+        "premature-infant-medical-care"
+      ],
+      "related_topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "category_id": "pregnancy",
+      "category_label": "妊娠・出産",
+      "priority": 3
+    },
+    {
+      "concern_id": "child-medical-cost",
+      "label": "子どもが病院にかかるときの費用（医療費）が心配",
+      "base_ids": [
+        "child-medical-subsidy"
+      ],
+      "related_topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "category_id": "money",
+      "priority": 101,
+      "category_label": "お金・手当・医療費"
+    },
+    {
+      "concern_id": "child-allowance-procedure",
+      "label": "毎月もらえる手当（児童手当）の手続きについて知りたい",
+      "base_ids": [
+        "child-allowance"
+      ],
+      "related_topic_tags": [
+        "子育て",
+        "税金・年金"
+      ],
+      "category_id": "money",
+      "priority": 102,
+      "category_label": "お金・手当・医療費"
+    },
+    {
+      "concern_id": "school-cost-money",
+      "label": "学校や給食にかかるお金の補助について知りたい",
+      "base_ids": [
+        "school-attendance-assistance"
+      ],
+      "related_topic_tags": [
+        "教育・生涯学習",
+        "税金・年金"
+      ],
+      "category_id": "money",
+      "priority": 103,
+      "category_label": "お金・手当・医療費"
+    },
+    {
+      "concern_id": "single-parent-allowance-money",
+      "label": "ひとり親家庭がもらえる手当（児童扶養手当）について知りたい",
+      "base_ids": [
+        "child-rearing-allowance"
+      ],
+      "related_topic_tags": [
+        "介護・福祉",
+        "税金・年金"
+      ],
+      "category_id": "money",
+      "priority": 104,
+      "category_label": "お金・手当・医療費"
+    },
+    {
+      "concern_id": "nursery-placement",
+      "label": "保育園・こども園に預けたい",
+      "base_ids": [
+        "nursery-enrollment",
+        "childcare-education-free"
+      ],
+      "related_topic_tags": [
+        "子育て",
+        "くらしの手続き"
+      ],
+      "category_id": "childcare",
+      "category_label": "預ける・学校",
+      "priority": 201
+    },
+    {
+      "concern_id": "casual-childcare-use",
+      "label": "少しの時間だけ子どもを預けたい",
+      "base_ids": [
+        "universal-childcare-access",
+        "family-support-center"
+      ],
+      "related_topic_tags": [
+        "子育て"
+      ],
+      "category_id": "childcare",
+      "category_label": "預ける・学校",
+      "priority": 202
+    },
+    {
+      "concern_id": "sick-child",
+      "label": "子どもが急に体調を崩したとき預け先を探したい",
+      "base_ids": [
+        "sick-child-care",
+        "online-pediatric-obgyn-consultation"
+      ],
+      "related_topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "category_id": "childcare",
+      "category_label": "預ける・学校",
+      "priority": 203
+    },
+    {
+      "concern_id": "after-school-care",
+      "label": "放課後の預け先（学童）を探している",
+      "base_ids": [
+        "gakudo-club"
+      ],
+      "related_topic_tags": [
+        "子育て",
+        "教育・生涯学習"
+      ],
+      "category_id": "childcare",
+      "category_label": "預ける・学校",
+      "priority": 204
+    },
+    {
+      "concern_id": "school-cost-support",
+      "label": "学校の給食費や学用品の援助について知りたい",
+      "base_ids": [
+        "school-attendance-assistance"
+      ],
+      "related_topic_tags": [
+        "教育・生涯学習",
+        "税金・年金"
+      ],
+      "category_id": "childcare",
+      "category_label": "預ける・学校",
+      "priority": 205
+    },
+    {
+      "concern_id": "single-parent-support",
+      "label": "ひとり親家庭向けの支援を知りたい",
+      "base_ids": [
+        "child-rearing-allowance",
+        "single-parent-medical-subsidy",
+        "single-parent-welfare-loan",
+        "single-parent-guidebook",
+        "single-mother-daily-life-support"
+      ],
+      "related_topic_tags": [
+        "介護・福祉",
+        "税金・年金"
+      ],
+      "category_id": "special",
+      "category_label": "特別なサポート",
+      "priority": 301
+    },
+    {
+      "concern_id": "disabled-child-support",
+      "label": "障がいのある子ども向けの支援を知りたい",
+      "base_ids": [
+        "special-child-rearing-allowance",
+        "chronic-disease-daily-supplies",
+        "medical-care-child-guideline"
+      ],
+      "related_topic_tags": [
+        "介護・福祉",
+        "子育て"
+      ],
+      "category_id": "special",
+      "category_label": "特別なサポート",
+      "priority": 302
+    },
+    {
+      "concern_id": "foster-care-interest",
+      "label": "里親制度について知りたい",
+      "base_ids": [
+        "foster-care"
+      ],
+      "related_topic_tags": [
+        "子育て",
+        "介護・福祉"
+      ],
+      "category_id": "special",
+      "category_label": "特別なサポート",
+      "priority": 303
+    },
+    {
+      "concern_id": "who-to-ask",
+      "label": "誰に相談したらいいか分からない",
+      "base_ids": [
+        "child-family-center",
+        "women-consultation",
+        "general-consultation-portal"
+      ],
+      "related_topic_tags": [
+        "募集・相談",
+        "子育て"
+      ],
+      "category_id": "special",
+      "category_label": "特別なサポート",
+      "priority": 304
+    }
+  ],
+  "_categories": [
+    {
+      "category_id": "pregnancy",
+      "category_label": "妊娠・出産"
+    },
+    {
+      "category_id": "money",
+      "category_label": "お金・手当・医療費"
+    },
+    {
+      "category_id": "childcare",
+      "category_label": "預ける・学校"
+    },
+    {
+      "category_id": "special",
+      "category_label": "特別なサポート"
+    }
+  ]
+}

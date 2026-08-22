@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>みなまた くらしナビ｜世代別・生活情報まとめ</title>
+<meta name="description" content="水俣市公式サイトの新着情報を自動収集し、子育て・学生・現役世代・高齢者・障がいのある方・事業者など、世代や立場ごとに整理する非公式ポータルです。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper:   '#F2F1EC',
+          ink:     '#24303B',
+          inkSoft: '#5B6772',
+          bay:     '#1B4B5A',
+          baySoft: '#E3EBEC',
+          line:    '#DAD5C9',
+          // 世代タグごとの色（そのままフィルタ・カードの色分けに使う「サイン」）
+          kosodate:  '#C9793F',
+          kosodateSoft: '#F5E7DA',
+          wakamono:  '#2C8F8F',
+          wakamonoSoft: '#DCEFEE',
+          genneki:   '#47588F',
+          gennekiSoft: '#E1E4F1',
+          koureisha: '#8B5A73',
+          koureishaSoft: '#F2E4EB',
+          shougai:   '#5F8567',
+          shougaiSoft: '#E4ECE4',
+          jigyousha: '#A87A2E',
+          jigyoushaSoft: '#F2E7D3',
+          zensedai:  '#556065',
+          zensedaiSoft: '#E7E7E4',
+        },
+        fontFamily: {
+          serif: ['"Shippori Mincho"', 'serif'],
+          sans:  ['"Zen Kaku Gothic New"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-feature-settings: "palt"; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .chip { transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+  .card-enter { animation: cardIn .35s ease both; }
+  @keyframes cardIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card-enter { animation: none; }
+  }
+  ::selection { background: #1B4B5A; color: #F2F1EC; }
+  .focus-ring:focus-visible { outline: 3px solid #1B4B5A; outline-offset: 2px; }
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; height: 0; }
+</style>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="sticky top-0 z-30 bg-paper/95 backdrop-blur border-b border-line">
+    <div class="max-w-3xl mx-auto px-4 pt-4 pb-3">
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bay opacity-60"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-bay"></span>
+          </span>
+          <p id="updated-at" class="text-xs text-inkSoft tabular">最終更新：取得中…</p>
+        </div>
+        <a href="#about" class="text-xs text-inkSoft underline decoration-line underline-offset-2 focus-ring rounded">このサイトについて</a>
+      </div>
+
+      <h1 class="mt-3 font-serif font-bold text-2xl sm:text-3xl leading-snug text-ink">
+        みなまた くらしナビ
+      </h1>
+      <p class="mt-1 text-sm text-inkSoft leading-relaxed">
+        水俣市の新着情報を、子育て・学生・現役世代・高齢者・事業者など、世代や立場ごとに整理してお届けします。
+      </p>
+
+      <div class="mt-4 relative">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-inkSoft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input
+          id="search"
+          type="search"
+          inputmode="search"
+          placeholder="例：子育て、介護保険、二十歳の集い…"
+          class="w-full h-12 pl-10 pr-4 rounded-xl border border-line bg-white text-base placeholder:text-inkSoft/70 focus-ring"
+        />
+      </div>
+    </div>
+
+    <p class="max-w-3xl mx-auto px-4 pt-1 text-[11px] text-inkSoft">世代・立場で絞り込む</p>
+    <div class="max-w-3xl mx-auto px-4 pb-2 overflow-x-auto no-scrollbar">
+      <div id="audience-chips" class="flex gap-2 w-max"></div>
+    </div>
+    <p class="max-w-3xl mx-auto px-4 pt-1 text-[11px] text-inkSoft">ジャンルで絞り込む</p>
+    <div class="max-w-3xl mx-auto px-4 pb-3 overflow-x-auto no-scrollbar">
+      <div id="topic-chips" class="flex gap-2 w-max"></div>
+    </div>
+  </header>
+
+  <!-- ===== 本文 ===== -->
+  <main class="max-w-3xl mx-auto px-4 py-5">
+
+    <p id="result-count" class="text-xs text-inkSoft mb-3 tabular">読み込み中…</p>
+
+    <div id="list" class="flex flex-col gap-3"></div>
+
+    <div id="empty" class="hidden text-center py-16">
+      <p class="font-serif text-lg text-ink mb-1">該当する情報が見つかりません</p>
+      <p class="text-sm text-inkSoft">キーワードや絞り込みを変えてお試しください。</p>
+    </div>
+
+    <div id="loading" class="text-center py-16 text-sm text-inkSoft">情報を読み込んでいます…</div>
+  </main>
+
+  <!-- ===== 詳細モーダル ===== -->
+  <div id="modal-backdrop" class="hidden fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm" style="display:none"></div>
+  <div id="modal" class="hidden fixed inset-x-0 bottom-0 z-50 sm:inset-0 sm:flex sm:items-center sm:justify-center" style="display:none">
+    <div class="bg-paper w-full sm:max-w-lg sm:rounded-2xl rounded-t-2xl max-h-[85vh] overflow-y-auto shadow-2xl border border-line">
+      <div class="p-5" id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ===== このサイトについて ===== -->
+  <section id="about" class="max-w-3xl mx-auto px-4 py-10 border-t border-line">
+    <h2 class="font-serif font-bold text-lg mb-2">このサイトについて</h2>
+    <ul class="text-sm text-inkSoft leading-relaxed space-y-2 list-disc pl-5">
+      <li>本サイトは有志が運営する<strong class="text-ink">非公式の情報まとめサイト</strong>です。水俣市公式サイトの新着情報をもとに、毎朝自動で収集・分類しています。</li>
+      <li>世代・ジャンルのタグ付けと要約にはAI（Gemini API）を使用しています。内容の正確性・最新性は保証されません。<strong class="text-ink">申請前に必ず「情報源を見る」から公式ページをご確認ください。</strong></li>
+      <li>入札公告・監査結果など、住民の生活に直接関係しない内部事務手続きの情報は対象外としています。</li>
+    </ul>
+  </section>
+
+  <footer class="text-center text-xs text-inkSoft py-6">
+    みなまた くらしナビ（非公式） ／ データ提供：水俣市
+  </footer>
+
+<script>
+(() => {
+  const DATA_URL = './data/life_info.json';
+
+  const AUDIENCE_STYLE = {
+    '子育て・妊娠期': { bar: 'bg-kosodate',  chipOn: 'bg-kosodate text-white border-kosodate',  chipOff: 'bg-kosodateSoft text-kosodate border-transparent' },
+    '学生・若者':     { bar: 'bg-wakamono',  chipOn: 'bg-wakamono text-white border-wakamono',  chipOff: 'bg-wakamonoSoft text-wakamono border-transparent' },
+    '現役世代':       { bar: 'bg-genneki',   chipOn: 'bg-genneki text-white border-genneki',    chipOff: 'bg-gennekiSoft text-genneki border-transparent' },
+    '高齢者':         { bar: 'bg-koureisha', chipOn: 'bg-koureisha text-white border-koureisha',chipOff: 'bg-koureishaSoft text-koureisha border-transparent' },
+    '障がいのある方': { bar: 'bg-shougai',   chipOn: 'bg-shougai text-white border-shougai',    chipOff: 'bg-shougaiSoft text-shougai border-transparent' },
+    '事業者向け':     { bar: 'bg-jigyousha', chipOn: 'bg-jigyousha text-white border-jigyousha',chipOff: 'bg-jigyoushaSoft text-jigyousha border-transparent' },
+    '全世代':         { bar: 'bg-zensedai',  chipOn: 'bg-zensedai text-white border-zensedai',  chipOff: 'bg-zensedaiSoft text-zensedai border-transparent' },
+  };
+  const DEFAULT_STYLE = { bar: 'bg-inkSoft', chipOn: 'bg-ink text-white border-ink', chipOff: 'bg-white text-inkSoft border-line' };
+  const TOPIC_STYLE = { chipOn: 'bg-ink text-white border-ink', chipOff: 'bg-white text-inkSoft border-line' };
+
+  const state = {
+    items: [],
+    query: '',
+    audience: 'すべて',
+    topic: 'すべて',
+  };
+
+  const el = {
+    list: document.getElementById('list'),
+    empty: document.getElementById('empty'),
+    loading: document.getElementById('loading'),
+    count: document.getElementById('result-count'),
+    updatedAt: document.getElementById('updated-at'),
+    search: document.getElementById('search'),
+    audienceChips: document.getElementById('audience-chips'),
+    topicChips: document.getElementById('topic-chips'),
+    modalBackdrop: document.getElementById('modal-backdrop'),
+    modal: document.getElementById('modal'),
+    modalContent: document.getElementById('modal-content'),
+  };
+
+  function fmtDate(iso) {
+    if (!iso) return null;
+    try {
+      const d = new Date(iso);
+      return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+    } catch { return iso; }
+  }
+
+  function esc(value) {
+    if (value === null || value === undefined) return '';
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function safeUrl(url) {
+    try {
+      const u = new URL(url, location.href);
+      if (u.protocol === 'http:' || u.protocol === 'https:') return u.href;
+    } catch { /* fallthrough */ }
+    return '#';
+  }
+
+  function deadlineBadge(deadline) {
+    if (!deadline) return '';
+    const d = new Date(deadline);
+    const days = Math.ceil((d - new Date()) / 86400000);
+    if (isNaN(days)) return '';
+    if (days < 0) return `<span class="text-xs px-2 py-0.5 rounded-full bg-line text-inkSoft">受付終了</span>`;
+    if (days <= 14) return `<span class="text-xs px-2 py-0.5 rounded-full bg-kosodateSoft text-kosodate font-medium">締切まであと${days}日</span>`;
+    return `<span class="text-xs px-2 py-0.5 rounded-full bg-baySoft text-bay">期限 ${fmtDate(deadline)}</span>`;
+  }
+
+  function audienceStyleFor(tags) {
+    const key = (tags || [])[0];
+    return AUDIENCE_STYLE[key] || DEFAULT_STYLE;
+  }
+
+  function uniqueValues(items, field) {
+    const set = new Set();
+    items.forEach(it => (it[field] || []).forEach(v => set.add(v)));
+    return Array.from(set);
+  }
+
+  function buildAudienceChips() {
+    const values = uniqueValues(state.items, 'audience_tags');
+    // 決め打ちの順序（子育て→若者→現役→高齢者→障がい→事業者→全世代）で並べる
+    const order = Object.keys(AUDIENCE_STYLE);
+    const sorted = order.filter(v => values.includes(v));
+    const all = ['すべて', ...sorted];
+
+    el.audienceChips.innerHTML = '';
+    all.forEach(v => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      const isOn = state.audience === v;
+      const style = v === 'すべて' ? DEFAULT_STYLE : audienceStyleFor([v]);
+      btn.className = `chip focus-ring shrink-0 text-sm px-3 py-1.5 rounded-full border ${isOn ? style.chipOn : style.chipOff}`;
+      btn.textContent = v;
+      btn.addEventListener('click', () => { state.audience = v; render(); });
+      el.audienceChips.appendChild(btn);
+    });
+  }
+
+  function buildTopicChips() {
+    const values = uniqueValues(state.items, 'topic_tags');
+    const all = ['すべて', ...values];
+
+    el.topicChips.innerHTML = '';
+    all.forEach(v => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      const isOn = state.topic === v;
+      btn.className = `chip focus-ring shrink-0 text-sm px-3 py-1.5 rounded-full border ${isOn ? TOPIC_STYLE.chipOn : TOPIC_STYLE.chipOff}`;
+      btn.textContent = v;
+      btn.addEventListener('click', () => { state.topic = v; render(); });
+      el.topicChips.appendChild(btn);
+    });
+  }
+
+  function matches(item) {
+    if (state.audience !== 'すべて' && !(item.audience_tags || []).includes(state.audience)) return false;
+    if (state.topic !== 'すべて' && !(item.topic_tags || []).includes(state.topic)) return false;
+    if (state.query) {
+      const haystack = [
+        item.title, item.summary, item.organization, item.target,
+        ...(item.audience_tags || []), ...(item.topic_tags || []),
+      ].join(' ').toLowerCase();
+      if (!haystack.includes(state.query.toLowerCase())) return false;
+    }
+    return true;
+  }
+
+  function cardHTML(item, idx) {
+    const style = audienceStyleFor(item.audience_tags);
+    const audTags = (item.audience_tags || []).slice(0, 2);
+    const topicTags = (item.topic_tags || []).slice(0, 2);
+    return `
+      <article class="card-enter bg-white rounded-xl border border-line overflow-hidden focus-ring" style="animation-delay:${Math.min(idx * 30, 300)}ms">
+        <button type="button" data-idx="${idx}" class="open-detail w-full text-left flex gap-3 p-4 focus-ring select-none">
+          <span class="w-1.5 rounded-full ${style.bar} shrink-0"></span>
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+              ${audTags.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full ${audienceStyleFor([t]).chipOff}">${esc(t)}</span>`).join('')}
+              ${topicTags.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-line/70 text-inkSoft">${esc(t)}</span>`).join('')}
+              ${deadlineBadge(item.deadline)}
+            </div>
+            <h3 class="font-serif font-semibold text-[15px] leading-snug text-ink mb-1">${esc(item.title)}</h3>
+            <p class="text-sm text-inkSoft leading-relaxed line-clamp-2">${esc(item.summary)}</p>
+            <div class="mt-2 flex items-center gap-2 text-xs text-inkSoft tabular">
+              <span>${esc(item.organization || item.source_name)}</span>
+              ${item.published_date ? `<span>・${esc(fmtDate(item.published_date))}</span>` : ''}
+            </div>
+          </div>
+        </button>
+      </article>
+    `;
+  }
+
+  function openModal(item) {
+    el.modalContent.innerHTML = `
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <div class="flex flex-wrap gap-1.5">
+          ${(item.audience_tags || []).map(t => `<span class="text-xs px-2 py-0.5 rounded-full ${audienceStyleFor([t]).chipOn}">${esc(t)}</span>`).join('')}
+          ${(item.topic_tags || []).map(t => `<span class="text-xs px-2 py-0.5 rounded-full bg-line text-inkSoft">${esc(t)}</span>`).join('')}
+        </div>
+        <button id="modal-close" aria-label="閉じる" class="focus-ring shrink-0 h-8 w-8 flex items-center justify-center rounded-full text-inkSoft hover:bg-line/60">✕</button>
+      </div>
+      <h2 class="font-serif font-bold text-xl leading-snug text-ink mb-2">${esc(item.title)}</h2>
+      ${deadlineBadge(item.deadline) ? `<div class="mb-3">${deadlineBadge(item.deadline)}</div>` : ''}
+      <p class="text-sm text-ink leading-relaxed mb-4">${esc(item.summary)}</p>
+
+      <dl class="text-sm space-y-2 border-t border-line pt-4">
+        <div class="flex gap-3"><dt class="w-20 shrink-0 text-inkSoft">対象</dt><dd class="text-ink">${esc(item.target) || '記載なし（情報源をご確認ください）'}</dd></div>
+        <div class="flex gap-3"><dt class="w-20 shrink-0 text-inkSoft">実施主体</dt><dd class="text-ink">${esc(item.organization) || '不明'}</dd></div>
+        <div class="flex gap-3"><dt class="w-20 shrink-0 text-inkSoft">情報源</dt><dd class="text-ink">${esc(item.source_name)}</dd></div>
+      </dl>
+
+      <a href="${safeUrl(item.source_url)}" target="_blank" rel="noopener noreferrer"
+         class="focus-ring mt-5 flex items-center justify-center gap-2 h-12 rounded-xl bg-bay text-white font-medium">
+        公式情報を見る（外部サイト）
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+      <p class="text-[11px] text-inkSoft text-center mt-3">申請の可否は必ず公式情報でご確認ください。</p>
+    `;
+    el.modalBackdrop.style.removeProperty('display');
+    el.modal.style.removeProperty('display');
+    el.modalBackdrop.classList.remove('hidden');
+    el.modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+  }
+
+  function closeModal() {
+    el.modalBackdrop.classList.add('hidden');
+    el.modal.classList.add('hidden');
+    el.modalBackdrop.style.setProperty('display', 'none', 'important');
+    el.modal.style.setProperty('display', 'none', 'important');
+    document.body.style.overflow = '';
+  }
+  el.modalBackdrop.addEventListener('click', closeModal);
+  el.modal.addEventListener('click', (e) => { if (e.target === el.modal) closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !el.modal.classList.contains('hidden')) closeModal();
+  });
+
+  function render() {
+    buildAudienceChips();
+    buildTopicChips();
+
+    const filtered = state.items.filter(matches);
+    el.count.textContent = `${filtered.length}件の生活情報`;
+
+    if (filtered.length === 0) {
+      el.list.innerHTML = '';
+      el.empty.classList.remove('hidden');
+    } else {
+      el.empty.classList.add('hidden');
+      el.list.innerHTML = filtered.map((item, idx) => cardHTML(item, idx)).join('');
+      el.list.querySelectorAll('.open-detail').forEach(btn => {
+        btn.addEventListener('click', () => openModal(filtered[Number(btn.dataset.idx)]));
+      });
+    }
+  }
+
+  el.search.addEventListener('input', (e) => {
+    state.query = e.target.value.trim();
+    render();
+  });
+
+  async function init() {
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('data fetch failed');
+      const data = await res.json();
+      state.items = (data.items || []).sort((a, b) => (b.published_date || '').localeCompare(a.published_date || ''));
+
+      if (data.last_updated) {
+        const d = new Date(data.last_updated);
+        el.updatedAt.textContent = `最終更新：${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+      }
+
+      el.loading.classList.add('hidden');
+      render();
+    } catch (err) {
+      el.loading.textContent = 'データの読み込みに失敗しました。時間をおいて再度お試しください。';
+      console.error(err);
+    }
+  }
+
+  init();
+})();
+</script>
+
+</body>
+</html>

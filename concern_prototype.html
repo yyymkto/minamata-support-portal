@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>こまりごとから探す｜みなまた くらしナビ（プロトタイプ）</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper:   '#F2F1EC',
+          ink:     '#24303B',
+          inkSoft: '#5B6772',
+          bay:     '#1B4B5A',
+          baySoft: '#E3EBEC',
+          line:    '#DAD5C9',
+          kosodate:  '#C9793F',
+          kosodateSoft: '#F5E7DA',
+          wakamono:  '#2C8F8F',
+          wakamonoSoft: '#DCEFEE',
+          genneki:   '#47588F',
+          gennekiSoft: '#E1E4F1',
+          koureisha: '#8B5A73',
+          koureishaSoft: '#F2E4EB',
+          shougai:   '#5F8567',
+          shougaiSoft: '#E4ECE4',
+          jigyousha: '#A87A2E',
+          jigyoushaSoft: '#F2E7D3',
+          zensedai:  '#556065',
+          zensedaiSoft: '#E7E7E4',
+          // service / guide の区別用
+          serviceAccent: '#1B4B5A',
+          serviceAccentSoft: '#E3EBEC',
+          guideAccent: '#8B7355',
+          guideAccentSoft: '#EFE9DE',
+          warnAccent: '#B4552F',
+          warnAccentSoft: '#F5E3DA',
+        },
+        fontFamily: {
+          serif: ['"Shippori Mincho"', 'serif'],
+          sans:  ['"Zen Kaku Gothic New"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-feature-settings: "palt"; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .chip { transition: background-color .15s ease, color .15s ease, border-color .15s ease, transform .1s ease; }
+  .chip:active { transform: scale(0.97); }
+  .card-enter { animation: cardIn .35s ease both; }
+  @keyframes cardIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card-enter { animation: none; }
+  }
+  ::selection { background: #1B4B5A; color: #F2F1EC; }
+  .focus-ring:focus-visible { outline: 3px solid #1B4B5A; outline-offset: 2px; }
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; height: 0; }
+</style>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="sticky top-0 z-30 bg-paper/95 backdrop-blur border-b border-line">
+    <div class="max-w-2xl mx-auto px-4 pt-4 pb-3">
+      <div class="flex items-center gap-2 mb-1">
+        <button id="back-btn" class="hidden focus-ring text-xs text-inkSoft flex items-center gap-1 -ml-1 px-1 py-1 rounded">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          こまりごと選択にもどる
+        </button>
+      </div>
+      <h1 class="font-serif font-bold text-2xl sm:text-3xl leading-snug text-ink">
+        こまりごとから探す
+      </h1>
+      <p id="header-sub" class="mt-1 text-sm text-inkSoft leading-relaxed">
+        子育てで「こんなときどうする？」を選ぶと、関係する制度や窓口をまとめて表示します。
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== 本文 ===== -->
+  <main class="max-w-2xl mx-auto px-4 py-6">
+
+    <!-- Step 1: こまりごとチップ選択画面 -->
+    <section id="concern-select">
+      <div id="concern-grid" class="flex flex-col"></div>
+    </section>
+
+    <!-- Step 2: 結果表示画面 -->
+    <section id="result-view" class="hidden">
+      <div id="result-title-wrap" class="mb-5"></div>
+
+      <!-- 利用できる制度・手続き -->
+      <div id="service-section" class="mb-8">
+        <h2 class="font-serif font-bold text-lg text-ink mb-3 flex items-center gap-2">
+          <span class="inline-block w-1.5 h-5 rounded-full bg-serviceAccent"></span>
+          利用できる制度・手続き
+        </h2>
+        <div id="service-list" class="flex flex-col gap-3"></div>
+      </div>
+
+      <!-- 関連するご案内・相談窓口 -->
+      <div id="guide-section" class="mb-8 hidden">
+        <h2 class="font-serif font-bold text-base text-inkSoft mb-3 flex items-center gap-2">
+          <span class="inline-block w-1.5 h-4 rounded-full bg-guideAccent"></span>
+          関連するご案内・相談窓口
+        </h2>
+        <div id="guide-list" class="flex flex-col gap-2.5"></div>
+      </div>
+
+      <!-- 最新のお知らせ（動的データ） -->
+      <div id="news-section" class="mb-4">
+        <h2 class="font-serif font-bold text-base text-ink mb-3 flex items-center gap-2">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bay opacity-60"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-bay"></span>
+          </span>
+          最新のお知らせ
+        </h2>
+        <div id="news-list" class="flex flex-col gap-2.5"></div>
+        <p id="news-empty" class="hidden text-sm text-inkSoft bg-white/60 border border-line rounded-xl px-4 py-3">
+          現在、この内容に関する新着のお知らせはありません。上記の制度は通年でご利用いただけます。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center text-xs text-inkSoft py-8 border-t border-line mt-4">
+    みなまた くらしナビ（非公式） ／ UIプロトタイプ（子育て領域スモールスタート）
+  </footer>
+
+<script src="embedded_data.js"></script>
+<script>
+(() => {
+  const BASE = window.__BASE_DATA__.items;
+  const CONCERNS = window.__MAPPING_DATA__.concerns;
+  const NEWS = window.__LIFE_DATA__.items;
+
+  const baseById = Object.fromEntries(BASE.map(i => [i.base_id, i]));
+
+  const el = {
+    grid: document.getElementById('concern-grid'),
+    select: document.getElementById('concern-select'),
+    result: document.getElementById('result-view'),
+    resultTitleWrap: document.getElementById('result-title-wrap'),
+    serviceList: document.getElementById('service-list'),
+    guideSection: document.getElementById('guide-section'),
+    guideList: document.getElementById('guide-list'),
+    newsList: document.getElementById('news-list'),
+    newsEmpty: document.getElementById('news-empty'),
+    backBtn: document.getElementById('back-btn'),
+    headerSub: document.getElementById('header-sub'),
+  };
+
+  // --- entry_type ごとの表示設定（CTA文言・アイコン・色） ---
+  const ENTRY_TYPE_STYLE = {
+    cash_benefit:  { cta: '申請する',   badge: '現金給付',   accent: 'bay',      accentSoft: 'baySoft' },
+    cost_subsidy:  { cta: '申請する',   badge: '費用の助成', accent: 'bay',      accentSoft: 'baySoft' },
+    service:       { cta: '利用する',   badge: 'サービス',   accent: 'wakamono', accentSoft: 'wakamonoSoft' },
+    procedure:     { cta: '手続きする', badge: '手続き',     accent: 'genneki',  accentSoft: 'gennekiSoft' },
+    loan:          { cta: '相談する',   badge: '貸付',       accent: 'jigyousha',accentSoft: 'jigyoushaSoft' },
+    consultation:  { cta: '相談する',   badge: '相談窓口',   accent: 'guideAccent', accentSoft: 'guideAccentSoft' },
+    reference:     { cta: '詳しく見る', badge: '案内',       accent: 'guideAccent', accentSoft: 'guideAccentSoft' },
+  };
+
+  function esc(v) {
+    if (v === null || v === undefined) return '';
+    return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function safeUrl(u) {
+    try { const x = new URL(u, location.href); if (x.protocol==='http:'||x.protocol==='https:') return x.href; } catch {}
+    return '#';
+  }
+
+  // last_verified の鮮度を判定（1年以上前なら注意表示）
+  function freshnessNote(dateStr) {
+    const d = new Date(dateStr);
+    if (isNaN(d)) return null;
+    const days = Math.floor((new Date() - d) / 86400000);
+    const years = days / 365;
+    if (years >= 3) {
+      return { level: 'warn', text: `最終更新から3年以上経過しています。要件が変わっている可能性があるため、必ず市の窓口にご確認ください（最終更新：${dateStr}）` };
+    }
+    if (years >= 1) {
+      return { level: 'note', text: `最終確認：${dateStr}` };
+    }
+    return { level: 'ok', text: `最終確認：${dateStr}` };
+  }
+
+  const CATEGORIES = window.__MAPPING_DATA__._categories || [];
+
+  // --- こまりごとチップ画面の構築（カテゴリごとにグループ化） ---
+  function buildConcernGrid() {
+    el.grid.innerHTML = '';
+    let cardIdx = 0;
+
+    CATEGORIES.forEach(cat => {
+      const inCat = CONCERNS.filter(c => c.category_id === cat.category_id);
+      if (!inCat.length) return;
+
+      const section = document.createElement('div');
+      section.className = 'mb-6';
+      section.innerHTML = `
+        <h2 class="font-serif font-bold text-sm text-inkSoft mb-2.5 px-0.5">${esc(cat.category_label)}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" data-cat="${esc(cat.category_id)}"></div>
+      `;
+      const wrap = section.querySelector('[data-cat]');
+
+      inCat.forEach(c => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'chip focus-ring text-left bg-white hover:bg-baySoft border border-line rounded-xl px-4 py-3.5 text-sm font-medium text-ink card-enter';
+        btn.style.animationDelay = Math.min(cardIdx * 25, 300) + 'ms';
+        cardIdx++;
+        btn.innerHTML = `<span class="block leading-snug">${esc(c.label)}</span>`;
+        btn.addEventListener('click', () => showResult(c));
+        wrap.appendChild(btn);
+      });
+
+      el.grid.appendChild(section);
+    });
+  }
+
+  function serviceCardHTML(item) {
+    const style = ENTRY_TYPE_STYLE[item.entry_type] || ENTRY_TYPE_STYLE.service;
+    const fresh = freshnessNote(item.last_verified);
+
+    // 警告レベルは独立した注意ボックス、それ以外は小さな鮮度バッジ
+    const freshBadge = (fresh && fresh.level !== 'warn')
+      ? `<span class="text-[11px] px-2 py-0.5 rounded-full bg-line/60 text-inkSoft">${esc(fresh.text)}</span>`
+      : '';
+    const warnBox = (fresh && fresh.level === 'warn')
+      ? `<div class="flex items-start gap-2 bg-warnAccentSoft border border-warnAccent/20 rounded-lg px-3 py-2.5 mb-3">
+           <svg class="h-4 w-4 text-warnAccent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+           <p class="text-xs text-warnAccent leading-relaxed">${esc(fresh.text)}</p>
+         </div>`
+      : '';
+
+    return `
+      <article class="card-enter bg-white rounded-xl border border-line overflow-hidden">
+        <div class="p-4">
+          <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-${style.accentSoft} text-${style.accent} font-medium">${esc(style.badge)}</span>
+            ${freshBadge}
+          </div>
+          <h3 class="font-serif font-semibold text-[15px] leading-snug text-ink mb-1.5">${esc(item.title)}</h3>
+          <p class="text-sm text-inkSoft leading-relaxed mb-3">${esc(item.description)}</p>
+          ${warnBox}
+          ${item.conditions_note ? `<p class="text-xs text-inkSoft bg-paper rounded-lg px-3 py-2 mb-3 leading-relaxed">${esc(item.conditions_note)}</p>` : ''}
+          <a href="${safeUrl(item.official_url)}" target="_blank" rel="noopener noreferrer"
+             class="focus-ring inline-flex items-center gap-1.5 text-sm font-medium text-white bg-bay hover:bg-bay/90 rounded-lg px-4 py-2">
+            ${esc(style.cta)}
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </article>
+    `;
+  }
+
+  function guideCardHTML(item) {
+    const style = ENTRY_TYPE_STYLE[item.entry_type] || ENTRY_TYPE_STYLE.reference;
+    return `
+      <a href="${safeUrl(item.official_url)}" target="_blank" rel="noopener noreferrer"
+         class="card-enter focus-ring flex items-center gap-3 bg-guideAccentSoft/50 hover:bg-guideAccentSoft border border-line rounded-xl px-4 py-3">
+        <span class="text-[11px] shrink-0 px-2 py-0.5 rounded-full bg-white text-guideAccent font-medium">${esc(style.badge)}</span>
+        <span class="flex-1 text-sm text-ink leading-snug">${esc(item.title)}</span>
+        <svg class="h-4 w-4 text-inkSoft shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    `;
+  }
+
+  function newsCardHTML(item) {
+    return `
+      <a href="${safeUrl(item.source_url)}" target="_blank" rel="noopener noreferrer"
+         class="card-enter focus-ring block bg-white hover:bg-baySoft/40 border border-line rounded-xl px-4 py-3">
+        <div class="flex items-center gap-2 text-[11px] text-inkSoft mb-1 tabular">
+          <span>${esc(item.published_date || '')}</span>
+          <span>・${esc(item.organization || item.source_name)}</span>
+        </div>
+        <h4 class="text-sm font-medium text-ink leading-snug mb-1">${esc(item.title)}</h4>
+        <p class="text-xs text-inkSoft leading-relaxed line-clamp-2">${esc(item.summary)}</p>
+      </a>
+    `;
+  }
+
+  function showResult(concern) {
+    el.resultTitleWrap.innerHTML = `
+      <p class="text-xs text-inkSoft mb-1">こまりごと</p>
+      <h2 class="font-serif font-bold text-xl text-ink leading-snug">${esc(concern.label)}</h2>
+    `;
+
+    // --- 静的データ: service / guide に分けて表示 ---
+    const items = concern.base_ids.map(id => baseById[id]).filter(Boolean);
+    const serviceItems = items.filter(i => i.info_type === 'service');
+    const guideItems = items.filter(i => i.info_type === 'guide');
+
+    el.serviceList.innerHTML = serviceItems.map(serviceCardHTML).join('');
+
+    if (guideItems.length) {
+      el.guideSection.classList.remove('hidden');
+      el.guideList.innerHTML = guideItems.map(guideCardHTML).join('');
+    } else {
+      el.guideSection.classList.add('hidden');
+    }
+
+    // --- 動的データ: related_topic_tags に一致する新着記事 ---
+    const tags = new Set(concern.related_topic_tags || []);
+    const matched = NEWS.filter(n => (n.topic_tags || []).some(t => tags.has(t)))
+                        .sort((a,b) => (b.published_date||'').localeCompare(a.published_date||''))
+                        .slice(0, 5);
+
+    if (matched.length) {
+      el.newsEmpty.classList.add('hidden');
+      el.newsList.classList.remove('hidden');
+      el.newsList.innerHTML = matched.map(newsCardHTML).join('');
+    } else {
+      el.newsList.classList.add('hidden');
+      el.newsEmpty.classList.remove('hidden');
+    }
+
+    el.select.classList.add('hidden');
+    el.result.classList.remove('hidden');
+    el.backBtn.classList.remove('hidden');
+    el.headerSub.textContent = '選んだこまりごとに関係する制度と、最新のお知らせをまとめて表示しています。';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showSelect() {
+    el.result.classList.add('hidden');
+    el.select.classList.remove('hidden');
+    el.backBtn.classList.add('hidden');
+    el.headerSub.textContent = '子育てで「こんなときどうする？」を選ぶと、関係する制度や窓口をまとめて表示します。';
+  }
+
+  el.backBtn.addEventListener('click', showSelect);
+
+  buildConcernGrid();
+})();
+</script>
+
+</body>
+</html>
