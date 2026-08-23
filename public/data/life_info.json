@@ -1,12 +1,16 @@
 {
-  "last_updated": "2026-08-15T09:00:00+09:00",
-  "generated_by": "scripts/update_data.py (manual seed - will be overwritten by GitHub Actions)",
+  "last_updated": "2026-08-23T17:17:35.193872+09:00",
+  "generated_by": "scripts/update_data.py",
   "items": [
     {
       "id": "seed-001",
       "title": "令和８年熊本地震に関する支援等",
-      "audience_tags": ["全世代"],
-      "topic_tags": ["防災・災害"],
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
       "organization": "水俣市 危機管理防災課",
       "summary": "令和8年熊本地震に関する水俣市の被災者支援策をまとめた特設ページ。罹災証明の申請方法、義援金、住宅支援、事業者向け支援などの情報を随時更新している。",
       "target": "水俣市内で被災した住民・事業者",
@@ -18,40 +22,14 @@
       "status": "active"
     },
     {
-      "id": "seed-002",
-      "title": "令和8年熊本地震に伴う災害に関して被災中小企業・小規模事業者支援措置について",
-      "audience_tags": ["事業者向け"],
-      "topic_tags": ["防災・災害", "産業・事業支援"],
-      "organization": "水俣市 / 経済産業省",
-      "summary": "熊本地震で被害を受けた中小企業・小規模事業者向けの支援措置について案内。特別相談窓口の設置や災害復旧貸付などが利用できる。",
-      "target": "水俣市内の中小企業・小規模事業者",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034784/index.html",
-      "source_name": "水俣市",
-      "published_date": "2026-08-05",
-      "collected_at": "2026-08-15T09:00:00+09:00",
-      "status": "active"
-    },
-    {
-      "id": "seed-003",
-      "title": "お盆休みも小児科医・産婦人科医・助産師にスマホで無料相談できます！",
-      "audience_tags": ["子育て・妊娠期"],
-      "topic_tags": ["健康・医療", "子育て"],
-      "organization": "水俣市",
-      "summary": "お盆休み期間中も、スマートフォンから小児科医・産婦人科医・助産師に無料で相談できるサービスを案内。子どもの体調や妊娠中の不安などについて相談できる。",
-      "target": "妊娠中の方、乳幼児を育てている保護者",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034803/index.html",
-      "source_name": "水俣市",
-      "published_date": "2026-08-06",
-      "collected_at": "2026-08-15T09:00:00+09:00",
-      "status": "active"
-    },
-    {
       "id": "seed-004",
       "title": "「介護保険給付状況のお知らせ」の通知廃止について",
-      "audience_tags": ["高齢者"],
-      "topic_tags": ["介護・福祉"],
+      "audience_tags": [
+        "高齢者"
+      ],
+      "topic_tags": [
+        "介護・福祉"
+      ],
       "organization": "水俣市",
       "summary": "これまで郵送していた「介護保険給付状況のお知らせ」の通知を廃止する案内。今後の給付状況の確認方法についても記載されている。",
       "target": "介護保険サービスを利用している高齢者とその家族",
@@ -63,10 +41,55 @@
       "status": "active"
     },
     {
+      "id": "seed-003",
+      "title": "お盆休みも小児科医・産婦人科医・助産師にスマホで無料相談できます！",
+      "audience_tags": [
+        "子育て・妊娠期"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "organization": "水俣市",
+      "summary": "お盆休み期間中も、スマートフォンから小児科医・産婦人科医・助産師に無料で相談できるサービスを案内。子どもの体調や妊娠中の不安などについて相談できる。",
+      "target": "妊娠中の方、乳幼児を育てている保護者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034803/index.html",
+      "source_name": "水俣市",
+      "published_date": "2026-08-06",
+      "collected_at": "2026-08-15T09:00:00+09:00",
+      "status": "active"
+    },
+    {
+      "id": "seed-002",
+      "title": "令和8年熊本地震に伴う災害に関して被災中小企業・小規模事業者支援措置について",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市 / 経済産業省",
+      "summary": "熊本地震で被害を受けた中小企業・小規模事業者向けの支援措置について案内。特別相談窓口の設置や災害復旧貸付などが利用できる。",
+      "target": "水俣市内の中小企業・小規模事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034784/index.html",
+      "source_name": "水俣市",
+      "published_date": "2026-08-05",
+      "collected_at": "2026-08-15T09:00:00+09:00",
+      "status": "active"
+    },
+    {
       "id": "seed-005",
       "title": "「二十歳の集い」の実行委員を募集しています",
-      "audience_tags": ["学生・若者"],
-      "topic_tags": ["イベント", "募集・相談"],
+      "audience_tags": [
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "イベント",
+        "募集・相談"
+      ],
       "organization": "水俣市",
       "summary": "二十歳を迎える若者を対象に、「二十歳の集い」を企画・運営する実行委員を募集。地域の同年代とつながりながら、イベント運営を経験できる。",
       "target": "水俣市内在住の二十歳前後の若者",
