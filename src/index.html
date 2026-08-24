@@ -151,6 +151,8 @@
         <p class="mt-1 text-sm text-inkSoft leading-relaxed mb-3">
           水俣市で子育て世帯が使える制度を、場面ごとにまとめています。関連する最新のお知らせがあれば、あわせて表示します。
         </p>
+        <p class="text-xs text-inkSoft mb-1.5">あてはまるものを選ぶと、関係する制度だけに絞り込めます（任意・端末内にのみ保存）</p>
+        <div id="profile-tags" class="flex flex-wrap gap-1.5 mb-3"></div>
         <nav id="jump-nav" class="jump-nav flex gap-1.5 overflow-x-auto no-scrollbar -mx-4 px-4 pb-1"></nav>
       </div>
     </header>
@@ -216,6 +218,7 @@
     query: '',
     audience: 'すべて',
     topic: 'すべて',
+    profile: JSON.parse(localStorage.getItem('minamata_profile') || '{"stages":[],"households":[]}')
   };
 
   const el = {
@@ -240,6 +243,7 @@
 
     // concern ui
     jumpNav: document.getElementById('jump-nav'),
+    profileTags: document.getElementById('profile-tags'),
     concernContent: document.getElementById('concern-content'),
   };
 
@@ -520,8 +524,49 @@
     `;
   }
 
+  const ALL_STAGES = ['妊娠中', '乳幼児', '未就学', '小学生', '中学生', '高校生'];
+  const ALL_HOUSEHOLDS = ['ひとり親', '障がい児'];
+
+  function renderProfileTags() {
+    let html = '';
+    const renderTag = (label, type) => {
+      const active = state.profile[type].includes(label);
+      const baseCls = "focus-ring text-xs px-3 py-1.5 rounded-full border transition-colors select-none cursor-pointer font-medium";
+      const cls = active ? "bg-bay text-white border-bay" : "bg-white text-inkSoft border-line hover:border-bay/50 hover:bg-baySoft/30";
+      return `<button type="button" class="${baseCls} ${cls}" data-type="${type}" data-label="${label}">${label}</button>`;
+    };
+    ALL_STAGES.forEach(s => html += renderTag(s, 'stages'));
+    ALL_HOUSEHOLDS.forEach(h => html += renderTag(h, 'households'));
+    el.profileTags.innerHTML = html;
+
+    el.profileTags.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = btn.dataset.type;
+        const label = btn.dataset.label;
+        const idx = state.profile[type].indexOf(label);
+        if (idx > -1) state.profile[type].splice(idx, 1);
+        else state.profile[type].push(label);
+        localStorage.setItem('minamata_profile', JSON.stringify(state.profile));
+        renderProfileTags();
+        renderConcern();
+      });
+    });
+  }
+
+  // プロフィール（ステージ・世帯状況）が未選択の項目、または選択と合致する項目のみ通す。
+  // child_stage/household_typeが空配列の項目は「誰にでも関係する制度」とみなし常に通す。
+  function itemMatchesProfile(item) {
+    const stages = state.profile.stages || [];
+    const households = state.profile.households || [];
+    const stageOk = stages.length === 0 || !item.child_stage || item.child_stage.length === 0
+      || item.child_stage.some(s => stages.includes(s));
+    const householdOk = households.length === 0 || !item.household_type || item.household_type.length === 0
+      || item.household_type.some(h => households.includes(h));
+    return stageOk && householdOk;
+  }
+
   function concernSectionHTML(concern) {
-    const items = concern.base_ids.map(id => state.baseById[id]).filter(Boolean);
+    const items = concern.base_ids.map(id => state.baseById[id]).filter(Boolean).filter(itemMatchesProfile);
     const serviceItems = items.filter(i => i.info_type === 'service');
     const guideItems = items.filter(i => i.info_type === 'guide');
 
@@ -529,6 +574,9 @@
     const matched = state.items.filter(n => (n.topic_tags || []).some(t => tags.has(t)))
                                .sort((a,b) => (b.published_date||'').localeCompare(a.published_date||''))
                                .slice(0, 2);
+
+    // 選択したプロフィールに合致する項目が1件もない場合は、見出しだけの空セクションを出さない。
+    if (!serviceItems.length && !guideItems.length && !matched.length) return '';
 
     return `
       <section class="mb-8">
@@ -556,23 +604,31 @@
   }
 
   function renderConcern() {
-    el.jumpNav.innerHTML = state.categories.map(cat => `
+    // カテゴリごとに、プロフィール絞り込み後も中身が残るものだけを対象にする
+    // （空になったカテゴリの見出しだけが残る・ジャンプナビが空リンクになる、を防ぐ）
+    const catSections = state.categories.map(cat => {
+      const inCat = state.concerns.filter(c => c.category_id === cat.category_id);
+      const sectionsHTML = inCat.map(concernSectionHTML).join('');
+      return { cat, sectionsHTML };
+    }).filter(({ sectionsHTML }) => sectionsHTML.trim().length > 0);
+
+    el.jumpNav.innerHTML = catSections.map(({ cat }) => `
       <a href="#cat-${esc(cat.category_id)}" class="focus-ring shrink-0 text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-line text-inkSoft hover:bg-baySoft transition-colors">${esc(cat.category_label)}</a>
     `).join('');
 
-    el.concernContent.innerHTML = state.categories.map(cat => {
-      const inCat = state.concerns.filter(c => c.category_id === cat.category_id);
-      if (!inCat.length) return '';
-      return `
+    if (!catSections.length) {
+      el.concernContent.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">選択した条件に合う制度が見つかりませんでした。上のタグを見直してみてください。</p>`;
+    } else {
+      el.concernContent.innerHTML = catSections.map(({ cat, sectionsHTML }) => `
         <div id="cat-${esc(cat.category_id)}" class="mb-10 scroll-mt-[180px]">
           <h2 class="font-serif font-bold text-xl text-ink mb-4 pb-2 border-b-2 border-bay/20">${esc(cat.category_label)}</h2>
-          ${inCat.map(concernSectionHTML).join('')}
+          ${sectionsHTML}
         </div>
-      `;
-    }).join('');
+      `).join('');
+    }
 
     // スクロール連動ハイライト
-    const sections = state.categories.map(c => document.getElementById(`cat-${c.category_id}`)).filter(Boolean);
+    const sections = catSections.map(({ cat }) => document.getElementById(`cat-${cat.category_id}`)).filter(Boolean);
     const navLinks = [...el.jumpNav.querySelectorAll('a')];
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
@@ -615,6 +671,7 @@
 
       el.loading.classList.add('hidden');
       switchTab('feed');
+      renderProfileTags();
       renderFeed();
       renderConcern();
     } catch (err) {
