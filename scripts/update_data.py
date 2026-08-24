@@ -64,6 +64,12 @@ GEMINI_MAX_RETRIES = int(os.environ.get("GEMINI_MAX_RETRIES", "5"))
 # （2026-08-24、実運用で確認）。15 RPM = 4秒間隔ペースなので、余裕を持って
 # 4.5秒とし、リトライは「ペース調整をすり抜けた分の保険」に留める。
 GEMINI_REQUEST_INTERVAL_SEC = float(os.environ.get("GEMINI_REQUEST_INTERVAL_SEC", "4.5"))
+# リトライ（最大GEMINI_MAX_RETRIES回・指数バックオフ）をすべて使い切ってなお失敗する状態が
+# 連続した場合、1分単位のレート制限(RPM)ではなく1日の上限(RPD)等の恒久的な問題である
+# 可能性が高い。そのまま全候補を回すと1件あたり最大約90秒を無駄にし続けるため、
+# 一定回数連続したら残りを打ち切り、ここまでの結果を保存する
+# （2026-08-24、RPM対応後も134件目以降ずっと429が続く事象で発生を確認）。
+GEMINI_CONSECUTIVE_FAILURE_LIMIT = int(os.environ.get("GEMINI_CONSECUTIVE_FAILURE_LIMIT", "3"))
 
 REQUEST_TIMEOUT = 20
 # HTTPヘッダーはASCII(latin-1)のみ許容されるため、日本語を含めないこと。
@@ -417,7 +423,16 @@ def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
     try:
         resp.raise_for_status()
     except requests.RequestException as e:
-        log.warning("Gemini API 呼び出し失敗: %s (%s)", candidate.title, e)
+        # 429の場合は応答本文に「どの上限（RPM/RPD/TPM等）に達したか」が入っていることが
+        # 多いため、原因切り分けのためにログへ残す（2026-08-24、RPM対応後もRPDらしき
+        # 恒久的な429が発生したため追加）。
+        if resp.status_code == 429:
+            log.warning(
+                "Gemini API 呼び出し失敗: %s (%s) / 応答本文: %s",
+                candidate.title, e, resp.text[:500],
+            )
+        else:
+            log.warning("Gemini API 呼び出し失敗: %s (%s)", candidate.title, e)
         return None
 
     data = resp.json()
@@ -557,6 +572,7 @@ def main() -> int:
 
     new_items: list[dict] = []
     newly_checked: set[str] = set()
+    consecutive_failures = 0
     for i, candidate in enumerate(unseen, start=1):
         log.info("[%d/%d] Gemini判定中: %s", i, len(unseen), candidate.title)
         structured, answered = structure_candidate(candidate)
@@ -564,6 +580,17 @@ def main() -> int:
             new_items.append(structured)
         if answered:
             newly_checked.add(candidate.link)
+            consecutive_failures = 0
+        else:
+            consecutive_failures += 1
+            if consecutive_failures >= GEMINI_CONSECUTIVE_FAILURE_LIMIT:
+                log.warning(
+                    "Gemini APIへの問い合わせが%d件連続でリトライ上限まで失敗しました。"
+                    "レート制限ではなく1日の上限等、恒久的な問題の可能性が高いため、"
+                    "残り%d件の判定を打ち切り、ここまでの結果を保存します。",
+                    consecutive_failures, len(unseen) - i,
+                )
+                break
         time.sleep(GEMINI_REQUEST_INTERVAL_SEC)
 
     log.info("生活情報として採用: %d 件", len(new_items))
