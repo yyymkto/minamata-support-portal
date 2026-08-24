@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-24T07:30:21.236126+09:00",
+  "last_updated": "2026-08-24T21:44:49.677368+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -17,25 +17,6 @@
       "deadline": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034805/index.html",
       "source_name": "水俣市（防災サイト）",
-      "published_date": "2026-08-14",
-      "collected_at": "2026-08-15T09:00:00+09:00",
-      "status": "active"
-    },
-    {
-      "id": "seed-004",
-      "title": "「介護保険給付状況のお知らせ」の通知廃止について",
-      "audience_tags": [
-        "高齢者"
-      ],
-      "topic_tags": [
-        "介護・福祉"
-      ],
-      "organization": "水俣市",
-      "summary": "これまで郵送していた「介護保険給付状況のお知らせ」の通知を廃止する案内。今後の給付状況の確認方法についても記載されている。",
-      "target": "介護保険サービスを利用している高齢者とその家族",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034646/index.html",
-      "source_name": "水俣市",
       "published_date": "2026-08-14",
       "collected_at": "2026-08-15T09:00:00+09:00",
       "status": "active"
@@ -98,6 +79,1002 @@
       "source_name": "水俣市",
       "published_date": "2026-07-15",
       "collected_at": "2026-08-15T09:00:00+09:00",
+      "status": "active"
+    },
+    {
+      "id": "0e353f631e6d",
+      "title": "ãä»è­·ä¿éºçµ¦ä»ç¶æ³ã®ãç¥ãããã®éç¥å»æ­¢ã«ã¤ãã¦",
+      "audience_tags": [
+        "高齢者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市より「介護保険給付状況のお知らせ」の通知廃止についての案内です。対象者や廃止時期などの詳細についてはリンク先の市公式ホームページをご確認ください。",
+      "target": "介護保険サービスを利用されている方およびその家族",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034646/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:17.367045+09:00",
+      "status": "active"
+    },
+    {
+      "id": "760a4ff99cfd",
+      "title": "ä½æã»æ¸ç±ã»è¨¼ææ¸",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "住所変更、戸籍の届出、各種証明書の取得方法など、くらしの手続きに関する案内ページです。詳細な手続き方法や必要書類についてはリンク先から確認できます。",
+      "target": "水俣市民および手続きが必要な方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00306.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:40:29.873104+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f4de0b880055",
+      "title": "ä½æå¤æ´",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市における住所変更（転入・転出・転居など）の手続きに関する案内です。必要な書類や窓口、手続きの期限等の詳細を確認できます。",
+      "target": "水俣市へ転入される方、市外へ転出される方、市内で転居される方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00347.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:40:33.506791+09:00",
+      "status": "active"
+    },
+    {
+      "id": "42828f50685c",
+      "title": "ãã¤ãã³ãã¼ã«ã¼ãã»ä½æ°åºæ¬å°å¸³ã«ã¼ã",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "マイナンバーカードおよび住民基本台帳カードに関する手続きや詳細情報を提供しています。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00349.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:40:35.213756+09:00",
+      "status": "active"
+    },
+    {
+      "id": "ccd581d2b3a4",
+      "title": "åºå®è³ç£ç¨",
+      "audience_tags": [
+        "現役世代",
+        "高齢者",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "税金・年金",
+        "住まい",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の固定資産税に関する情報ページです。土地や家屋、償却資産に対する課税の仕組みや手続きについて案内しています。",
+      "target": "水俣市内で土地、家屋、償却資産を所有している方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00353.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:40:41.274818+09:00",
+      "status": "active"
+    },
+    {
+      "id": "510164d22106",
+      "title": "ä½ã¾ãã»åå°",
+      "audience_tags": [
+        "全世代",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "住まい"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内の住まいや土地に関する情報を提供しています。定住や住宅取得を検討している方に役立つ情報が掲載されています。",
+      "target": "水俣市での住まいや土地の取得を検討している方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00310.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:40:47.186226+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d348a8656c8b",
+      "title": "ä¼æ¥å½çªå»",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "健康・医療"
+      ],
+      "organization": "水俣市",
+      "summary": "休日当番医の案内情報です。休日に急病になった際に対応している医療機関を確認できます。",
+      "target": "水俣市民および近隣住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033694/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:12.171504+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4fc2d2f273f1",
+      "title": "å­è²ã¦æå ±",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "子育て",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の子育てに関する各種情報を掲載しているページです。妊娠・出産から乳幼児、学校教育期までの支援や手続きなどの情報を確認できます。",
+      "target": "妊婦、乳幼児〜子どもの保護者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00315.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:13.598364+09:00",
+      "status": "active"
+    },
+    {
+      "id": "5664e50b5ddc",
+      "title": "å­è²ã¦æ¯æ´ï¼LINEï¼",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "子育て",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の子育て支援に関する情報をLINEで提供しています。妊娠中の方や子育て中の保護者に向けて、役立つ情報を手軽に受け取ることができます。",
+      "target": "妊婦および子育て中の保護者など",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list01334.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:20.933700+09:00",
+      "status": "active"
+    },
+    {
+      "id": "666bfa831ec9",
+      "title": "ä»è­·ä¿éº",
+      "audience_tags": [
+        "高齢者",
+        "現役世代",
+        "全世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の介護保険制度に関する案内ページです。制度の仕組みや利用手続き、サービス内容についての情報を提供しています。",
+      "target": "介護保険の対象者およびそのご家族",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00316.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:22.279133+09:00",
+      "status": "active"
+    },
+    {
+      "id": "79f535076500",
+      "title": "ä»è­·ä¿éºã«é¢ãããç¥ãã",
+      "audience_tags": [
+        "高齢者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "介護・福祉"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の介護保険に関するお知らせです。介護保険制度や手続きに関する詳細な情報が掲載されています。",
+      "target": "介護保険の対象者およびその家族",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00380.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:23.627810+09:00",
+      "status": "active"
+    },
+    {
+      "id": "78241c5b43e4",
+      "title": "ä»è­·ä¿éºã®æç¶ã",
+      "audience_tags": [
+        "高齢者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "介護保険に関する各種手続きについての案内ページです。要介護・要支援認定の申請方法や利用できるサービスなどの詳細を確認できます。",
+      "target": "介護保険の対象者およびそのご家族",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00381.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:25.036603+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1949b60dec55",
+      "title": "ä»è­·ä¿éºå¶åº¦ã»ä»è­·ä¿éºæ",
+      "audience_tags": [
+        "高齢者",
+        "現役世代",
+        "全世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "税金・年金",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "介護保険制度の仕組みや介護保険料に関する情報を提供しています。制度の概要や保険料の算定・納付についての詳細を確認できます。",
+      "target": "市民および介護保険の対象者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00382.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:26.409481+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4326d2100b04",
+      "title": "ä»è­·ä¿éºãµã¼ãã¹",
+      "audience_tags": [
+        "高齢者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "介護・福祉"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の介護保険サービスに関する総合情報ページです。利用できる各種サービスや手続きについて案内しています。",
+      "target": "介護保険サービスを利用される方、そのご家族",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00383.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:27.655666+09:00",
+      "status": "active"
+    },
+    {
+      "id": "b867628e8a07",
+      "title": "ä»è­·äºé²",
+      "audience_tags": [
+        "高齢者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "健康・医療"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の介護予防に関する情報を提供しています。いつまでも元気に暮らすための健康づくりや介護予防の取り組みについて確認できます。",
+      "target": "高齢者およびその家族、介護予防に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00384.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:28.890050+09:00",
+      "status": "active"
+    },
+    {
+      "id": "fb49d383a2f6",
+      "title": "å¹´éã»å¥åº·ä¿éº",
+      "audience_tags": [
+        "全世代",
+        "現役世代",
+        "高齢者"
+      ],
+      "topic_tags": [
+        "税金・年金",
+        "健康・医療",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の年金および健康保険に関する案内ページです。手続きや制度の詳細について確認することができます。",
+      "target": "市民全般（年金加入者、健康保険加入者）",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00317.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:30.209616+09:00",
+      "status": "active"
+    },
+    {
+      "id": "dc1a6dd0e189",
+      "title": "å½æ°å¹´é",
+      "audience_tags": [
+        "現役世代",
+        "学生・若者",
+        "全世代"
+      ],
+      "topic_tags": [
+        "税金・年金"
+      ],
+      "organization": "水俣市",
+      "summary": "国民年金に関する制度や手続き、納付案内などの情報を提供しています。加入手続きや免除申請など、生活に必要な詳細についてご確認いただけます。",
+      "target": "国民年金加入者および対象となる方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00385.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:31.575161+09:00",
+      "status": "active"
+    },
+    {
+      "id": "b86f49f77d4e",
+      "title": "å½æ°å¥åº·ä¿éº",
+      "audience_tags": [
+        "現役世代",
+        "高齢者",
+        "全世代"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "税金・年金"
+      ],
+      "organization": "水俣市",
+      "summary": "国民健康保険に関する制度や手続き、給付内容などの情報を掲載しています。加入や脱退の手続き、医療費の自己負担割合や高額療養費などの詳細を確認できます。",
+      "target": "水俣市の国民健康保険加入者およびその世帯主",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00386.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:32.968721+09:00",
+      "status": "active"
+    },
+    {
+      "id": "7bc7a8721d7b",
+      "title": "å¾æé«é½¢èå»ç",
+      "audience_tags": [
+        "高齢者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "後期高齢者医療制度に関する情報や手続きについてのご案内です。対象となる方や医療費の自己負担割合、各種申請手続きについての詳細を確認できます。",
+      "target": "後期高齢者医療制度の対象者およびその家族",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00387.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:41:34.514235+09:00",
+      "status": "active"
+    },
+    {
+      "id": "7c0655285ad1",
+      "title": "æ°´ä¿£å¸å¬å¼LINE",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の公式LINEアカウントです。市の行政情報や便利なサービス、お知らせなどを配信していますので、ぜひご登録ください。",
+      "target": "水俣市民および利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list01431.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:42:21.158501+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a50df556316d",
+      "title": "åºå ±ã¿ãªã¾ã",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "イベント",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の広報誌「広報みなまた」の最新号が掲載されています。市の行事予定、お知らせ、生活に必要な様々な情報が記載されていますのでご確認ください。",
+      "target": "水俣市民および関係者の皆様",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list00422.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:42:22.639572+09:00",
+      "status": "active"
+    },
+    {
+      "id": "6cff871fe384",
+      "title": "å¸é·ã¸ã®æç´",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市では、市政に対する市民からの意見や提案を「市長への手紙」として受け付けています。寄せられた手紙は関係課で共有され、市政運営の参考として活用されます。",
+      "target": "水俣市民および市に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/dynamic/entry/pub/ansform.aspx?c_id=34&entry_ins=2",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:42:28.961220+09:00",
+      "status": "active"
+    },
+    {
+      "id": "38b6b3571533",
+      "title": "è¢«ç½èã¸ã®æ¯æ´ç­",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "被災された方々への支援制度や相談窓口等の情報を提供しています。生活再建に向けた各種手続きや支援策を確認することができます。",
+      "target": "被災された方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/list01209.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:42:32.852515+09:00",
+      "status": "active"
+    },
+    {
+      "id": "57106d1fddf3",
+      "title": "ä»¤åï¼å¹´åº¦æ°´ä¿£å¸å°åå¯çåãµã¼ãã¹äºæ¥­èç­éå£æå°ã«ã¤ãã¦",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年度の水俣市地域密着型サービス事業者等を対象とした集団指導についての案内です。対象の事業者は内容を確認し、指定された期日や手続きに従って対応してください。",
+      "target": "水俣市内の地域密着型サービス事業者等",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034791/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:11.745206+09:00",
+      "status": "active"
+    },
+    {
+      "id": "ebfc74d4d9ee",
+      "title": "ä»¤åï¼å¹´åº¦æ°´ä¿£å¸è·å¡æ¡ç¨è©¦é¨ï¼å¾æè©¦é¨ï¼ç³è¾¼åä»",
+      "audience_tags": [
+        "学生・若者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年度水俣市職員採用試験（後期試験）の申込受付が開始されています。受験を希望される方は詳細をご確認の上、期限内にお申し込みください。",
+      "target": "水俣市職員採用試験の受験を希望する方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034624/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:13.199361+09:00",
+      "status": "active"
+    },
+    {
+      "id": "2c262d19f3ba",
+      "title": "ã¹ãã¼ãã³ããã·ã§ã³ã¿ãªã¾ãã®ã­ã´ãã¼ã¯ã®ãã¶ã¤ã³æ¡ãåéãã¾ãï¼",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "募集・相談",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "スポーツコミッションみなまたのロゴマークのデザイン案を募集しています。詳細はリンク先の水俣市公式サイトをご確認ください。",
+      "target": "デザイン案の応募に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034735/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:14.502632+09:00",
+      "status": "active"
+    },
+    {
+      "id": "970141724f61",
+      "title": "å¨å½ä¸æããã©ãã®äººæ¨©ç¸è«ãå¼·åé±é",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者",
+        "全世代"
+      ],
+      "topic_tags": [
+        "子育て",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "全国一斉「子どもの人権相談」強化週間が実施されます。子どもに関する様々な人権問題についての相談を受け付けます。",
+      "target": "子どもおよびその保護者、一般住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034807/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:16.015115+09:00",
+      "status": "active"
+    },
+    {
+      "id": "bb4ac28818b3",
+      "title": "ä»¤åï¼å¹´çæ¬å°éã«ä¼´ãå¥æ¹¯ç¨ã®èª²ç¨åé¤ï¼ç¹ä¾æªç½®ï¼ã«ã¤ãã¦",
+      "audience_tags": [
+        "事業者向け",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "税金・年金",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年熊本地震に伴う入湯税の課税免除（特例措置）についての案内です。対象となる事業者等の詳細について掲載されています。",
+      "target": "宿泊施設などの事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034819/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:20.188720+09:00",
+      "status": "active"
+    },
+    {
+      "id": "7d0dd422be5d",
+      "title": "ç§»ä½ã¤ãã³ãããããã¤ã ããã§ããã¾ã£ãããã ï½ãããã¤ã£ã¦ãã»ãã¨ã«ï¼ã¡ãã£ã¨èãã¦ã¿ããï¼ï½ãã«æ°´ä¿£å¸ãåºå±ãã¾ãï¼",
+      "audience_tags": [
+        "学生・若者",
+        "現役世代",
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市が移住イベント「よかこつだらけで　ざまったもんだ～よかこつって、ほんとに？ちょっと聞いてみよっか！～」に出展します。水俣市への移住や定住に関心がある方に向けて、現地の情報を知ることができます。",
+      "target": "水俣市への移住・定住に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034813/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:24.085867+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1f2a0850b469",
+      "title": "ä»¤å8å¹´ï¼2026å¹´ï¼10æï½ä»¤å11å¹´ï¼2029å¹´ï¼9æã®æ°´ä¿£å¸å¥æ­åå è³æ ¼å¯©æ»ç³è«ï¼ç©åã®è£½é ã»ä¿®çã»è³¼å¥ãæ¥­åå§è¨ç­ï¼ãåãä»ãã¾ãã",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年（2026年）10月～令和11年（2029年）9月の水俣市入札参加資格審査申請（物品の製造・修理・購入、業務委託等）の受付を行います。水俣市との取引を希望する事業者は手続きが必要です。",
+      "target": "物品の製造・修理・購入や業務委託等の入札参加を希望する事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034767/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:25.435417+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d96de7b98a91",
+      "title": "èªä¸»æåäºæ¥­ãå²¸è°·é¦ãKAORI PARADISE 2026 -10åç®ã®ã²ã¨ãæ-ãéå¬ã®ãç¥ãã",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "自主文化事業として、岸谷香による「KAORI PARADISE 2026 -10回目のひとり旅-」の開催がお知らせされています。文化・芸術に触れられるイベントとなっており、市民をはじめどなたでも参加できます。",
+      "target": "一般住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034718/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:26.831389+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1a0c6217495d",
+      "title": "ä»¤åï¼å¹´åº¦æ°´ä¿£å¸è·å¡æ¡ç¨è©¦é¨ï¼åæï¼åæ ¼çºè¡¨",
+      "audience_tags": [
+        "学生・若者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "就労・仕事",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年度水俣市職員採用試験（前期）の合格者を発表しています。詳細は水俣市ホームページのリンクからご確認ください。",
+      "target": "令和8年度水俣市職員採用試験（前期）を受験された方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034304/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:29.411669+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d0cae74f52de",
+      "title": "æ°´ä¿£å¸ç©ºãåºèã»å·¥å ´ç­ãã³ã¯ç©ä»¶æå ±ä¸è¦§ï¼ç©ºãåºèæå ±ãæ´æ°ãã¾ããï¼",
+      "audience_tags": [
+        "事業者向け",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "住まい",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内の空き店舗や工場などのバンク物件情報を更新しました。市内で事業を始めたい方や店舗・工場の進出を検討している方は詳細をご確認ください。",
+      "target": "水俣市内で空き店舗や工場を探している事業者・個人",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji003603/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:31.063453+09:00",
+      "status": "active"
+    },
+    {
+      "id": "081324aca810",
+      "title": "ãç½å®³å°ç¨ããªã¼ãã¤ã¤ã«ããéè¨­ããã¾ãã",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "災害時に利用できる「災害専用フリーダイヤル」が開設されました。詳細については公式サイトのリンクからご確認いただけます。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034801/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:33.986386+09:00",
+      "status": "active"
+    },
+    {
+      "id": "5474d36672ca",
+      "title": "æé«è£å¤æ±ºãè¸ã¾ããçæ´»ä¿è­·è²»ç­ã®è¿½å çµ¦ä»ã«ã¤ãã¦",
+      "audience_tags": [
+        "高齢者",
+        "障がいのある方",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "最高裁判決を踏まえた生活保護費等の追加給付に関する情報です。対象者や支給手続きに関する詳細はリンク先をご確認ください。",
+      "target": "生活保護受給者など対象者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034722/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:38.255135+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d69050d4f5f0",
+      "title": "ç½å®³ã«ä¾¿ä¹ããæªè³ªåæ³ã«ãæ³¨æãã ããï¼",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "災害に便乗した悪質商法に対する注意喚起です。不審な訪問販売や点検商法などに十分ご注意ください。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034783/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:43:50.411079+09:00",
+      "status": "active"
+    },
+    {
+      "id": "101b30d2946d",
+      "title": "é²ç½ãµã¤ã",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の防災サイトにおける市からのお知らせページです。災害への備えや避難情報、防災に関する最新情報が随時掲載されています。",
+      "target": "水俣市民および防災情報を必要とする方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/default.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:15.396863+09:00",
+      "status": "active"
+    },
+    {
+      "id": "777fc8eaa074",
+      "title": "ç½å®³æå ±ä¸è¦§",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の災害情報や避難に関する情報を掲載しているページです。いざという時のために、最新の被災・防災情報をご確認ください。",
+      "target": "水俣市民および関係者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:17.937271+09:00",
+      "status": "active"
+    },
+    {
+      "id": "424082cc2efc",
+      "title": "ä»¤åï¼å¹´çæ¬å°éã«é¢ããæ¯æ´ç­",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年熊本地震に関する支援や関連情報についてお知らせします。被災された方への支援情報などが掲載されています。",
+      "target": "市民および被災された方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034805/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:19.191185+09:00",
+      "status": "active"
+    },
+    {
+      "id": "ac6710f2e041",
+      "title": "çæ¬çã«ä½ãå¤å½äººã®çããã¸ï¼çæ¬å°éã«ã¤ãã¦ï¼",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "熊本県に住む外国人の方向けに、熊本地震に関する情報や防災に関する案内を提供しています。",
+      "target": "熊本県内に居住する外国人住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034790/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:20.536079+09:00",
+      "status": "active"
+    },
+    {
+      "id": "de7a958f50ae",
+      "title": "ãç«ã®å½ã¼ãããå¡¾ãã®åè¬çãåéãã¾ã",
+      "audience_tags": [
+        "事業者向け",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "産業・事業支援",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "ビジネスの立ち上げや経営向上を目指す方を対象とした「火の国ぼうさい塾」の受講生を募集しています。防災や事業継続（BCP）に関する知識などを学ぶことができます。",
+      "target": "事業者、起業を希望する方など",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034320/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:21.933326+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c832a1112860",
+      "title": "å°éã«åãã¾ãããï¼",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "地震に備えるための防災情報を提供しています。日頃からの備えや避難に関する確認を行っておきましょう。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034640/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:23.243215+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a0090c939611",
+      "title": "ä»¤åï¼å¹´åº¦æ°´ä¿£å¸å°åé²ç½è¨ç»ã«ã¤ãã¦",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "令和7年度の水俣市地域防災計画について公開されています。地域の防災体制や災害対策に関する詳細を確認できます。",
+      "target": "水俣市民および関係者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0033822/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:24.471695+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4b06f972ae25",
+      "title": "ä¸è¦ã«ãªã£ãæ¸å¥åä¿¡æ©ã¯è¿éããé¡ããã¾ãï¼",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "不要になった戸別受信機をお持ちの方は、市への返還をお願いしています。該当する方はお手元の受信機の状態をご確認の上、指定の手続きに従い返還を行ってください。",
+      "target": "戸別受信機をお持ちの市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034140/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:26.117061+09:00",
+      "status": "active"
+    },
+    {
+      "id": "18a470c9bd0a",
+      "title": "æ°´ä¿£å¸é²ç½å£«é¨ä¼ã¸ã®ç»é²ã»å¥ä¼ã«ã¤ãã¦",
+      "audience_tags": [
+        "現役世代",
+        "高齢者",
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市防災士部会への登録および入会についてのご案内です。防災士の資格を持つ方や防災活動に関心のある方の参加を募集しています。",
+      "target": "水俣市防災士部会への登録・入会を希望する方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0033260/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:27.515204+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f3e10eb262fb",
+      "title": "æ°´ä¿£å¸é²ç½æ°è±¡æå ±",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の防災気象情報を提供するページです。気象に関する警報や注意報、雨量などの最新情報を確認し、災害への備えや避難行動にお役立てください。",
+      "target": "水俣市にお住まいの方、滞在中の方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003297/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:28.871783+09:00",
+      "status": "active"
+    },
+    {
+      "id": "9b4a8a726538",
+      "title": "ä»¤å3å¹´5æ20æ¥ããé¿é£æå ±ãæ°ãããªãã¾ãã",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "令和3年5月20日から避難情報の発令基準が変更され、警戒レベル4の「避難勧告」が廃止され「避難指示」に一本化されます。警戒レベル4の避難指示までに必ず危険な場所から避難してください。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0032312/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:30.270178+09:00",
+      "status": "active"
+    },
+    {
+      "id": "6dd224078eff",
+      "title": "é¿é£æã«ãããæ°åã³ã­ãã¦ã¤ã«ã¹ææçå¯¾ç­ã«ã¤ãã¦ã®ãé¡ã",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "避難所における新型コロナウイルス感染症対策に関する住民へのお願いです。災害時の避難にあたり、感染拡大防止に向けた協力や留意事項が記載されています。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0031875/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:31.834691+09:00",
+      "status": "active"
+    },
+    {
+      "id": "2ffa5ddc6227",
+      "title": "ã¤ãã¼æ ªå¼ä¼ç¤¾ã¨ã®ãç½å®³ã«ä¿ãæå ±çºä¿¡ç­ã«é¢ããåå®ãã®ç· çµã«ã¤ãã¦",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市はヤフー株式会社と「災害に係る情報発信等に関する協定」を締結しました。災害時にYahoo! JAPANのサービスを活用して住民へ迅速かつ正確な情報発信や防災情報の共有が行われます。",
+      "target": "水俣市民および防災情報を必要とする方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0031531/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-24T21:44:33.232939+09:00",
       "status": "active"
     }
   ]
