@@ -59,9 +59,11 @@ GEMINI_ENDPOINT = (
 MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "0"))  # 0=フィルタなし
 MAX_ITEMS = int(os.environ.get("MAX_ITEMS", "400"))
 GEMINI_MAX_RETRIES = int(os.environ.get("GEMINI_MAX_RETRIES", "5"))
-# 候補間の待機秒数。短すぎるとGemini APIのレート制限(429)に頻発してぶつかる
-# （2026-08-24、0.5秒間隔で大量の429が発生したことを確認）。
-GEMINI_REQUEST_INTERVAL_SEC = float(os.environ.get("GEMINI_REQUEST_INTERVAL_SEC", "1.2"))
+# 候補間の待機秒数。AI StudioのRate limits画面で実際に確認したところ、
+# gemini-3.5-flash-lite は無料枠で 15 RPM（RPDは500で余裕あり）だった
+# （2026-08-24、実運用で確認）。15 RPM = 4秒間隔ペースなので、余裕を持って
+# 4.5秒とし、リトライは「ペース調整をすり抜けた分の保険」に留める。
+GEMINI_REQUEST_INTERVAL_SEC = float(os.environ.get("GEMINI_REQUEST_INTERVAL_SEC", "4.5"))
 
 REQUEST_TIMEOUT = 20
 # HTTPヘッダーはASCII(latin-1)のみ許容されるため、日本語を含めないこと。
