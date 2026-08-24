@@ -58,6 +58,10 @@ GEMINI_ENDPOINT = (
 
 MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "0"))  # 0=フィルタなし
 MAX_ITEMS = int(os.environ.get("MAX_ITEMS", "400"))
+GEMINI_MAX_RETRIES = int(os.environ.get("GEMINI_MAX_RETRIES", "5"))
+# 候補間の待機秒数。短すぎるとGemini APIのレート制限(429)に頻発してぶつかる
+# （2026-08-24、0.5秒間隔で大量の429が発生したことを確認）。
+GEMINI_REQUEST_INTERVAL_SEC = float(os.environ.get("GEMINI_REQUEST_INTERVAL_SEC", "1.2"))
 
 REQUEST_TIMEOUT = 20
 # HTTPヘッダーはASCII(latin-1)のみ許容されるため、日本語を含めないこと。
@@ -380,10 +384,35 @@ def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
     # クエリパラメータに含めると、HTTPエラー時の例外メッセージにURL全体が
     # 含まれてしまい、ログ出力経由でキーが漏れるリスクがあるため。
     headers = {"x-goog-api-key": GEMINI_API_KEY}
+
+    # 429（レート制限）は一時的なもので、そのまま諦めると「関係ない記事」と
+    # 同じ扱いで候補が失われてしまう（2026-08-24、実運用で大量発生を確認）。
+    # 指数バックオフで再試行し、Retry-Afterヘッダーがあればそれを優先する。
+    resp: Optional[requests.Response] = None
+    for attempt in range(GEMINI_MAX_RETRIES + 1):
+        try:
+            resp = requests.post(
+                GEMINI_ENDPOINT, headers=headers, json=payload, timeout=REQUEST_TIMEOUT
+            )
+        except requests.RequestException as e:
+            log.warning("Gemini API 呼び出し失敗: %s (%s)", candidate.title, e)
+            return None
+
+        if resp.status_code == 429 and attempt < GEMINI_MAX_RETRIES:
+            retry_after = resp.headers.get("Retry-After")
+            try:
+                wait_s = float(retry_after) if retry_after else min(2.0 * (2 ** attempt), 30.0)
+            except ValueError:
+                wait_s = min(2.0 * (2 ** attempt), 30.0)
+            log.warning(
+                "Gemini APIがレート制限中(429): %s。%.1f秒待って再試行します (%d/%d)",
+                candidate.title, wait_s, attempt + 1, GEMINI_MAX_RETRIES,
+            )
+            time.sleep(wait_s)
+            continue
+        break
+
     try:
-        resp = requests.post(
-            GEMINI_ENDPOINT, headers=headers, json=payload, timeout=REQUEST_TIMEOUT
-        )
         resp.raise_for_status()
     except requests.RequestException as e:
         log.warning("Gemini API 呼び出し失敗: %s (%s)", candidate.title, e)
@@ -488,7 +517,7 @@ def main() -> int:
         structured = structure_candidate(candidate)
         if structured:
             new_items.append(structured)
-        time.sleep(0.5)
+        time.sleep(GEMINI_REQUEST_INTERVAL_SEC)
 
     log.info("生活情報として採用: %d 件", len(new_items))
 
