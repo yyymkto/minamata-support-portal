@@ -169,9 +169,15 @@ def http_get(url: str) -> Optional[requests.Response]:
     # 水俣市サイトはレスポンスヘッダーにcharsetを明示しないため、requestsが
     # HTTP仕様上のデフォルトである ISO-8859-1 に誤判定し、日本語が文字化けする
     # （life_info.jsonのtitleが文字化けする不具合の原因。2026-08-24、実運用で発覚）。
-    # apparent_encoding（コンテンツから推定した実際のエンコーディング）で上書きする。
+    #
+    # 当初は resp.apparent_encoding（chardet/charset_normalizerによる推定）で
+    # 上書きしていたが、ローカル環境では正しく "UTF-8-SIG" と推定される一方、
+    # GitHub Actions（Linux）環境では別の結果になったらしく、実運用で文字化けが
+    # 再発した。生バイトを直接確認したところ、水俣市サイトは例外なく
+    # UTF-8（先頭にBOM付き, b'\xef\xbb\xbf'）で配信されていることを確認済みのため、
+    # 推定に頼らず固定値で上書きする（環境差によるブレをなくすため）。
     if resp.encoding is None or resp.encoding.lower() == "iso-8859-1":
-        resp.encoding = resp.apparent_encoding
+        resp.encoding = "utf-8-sig"
 
     return resp
 

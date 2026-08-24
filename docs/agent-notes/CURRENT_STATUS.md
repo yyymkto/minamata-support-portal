@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-08-24 (4) by Claude）
+# 現在の状態（最終更新：2026-08-24 (5) by Claude）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -75,13 +75,23 @@ minamata-support-portal
 
 ## 未決定の論点（次に議論すべきこと）
 
-- **【要対応】** `scripts/update_data.py` の文字化け修正（下記changelog参照）を反映した状態で、
-  もう一度 `daily-update.yml` を実行し、`life_info.json` のtitleが正しい日本語になることを
-  再確認してほしい（直前の手動実行は修正前だったため、文字化けしたデータがコミットされている）。
+- **【要対応】** 文字化け修正（2回目・下記changelog参照）を反映した状態で、もう一度
+  `daily-update.yml` を実行し、`life_info.json` のtitleが正しい日本語になることを
+  再確認してほしい。今リポジトリに入っている `life_info.json` は、1回目の修正では
+  直らなかった状態（文字化けしたまま）のデータがコミットされている。
 - 本番デプロイ（Pages）に向けたフロー確認
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-08-24: [Claude] 直前の文字化け修正（`apparent_encoding`での上書き）をpush後、
+  吉野さんが再度`daily-update.yml`を手動実行したところ、**文字化けが直っていなかった**。
+  調査の結果、`resp.apparent_encoding`（chardet/charset_normalizerによる推定）が
+  ローカル環境（Windows）では正しく"UTF-8-SIG"と判定される一方、GitHub Actions
+  （Linux）環境では別の判定結果になっていたらしいと判明（正確な原因はCIログにアクセス
+  できないため特定しきれていない）。生バイトを直接確認し、水俣市サイトが例外なく
+  UTF-8（先頭にBOM付き）で配信されていることを確認済みだったため、推定に頼るのをやめ、
+  `update_data.py`・`monitor_stock.py`双方の`http_get()`で`"utf-8-sig"`に固定する形に
+  変更。ローカルで文字化け（置換文字U+FFFD）が0件になることを確認済み。
 - 2026-08-24: [Claude] 吉野さんが`daily-update.yml`を手動実行（workflow_dispatch）したところ、
   Gemini判定自体は正常に動作し新しい記事が`life_info.json`に反映されるようになった一方で、
   **サイト上のタイトル表示が文字化けする不具合**を発見。原因は `scripts/update_data.py` の

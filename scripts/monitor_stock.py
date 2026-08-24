@@ -176,9 +176,11 @@ def http_get(url: str) -> tuple[Optional[requests.Response], Optional[str]]:
 
     # 水俣市サイトはレスポンスヘッダーにcharsetを明示しないため、requestsが
     # HTTP仕様上のデフォルトである ISO-8859-1 に誤判定し、日本語が文字化けする。
-    # apparent_encoding（コンテンツから推定した実際のエンコーディング）で上書きする。
+    # apparent_encoding（推定）は環境（chardet/charset_normalizerのバージョン差）に
+    # よって結果がぶれることが判明したため使わず、生バイトで確認済みの固定値
+    # （UTF-8, 先頭にBOMあり）で上書きする（詳細は update_data.py の同名関数を参照）。
     if resp.encoding is None or resp.encoding.lower() == "iso-8859-1":
-        resp.encoding = resp.apparent_encoding
+        resp.encoding = "utf-8-sig"
 
     return resp, None
 
