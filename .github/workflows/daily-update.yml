@@ -64,7 +64,20 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add public/data/life_info.json public/data/_checked_urls.json
           git commit -m "chore: 生活情報を自動更新 ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
-          git push
+
+          # このジョブは実行に十数分かかるため、その間に他のpush（手動実行や
+          # 他のワークフロー）が先にmainへ反映されると、単純なgit pushは
+          # non-fast-forwardで失敗する。pull --rebaseしてから再試行する。
+          for i in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "push失敗。pull --rebaseしてリトライします ($i/5)"
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::5回リトライしてもpushに失敗しました。"
+          exit 1
 
       - name: Issueテンプレート用の情報を準備
         if: steps.run-update.outcome == 'failure'

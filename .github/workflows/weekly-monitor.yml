@@ -49,7 +49,19 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add public/data/_monitor_state.json
           git commit -m "chore: ストック監視の状態を更新 ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
-          git push
+
+          # daily-update.yml等、他のワークフローが先にmainへpushしていると
+          # 単純なgit pushはnon-fast-forwardで失敗する。pull --rebaseして再試行する。
+          for i in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "push失敗。pull --rebaseしてリトライします ($i/5)"
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::5回リトライしてもpushに失敗しました。"
+          exit 1
 
       - name: 監視スクリプトの失敗をワークフローに反映
         if: steps.run-monitor.outcome == 'failure'
