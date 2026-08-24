@@ -435,13 +435,21 @@ def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
         return None
 
 
-def structure_candidate(candidate: Candidate) -> Optional[dict[str, Any]]:
+def structure_candidate(candidate: Candidate) -> tuple[Optional[dict[str, Any]], bool]:
+    """(生活情報として採用する項目 or None, Geminiから何らかの回答を得られたか) を返す。
+
+    2つ目の値は「関係ない記事として判定できた」候補と「API呼び出し自体が失敗した」候補を
+    区別するために使う。前者は次回以降の判定をスキップしてよいが、後者は一時的な失敗
+    （レート制限等）の可能性があるため、次回また判定し直す必要がある。
+    """
     result = call_gemini(candidate)
-    if not result or not result.get("is_relevant"):
-        return None
+    if result is None:
+        return None, False
+    if not result.get("is_relevant"):
+        return None, True
 
     now = dt.datetime.now(tz=JST).isoformat()
-    return {
+    item = {
         "id": make_id(candidate.link),
         "title": candidate.title,
         "audience_tags": result.get("audience_tags") or ["全世代"],
@@ -456,6 +464,7 @@ def structure_candidate(candidate: Candidate) -> Optional[dict[str, Any]]:
         "collected_at": now,
         "status": "active",
     }
+    return item, True
 
 
 # --------------------------------------------------------------------------
@@ -466,6 +475,28 @@ def load_existing() -> dict[str, Any]:
         with DATA_PATH.open(encoding="utf-8") as f:
             return json.load(f)
     return {"last_updated": None, "items": []}
+
+
+# 「関係ない記事」と判定済みのURL（ナビゲーションメニュー等、毎回候補に出てくるが
+# 恒久的に無関係なもの）を記録し、次回以降はGemini判定自体をスキップする。
+# life_info.json は「採用された」項目しか保持しないため、これとは別に管理する必要がある。
+# API呼び出し自体が失敗した候補（レート制限等）はここに含めず、次回また判定し直す。
+CHECKED_URLS_PATH = ROOT_DIR / "public" / "data" / "_checked_urls.json"
+
+
+def load_checked_urls() -> set[str]:
+    if CHECKED_URLS_PATH.exists():
+        with CHECKED_URLS_PATH.open(encoding="utf-8") as f:
+            return set(json.load(f).get("urls", []))
+    return set()
+
+
+def save_checked_urls(urls: set[str]) -> None:
+    CHECKED_URLS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = CHECKED_URLS_PATH.with_suffix(".json.tmp")
+    with tmp_path.open("w", encoding="utf-8") as f:
+        json.dump({"urls": sorted(urls)}, f, ensure_ascii=False, indent=2)
+    tmp_path.replace(CHECKED_URLS_PATH)
 
 
 def merge_items(existing_items: list[dict], new_items: list[dict]) -> list[dict]:
@@ -513,12 +544,26 @@ def main() -> int:
         log.info("本日は新規候補がありませんでした（異常ではありません）。終了します。")
         return 0
 
+    checked_urls = load_checked_urls()
+    unseen = [c for c in candidates if c.link not in checked_urls]
+    log.info(
+        "うち未判定の候補: %d 件（判定済みとしてスキップ: %d 件）",
+        len(unseen), len(candidates) - len(unseen),
+    )
+
+    if not unseen:
+        log.info("新規に判定すべき候補がありませんでした。終了します。")
+        return 0
+
     new_items: list[dict] = []
-    for i, candidate in enumerate(candidates, start=1):
-        log.info("[%d/%d] Gemini判定中: %s", i, len(candidates), candidate.title)
-        structured = structure_candidate(candidate)
+    newly_checked: set[str] = set()
+    for i, candidate in enumerate(unseen, start=1):
+        log.info("[%d/%d] Gemini判定中: %s", i, len(unseen), candidate.title)
+        structured, answered = structure_candidate(candidate)
         if structured:
             new_items.append(structured)
+        if answered:
+            newly_checked.add(candidate.link)
         time.sleep(GEMINI_REQUEST_INTERVAL_SEC)
 
     log.info("生活情報として採用: %d 件", len(new_items))
@@ -526,6 +571,7 @@ def main() -> int:
     existing = load_existing()
     merged = merge_items(existing.get("items", []), new_items)
     save_data(merged)
+    save_checked_urls(checked_urls | newly_checked)
 
     log.info("=== 完了 ===")
     return 0
