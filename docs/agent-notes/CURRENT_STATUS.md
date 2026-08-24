@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-08-24 (3) by Antigravity）
+# 現在の状態（最終更新：2026-08-24 (4) by Claude）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -75,22 +75,23 @@ minamata-support-portal
 
 ## 未決定の論点（次に議論すべきこと）
 
-- **【要対応】** `weekly-monitor.yml` はローカルではIssue起票部分まで検証できていない。
-  GitHub Actions上で一度 `workflow_dispatch` により手動実行し、正常に動作すること
-  （特にIssue起票・`_monitor_state.json`のコミット）を確認してほしい。
-- **【要対応】** `update_data.py` に追加した3ソース（観光物産協会×2、スポーツRSS）は、
-  スクレイピング段階の動作のみローカル確認済み。`GEMINI_API_KEY` がローカルにないため、
-  Gemini判定を経て実際に `life_info.json` に反映されるところまでは未検証。
-  次回の `daily-update.yml` 実行（または `workflow_dispatch` 手動実行）で確認してほしい。
-  ※ `GEMINI_MODEL` のデフォルトを `gemini-3.5-flash-lite` に修正済み（下記changelog参照）
-  なので、以前のような大量404エラーは起きないはず。
+- **【要対応】** `scripts/update_data.py` の文字化け修正（下記changelog参照）を反映した状態で、
+  もう一度 `daily-update.yml` を実行し、`life_info.json` のtitleが正しい日本語になることを
+  再確認してほしい（直前の手動実行は修正前だったため、文字化けしたデータがコミットされている）。
 - 本番デプロイ（Pages）に向けたフロー確認
-- リポジトリ直下に `tags.txt`（ステージ・世帯状況タグの一覧メモらしき2行のファイル）が
-  未追跡のまま残っている。Antigravityの作業中の一時ファイルと思われるため、
-  不要であれば削除してよいか確認してほしい（Claudeからは判断がつかず削除していない）。
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-08-24: [Claude] 吉野さんが`daily-update.yml`を手動実行（workflow_dispatch）したところ、
+  Gemini判定自体は正常に動作し新しい記事が`life_info.json`に反映されるようになった一方で、
+  **サイト上のタイトル表示が文字化けする不具合**を発見。原因は `scripts/update_data.py` の
+  `http_get()` で、水俣市サイトがレスポンスヘッダーにcharsetを明示しないため`requests`が
+  `ISO-8859-1`に誤判定し、スクレイピングしたタイトル文字列が化ける現象。
+  `monitor_stock.py`（2026-08-23対応）と全く同じ原因だったが、当時は`update_data.py`側への
+  横展開ができていなかった。同じ`apparent_encoding`上書き処理を`http_get()`に追加して修正し、
+  実際に`new_list.html`から取得したタイトルが正しい日本語で取得できることを確認済み。
+  この不具合はスクレイピング機能自体は当初から持っていたが、これまでの実行はGemini側の
+  モデル廃止でずっと0件判定だったため表面化していなかった、という経緯。
 - 2026-08-24: [Claude] 吉野さんの依頼でAntigravity実装の「疑似属性登録」機能をレビュー。
   未コミットの `src/index.html` の差分を精査したところ、**2件の致命的なバグ**を発見・修正した。
   (1) JSが参照する `#profile-tags`（プロフィールタグの表示先）がHTML側に存在せず、

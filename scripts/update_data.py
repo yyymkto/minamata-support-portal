@@ -162,10 +162,18 @@ def http_get(url: str) -> Optional[requests.Response]:
     try:
         resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
         resp.raise_for_status()
-        return resp
     except requests.RequestException as e:
         log.warning("取得失敗: %s (%s)", url, e)
         return None
+
+    # 水俣市サイトはレスポンスヘッダーにcharsetを明示しないため、requestsが
+    # HTTP仕様上のデフォルトである ISO-8859-1 に誤判定し、日本語が文字化けする
+    # （life_info.jsonのtitleが文字化けする不具合の原因。2026-08-24、実運用で発覚）。
+    # apparent_encoding（コンテンツから推定した実際のエンコーディング）で上書きする。
+    if resp.encoding is None or resp.encoding.lower() == "iso-8859-1":
+        resp.encoding = resp.apparent_encoding
+
+    return resp
 
 
 def fetch_rss(source: Source) -> Optional[list[Candidate]]:
