@@ -671,10 +671,17 @@
       const dataBase = await resBase.json();
       const dataMap = await resMap.json();
 
-      // published_dateがない項目が多いため（本文に明確な日付表記がない制度案内ページ等）、
-      // その場合はcollected_at（収集日時）を代わりに使う。update_data.pyのsort_key()と同じ考え方。
-      const sortKey = (item) => item.published_date || item.collected_at || '';
-      state.items = (dataLife.items || []).sort((a, b) => sortKey(b).localeCompare(sortKey(a)));
+      // 実際のpublished_dateを持つ項目を、collected_at（確認日）しかない項目より
+      // 常に上位に置く。collected_atは収集した瞬間＝常にほぼ「今」の値になるため、
+      // 単純に日付だけで混ぜて並べると確認したばかりというだけの項目が不当に
+      // 新しく見えてしまう（update_data.pyのsort_key()と同じ二段階の考え方、2026-08-25）。
+      const sortTier = (item) => item.published_date ? [1, item.published_date] : [0, item.collected_at || ''];
+      state.items = (dataLife.items || []).sort((a, b) => {
+        const [aTier, aDate] = sortTier(a);
+        const [bTier, bDate] = sortTier(b);
+        if (aTier !== bTier) return bTier - aTier;
+        return bDate.localeCompare(aDate);
+      });
       if (dataLife.last_updated) {
         const d = new Date(dataLife.last_updated);
         el.updatedAt.textContent = `最終更新：${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;

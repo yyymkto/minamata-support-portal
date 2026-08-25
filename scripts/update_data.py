@@ -559,12 +559,17 @@ def save_checked_urls(urls: set[str]) -> None:
     tmp_path.replace(CHECKED_URLS_PATH)
 
 
-def sort_key(item: dict) -> str:
-    # published_date（記事本文から読み取れた日付）が最優先。多くの制度案内ページ等は
-    # 本文中に明確な日付表記がなくpublished_dateがnullになる（2026-08-25、実データで
-    # 191件中187件がnullと判明）。その場合はcollected_at（このスクリプトが最初に
-    # 見つけた日時）を代わりに使い、「新着」という見た目の意味を保つ。
-    return item.get("published_date") or item.get("collected_at") or ""
+def sort_key(item: dict) -> tuple[int, str]:
+    # 実際のpublished_date（記事本文から読み取れた日付）を持つ項目を、
+    # collected_at（このスクリプトが見つけた日時）しかない項目より常に上位に置く。
+    # collected_atは収集した瞬間＝常にほぼ「今」の値になるため、単純に日付だけで
+    # 混ぜて並べると、確認したばかりというだけの項目が実日付の項目より不当に
+    # 新しく見えてしまう（2026-08-25、吉野さんの指摘を受けて変更）。
+    # タプルの第1要素（実日付なら1、確認日のみなら0）を優先して比較し、
+    # 同じグループ内では第2要素（日付文字列）の降順で並べる。
+    if item.get("published_date"):
+        return (1, item["published_date"])
+    return (0, item.get("collected_at") or "")
 
 
 def merge_items(existing_items: list[dict], new_items: list[dict]) -> list[dict]:
