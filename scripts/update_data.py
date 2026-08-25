@@ -194,6 +194,51 @@ def http_get(url: str) -> Optional[requests.Response]:
     return resp
 
 
+# 水俣市サイト（city.minamata.lg.jp）のCMSは、記事ページ本文の冒頭付近に
+#   <div class="updDate">最終更新日：<time datetime="2024-11-28T16:44:12+09:00">...</time></div>
+# という構造化マークアップを出力する（monitor_stock.pyで2026-08-23に実HTMLで確認済み）。
+# 新着一覧ページ（new_list.html等）の側では日付が併記されないリンクが大半
+# （実データで191件中187件がpublished_date欠落）だったため、Geminiに「関係あり」と
+# 判定された項目についてのみ、記事ページ本体から正確な日付を取得し直す。
+# なお観光物産協会サイト（go-minamata.jp）は記事ページ自体に日付表示が無いことを
+# 実際に確認済みのため、対象を水俣市公式サイトのドメインに限定する。
+ARTICLE_DATE_DOMAIN = "minamata.lg.jp"
+ARTICLE_DATE_TEXT_PATTERN = re.compile(
+    r"最終更新日\s*[:：]\s*(\d{4})年(\d{1,2})月(\d{1,2})日"
+)
+
+
+def fetch_article_published_date(url: str) -> Optional[str]:
+    if ARTICLE_DATE_DOMAIN not in url:
+        return None
+
+    resp = http_get(url)
+    if resp is None:
+        return None
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+
+    time_tag = soup.select_one("time[datetime]")
+    if time_tag is not None:
+        raw = (time_tag.get("datetime") or "").strip()
+        if raw:
+            try:
+                return dt.datetime.fromisoformat(raw).date().isoformat()
+            except ValueError:
+                log.warning("記事ページのtime要素のdatetime属性のパースに失敗: %r (%s)", raw, url)
+
+    # フォールバック: 構造化マークアップが見つからない場合、可視テキストから抽出する。
+    text = soup.get_text(" ", strip=True)
+    m = ARTICLE_DATE_TEXT_PATTERN.search(text)
+    if not m:
+        return None
+    y, mo, d = (int(g) for g in m.groups())
+    try:
+        return dt.date(y, mo, d).isoformat()
+    except ValueError:
+        return None
+
+
 def fetch_rss(source: Source) -> Optional[list[Candidate]]:
     log.info("RSS取得中: %s", source.url)
     resp = http_get(source.url)
@@ -585,6 +630,10 @@ def main() -> int:
         log.info("[%d/%d] Gemini判定中: %s", i, len(unseen), candidate.title)
         structured, answered = structure_candidate(candidate)
         if structured:
+            if not structured.get("published_date"):
+                real_date = fetch_article_published_date(candidate.link)
+                if real_date:
+                    structured["published_date"] = real_date
             new_items.append(structured)
         if answered:
             newly_checked.add(candidate.link)
