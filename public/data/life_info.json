@@ -1,7 +1,28 @@
 {
-  "last_updated": "2026-08-25T19:42:29.285465+09:00",
+  "last_updated": "2026-08-26T07:33:01.885396+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "cb527256d504",
+      "title": "水俣環境アカデミア「令和8年度第3回プログラミングワークショップ」の参加者を募集します！",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "教育・生涯学習",
+        "イベント"
+      ],
+      "organization": "水俣環境アカデミア",
+      "summary": "水俣環境アカデミアが開催するプログラミングワークショップの参加者を募集しています。プログラミングに興味のある子どもや学生を対象とした学習イベントです。",
+      "target": "プログラミングに関心のある子どもや学生",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034787/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-26",
+      "collected_at": "2026-08-26T07:32:49.875978+09:00",
+      "status": "active"
+    },
     {
       "id": "9c5449ea904a",
       "title": "災害などで住居を失った方への市営住宅等の提供（一時使用）について",
@@ -1833,6 +1854,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f967e1221f51",
+      "title": "「朝だ！生です旅サラダ」の中で水俣が紹介されました！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "テレビ番組「朝だ！生です旅サラダ」にて、水俣市の魅力が紹介されました。番組で取り上げられた内容や地域の観光情報について、公式サイトから詳細を確認できます。",
+      "target": "水俣市の観光に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-08-26T07:32:57.382596+09:00",
       "status": "active"
     },
     {
