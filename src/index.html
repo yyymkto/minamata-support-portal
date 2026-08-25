@@ -290,6 +290,19 @@
 
 
   // ===== Feed View Logic =====
+  function displayDateLabel(item) {
+    // published_date（記事本文から読み取れた日付）があればそれを、なければ
+    // collected_at（このサイトが情報を見つけた日時）を代わりに表示する。
+    // 後者は実際の公開日ではないため、誤解を避けるために「確認：」を付ける
+    // （update_data.pyのsort_key()と同じフォールバック方針、2026-08-25追加）。
+    if (item.published_date) return fmtDate(item.published_date) || '';
+    if (item.collected_at) {
+      const d = fmtDate(item.collected_at);
+      return d ? `確認：${d}` : '';
+    }
+    return '';
+  }
+
   function deadlineBadge(deadline) {
     if (!deadline) return '';
     const d = new Date(deadline);
@@ -377,7 +390,7 @@
             <p class="text-sm text-inkSoft leading-relaxed line-clamp-2">${esc(item.summary)}</p>
             <div class="mt-2 flex items-center gap-2 text-xs text-inkSoft tabular">
               <span>${esc(item.organization || item.source_name)}</span>
-              <span class="ml-auto">${esc(item.published_date || '')}</span>
+              <span class="ml-auto">${esc(displayDateLabel(item))}</span>
             </div>
           </div>
         </button>
@@ -515,7 +528,7 @@
       <a href="${safeUrl(item.source_url)}" target="_blank" rel="noopener noreferrer"
          class="focus-ring block bg-white hover:bg-baySoft/40 border border-line rounded-xl px-4 py-3">
         <div class="flex items-center gap-2 text-[11px] text-inkSoft mb-1 tabular">
-          <span>${esc(item.published_date || '')}</span>
+          <span>${esc(displayDateLabel(item))}</span>
           <span>・${esc(item.organization || item.source_name)}</span>
         </div>
         <h5 class="text-sm font-medium text-ink leading-snug mb-1">${esc(item.title)}</h5>
