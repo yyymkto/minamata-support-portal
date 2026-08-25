@@ -514,12 +514,20 @@ def save_checked_urls(urls: set[str]) -> None:
     tmp_path.replace(CHECKED_URLS_PATH)
 
 
+def sort_key(item: dict) -> str:
+    # published_date（記事本文から読み取れた日付）が最優先。多くの制度案内ページ等は
+    # 本文中に明確な日付表記がなくpublished_dateがnullになる（2026-08-25、実データで
+    # 191件中187件がnullと判明）。その場合はcollected_at（このスクリプトが最初に
+    # 見つけた日時）を代わりに使い、「新着」という見た目の意味を保つ。
+    return item.get("published_date") or item.get("collected_at") or ""
+
+
 def merge_items(existing_items: list[dict], new_items: list[dict]) -> list[dict]:
     by_url: dict[str, dict] = {item["source_url"]: item for item in existing_items}
     for item in new_items:
         by_url[item["source_url"]] = item
     merged = list(by_url.values())
-    merged.sort(key=lambda x: x.get("published_date") or "", reverse=True)
+    merged.sort(key=sort_key, reverse=True)
     return merged[:MAX_ITEMS]
 
 
