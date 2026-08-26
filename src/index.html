@@ -78,6 +78,7 @@
     <div class="max-w-3xl mx-auto flex h-full">
       <button id="tab-feed" class="focus-ring flex-1 h-full text-sm font-bold border-b-4 border-white transition-colors">最新のお知らせ</button>
       <button id="tab-concern" class="focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors">子育て支援制度</button>
+      <button id="tab-young" class="focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors">一人暮らし・若者支援</button>
     </div>
   </nav>
 
@@ -160,6 +161,24 @@
     <main id="concern-content" class="max-w-2xl mx-auto px-4 py-6"></main>
   </div>
 
+  <!-- ===== 一人暮らし・若者支援ビュー ===== -->
+  <div id="view-young" class="hidden">
+    <header class="sticky top-12 z-30 bg-paper/95 backdrop-blur border-b border-line">
+      <div class="max-w-2xl mx-auto px-4 pt-4 pb-3">
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl leading-snug text-ink">
+          水俣の一人暮らし・若者支援
+        </h2>
+        <p class="mt-1 text-sm text-inkSoft leading-relaxed mb-3">
+          水俣市で一人暮らしをする方、移住を考えている方向けの制度を、場面ごとにまとめています。
+          関連する最新のお知らせがあれば、あわせて表示します。
+        </p>
+        <nav id="ya-jump-nav" class="jump-nav flex gap-1.5 overflow-x-auto no-scrollbar -mx-4 px-4 pb-1"></nav>
+      </div>
+    </header>
+
+    <main id="ya-concern-content" class="max-w-2xl mx-auto px-4 py-6"></main>
+  </div>
+
   <!-- ===== 詳細モーダル (フィード用) ===== -->
   <div id="modal-backdrop" class="hidden fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm" style="display:none"></div>
   <div id="modal" class="hidden fixed inset-x-0 bottom-0 z-[60] sm:inset-0 sm:flex sm:items-center sm:justify-center" style="display:none">
@@ -186,6 +205,8 @@
   const DATA_URL = './data/life_info.json';
   const BASE_URL = './data/child_support_base.json';
   const MAPPING_URL = './data/concern_mapping.json';
+  const YA_BASE_URL = './data/young_adult_support_base.json';
+  const YA_MAPPING_URL = './data/young_adult_concern_mapping.json';
 
   const AUDIENCE_STYLE = {
     '子育て・妊娠期': { bar: 'bg-kosodate',  chipOn: 'bg-kosodate text-white border-kosodate',  chipOff: 'bg-kosodateSoft text-kosodate border-transparent' },
@@ -210,7 +231,7 @@
   };
 
   const state = {
-    activeTab: 'feed', // 'feed' | 'concern'
+    activeTab: 'feed', // 'feed' | 'concern' | 'young'
     items: [],
     baseById: {},
     concerns: [],
@@ -218,17 +239,23 @@
     query: '',
     audience: 'すべて',
     topic: 'すべて',
-    profile: JSON.parse(localStorage.getItem('minamata_profile') || '{"stages":[],"households":[]}')
+    profile: JSON.parse(localStorage.getItem('minamata_profile') || '{"stages":[],"households":[]}'),
+    // 一人暮らし・若者支援タブ用（子育て支援制度タブとは別データセット）
+    yaBaseById: {},
+    yaConcerns: [],
+    yaCategories: [],
   };
 
   const el = {
     tabFeed: document.getElementById('tab-feed'),
     tabConcern: document.getElementById('tab-concern'),
+    tabYoung: document.getElementById('tab-young'),
     viewFeed: document.getElementById('view-feed'),
     viewConcern: document.getElementById('view-concern'),
+    viewYoung: document.getElementById('view-young'),
     loading: document.getElementById('loading-view'),
     error: document.getElementById('error-view'),
-    
+
     // feed ui
     list: document.getElementById('list'),
     empty: document.getElementById('empty'),
@@ -241,10 +268,14 @@
     modal: document.getElementById('modal'),
     modalContent: document.getElementById('modal-content'),
 
-    // concern ui
+    // concern ui（子育て支援制度タブ）
     jumpNav: document.getElementById('jump-nav'),
     profileTags: document.getElementById('profile-tags'),
     concernContent: document.getElementById('concern-content'),
+
+    // young adult ui（一人暮らし・若者支援タブ）
+    yaJumpNav: document.getElementById('ya-jump-nav'),
+    yaConcernContent: document.getElementById('ya-concern-content'),
   };
 
   function esc(v) {
@@ -270,23 +301,26 @@
   }
 
   // ===== Tab Logic =====
+  const TABS = {
+    feed:    { btn: 'tabFeed',    view: 'viewFeed' },
+    concern: { btn: 'tabConcern', view: 'viewConcern' },
+    young:   { btn: 'tabYoung',   view: 'viewYoung' },
+  };
+  const TAB_BTN_ACTIVE = "focus-ring flex-1 h-full text-sm font-bold border-b-4 border-white transition-colors text-white";
+  const TAB_BTN_INACTIVE = "focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors";
+
   function switchTab(tabId) {
     state.activeTab = tabId;
-    if (tabId === 'feed') {
-      el.tabFeed.className = "focus-ring flex-1 h-full text-sm font-bold border-b-4 border-white transition-colors text-white";
-      el.tabConcern.className = "focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors";
-      el.viewFeed.classList.remove('hidden');
-      el.viewConcern.classList.add('hidden');
-    } else {
-      el.tabConcern.className = "focus-ring flex-1 h-full text-sm font-bold border-b-4 border-white transition-colors text-white";
-      el.tabFeed.className = "focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors";
-      el.viewConcern.classList.remove('hidden');
-      el.viewFeed.classList.add('hidden');
-    }
+    Object.entries(TABS).forEach(([id, { btn, view }]) => {
+      const active = id === tabId;
+      el[btn].className = active ? TAB_BTN_ACTIVE : TAB_BTN_INACTIVE;
+      el[view].classList.toggle('hidden', !active);
+    });
   }
 
   el.tabFeed.addEventListener('click', () => switchTab('feed'));
   el.tabConcern.addEventListener('click', () => switchTab('concern'));
+  el.tabYoung.addEventListener('click', () => switchTab('young'));
 
 
   // ===== Feed View Logic =====
@@ -578,8 +612,8 @@
     return stageOk && householdOk;
   }
 
-  function concernSectionHTML(concern) {
-    const items = concern.base_ids.map(id => state.baseById[id]).filter(Boolean).filter(itemMatchesProfile);
+  function concernSectionHTML(concern, baseById = state.baseById) {
+    const items = concern.base_ids.map(id => baseById[id]).filter(Boolean).filter(itemMatchesProfile);
     const serviceItems = items.filter(i => i.info_type === 'service');
     const guideItems = items.filter(i => i.info_type === 'guide');
 
@@ -616,23 +650,23 @@
     `;
   }
 
-  function renderConcern() {
-    // カテゴリごとに、プロフィール絞り込み後も中身が残るものだけを対象にする
+  function renderConcernSet(categories, concerns, baseById, jumpNavEl, contentEl, emptyMessage) {
+    // カテゴリごとに、絞り込み後も中身が残るものだけを対象にする
     // （空になったカテゴリの見出しだけが残る・ジャンプナビが空リンクになる、を防ぐ）
-    const catSections = state.categories.map(cat => {
-      const inCat = state.concerns.filter(c => c.category_id === cat.category_id);
-      const sectionsHTML = inCat.map(concernSectionHTML).join('');
+    const catSections = categories.map(cat => {
+      const inCat = concerns.filter(c => c.category_id === cat.category_id);
+      const sectionsHTML = inCat.map(c => concernSectionHTML(c, baseById)).join('');
       return { cat, sectionsHTML };
     }).filter(({ sectionsHTML }) => sectionsHTML.trim().length > 0);
 
-    el.jumpNav.innerHTML = catSections.map(({ cat }) => `
+    jumpNavEl.innerHTML = catSections.map(({ cat }) => `
       <a href="#cat-${esc(cat.category_id)}" class="focus-ring shrink-0 text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-line text-inkSoft hover:bg-baySoft transition-colors">${esc(cat.category_label)}</a>
     `).join('');
 
     if (!catSections.length) {
-      el.concernContent.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">選択した条件に合う制度が見つかりませんでした。上のタグを見直してみてください。</p>`;
+      contentEl.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">${esc(emptyMessage)}</p>`;
     } else {
-      el.concernContent.innerHTML = catSections.map(({ cat, sectionsHTML }) => `
+      contentEl.innerHTML = catSections.map(({ cat, sectionsHTML }) => `
         <div id="cat-${esc(cat.category_id)}" class="mb-10 scroll-mt-[180px]">
           <h2 class="font-serif font-bold text-xl text-ink mb-4 pb-2 border-b-2 border-bay/20">${esc(cat.category_label)}</h2>
           ${sectionsHTML}
@@ -642,7 +676,7 @@
 
     // スクロール連動ハイライト
     const sections = catSections.map(({ cat }) => document.getElementById(`cat-${cat.category_id}`)).filter(Boolean);
-    const navLinks = [...el.jumpNav.querySelectorAll('a')];
+    const navLinks = [...jumpNavEl.querySelectorAll('a')];
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -653,6 +687,20 @@
       }, { rootMargin: '-30% 0px -60% 0px' });
       sections.forEach(s => observer.observe(s));
     }
+  }
+
+  function renderConcern() {
+    renderConcernSet(
+      state.categories, state.concerns, state.baseById, el.jumpNav, el.concernContent,
+      '選択した条件に合う制度が見つかりませんでした。上のタグを見直してみてください。'
+    );
+  }
+
+  function renderYoungAdult() {
+    renderConcernSet(
+      state.yaCategories, state.yaConcerns, state.yaBaseById, el.yaJumpNav, el.yaConcernContent,
+      '該当する制度が見つかりませんでした。'
+    );
   }
 
 
@@ -701,6 +749,33 @@
       el.loading.classList.add('hidden');
       el.error.classList.remove('hidden');
       el.error.textContent = 'データの読み込みに失敗しました。時間をおいて再度お試しください。';
+      console.error(err);
+    }
+
+    // 一人暮らし・若者支援タブは独立したtry/catchで初期化する。
+    // ここで例外が起きても、上のフィード・子育て支援制度タブには影響させない
+    // （2026-08-24、profile-tags要素の欠落で全タブがクラッシュした教訓を踏まえた対応）。
+    initYoungAdult();
+  }
+
+  async function initYoungAdult() {
+    try {
+      const [resBase, resMap] = await Promise.all([
+        fetch(YA_BASE_URL, { cache: 'no-store' }),
+        fetch(YA_MAPPING_URL, { cache: 'no-store' })
+      ]);
+      if (!resBase.ok || !resMap.ok) throw new Error('young adult data fetch failed');
+
+      const dataBase = await resBase.json();
+      const dataMap = await resMap.json();
+
+      state.yaBaseById = Object.fromEntries((dataBase.items || []).map(i => [i.base_id, i]));
+      state.yaConcerns = dataMap.concerns || [];
+      state.yaCategories = dataMap._categories || [];
+
+      renderYoungAdult();
+    } catch (err) {
+      el.yaConcernContent.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">データの読み込みに失敗しました。時間をおいて再度お試しください。</p>`;
       console.error(err);
     }
   }

@@ -1,0 +1,159 @@
+{
+  "_schema_note": "この静的データは水俣市の一人暮らし・若者・移住検討者向け支援制度の基礎情報です。child_support_base.jsonと同じ方針（手動キュレーション、年1〜数回更新、Gemini自動収集の対象外）で運用します。child_stage/household_typeフィールドは持たず、プロフィール絞り込み機能の対象外です（2026-08-26新設）。",
+  "last_updated": "2026-08-26",
+  "items": [
+    {
+      "base_id": "akiya-bank",
+      "title": "水俣市空き家バンク",
+      "description": "水俣市内の空き家（売買・賃貸）の物件情報を紹介する仕組み。市が所有者等から登録を受け付け、物件情報を発信している。",
+      "conditions_note": "登録物件数・条件は随時変動します。詳細は物件情報ページをご確認ください。",
+      "how_to_apply": "空き家バンク物件情報ページから物件を探し、興味のある物件について市へ問い合わせる。",
+      "related_tags": [
+        "住まい",
+        "募集・相談"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/list01078.html",
+      "last_verified": "2026-08-26",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認。物件情報・利用方法の各ページへのリンクを含む一覧ページであることを確認）",
+      "entry_type": "service",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "akiya-reform-subsidy",
+      "title": "水俣市空き家リフォーム等補助金",
+      "description": "市内の空き家に居住するためのリフォーム工事、または空き家内の家財道具の処分にかかる費用を補助する制度。",
+      "conditions_note": "申請日までの3ヶ月以内に空き家住所へ転入し、5年超の居住意思があること等が条件。予算の範囲内での交付のため、上限に達し次第受付終了となる場合がある。",
+      "how_to_apply": "水俣市総務企画部地域振興課へ事前相談のうえ、交付申請書等（計画書・誓約書兼同意書・契約書写し・見積書等）を提出。",
+      "related_tags": [
+        "住まい",
+        "くらしの手続き"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/kiji0033276/index.html",
+      "last_verified": "2026-04-01",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認。補助対象経費の1/4以内・最大25万円、空き家バンク登録物件は+5万円加算。連絡先：地域振興課 0966-61-1607 / kikaku@city.minamata.lg.jp）",
+      "entry_type": "cost_subsidy",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "young-housing-incentive",
+      "title": "若年層住宅取得応援奨励金",
+      "description": "39歳以下の方が水俣市内に定住を目的として新築・中古住宅を取得した場合に交付される奨励金。",
+      "conditions_note": "住宅取得時に本人または配偶者が39歳以下、令和7年4月1日以降の引渡し・登記完了、取得後6月以内の居住開始、市税滞納なし、定住の誓約・自治会加入が必要。",
+      "how_to_apply": "住宅取得・登記・転居完了後、担当窓口（水俣市役所）へ事前確認のうえ必要書類を提出。交付決定通知後に請求書を提出。",
+      "related_tags": [
+        "住まい",
+        "税金・年金"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/ijyu/kiji0032687/index.html",
+      "last_verified": "2026-04-01",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認。新築50万円＋市内事業者施工で+50万円、中古20万円。最大100万円。連絡先：水俣市役所 0966-63-1111）",
+      "entry_type": "cash_benefit",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "trial-house",
+      "title": "水俣市移住定住お試しハウス",
+      "description": "水俣市への移住を具体的に検討している市外在住者が、住居探しや求職活動等の「移住活動」目的で短期間無料で滞在できる施設。",
+      "conditions_note": "水俣市外に住所があり、移住を具体的に検討している方が対象。観光・体験目的での利用は不可。1回の申請につき1週間以内、同一年度内で最大2回まで。12/28〜1/4は休館。",
+      "how_to_apply": "事前に電話またはメールで仮申請し、その後所定の申請書を提出。窓口・詳細は水俣市役所（0966-63-1111）へ問い合わせ。",
+      "related_tags": [
+        "住まい",
+        "募集・相談"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/ijyu/kiji0032772/index.html",
+      "last_verified": "2026-08-19",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認）",
+      "entry_type": "service",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "scholarship-repayment-support",
+      "title": "水俣市若者人材確保奨学金返還支援補助金",
+      "description": "市内事業所での正規雇用または自営業により、奨学金の返還を続ける30歳以下の方を対象に、返還額の一部を最長5年間補助する制度。",
+      "conditions_note": "申請年度に30歳以下、申請前年度4月1日以降に市に定住し5年以上の定住意思があること、市内での正規雇用または自営業（公務員は対象外）、5年以上の奨学金返済期間が残存、市税滞納なし等が条件。",
+      "how_to_apply": "認定申請書・誓約書・在職証明書（または自営業申立書）等を水俣市役所へ提出。",
+      "related_tags": [
+        "就労・仕事",
+        "教育・生涯学習"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/ijyu/kiji0032719/index.html",
+      "last_verified": "2026-04-01",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認。補助額は返還額1か月あたりの1/3・月上限5,000円、最長60ヶ月。連絡先：水俣市役所 0966-63-1111）",
+      "entry_type": "cash_benefit",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "employment-relocation-incentive",
+      "title": "水俣市就業・創業者等転入支援奨励金",
+      "description": "水俣市に転入して市内事業所への就業・創業・事業承継・新規就農等を行う方に交付される奨励金。",
+      "conditions_note": "転入前1年間、水俣市の住民基本台帳に登録されていないこと、転入後1年以内の申請、5年以上の継続居住意思、就業の場合は市内で週20時間以上の無期雇用契約による正規雇用等が条件。",
+      "how_to_apply": "共通書類（申請書・住民票・税滞納証明）に加え、職務内容別の様式を水俣市総務企画部地域振興課へ提出。",
+      "related_tags": [
+        "就労・仕事",
+        "産業・事業支援"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/ijyu/kiji0033266/index.html",
+      "last_verified": "2026-04-01",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認。単身5万円、2人以上世帯10万円。連絡先：地域振興課 0966-61-1607 / kikaku@city.minamata.lg.jp。申請期限：令和9年3月31日17時必着）",
+      "entry_type": "cash_benefit",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "marriage-support",
+      "title": "水俣市結婚新生活支援補助金",
+      "description": "結婚を機に水俣市内で新生活を始める世帯の、住宅取得・賃借・リフォーム・引越にかかる費用を補助する制度。",
+      "conditions_note": "婚姻の届出受理日における夫婦いずれかの年齢が39歳以下、令和8年1月1日〜令和9年3月31日に婚姻届が受理されていること、市内在住・5年超の居住意思・自治会加入・市税滞納なし等が条件。夫婦共に29歳以下は上限20万円、それ以外（いずれかが39歳以下）は上限10万円。",
+      "how_to_apply": "水俣市総務企画部地域振興課へ申請書等を提出。申請期限：令和9年3月31日17時必着。",
+      "related_tags": [
+        "住まい",
+        "税金・年金"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/ijyu/kiji0033267/index.html",
+      "last_verified": "2026-04-16",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認。連絡先：地域振興課 0966-61-1607 / kikaku@city.minamata.lg.jp）",
+      "entry_type": "cash_benefit",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "general-consultation-portal-ya",
+      "title": "困ったらすぐ相談！暮らしいきいき水俣！",
+      "description": "暮らし全般の困りごとについて、どの窓口に相談すればよいかをまとめた総合案内。子育てに限らず幅広い相談の入口として使える。",
+      "conditions_note": null,
+      "how_to_apply": "ページ内の案内から該当窓口へ。",
+      "related_tags": [
+        "募集・相談",
+        "くらしの手続き"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/kiji003804/index.html",
+      "last_verified": "2026-04-14",
+      "verification_status": "確認済み（child_support_base.jsonの`general-consultation-portal`と同一ページ。子育てに限定されない総合相談窓口のため一人暮らし・若者向けデータにも掲載）",
+      "entry_type": "consultation",
+      "permanence": "ongoing",
+      "info_type": "guide"
+    },
+    {
+      "base_id": "consumer-center",
+      "title": "水俣市消費生活センター",
+      "description": "悪質な訪問販売、定期購入トラブル、身に覚えのない請求など、契約・消費者トラブル全般の無料相談窓口。一人暮らしを始めたばかりの人が遭いやすいトラブルにも対応。",
+      "conditions_note": "予約不要、相談内容は秘密厳守。",
+      "how_to_apply": "電話または来所。電話：0966-61-1333（直通）、消費者ホットライン：188。受付時間：月〜金（開庁日）9:00〜12:00、13:00〜16:00。",
+      "related_tags": [
+        "募集・相談",
+        "くらしの手続き"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/kiji003815/index.html",
+      "last_verified": "2026-04-01",
+      "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認）",
+      "entry_type": "consultation",
+      "permanence": "ongoing",
+      "info_type": "guide"
+    }
+  ]
+}

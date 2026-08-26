@@ -1,0 +1,147 @@
+{
+  "_note": "UI上の「困りごと」入り口と、young_adult_support_base.json の base_id を紐付けるマッピング定義（concern_mapping.jsonの一人暮らし・若者・移住検討者版、2026-08-26新設）。related_topic_tags は life_info.json（動的データ）の中から関連する最新記事を併記表示するために使う。",
+  "concerns": [
+    {
+      "concern_id": "housing-search",
+      "label": "水俣市内の空き家・賃貸物件を探したい",
+      "base_ids": [
+        "akiya-bank"
+      ],
+      "related_topic_tags": [
+        "住まい"
+      ],
+      "category_id": "housing",
+      "category_label": "住まい",
+      "priority": 1
+    },
+    {
+      "concern_id": "housing-reform-cost",
+      "label": "空き家を借りる・買うときのリフォーム費用を抑えたい",
+      "base_ids": [
+        "akiya-reform-subsidy"
+      ],
+      "related_topic_tags": [
+        "住まい"
+      ],
+      "category_id": "housing",
+      "category_label": "住まい",
+      "priority": 2
+    },
+    {
+      "concern_id": "housing-acquisition",
+      "label": "水俣で住宅を取得したい（新築・中古）",
+      "base_ids": [
+        "young-housing-incentive"
+      ],
+      "related_topic_tags": [
+        "住まい",
+        "税金・年金"
+      ],
+      "category_id": "housing",
+      "category_label": "住まい",
+      "priority": 3
+    },
+    {
+      "concern_id": "trial-stay",
+      "label": "移住を考えていて、まず水俣での暮らしを試してみたい",
+      "base_ids": [
+        "trial-house"
+      ],
+      "related_topic_tags": [
+        "住まい",
+        "募集・相談"
+      ],
+      "category_id": "housing",
+      "category_label": "住まい",
+      "priority": 4
+    },
+    {
+      "concern_id": "scholarship-burden",
+      "label": "奨学金の返済負担を軽くしたい",
+      "base_ids": [
+        "scholarship-repayment-support"
+      ],
+      "related_topic_tags": [
+        "就労・仕事",
+        "教育・生涯学習"
+      ],
+      "category_id": "money_work",
+      "category_label": "お金・仕事",
+      "priority": 101
+    },
+    {
+      "concern_id": "relocate-for-work",
+      "label": "水俣に転入して就職・起業したい",
+      "base_ids": [
+        "employment-relocation-incentive"
+      ],
+      "related_topic_tags": [
+        "就労・仕事",
+        "産業・事業支援"
+      ],
+      "category_id": "money_work",
+      "category_label": "お金・仕事",
+      "priority": 102
+    },
+    {
+      "concern_id": "new-married-life",
+      "label": "結婚を機に新生活を始めたい",
+      "base_ids": [
+        "marriage-support"
+      ],
+      "related_topic_tags": [
+        "住まい",
+        "税金・年金"
+      ],
+      "category_id": "connection",
+      "category_label": "つながり・くらし",
+      "priority": 201
+    },
+    {
+      "concern_id": "who-to-ask-ya",
+      "label": "誰に相談したらいいか分からない",
+      "base_ids": [
+        "general-consultation-portal-ya"
+      ],
+      "related_topic_tags": [
+        "募集・相談",
+        "くらしの手続き"
+      ],
+      "category_id": "connection",
+      "category_label": "つながり・くらし",
+      "priority": 202
+    },
+    {
+      "concern_id": "contract-trouble",
+      "label": "契約トラブル・悪質商法の被害にあったかもしれない",
+      "base_ids": [
+        "consumer-center"
+      ],
+      "related_topic_tags": [
+        "募集・相談",
+        "くらしの手続き"
+      ],
+      "category_id": "procedures",
+      "category_label": "手続き・トラブル",
+      "priority": 301
+    }
+  ],
+  "_categories": [
+    {
+      "category_id": "housing",
+      "category_label": "住まい"
+    },
+    {
+      "category_id": "money_work",
+      "category_label": "お金・仕事"
+    },
+    {
+      "category_id": "connection",
+      "category_label": "つながり・くらし"
+    },
+    {
+      "category_id": "procedures",
+      "category_label": "手続き・トラブル"
+    }
+  ]
+}
