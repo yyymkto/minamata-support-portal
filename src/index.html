@@ -150,7 +150,7 @@
           水俣市の子育て支援制度
         </h2>
         <p class="mt-1 text-sm text-inkSoft leading-relaxed mb-3">
-          水俣市の子育て支援制度を、場面ごとにまとめています。関連する最新のお知らせがあれば、あわせて表示します。
+          水俣市の子育て支援制度を、場面ごとにまとめています。
         </p>
         <p class="text-xs text-inkSoft mb-1.5">あてはまるものを選ぶと、関係する制度だけに絞り込めます（任意・端末内にのみ保存）</p>
         <div id="profile-tags" class="flex flex-wrap gap-1.5 mb-3"></div>
@@ -170,7 +170,6 @@
         </h2>
         <p class="mt-1 text-sm text-inkSoft leading-relaxed mb-3">
           水俣市で一人暮らしをする方、移住を考えている方向けの制度を、場面ごとにまとめています。
-          関連する最新のお知らせがあれば、あわせて表示します。
         </p>
         <nav id="ya-jump-nav" class="jump-nav flex gap-1.5 overflow-x-auto no-scrollbar -mx-4 px-4 pb-1"></nav>
       </div>
@@ -557,19 +556,6 @@
     `;
   }
 
-  function newsCardHTML(item) {
-    return `
-      <a href="${safeUrl(item.source_url)}" target="_blank" rel="noopener noreferrer"
-         class="focus-ring block bg-white hover:bg-baySoft/40 border border-line rounded-xl px-4 py-3">
-        <div class="flex items-center gap-2 text-[11px] text-inkSoft mb-1 tabular">
-          <span>${esc(displayDateLabel(item))}</span>
-          <span>・${esc(item.organization || item.source_name)}</span>
-        </div>
-        <h5 class="text-sm font-medium text-ink leading-snug mb-1">${esc(item.title)}</h5>
-        <p class="text-xs text-inkSoft leading-relaxed line-clamp-2">${esc(item.summary)}</p>
-      </a>
-    `;
-  }
 
   const ALL_STAGES = ['妊娠中', '乳幼児', '未就学', '小学生', '中学生', '高校生'];
   const ALL_HOUSEHOLDS = ['ひとり親', '障がい児'];
@@ -617,13 +603,8 @@
     const serviceItems = items.filter(i => i.info_type === 'service');
     const guideItems = items.filter(i => i.info_type === 'guide');
 
-    const tags = new Set(concern.related_topic_tags || []);
-    const matched = state.items.filter(n => (n.topic_tags || []).some(t => tags.has(t)))
-                               .sort((a,b) => (b.published_date||'').localeCompare(a.published_date||''))
-                               .slice(0, 2);
-
     // 選択したプロフィールに合致する項目が1件もない場合は、見出しだけの空セクションを出さない。
-    if (!serviceItems.length && !guideItems.length && !matched.length) return '';
+    if (!serviceItems.length && !guideItems.length) return '';
 
     return `
       <section class="mb-8">
@@ -634,17 +615,6 @@
         ${guideItems.length ? `
           <div class="flex flex-col gap-2 mb-3">
             ${guideItems.map(guideCardHTML).join('')}
-          </div>` : ''}
-        ${matched.length ? `
-          <div class="flex flex-col gap-2 mt-3">
-            <p class="text-[11px] text-inkSoft flex items-center gap-1.5">
-              <span class="relative flex h-1.5 w-1.5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bay opacity-60"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-bay"></span>
-              </span>
-              関連する最新のお知らせ
-            </p>
-            ${matched.map(newsCardHTML).join('')}
           </div>` : ''}
       </section>
     `;
