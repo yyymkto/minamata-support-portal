@@ -1,7 +1,28 @@
 {
-  "last_updated": "2026-08-26T07:33:01.885396+09:00",
+  "last_updated": "2026-08-27T12:01:33.026519+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "3540b1929d11",
+      "title": "（令和８年度）物価高騰の影響を受けた高齢者施設等に対し、支援金を交付します",
+      "audience_tags": [
+        "高齢者",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "物価高騰の影響を受けている市内の高齢者施設等に対し、支援金を交付します。対象となる施設や申請方法等の詳細は、市公式サイトの案内をご確認ください。",
+      "target": "市内の高齢者施設等の運営事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034830/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-27",
+      "collected_at": "2026-08-27T12:01:21.361931+09:00",
+      "status": "active"
+    },
     {
       "id": "cb527256d504",
       "title": "水俣環境アカデミア「令和8年度第3回プログラミングワークショップ」の参加者を募集します！",
@@ -1854,6 +1875,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a515bc244b4c",
+      "title": "水俣病公式確認70年事業「水俣の祈り」",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣病公式確認70年を記念した事業「水俣の祈り」が開催されます。詳細は公式サイトにてご確認ください。",
+      "target": "市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-information/inori_70.html",
+      "source_name": "みなまた観光物産協会 お知らせ",
+      "published_date": null,
+      "collected_at": "2026-08-27T12:01:28.523860+09:00",
       "status": "active"
     },
     {
