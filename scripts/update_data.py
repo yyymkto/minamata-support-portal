@@ -411,21 +411,21 @@ audience_tagsの判断基準:
 """
 
 
-def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
+def call_gemini_json(
+    system_prompt: str, user_content: str, *, log_label: str
+) -> Optional[dict[str, Any]]:
+    """system_prompt + user_content をGeminiに渡し、JSON形式の応答をパースして返す。
+
+    scripts/detect_stock_candidates.py など、他のGemini判定スクリプトからも
+    同じ再試行・エラー処理ロジックを再利用するために切り出している。
+    log_label はログ出力用の識別子（呼び出し元の候補タイトル等）。
+    """
     if not GEMINI_API_KEY:
         log.error("GEMINI_API_KEY が未設定のため、判定をスキップします。")
         return None
 
-    user_content = (
-        f"タイトル: {candidate.title}\n"
-        f"抜粋: {candidate.snippet}\n"
-        f"リンク: {candidate.link}\n"
-        f"情報源: {candidate.source_name}\n"
-        f"取得できた日付: {candidate.published_date or '不明'}\n"
-    )
-
     payload = {
-        "system_instruction": {"parts": [{"text": EXTRACTION_SYSTEM_PROMPT}]},
+        "system_instruction": {"parts": [{"text": system_prompt}]},
         "contents": [{"role": "user", "parts": [{"text": user_content}]}],
         "generationConfig": {
             "temperature": 0.2,
@@ -448,7 +448,7 @@ def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
                 GEMINI_ENDPOINT, headers=headers, json=payload, timeout=REQUEST_TIMEOUT
             )
         except requests.RequestException as e:
-            log.warning("Gemini API 呼び出し失敗: %s (%s)", candidate.title, e)
+            log.warning("Gemini API 呼び出し失敗: %s (%s)", log_label, e)
             return None
 
         if resp.status_code == 429 and attempt < GEMINI_MAX_RETRIES:
@@ -459,7 +459,7 @@ def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
                 wait_s = min(2.0 * (2 ** attempt), 30.0)
             log.warning(
                 "Gemini APIがレート制限中(429): %s。%.1f秒待って再試行します (%d/%d)",
-                candidate.title, wait_s, attempt + 1, GEMINI_MAX_RETRIES,
+                log_label, wait_s, attempt + 1, GEMINI_MAX_RETRIES,
             )
             time.sleep(wait_s)
             continue
@@ -474,10 +474,10 @@ def call_gemini(candidate: Candidate) -> Optional[dict[str, Any]]:
         if resp.status_code == 429:
             log.warning(
                 "Gemini API 呼び出し失敗: %s (%s) / 応答本文: %s",
-                candidate.title, e, resp.text[:500],
+                log_label, e, resp.text[:500],
             )
         else:
-            log.warning("Gemini API 呼び出し失敗: %s (%s)", candidate.title, e)
+            log.warning("Gemini API 呼び出し失敗: %s (%s)", log_label, e)
         return None
 
     data = resp.json()
@@ -502,7 +502,14 @@ def structure_candidate(candidate: Candidate) -> tuple[Optional[dict[str, Any]],
     区別するために使う。前者は次回以降の判定をスキップしてよいが、後者は一時的な失敗
     （レート制限等）の可能性があるため、次回また判定し直す必要がある。
     """
-    result = call_gemini(candidate)
+    user_content = (
+        f"タイトル: {candidate.title}\n"
+        f"抜粋: {candidate.snippet}\n"
+        f"リンク: {candidate.link}\n"
+        f"情報源: {candidate.source_name}\n"
+        f"取得できた日付: {candidate.published_date or '不明'}\n"
+    )
+    result = call_gemini_json(EXTRACTION_SYSTEM_PROMPT, user_content, log_label=candidate.title)
     if result is None:
         return None, False
     if not result.get("is_relevant"):

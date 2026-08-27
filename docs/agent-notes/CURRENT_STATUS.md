@@ -32,10 +32,11 @@ minamata-support-portal
 ├── .github/
 │   ├── workflows/
 │   │   ├── daily-update.yml
-│   │   └── weekly-monitor.yml       # 新規（ストック情報の監視、週1回）
+│   │   └── weekly-monitor.yml       # ストック情報の監視＋ストック候補検出、週1回
 │   └── workflow-templates/
 │       ├── collection-failure-issue.md
-│       └── stock-update-detected-issue.md  # 新規
+│       ├── stock-update-detected-issue.md
+│       └── stock-candidate-detected-issue.md  # 新規（フロー→ストック候補の通知）
 ├── docs/
 │   └── agent-notes/
 │       ├── CURRENT_STATUS.md
@@ -51,8 +52,10 @@ minamata-support-portal
 │       └── _checked_urls.json       # 自動生成（Gemini判定済みURLの記録、UIからは不参照）
 ├── scripts/
 │   ├── requirements.txt
-│   ├── update_data.py               # SOURCESに3件追加（観光物産協会×2、スポーツRSS）
-│   └── monitor_stock.py
+│   ├── update_data.py               # SOURCESに3件追加（観光物産協会×2、スポーツRSS）。
+│   │                                 # call_gemini_json()として汎用化済み
+│   ├── monitor_stock.py
+│   └── detect_stock_candidates.py   # 新規（フロー→ストック候補の検出、週次）
 ├── src/
 │   └── index.html
 ├── AGENTS.md
@@ -76,9 +79,15 @@ minamata-support-portal
 | イベント系収集ソース（観光物産協会・スポーツ）の追加 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
 | 疑似属性登録（ローカルストレージ）機能 | Antigravity（実装）→Claude（レビュー・バグ修正） | 完了 |
 | 「一人暮らし・若者支援」タブの新設 | Claude | 完了（吉野さんの実地確認待ち） |
+| 「最新のお知らせ→ストック候補」検出機能の実装 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
 
 ## 未決定の論点（次に議論すべきこと）
 
+- 「最新のお知らせ→ストック候補」検出機能（`scripts/detect_stock_candidates.py`）は
+  ローカルでデータ読み込み・エラーパスのみ検証済みで、実際のGemini判定精度・
+  `weekly-monitor.yml`上での動作は未検証。次回の週次実行（または手動
+  workflow_dispatch）で、Issueが意図通り起票されるか、誤検知・見逃しの傾向が
+  どの程度かを確認する必要がある。
 - `daily-update.yml` は `gemini-3.1-flash-lite` への切り替え後、191件のデータで
   最後まで正常完走した（文字化け対応・429対応・重複排除・サーキットブレーカーが
   一通り実運用で機能することを確認済み）。並び順・文字化け残骸・日付表示の指摘も
@@ -112,6 +121,27 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-08-28: [Claude] 吉野さんとの壁打ちで方向性を固めた「最新のお知らせ→ストック候補
+  検出」機能を実装した。決定内容は
+  `decisions-log/2026-08-28_flow-to-stock-candidate-issue.md`参照（自動書き込みは
+  せずIssue通知のみ、週1回、既存ストック一覧との照合をGeminiに判定させる）。
+  実装内容：(1) `scripts/update_data.py`の`call_gemini`を汎用化した
+  `call_gemini_json(system_prompt, user_content, log_label)`に切り出し、既存の
+  収集処理（`structure_candidate`）はそのまま動作することを確認（挙動変更なし、
+  リファクタのみ）。(2) 新規`scripts/detect_stock_candidates.py`：`life_info.json`
+  の直近7日分（`STOCK_CANDIDATE_LOOKBACK_DAYS`で変更可）を対象に、既存ストック
+  一覧（`child_support_base.json`+`young_adult_support_base.json`、
+  `permanence=time_limited`は除外）を判定材料としてGeminiに渡し、
+  「既存項目の更新情報」「新しい恒常制度の候補」「関係なし」の3値判定をさせる。
+  結果はレポート（`.stock_candidate_report.md`）として出力するのみで、データの
+  自動書き換えは一切しない。(3) `.github/workflows/weekly-monitor.yml`に
+  `detect-stock-candidates`ジョブを追加（既存の`monitor-stock`ジョブとは並列、
+  同じ週次スケジュール）。(4) Issue通知用に
+  `.github/workflow-templates/stock-candidate-detected-issue.md`を新規作成
+  （既存の`stock-update-detected-issue.md`と同じパターン）。
+  ローカルでデータ読み込み部分（`load_life_info_recent`：直近項目194件検出、
+  `load_stock_titles`：既存36件検出）とAPIキー未設定時のエラー終了パスを検証済み。
+  Gemini呼び出し自体（実際の判定精度）はCI実行での確認が今後必要。
 - 2026-08-28: [Claude] 吉野さんから「README.mdが古い」との指摘を受け、内容を現状に合わせて
   全面更新した。旧README.mdは2タブ構成・2収集ソースの頃の記述のまま残っていたため、
   3タブ構成（最新のお知らせ／子育て支援制度／一人暮らし・若者支援）、実際の5収集ソース、

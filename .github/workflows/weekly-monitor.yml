@@ -89,3 +89,52 @@ jobs:
         with:
           filename: .github/workflow-templates/stock-update-detected-issue.md
           update_existing: true
+
+  detect-stock-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存関係インストール
+        run: pip install -r scripts/requirements.txt
+
+      - name: 「最新のお知らせ」からストック制度候補を検出
+        id: run-detect
+        continue-on-error: true
+        working-directory: scripts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python detect_stock_candidates.py
+
+      - name: 検出処理の失敗をワークフローに反映
+        if: steps.run-detect.outcome == 'failure'
+        run: |
+          echo "::error::ストック候補の検出処理が失敗しました。ログを確認してください。"
+          exit 1
+
+      - name: Issue用の情報を準備
+        if: steps.run-detect.outcome == 'success' && steps.run-detect.outputs.has_findings == 'true'
+        run: |
+          echo "RUN_DATE=$(TZ=Asia/Tokyo date +'%Y-%m-%d %H:%M JST')" >> "$GITHUB_ENV"
+          echo "RUN_URL=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> "$GITHUB_ENV"
+          echo "FINDINGS_COUNT=${{ steps.run-detect.outputs.findings_count }}" >> "$GITHUB_ENV"
+          {
+            echo "REPORT<<STOCK_CANDIDATE_REPORT_EOF"
+            cat scripts/.stock_candidate_report.md
+            echo "STOCK_CANDIDATE_REPORT_EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: ストック候補をIssueとして起票（既存Issueがあれば更新）
+        if: steps.run-detect.outcome == 'success' && steps.run-detect.outputs.has_findings == 'true'
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/workflow-templates/stock-candidate-detected-issue.md
+          update_existing: true
