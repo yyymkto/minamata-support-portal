@@ -1,7 +1,46 @@
 {
-  "last_updated": "2026-08-27T12:01:33.026519+09:00",
+  "last_updated": "2026-08-28T15:02:58.067146+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "975f56319446",
+      "title": "水俣市公式LINEポイント付与事業「みなeポイント」対象イベントについて",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市公式LINEを活用したポイント付与事業「みなeポイント」の対象イベントに関する情報です。対象イベントに参加することでポイントが付与されます。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034395/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-28",
+      "collected_at": "2026-08-28T15:02:13.297143+09:00",
+      "status": "active"
+    },
+    {
+      "id": "2c8a794d350d",
+      "title": "令和８年９月１日から１０月３１日までは「行政相談月間」です",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年9月1日から10月31日までの期間は「行政相談月間」です。行政に関する苦情や意見、要望などについて相談を受け付けています。",
+      "target": "行政に関する相談がある市民全般",
+      "deadline": "2026-10-31",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034834/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-28",
+      "collected_at": "2026-08-28T15:02:20.312431+09:00",
+      "status": "active"
+    },
     {
       "id": "3540b1929d11",
       "title": "（令和８年度）物価高騰の影響を受けた高齢者施設等に対し、支援金を交付します",
@@ -21,6 +60,82 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-08-27",
       "collected_at": "2026-08-27T12:01:21.361931+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f1a55a25d489",
+      "title": "フライングディスク世界大会の開催決定！！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市にてフライングディスク世界大会の開催が決定しました。詳細は市のスポーツサイトにて順次公開されます。",
+      "target": "市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034840/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-27",
+      "collected_at": "2026-08-28T15:02:27.135197+09:00",
+      "status": "active"
+    },
+    {
+      "id": "e73dd0df64ec",
+      "title": "「第５1回全日本フライングディスク個人総合選手権大会」が開催されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市にて「第51回全日本フライングディスク個人総合選手権大会」が開催されます。全国レベルの競技を観戦できる機会です。",
+      "target": "市民およびフライングディスク競技に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034841/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-27",
+      "collected_at": "2026-08-28T15:02:35.143612+09:00",
+      "status": "active"
+    },
+    {
+      "id": "0918fa3d7035",
+      "title": "フライングディスク世界大会の開催決定！！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市にてフライングディスクの世界大会が開催されることが決定しました。詳細な日程や会場等の情報は、市のスポーツ情報ページにて順次公開されます。",
+      "target": "水俣市民およびフライングディスク競技に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034840/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-08-27",
+      "collected_at": "2026-08-28T15:02:42.425613+09:00",
+      "status": "active"
+    },
+    {
+      "id": "aa553bb74439",
+      "title": "「第５1回全日本フライングディスク個人総合選手権大会」が開催されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市で「第51回全日本フライングディスク個人総合選手権大会」が開催されます。スポーツに関心のある方はぜひ観戦や応援にお越しください。",
+      "target": "市民およびスポーツファン",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034841/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-08-27",
+      "collected_at": "2026-08-28T15:02:48.189458+09:00",
       "status": "active"
     },
     {
@@ -1875,6 +1990,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "949d26a84f63",
+      "title": "でかくっか水俣キャンペーンのお知らせ",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市内で実施される「でかくっか水俣キャンペーン」のお知らせです。詳細なキャンペーン内容や参加方法については、リンク先の公式サイトをご確認ください。",
+      "target": "水俣市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/deka_mina_campaign.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-08-28T15:02:53.564705+09:00",
       "status": "active"
     },
     {
