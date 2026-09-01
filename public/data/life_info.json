@@ -1,7 +1,48 @@
 {
-  "last_updated": "2026-09-01T10:10:27.443186+09:00",
+  "last_updated": "2026-09-02T08:55:16.375200+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "6c9fb45b4f8a",
+      "title": "家族や職場など、身近な人との会話が楽しくなる「共感トランプ講座」が開催されます。",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "家族や職場など、身近な人とのコミュニケーションを円滑にするための「共感トランプ講座」が開催されます。対人関係のスキルアップや会話を楽しむためのヒントを学べる講座です。",
+      "target": "身近な人とのコミュニケーションに関心がある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034772/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-02",
+      "collected_at": "2026-09-02T08:54:02.118269+09:00",
+      "status": "active"
+    },
+    {
+      "id": "6c42db1d75d2",
+      "title": "スマホで楽しく介護予防・健康づくり 「みんチャレ」の参加者を募集してます！",
+      "audience_tags": [
+        "高齢者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "スマートフォンアプリ「みんチャレ」を活用した介護予防・健康づくりプログラムの参加者を募集しています。仲間と一緒に楽しみながら健康習慣を身につけることができます。",
+      "target": "健康づくりや介護予防に関心のある市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034234/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-02",
+      "collected_at": "2026-09-02T08:54:14.466400+09:00",
+      "status": "active"
+    },
     {
       "id": "6b0a3675c222",
       "title": "農畜産物生産資材価格高騰対策支援金を交付します。",
@@ -98,6 +139,147 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-09-01",
       "collected_at": "2026-09-01T10:09:19.794519+09:00",
+      "status": "active"
+    },
+    {
+      "id": "302cf8832a17",
+      "title": "コンビニ交付サービスを一時停止します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "システムメンテナンス等のため、コンビニ交付サービスを一時停止します。停止期間中はコンビニでの証明書発行が利用できないため、必要な方は事前に窓口で取得してください。",
+      "target": "コンビニ交付サービスを利用する全住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034019/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-01",
+      "collected_at": "2026-09-02T08:54:21.974292+09:00",
+      "status": "active"
+    },
+    {
+      "id": "760d64dad1dd",
+      "title": "令和８年熊本地震で被災された方の水道料金及び下水道使用料を減免します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年熊本地震により被災された方を対象に、水道料金および下水道使用料の減免措置を実施します。詳細な申請方法や減免内容については、市の公式サイトを確認してください。",
+      "target": "令和8年熊本地震で被災された方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034828/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-01",
+      "collected_at": "2026-09-02T08:54:29.334879+09:00",
+      "status": "active"
+    },
+    {
+      "id": "27d50cf5a8a4",
+      "title": "第１６回みなまた産業団地まつり　ステージイベント参加団体を募集します！",
+      "audience_tags": [
+        "全世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "イベント",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "第16回みなまた産業団地まつりのステージイベントに出演する団体を募集しています。地域活性化を目的としたイベントで、パフォーマンスを披露したい団体はぜひご応募ください。",
+      "target": "ステージイベントへの出演を希望する団体",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033407/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-31",
+      "collected_at": "2026-09-02T08:54:37.555593+09:00",
+      "status": "active"
+    },
+    {
+      "id": "8e54b77a864e",
+      "title": "令和８年　議会録画配信",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市議会",
+      "summary": "水俣市議会の会議の様子を録画配信しています。インターネットを通じて、いつでも議会の審議内容を確認することができます。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/gikai/kiji0034605/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-31",
+      "collected_at": "2026-09-02T08:54:44.709179+09:00",
+      "status": "active"
+    },
+    {
+      "id": "631ca4c7f999",
+      "title": "ハローワーク水俣の求人情報誌を掲載します！",
+      "audience_tags": [
+        "学生・若者",
+        "現役世代",
+        "高齢者"
+      ],
+      "topic_tags": [
+        "就労・仕事"
+      ],
+      "organization": "水俣市",
+      "summary": "ハローワーク水俣が発行する最新の求人情報誌を掲載しています。求職中の方は、市内の最新の求人情報を確認することができます。",
+      "target": "求職中の方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji00385/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-31",
+      "collected_at": "2026-09-02T08:54:52.522147+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c808b751c900",
+      "title": "オリンピアンによるバスケットボール教室＆トークショー",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "オリンピアンを講師に招いたバスケットボール教室とトークショーが開催されます。スポーツを通じた交流や学びの機会として、子どもから大人まで参加可能です。",
+      "target": "バスケットボールに関心のある市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034810/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-08-31",
+      "collected_at": "2026-09-02T08:55:06.387843+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c684cd042704",
+      "title": "「みなまたスポーツフェスタ2026」を開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "市民がスポーツに親しむためのイベント「みなまたスポーツフェスタ2026」が開催されます。詳細については市の公式サイトをご確認ください。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034822/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-08-31",
+      "collected_at": "2026-09-02T08:55:11.872646+09:00",
       "status": "active"
     },
     {
@@ -491,6 +673,28 @@
       "source_name": "水俣市 スポーツ情報",
       "published_date": "2026-08-21",
       "collected_at": "2026-08-25T19:41:39.452288+09:00",
+      "status": "active"
+    },
+    {
+      "id": "3a5ae8f46e48",
+      "title": "「脳の健康フォーラム」のお知らせ",
+      "audience_tags": [
+        "高齢者",
+        "現役世代",
+        "全世代"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "脳の健康をテーマにしたフォーラムが開催されます。認知症予防や脳の健康維持に関心のある方はぜひご参加ください。",
+      "target": "脳の健康に関心のある市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034824/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-21",
+      "collected_at": "2026-09-02T08:54:58.934954+09:00",
       "status": "active"
     },
     {
