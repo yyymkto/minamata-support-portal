@@ -1,7 +1,105 @@
 {
-  "last_updated": "2026-08-28T15:02:58.067146+09:00",
+  "last_updated": "2026-09-01T10:10:27.443186+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "6b0a3675c222",
+      "title": "農畜産物生産資材価格高騰対策支援金を交付します。",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "肥料や飼料などの生産資材価格高騰の影響を受けている農畜産物生産者に対し、支援金を交付します。詳細な申請条件や金額については市の公式サイトをご確認ください。",
+      "target": "市内で農畜産物を生産している事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034750/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-01",
+      "collected_at": "2026-09-01T10:08:38.127479+09:00",
+      "status": "active"
+    },
+    {
+      "id": "77a712256dba",
+      "title": "オリンピアンによるバスケットボール教室＆トークショー",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者",
+        "現役世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "オリンピアンを講師に招いたバスケットボール教室とトークショーが開催されます。スポーツを通じた交流や学びの機会として、市民を対象に行われます。",
+      "target": "バスケットボールに関心のある市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034810/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-01",
+      "collected_at": "2026-09-01T10:08:52.316758+09:00",
+      "status": "active"
+    },
+    {
+      "id": "02f53019b2a3",
+      "title": "「みなまたスポーツフェスタ2026」を開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市にて「みなまたスポーツフェスタ2026」が開催されます。スポーツを通じて交流を深めるイベントです。",
+      "target": "市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034822/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-01",
+      "collected_at": "2026-09-01T10:09:02.533696+09:00",
+      "status": "active"
+    },
+    {
+      "id": "0720b97e1a9a",
+      "title": "令和８年社会生活基本調査にご協力をお願いします！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年社会生活基本調査の実施に関するお知らせです。国民の生活時間の配分や余暇活動の状況を把握するための重要な調査ですので、対象となった世帯はご協力をお願いします。",
+      "target": "調査対象として選定された世帯の住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034093/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-01",
+      "collected_at": "2026-09-01T10:09:11.107401+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d57181ba8d1e",
+      "title": "広報みなまた令和8年9月号",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の広報誌「広報みなまた」令和8年9月号が発行されました。市政情報や地域のイベント、暮らしに役立つお知らせが掲載されています。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034847/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-01",
+      "collected_at": "2026-09-01T10:09:19.794519+09:00",
+      "status": "active"
+    },
     {
       "id": "975f56319446",
       "title": "水俣市公式LINEポイント付与事業「みなeポイント」対象イベントについて",
