@@ -376,7 +376,7 @@ def main() -> int:
 
     report = build_report(findings)
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    REPORT_PATH.write_text(report, encoding="utf-8")
+    REPORT_PATH.write_text(report + "\n", encoding="utf-8")
 
     has_findings = bool(findings)
     write_github_output("has_findings", "true" if has_findings else "false")

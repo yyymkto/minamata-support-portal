@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-08-28 by Claude）
+# 現在の状態（最終更新：2026-09-03 by Claude）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -83,11 +83,35 @@ minamata-support-portal
 
 ## 未決定の論点（次に議論すべきこと）
 
-- 「最新のお知らせ→ストック候補」検出機能（`scripts/detect_stock_candidates.py`）は
-  ローカルでデータ読み込み・エラーパスのみ検証済みで、実際のGemini判定精度・
-  `weekly-monitor.yml`上での動作は未検証。次回の週次実行（または手動
-  workflow_dispatch）で、Issueが意図通り起票されるか、誤検知・見逃しの傾向が
-  どの程度かを確認する必要がある。
+- **【新規・バグ判明】** 吉野さんから「最終更新日が8/28で止まっているのは対象が
+  無かったからか」との質問を受け、GitHub Actions実行履歴（API）と水俣市サイトの
+  実HTMLを突き合わせて調査した結果、`daily-update.yml`は8/28〜8/31も毎日正常に
+  実行されていた（失敗なし）が、**`_checked_urls.json`によるURL単位の「一度判定
+  したら二度と判定しない」仕組みが、同一URLのまま内容だけ更新されるページ
+  （災害対応まとめページ等）を構造的に取りこぼす**ことが判明した。実例：
+  「令和８年熊本地震に関する支援等」（`kiji0034805`）は2026-08-25に一度収集・
+  採用済みだが、水俣市サイト側はこの記事を同じURLのまま内容更新し続けており
+  （新着一覧で2026-08-31時点でも最上部に表示）、`life_info.json`側は8/25時点の
+  古い要約・`published_date: 2026-08-20`のまま固まっている。吉野さんに報告し、
+  対応方針を相談した結果、「様子見（何もしない）」との判断。今回はコード変更なし、
+  現象の記録のみ。
+  なお同時に、当日投稿されたばかりで単に未処理なだけの新着（産業団地まつり等5件）
+  も確認したが、これはcronの実行タイミング次第で次回拾われるため異常ではない。
+- **【バグ修正済み・要CI確認】** 「最新のお知らせ→ストック候補」検出機能
+  （`detect-stock-candidates`ジョブ）が実際にCIで実行され、「Issue用の情報を準備」
+  ステップで`Invalid value. Matching delimiter not found 'STOCK_CANDIDATE_REPORT_EOF'`
+  エラーにより失敗していたことが判明（吉野さんがActionsの実行結果画面を共有）。
+  原因は`REPORT_PATH.write_text(report, ...)`が末尾改行なしでレポートファイルを
+  書き出しており、`weekly-monitor.yml`側の`cat scripts/.stock_candidate_report.md`
+  出力に続けて`echo "STOCK_CANDIDATE_REPORT_EOF"`を書くと、区切り文字が
+  レポート最終行の末尾にそのまま連結されてしまい、`GITHUB_ENV`のヒアドキュメント
+  パーサーが区切り行を見つけられなくなること（bashで実際に再現・確認済み）。
+  同じ`build_report()...strip()` → `write_text()`パターンを使う
+  `scripts/monitor_stock.py`（`monitor-stock`ジョブ、`STOCK_MONITOR_REPORT_EOF`）にも
+  同一のバグが潜在していたため、両方とも`write_text(report + "\n", ...)`に修正した。
+  Gemini判定精度そのものはまだ未検証のため、次回の週次実行（または手動
+  workflow_dispatch）で、エラーなく完走しIssueが意図通り起票されるか、
+  誤検知・見逃しの傾向がどの程度かを確認する必要がある。
 - `daily-update.yml` は `gemini-3.1-flash-lite` への切り替え後、191件のデータで
   最後まで正常完走した（文字化け対応・429対応・重複排除・サーキットブレーカーが
   一通り実運用で機能することを確認済み）。並び順・文字化け残骸・日付表示の指摘も
@@ -121,6 +145,14 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-09-03: [Claude] 吉野さんから`detect-stock-candidates`ジョブの失敗画面（Actions UI）
+  を共有され調査。「Issue用の情報を準備」ステップで`GITHUB_ENV`ヒアドキュメントの
+  区切り文字が見つからずエラー終了していた。原因は`detect_stock_candidates.py`の
+  `REPORT_PATH.write_text(report, ...)`が末尾改行なしでファイルを書き出しており、
+  `cat`の出力直後に`echo "STOCK_CANDIDATE_REPORT_EOF"`が続くと区切り行が最終行に
+  連結されてしまうこと（bashで再現・原因確認済み）。同じ書き方をしていた
+  `monitor_stock.py`（`STOCK_MONITOR_REPORT_EOF`側）も同様に修正した
+  （両ファイルとも`write_text(report + "\n", ...)`に変更）。
 - 2026-08-28: [Claude] 吉野さんとの壁打ちで方向性を固めた「最新のお知らせ→ストック候補
   検出」機能を実装した。決定内容は
   `decisions-log/2026-08-28_flow-to-stock-candidate-issue.md`参照（自動書き込みは
