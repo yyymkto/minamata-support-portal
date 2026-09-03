@@ -1,7 +1,128 @@
 {
-  "last_updated": "2026-09-03T08:56:20.009117+09:00",
+  "last_updated": "2026-09-04T08:54:11.471552+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "3ed50c4e8cb9",
+      "title": "令和８年９月定例会一般質問",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市議会",
+      "summary": "水俣市議会における令和8年9月定例会の一般質問の内容が公開されています。市政に対する議員の質問内容を確認することができます。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/gikai/kiji0034848/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-03",
+      "collected_at": "2026-09-04T08:52:48.573703+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a76c91c438bd",
+      "title": "子育て講座のご案内",
+      "audience_tags": [
+        "子育て・妊娠期"
+      ],
+      "topic_tags": [
+        "子育て",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "子育て中の保護者を対象とした講座を開催します。子育てに関する学びや交流の機会として活用してください。",
+      "target": "子育て中の保護者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034197/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-03",
+      "collected_at": "2026-09-04T08:53:00.327344+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1f9f07462d85",
+      "title": "介護保険負担限度額認定証の色が変更になります",
+      "audience_tags": [
+        "高齢者"
+      ],
+      "topic_tags": [
+        "介護・福祉"
+      ],
+      "organization": "水俣市",
+      "summary": "介護保険負担限度額認定証の用紙の色が変更されます。制度の内容に変更はありませんが、お手元の認定証の色が変わるため注意してください。",
+      "target": "介護保険負担限度額認定証をお持ちの方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034812/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-03",
+      "collected_at": "2026-09-04T08:53:11.059591+09:00",
+      "status": "active"
+    },
+    {
+      "id": "ecb0eef4b9b7",
+      "title": "市民手帳の発行を終了します。",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市が発行していた市民手帳の販売・配布を終了します。長年利用されていた方はご注意ください。",
+      "target": "市民手帳を利用していた方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034853/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-03",
+      "collected_at": "2026-09-04T08:53:31.074052+09:00",
+      "status": "active"
+    },
+    {
+      "id": "b44a01806580",
+      "title": "「みなまたスポーツフェスタ2026」の出店者を募集しています！",
+      "audience_tags": [
+        "事業者向け",
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "募集・相談",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "「みなまたスポーツフェスタ2026」に出店する事業者を募集しています。イベントでの販売やPRを希望する方は、詳細を確認の上、指定の方法で申し込みを行ってください。",
+      "target": "イベントへの出店を希望する事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034823/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-03",
+      "collected_at": "2026-09-04T08:53:41.569296+09:00",
+      "status": "active"
+    },
+    {
+      "id": "9f48c0b6b80c",
+      "title": "「みなまたスポーツフェスタ2026」の出店者を募集しています！",
+      "audience_tags": [
+        "事業者向け",
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "募集・相談",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "「みなまたスポーツフェスタ2026」の会場で出店を行う事業者を募集しています。イベントでの販売やPRを希望する方は、詳細を確認の上、指定の方法で申し込みを行ってください。",
+      "target": "イベントでの出店を希望する事業者や団体",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034823/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-09-03",
+      "collected_at": "2026-09-04T08:54:06.968651+09:00",
+      "status": "active"
+    },
     {
       "id": "6c9fb45b4f8a",
       "title": "家族や職場など、身近な人との会話が楽しくなる「共感トランプ講座」が開催されます。",
@@ -41,6 +162,27 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-09-02",
       "collected_at": "2026-09-02T08:54:14.466400+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c257a1d07b0c",
+      "title": "お店の人が教えてくれる♪「みなまたまちゼミ２０２６」が開催されます",
+      "audience_tags": [
+        "全世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "イベント",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内の店舗店主が講師となり、専門知識やコツを無料で教える少人数制のゼミナール「みなまたまちゼミ2026」が開催されます。地域のお店と住民が交流し、新たな魅力を発見できるイベントです。",
+      "target": "水俣市民および市内事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-02",
+      "collected_at": "2026-09-04T08:53:56.956711+09:00",
       "status": "active"
     },
     {
