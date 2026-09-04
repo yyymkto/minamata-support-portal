@@ -1,7 +1,27 @@
 {
-  "last_updated": "2026-09-04T08:54:11.471552+09:00",
+  "last_updated": "2026-09-05T08:51:27.161493+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "03c38aac1ef1",
+      "title": "毎年９月１０日～１６日は自殺予防週間です。",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "毎年9月10日から16日は自殺予防週間です。市ではこの期間に合わせて、心の健康に関する相談窓口の案内や啓発活動を行っています。",
+      "target": "市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033424/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-04",
+      "collected_at": "2026-09-05T08:51:20.984818+09:00",
+      "status": "active"
+    },
     {
       "id": "3ed50c4e8cb9",
       "title": "令和８年９月定例会一般質問",
