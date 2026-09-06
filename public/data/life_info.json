@@ -1,7 +1,27 @@
 {
-  "last_updated": "2026-09-05T08:51:27.161493+09:00",
+  "last_updated": "2026-09-07T08:39:58.854784+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "993814531567",
+      "title": "令和８年度水俣市育児休業代替任期付職員募集",
+      "audience_tags": [
+        "現役世代"
+      ],
+      "topic_tags": [
+        "就労・仕事",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年度の育児休業代替任期付職員の募集です。詳細な募集要項や応募方法については、市の公式サイトをご確認ください。",
+      "target": "育児休業代替任期付職員として勤務を希望する方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034561/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-07",
+      "collected_at": "2026-09-07T08:39:52.739743+09:00",
+      "status": "active"
+    },
     {
       "id": "03c38aac1ef1",
       "title": "毎年９月１０日～１６日は自殺予防週間です。",
