@@ -1,7 +1,69 @@
 {
-  "last_updated": "2026-09-08T09:05:54.248698+09:00",
+  "last_updated": "2026-09-09T08:58:00.833170+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "9897b6f93c85",
+      "title": "季節性インフルエンザ予防接種・新型コロナ予防接種について",
+      "audience_tags": [
+        "高齢者",
+        "現役世代",
+        "子育て・妊娠期"
+      ],
+      "topic_tags": [
+        "健康・医療"
+      ],
+      "organization": "水俣市",
+      "summary": "季節性インフルエンザおよび新型コロナウイルス感染症の予防接種に関する案内です。対象者や接種期間、費用などの詳細が記載されています。",
+      "target": "予防接種を希望する市民（主に高齢者や基礎疾患を有する方など）",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0032116/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-08",
+      "collected_at": "2026-09-09T08:57:30.238594+09:00",
+      "status": "active"
+    },
+    {
+      "id": "45cb97f2891e",
+      "title": "創業・起業に関するセミナーを開催します（参加者募集中）",
+      "audience_tags": [
+        "現役世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "就労・仕事",
+        "産業・事業支援",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内で創業や起業を検討している方を対象としたセミナーを開催します。起業に必要な知識やノウハウを学ぶ機会として、現在参加者を募集しています。",
+      "target": "水俣市内で創業・起業を考えている方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034354/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-08",
+      "collected_at": "2026-09-09T08:57:38.626611+09:00",
+      "status": "active"
+    },
+    {
+      "id": "3d9ae04818bf",
+      "title": "JR九州「2026駅長対抗ご当地カレー総選挙」に愛林館のカレーがエントリーされました",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "JR九州が主催する「2026駅長対抗ご当地カレー総選挙」に、水俣市の愛林館のカレーがエントリーされました。地域の魅力発信を目的とした企画であり、詳細は公式サイトより確認できます。",
+      "target": "水俣市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034858/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-08",
+      "collected_at": "2026-09-09T08:57:46.998323+09:00",
+      "status": "active"
+    },
     {
       "id": "993814531567",
       "title": "令和８年度水俣市育児休業代替任期付職員募集",
@@ -2493,6 +2555,26 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "abebc2124012",
+      "title": "みなまた呑みの市を開催します！ !",
+      "audience_tags": [
+        "現役世代",
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市内で「みなまた呑みの市」が開催されます。地域の食や飲み物を楽しめるイベントです。",
+      "target": "水俣市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/r8_minamata_nominoichi-1026.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-09-09T08:57:56.330431+09:00",
       "status": "active"
     },
     {
