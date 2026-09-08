@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-07T08:39:58.854784+09:00",
+  "last_updated": "2026-09-08T09:05:54.248698+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -20,6 +20,25 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-09-07",
       "collected_at": "2026-09-07T08:39:52.739743+09:00",
+      "status": "active"
+    },
+    {
+      "id": "55a9574bbdac",
+      "title": "生活道路における法定速度の変更について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "交通"
+      ],
+      "organization": "水俣市",
+      "summary": "生活道路における法定速度の変更に関するお知らせです。交通安全のため、該当する道路を通行する際は速度制限にご注意ください。",
+      "target": "水俣市内の道路を利用するすべての住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034860/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-07",
+      "collected_at": "2026-09-08T09:05:48.452000+09:00",
       "status": "active"
     },
     {
