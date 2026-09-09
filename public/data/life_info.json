@@ -1,7 +1,26 @@
 {
-  "last_updated": "2026-09-09T08:58:00.833170+09:00",
+  "last_updated": "2026-09-10T08:57:08.493479+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "68e6057bda86",
+      "title": "知っていますか　水俣の歴史",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の歴史について紹介するページです。市の成り立ちや歴史的背景を学ぶことができます。",
+      "target": "水俣市の歴史に関心のある市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034863/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-09",
+      "collected_at": "2026-09-10T08:57:01.630232+09:00",
+      "status": "active"
+    },
     {
       "id": "9897b6f93c85",
       "title": "季節性インフルエンザ予防接種・新型コロナ予防接種について",
