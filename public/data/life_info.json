@@ -1,7 +1,26 @@
 {
-  "last_updated": "2026-09-10T08:57:08.493479+09:00",
+  "last_updated": "2026-09-12T09:00:18.179061+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "d97b6efcc1d8",
+      "title": "日本赤十字社熊本県支部で受付中の義援金・救援金について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "日本赤十字社熊本県支部",
+      "summary": "日本赤十字社熊本県支部にて、被災地支援のための義援金および救援金の受付を行っています。詳細はリンク先の日本赤十字社ホームページをご確認ください。",
+      "target": "支援を希望する市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034852/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-11",
+      "collected_at": "2026-09-12T09:00:11.558384+09:00",
+      "status": "active"
+    },
     {
       "id": "68e6057bda86",
       "title": "知っていますか　水俣の歴史",
