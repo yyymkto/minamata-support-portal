@@ -1,7 +1,45 @@
 {
-  "last_updated": "2026-09-12T09:00:18.179061+09:00",
+  "last_updated": "2026-09-15T09:25:46.738718+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "520f44dceb1d",
+      "title": "エコパーク水俣で「第55回日本男子ソフトボールリーグ第4節熊本大会」が開催されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "エコパーク水俣にて、第55回日本男子ソフトボールリーグ第4節熊本大会が開催されます。トップレベルのソフトボールの試合を観戦できる機会です。",
+      "target": "スポーツ観戦に関心のある市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034865/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-14",
+      "collected_at": "2026-09-15T09:25:10.307716+09:00",
+      "status": "active"
+    },
+    {
+      "id": "df6c7453508d",
+      "title": "エコパーク水俣で「第55回日本男子ソフトボールリーグ第4節熊本大会」が開催されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "エコパーク水俣にて、第55回日本男子ソフトボールリーグ第4節熊本大会が開催されます。トップレベルのソフトボールの試合を観戦できる貴重な機会です。",
+      "target": "市民およびソフトボールファン",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034865/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-09-14",
+      "collected_at": "2026-09-15T09:25:42.234735+09:00",
+      "status": "active"
+    },
     {
       "id": "d97b6efcc1d8",
       "title": "日本赤十字社熊本県支部で受付中の義援金・救援金について",
