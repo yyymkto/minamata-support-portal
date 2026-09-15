@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-09-15 by Claude）
+# 現在の状態（最終更新：2026-09-16 by Claude Code）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -146,6 +146,15 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-09-16: [Claude Code] 前日に導入した分担のうち、**設計担当をclaude.aiから
+  Claude Codeに変更**した。claude.aiはリポジトリを読めないため、Antigravityが
+  設計書に書いた疑問点の回収も実装差分のレビューも人間のコピペ頼みになる一方、
+  Claude Codeなら両方とも直接読めてループが閉じるため。claude.aiは「リポジトリを
+  読めなくても成立する企画・戦略の壁打ち」に限定して外側に残す（2026-08-26に
+  `SPEC.md`を別セッションに渡して利用促進戦略を検討したケースがこの用途）。
+  `AGENTS.md`・`CLAUDE.md`・`AGENT_NOTES_README.md`・各テンプレートを更新。
+  あわせて`.gitignore`に`.wrangler/`を追加した。詳細は
+  `decisions-log/2026-09-16_design-role-to-claude-code.md`参照。
 - 2026-09-15: [Claude] 吉野さんから「Claude(設計)とAntigravity(実装)の受け渡しをファイルで
   行う仕組みを導入したい」との依頼を受け、`docs/agent-notes/design-specs/`を新設
   （TEMPLATE.md：概要／データ構造／画面・API仕様／タスク一覧の型）。`CLAUDE.md`・

@@ -1,6 +1,6 @@
 # [YYYY-MM-DD] 機能名 設計書
 
-**設計者**: （例：Claude(claude.ai)）
+**設計者**: （例：Claude Code）
 **実装担当**: （例：Antigravity）
 **状態**: 未着手 / 実装中 / 実装完了・レビュー待ち / 完了
 

@@ -22,3 +22,6 @@ Thumbs.db
 
 # ビルド成果物
 dist/
+
+# Cloudflare（Pagesデプロイ検証時のローカルキャッシュ）
+.wrangler/
