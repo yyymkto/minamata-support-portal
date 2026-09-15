@@ -1,6 +1,29 @@
 {
   "_schema_note": "この静的データは水俣市の子育て支援制度の基礎情報です。動的データ（life_info.json）とは異なり、GitHub Actionsによる自動更新の対象外です。年1〜数回、手動でメンテナンスすることを想定しています。各制度ページの内容は last_verified 時点のものであり、必ず official_url で最新情報をご確認ください。 / entry_typeとpermanenceフィールドを追加（2026-08-15）。permanence=time_limitedの項目は静的データから除外し、動的データ（life_info.json）側のタグマッチングでのみ表示する方針。 / official_url に null を許容し、source_note（出典名の文字列）を追加（2026-09-16）。市の公式サイトに制度ページが存在しない制度のための例外措置であり、公式ページの有無を実際に確認した上でのみ null を使うこと。official_url=null の項目は monitor_stock.py の自動監視対象外になるため、年度替わり（4〜5月）に人手で確認する必要がある。またUI側はCTAボタンを描画せず source_note を表示する（設計書 design-specs/2026-09-16_child-support-page-renovation.md 仕様3b）。",
   "last_updated": "2026-09-16",
+  "_highlights_note": "タブ冒頭の「全体像」セクション用（設計書 design-specs/2026-09-16_child-support-page-renovation.md 仕様0）。4〜5件まで。fact は公式ページに書かれた事実の言い換えで済む範囲に限り、書き手の評価・呼びかけ（「子育てしやすい」「ぜひご活用ください」等）は入れない。base_id は items 内に存在すること。年度で変わる事実には年度を明記する。",
+  "highlights": [
+    {
+      "label": "医療費",
+      "fact": "18歳まで、窓口での支払いなし",
+      "base_id": "child-medical-subsidy"
+    },
+    {
+      "label": "給食費",
+      "fact": "小・中学校とも全額補助（令和8年度）",
+      "base_id": "school-lunch-subsidy"
+    },
+    {
+      "label": "保育料",
+      "fact": "3〜5歳は無償",
+      "base_id": "childcare-education-free"
+    },
+    {
+      "label": "相談",
+      "fact": "妊娠期から子育て期まで切れ目なく対応",
+      "base_id": "child-family-center"
+    }
+  ],
   "items": [
     {
       "base_id": "child-allowance",
@@ -30,7 +53,7 @@
     {
       "base_id": "child-medical-subsidy",
       "title": "こども医療費助成",
-      "description": "医療機関受診時の自己負担額の一部または全部を助成する制度。0歳から18歳（18歳到達後の最初の3月31日）までの子どもが対象。",
+      "description": "0歳から18歳（18歳到達後の最初の3月31日）までの子どもが対象。熊本県内の医療機関で1か月の医療費が21,000円未満の場合、窓口での支払いは不要。入院した場合や県外の医療機関を利用した場合は、一旦支払ったうえで払い戻しの申請が必要。",
       "child_stage": [
         "乳幼児",
         "未就学",
@@ -39,7 +62,7 @@
         "高校生"
       ],
       "household_type": [],
-      "conditions_note": "所得制限の有無・自己負担額は年度により変更されている可能性があります。詳細はリンク先をご確認ください。",
+      "conditions_note": "受給資格者証の交付申請が必要です。所得制限については公式ページに記載がありません（「記載がない」ことを「制限なし」と断定はしていません）。年度により変更されている可能性があるため、詳細はリンク先をご確認ください。",
       "how_to_apply": "出生、転入の手続き後に、いきいき健康課 または市民課 年金医療保険係で申請が必要です。",
       "related_tags": [
         "健康・医療",
@@ -47,7 +70,7 @@
       ],
       "official_url": "https://www.city.minamata.lg.jp/kiji0034553/index.html",
       "last_verified": "2026-07-17",
-      "verification_status": "確認済み（対象が0～18歳に拡充されていること、交付申請が必要であることを確認）。",
+      "verification_status": "確認済み（対象が0～18歳に拡充されていること、交付申請が必要であることを確認）。★2026-09-16に公式ページを再確認し、説明文を事実寄りに書き換えた（設計書 design-specs/2026-09-16_child-support-page-renovation.md のタスク0b）。公式ページの記述は「窓口での支払いは不要です」（熊本県内の医療機関で1か月の医療費が21,000円未満の場合）であり、入院・県外受診は払い戻し申請が必要。市の移住・定住促進サイトは「18歳まで医療費の自己負担がありません」と簡略化して書いているが、本サイトでは条件を落とさずに記載する方針とした。所得制限は公式ページに記載なし。",
       "entry_type": "cost_subsidy",
       "permanence": "ongoing",
       "info_type": "service"
