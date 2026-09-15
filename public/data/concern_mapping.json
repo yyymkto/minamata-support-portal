@@ -78,6 +78,7 @@
       "concern_id": "school-cost-money",
       "label": "学校や給食にかかるお金の補助について知りたい",
       "base_ids": [
+        "school-lunch-subsidy",
         "school-attendance-assistance"
       ],
       "related_topic_tags": [
@@ -164,6 +165,7 @@
       "concern_id": "school-cost-support",
       "label": "学校の給食費や学用品の援助について知りたい",
       "base_ids": [
+        "school-lunch-subsidy",
         "school-attendance-assistance"
       ],
       "related_topic_tags": [
