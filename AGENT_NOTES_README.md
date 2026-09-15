@@ -8,12 +8,29 @@ Claude Code・Antigravity・Gemini（ブラウザ経由）など、複数のAI�
 
 ```
 CLAUDE.md                              ← Claude Codeが自動で読む起点ファイル
+AGENTS.md                              ← Antigravityが自動で読む起点ファイル（CLAUDE.mdと同内容）
 docs/agent-notes/
 ├── CURRENT_STATUS.md                  ← 常に最新の状態（上書き運用）
+├── design-specs/                      ← Claude（設計）→Antigravity（実装）の受け渡し用
+│   ├── TEMPLATE.md                    ← 新しい設計書を書く時のひな形
+│   └── YYYY-MM-DD_機能名.md           ← 個別機能の設計書（実装完了後も残す）
 └── decisions-log/
     ├── TEMPLATE.md                    ← 新しい決定を記録する時のひな形
     └── YYYY-MM-DD_件名.md             ← 決定の記録（追記専用、削除しない）
 ```
+
+`design-specs/` と `decisions-log/` の違い：
+- `design-specs/` は**実装前**に書く、これから作るものの仕様書（概要・データ構造・画面/API仕様・タスク一覧）。
+- `decisions-log/` は**決まった後**に書く、なぜその設計にしたかの記録。
+
+## claude.ai（設計担当）との連携
+
+大きめの機能は、claude.aiのプロジェクト機能でClaudeに設計を依頼し、
+`design-specs/TEMPLATE.md`の型で設計書を書いてもらう運用にしている。
+claude.aiは直接リポジトリを読めないため、人間が設計書をコピーして
+`docs/agent-notes/design-specs/YYYY-MM-DD_機能名.md`として保存する。
+Antigravity（実装担当）はこの設計書に従って実装し、**食い違いや不足を見つけても
+無断で仕様を変えず、設計書に疑問点を追記した上で作業を止めて報告する**。
 
 ## 使い方（3ルールだけ）
 

@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-09-03 by Claude）
+# 現在の状態（最終更新：2026-09-15 by Claude）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -40,6 +40,7 @@ minamata-support-portal
 ├── docs/
 │   └── agent-notes/
 │       ├── CURRENT_STATUS.md
+│       ├── design-specs/            # 新規（Claude設計→Antigravity実装の受け渡し用）
 │       └── decisions-log/
 ├── public/
 │   └── data/
@@ -145,6 +146,14 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-09-15: [Claude] 吉野さんから「Claude(設計)とAntigravity(実装)の受け渡しをファイルで
+  行う仕組みを導入したい」との依頼を受け、`docs/agent-notes/design-specs/`を新設
+  （TEMPLATE.md：概要／データ構造／画面・API仕様／タスク一覧の型）。`CLAUDE.md`・
+  `AGENTS.md`に「実装前にdesign-specs/を確認する」「設計書と食い違う場合は無断で
+  変更せず疑問点を追記して作業を止める」ルールを追加し、`AGENT_NOTES_README.md`に
+  claude.aiとの連携フロー（人間が設計出力をコピーして保存）を追記した。詳細は
+  `decisions-log/2026-09-15_design-spec-handoff.md`参照。同じ仕組みを
+  `minamata-grant-scout`リポジトリにも新規導入した。
 - 2026-09-03: [Claude] 吉野さんから`detect-stock-candidates`ジョブの失敗画面（Actions UI）
   を共有され調査。「Issue用の情報を準備」ステップで`GITHUB_ENV`ヒアドキュメントの
   区切り文字が見つからずエラー終了していた。原因は`detect_stock_candidates.py`の
