@@ -81,7 +81,7 @@ minamata-support-portal
 | 疑似属性登録（ローカルストレージ）機能 | Antigravity（実装）→Claude（レビュー・バグ修正） | 完了 |
 | 「一人暮らし・若者支援」タブの新設 | Claude | 完了（吉野さんの実地確認待ち） |
 | 「最新のお知らせ→ストック候補」検出機能の実装 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
-| 子育て支援制度タブの改装（制度の追加＋情報階層の整理） | Claude Code（設計・データ）→Antigravity（UI） | 設計書作成済み・未着手（`design-specs/2026-09-16_child-support-page-renovation.md`） |
+| 子育て支援制度タブの改装（制度の追加＋情報階層の整理） | Claude Code（設計・データ）→Antigravity（UI） | 進行中。設計書は`design-specs/2026-09-16_child-support-page-renovation.md`。給食費の追加（タスク0c）と`official_url=null`の最小限のUIガードは完了。仕様0（全体像）・仕様1〜5のUIはAntigravity未着手 |
 
 ## 未決定の論点（次に議論すべきこと）
 

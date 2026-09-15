@@ -514,6 +514,11 @@
 
   function serviceCardHTML(item) {
     const style = ENTRY_TYPE_STYLE[item.entry_type] || ENTRY_TYPE_STYLE.service;
+    // official_url が無い制度（市の公式サイトに専用ページが存在しないもの）がある。
+    // safeUrl(null) は '#' ではなく「/null」という実在しないURLを返すため、
+    // そのままCTAを描画すると404へのリンクになる。リンクを持たない場合は
+    // CTAを出さず、source_note（出典）を代わりに示す。
+    const hasLink = Boolean(item.official_url);
     const fresh = freshnessNote(item.last_verified);
     const freshBadge = (fresh && fresh.level !== 'warn')
       ? `<span class="text-[11px] px-2 py-0.5 rounded-full bg-line/60 text-inkSoft">${esc(fresh.text)}</span>` : '';
@@ -534,11 +539,18 @@
           <p class="text-sm text-inkSoft leading-relaxed mb-3">${esc(item.description)}</p>
           ${warnBox}
           ${item.conditions_note ? `<p class="text-xs text-inkSoft bg-paper rounded-lg px-3 py-2 mb-3 leading-relaxed">${esc(item.conditions_note)}</p>` : ''}
+          ${hasLink ? `
           <a href="${safeUrl(item.official_url)}" target="_blank" rel="noopener noreferrer"
              class="focus-ring inline-flex items-center gap-1.5 text-sm font-medium text-white bg-bay hover:bg-bay/90 rounded-lg px-4 py-2">
             ${esc(style.cta)}
             <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
+          </a>` : `
+          <div class="border-t border-line pt-3">
+            <p class="text-[11px] text-inkSoft leading-relaxed">
+              出典：${esc(item.source_note || '記載なし')}<br>
+              ※ この制度は市の公式サイトに専用ページがありません
+            </p>
+          </div>`}
         </div>
       </article>
     `;
