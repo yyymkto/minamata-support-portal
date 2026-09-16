@@ -1,7 +1,27 @@
 {
-  "last_updated": "2026-09-15T09:25:46.738718+09:00",
+  "last_updated": "2026-09-16T09:04:33.123050+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "ab66d5994488",
+      "title": "（公社）熊本県宅地建物取引業協会主催「巡回不動産相談会」が開催されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "住まい",
+        "相談"
+      ],
+      "organization": "公益社団法人熊本県宅地建物取引業協会",
+      "summary": "公益社団法人熊本県宅地建物取引業協会による巡回不動産相談会が開催されます。不動産の売買や賃貸、管理などに関する相談が可能です。",
+      "target": "不動産に関する相談がある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033451/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-15",
+      "collected_at": "2026-09-16T09:04:18.705723+09:00",
+      "status": "active"
+    },
     {
       "id": "520f44dceb1d",
       "title": "エコパーク水俣で「第55回日本男子ソフトボールリーグ第4節熊本大会」が開催されます！",
@@ -2631,6 +2651,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "3fbe6be15817",
+      "title": "市役所マルシェ　9月開催のお知らせ",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "9月に市役所マルシェが開催されます。地域の特産品やイベントを楽しめる機会ですので、ぜひお立ち寄りください。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m9.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-09-16T09:04:28.619950+09:00",
       "status": "active"
     },
     {
