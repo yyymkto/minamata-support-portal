@@ -68,6 +68,8 @@
   .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
   .no-scrollbar::-webkit-scrollbar { display: none; height: 0; }
   .jump-nav a.active { background: #1B4B5A; color: #F2F1EC; }
+  .scroll-mt-header { scroll-margin-top: var(--concern-header-h, 180px); }
+  #view-young .scroll-mt-header { scroll-margin-top: var(--ya-header-h, 180px); }
 </style>
 </head>
 
@@ -317,6 +319,7 @@
       el[btn].className = active ? TAB_BTN_ACTIVE : TAB_BTN_INACTIVE;
       el[view].classList.toggle('hidden', !active);
     });
+    scheduleHeaderOffsetUpdate();
   }
 
   el.tabFeed.addEventListener('click', () => switchTab('feed'));
@@ -554,7 +557,7 @@
     const targetStage = targetStagesHTML(item);
 
     return `
-      <article id="base-${esc(item.base_id)}" class="bg-white rounded-xl border border-line overflow-hidden">
+      <article id="base-${esc(item.base_id)}" class="bg-white rounded-xl border border-line overflow-hidden scroll-mt-header">
         <div class="p-4">
           <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
             <span class="text-[11px] px-2 py-0.5 rounded-full bg-${style.accentSoft} text-${style.accent} font-medium">${esc(style.badge)}</span>
@@ -590,14 +593,13 @@
     const style = ENTRY_TYPE_STYLE[item.entry_type] || ENTRY_TYPE_STYLE.reference;
     return `
       <a id="base-${esc(item.base_id)}" href="${safeUrl(item.official_url)}" target="_blank" rel="noopener noreferrer"
-         class="focus-ring flex items-center gap-3 bg-guideAccentSoft/50 hover:bg-guideAccentSoft border border-line rounded-xl px-4 py-3">
+         class="focus-ring flex items-center gap-3 bg-guideAccentSoft/50 hover:bg-guideAccentSoft border border-line rounded-xl px-4 py-3 scroll-mt-header">
         <span class="text-[11px] shrink-0 px-2 py-0.5 rounded-full bg-white text-guideAccent font-medium">${esc(style.badge)}</span>
         <span class="flex-1 text-sm text-ink leading-snug">${esc(item.title)}</span>
         <svg class="h-4 w-4 text-inkSoft shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </a>
     `;
   }
-
 
   function renderProfileTags() {
     let html = '';
@@ -623,6 +625,8 @@
         renderConcern();
       });
     });
+
+    scheduleHeaderOffsetUpdate();
   }
 
   // プロフィール（ステージ・世帯状況）が未選択の項目、または選択と合致する項目のみ通す。
@@ -688,7 +692,7 @@
       contentEl.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">${esc(emptyMessage)}</p>`;
     } else {
       contentEl.innerHTML = catSections.map(({ cat, sectionsHTML, count }) => `
-        <div id="cat-${esc(cat.category_id)}" class="mb-10 scroll-mt-[180px]">
+        <div id="cat-${esc(cat.category_id)}" class="category-section mb-10 scroll-mt-header">
           <div class="flex items-baseline justify-between mb-4 pb-2 border-b-2 border-bay/20">
             <h2 class="font-serif font-bold text-xl text-ink">${esc(cat.category_label)}</h2>
             <span class="text-xs text-inkSoft font-normal tabular">${count}件</span>
@@ -701,8 +705,8 @@
     // スクロール連動ハイライト
     const sections = catSections.map(({ cat }) => document.getElementById(`cat-${cat.category_id}`)).filter(Boolean);
     const navLinks = [...jumpNavEl.querySelectorAll('a')];
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
+    if (typeof window !== 'undefined' && window.IntersectionObserver) {
+      const observer = new window.IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
@@ -742,12 +746,40 @@
     `;
   }
 
+  function updateHeaderOffsets() {
+    const globalNavH = 48;
+    const concernHeader = document.querySelector('#view-concern header');
+    if (concernHeader && concernHeader.offsetHeight) {
+      const totalH = globalNavH + concernHeader.offsetHeight + 12;
+      document.documentElement.style.setProperty('--concern-header-h', `${totalH}px`);
+    }
+    const yaHeader = document.querySelector('#view-young header');
+    if (yaHeader && yaHeader.offsetHeight) {
+      const totalH = globalNavH + yaHeader.offsetHeight + 12;
+      document.documentElement.style.setProperty('--ya-header-h', `${totalH}px`);
+    }
+  }
+
+  function scheduleHeaderOffsetUpdate() {
+    if (typeof updateHeaderOffsets !== 'function') return;
+    if (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function') {
+      window.requestAnimationFrame(updateHeaderOffsets);
+    } else {
+      updateHeaderOffsets();
+    }
+  }
+
+  if (typeof window !== 'undefined') {
+    window.addEventListener('resize', updateHeaderOffsets);
+  }
+
   function renderConcern() {
     renderHighlights(state.highlights);
     renderConcernSet(
       state.categories, state.concerns, state.baseById, el.jumpNav, el.concernContent,
       '選択した条件に合う制度が見つかりませんでした。上のタグを見直してみてください。'
     );
+    scheduleHeaderOffsetUpdate();
   }
 
   function renderYoungAdult() {
@@ -755,6 +787,7 @@
       state.yaCategories, state.yaConcerns, state.yaBaseById, el.yaJumpNav, el.yaConcernContent,
       '該当する制度が見つかりませんでした。'
     );
+    scheduleHeaderOffsetUpdate();
   }
 
 
@@ -800,6 +833,7 @@
       renderProfileTags();
       renderFeed();
       renderConcern();
+      updateHeaderOffsets();
     } catch (err) {
       el.loading.classList.add('hidden');
       el.error.classList.remove('hidden');
