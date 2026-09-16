@@ -158,6 +158,7 @@
       </div>
     </header>
 
+    <div id="concern-highlights" class="max-w-2xl mx-auto px-4 pt-6"></div>
     <main id="concern-content" class="max-w-2xl mx-auto px-4 py-6"></main>
   </div>
 
@@ -235,6 +236,7 @@
     baseById: {},
     concerns: [],
     categories: [],
+    highlights: [],
     query: '',
     audience: 'すべて',
     topic: 'すべて',
@@ -673,7 +675,37 @@
     }
   }
 
+  function renderHighlights(highlights) {
+    const elHighlights = document.getElementById('concern-highlights');
+    if (!elHighlights) return;
+    if (!highlights || !highlights.length) {
+      elHighlights.innerHTML = '';
+      elHighlights.classList.add('hidden');
+      return;
+    }
+    elHighlights.classList.remove('hidden');
+    const items = highlights.slice(0, 5);
+    elHighlights.innerHTML = `
+      <section class="bg-white rounded-xl border border-line p-4 sm:p-5">
+        <h3 class="font-serif font-bold text-base text-ink mb-3 leading-snug">水俣市の子育て支援</h3>
+        <ul class="divide-y divide-line/60">
+          ${items.map(h => `
+            <li>
+              <a href="#base-${esc(h.base_id)}" class="focus-ring flex items-baseline justify-between py-2.5 px-1 hover:bg-baySoft/40 rounded transition-colors group">
+                <span class="text-xs sm:text-sm font-bold text-bay w-16 sm:w-20 shrink-0">${esc(h.label)}</span>
+                <span class="text-xs sm:text-sm text-ink text-right flex-1 font-medium group-hover:text-bay transition-colors">${esc(h.fact)}</span>
+                <span class="text-inkSoft/40 text-xs ml-2 select-none" aria-hidden="true">›</span>
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+        <p class="text-[11px] text-inkSoft mt-3 pt-2 border-t border-line/60 text-right">※ 詳しい条件は下の各制度をご確認ください</p>
+      </section>
+    `;
+  }
+
   function renderConcern() {
+    renderHighlights(state.highlights);
     renderConcernSet(
       state.categories, state.concerns, state.baseById, el.jumpNav, el.concernContent,
       '選択した条件に合う制度が見つかりませんでした。上のタグを見直してみてください。'
@@ -720,6 +752,7 @@
       }
 
       const baseItems = dataBase.items || [];
+      state.highlights = dataBase.highlights || [];
       state.baseById = Object.fromEntries(baseItems.map(i => [i.base_id, i]));
       state.concerns = dataMap.concerns || [];
       state.categories = dataMap._categories || [];
