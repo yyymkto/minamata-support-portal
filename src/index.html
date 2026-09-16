@@ -514,6 +514,29 @@
     return { level: 'ok', text: `最終確認：${dateStr}` };
   }
 
+  const ALL_STAGES = ['妊娠中', '乳幼児', '未就学', '小学生', '中学生', '高校生'];
+  const ALL_CHILD_STAGES = ['乳幼児', '未就学', '小学生', '中学生', '高校生'];
+  const ALL_HOUSEHOLDS = ['ひとり親', '障がい児'];
+
+  function targetStagesHTML(item) {
+    const parts = [];
+    const stages = item.child_stage || [];
+    if (stages.length > 0) {
+      if (ALL_CHILD_STAGES.every(s => stages.includes(s))) {
+        parts.push('すべての年代');
+      } else {
+        const ordered = ALL_STAGES.filter(s => stages.includes(s));
+        parts.push(ordered.length ? ordered.join('・') : stages.join('・'));
+      }
+    }
+    const households = item.household_type || [];
+    if (households.length > 0) {
+      parts.push(households.join('・'));
+    }
+    if (!parts.length) return '';
+    return `<span class="text-[11px] text-inkSoft font-normal">${esc(parts.join(' ／ '))}</span>`;
+  }
+
   function serviceCardHTML(item) {
     const style = ENTRY_TYPE_STYLE[item.entry_type] || ENTRY_TYPE_STYLE.service;
     // official_url が無い制度（市の公式サイトに専用ページが存在しないもの）がある。
@@ -528,11 +551,14 @@
            <p class="text-xs text-warnAccent leading-relaxed">${esc(fresh.text)}</p>
          </div>` : '';
 
+    const targetStage = targetStagesHTML(item);
+
     return `
       <article id="base-${esc(item.base_id)}" class="bg-white rounded-xl border border-line overflow-hidden">
         <div class="p-4">
           <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
             <span class="text-[11px] px-2 py-0.5 rounded-full bg-${style.accentSoft} text-${style.accent} font-medium">${esc(style.badge)}</span>
+            ${targetStage}
           </div>
           <h4 class="font-serif font-semibold text-[15px] leading-snug text-ink mb-1.5">${esc(item.title)}</h4>
           <p class="text-sm text-inkSoft leading-relaxed mb-3">${esc(item.description)}</p>
@@ -572,9 +598,6 @@
     `;
   }
 
-
-  const ALL_STAGES = ['妊娠中', '乳幼児', '未就学', '小学生', '中学生', '高校生'];
-  const ALL_HOUSEHOLDS = ['ひとり親', '障がい児'];
 
   function renderProfileTags() {
     let html = '';
