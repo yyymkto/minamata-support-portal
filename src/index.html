@@ -623,8 +623,8 @@
     if (!serviceItems.length && !guideItems.length) return '';
 
     return `
-      <section class="mb-8">
-        <h3 class="font-serif font-bold text-base text-ink mb-3 leading-snug">${esc(concern.label)}</h3>
+      <section class="mb-8 mt-6">
+        <h3 class="font-serif font-medium text-[15px] text-ink border-l-2 border-bay/40 pl-3 mb-3 leading-snug">${esc(concern.label)}</h3>
         <div class="flex flex-col gap-3 mb-3">
           ${serviceItems.map(serviceCardHTML).join('')}
         </div>
