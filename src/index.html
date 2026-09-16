@@ -642,7 +642,19 @@
     const catSections = categories.map(cat => {
       const inCat = concerns.filter(c => c.category_id === cat.category_id);
       const sectionsHTML = inCat.map(c => concernSectionHTML(c, baseById)).join('');
-      return { cat, sectionsHTML };
+
+      const catBaseIds = new Set();
+      inCat.forEach(c => {
+        c.base_ids.forEach(id => {
+          const item = baseById[id];
+          if (item && itemMatchesProfile(item)) {
+            catBaseIds.add(id);
+          }
+        });
+      });
+      const count = catBaseIds.size;
+
+      return { cat, sectionsHTML, count };
     }).filter(({ sectionsHTML }) => sectionsHTML.trim().length > 0);
 
     jumpNavEl.innerHTML = catSections.map(({ cat }) => `
@@ -652,9 +664,12 @@
     if (!catSections.length) {
       contentEl.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">${esc(emptyMessage)}</p>`;
     } else {
-      contentEl.innerHTML = catSections.map(({ cat, sectionsHTML }) => `
+      contentEl.innerHTML = catSections.map(({ cat, sectionsHTML, count }) => `
         <div id="cat-${esc(cat.category_id)}" class="mb-10 scroll-mt-[180px]">
-          <h2 class="font-serif font-bold text-xl text-ink mb-4 pb-2 border-b-2 border-bay/20">${esc(cat.category_label)}</h2>
+          <div class="flex items-baseline justify-between mb-4 pb-2 border-b-2 border-bay/20">
+            <h2 class="font-serif font-bold text-xl text-ink">${esc(cat.category_label)}</h2>
+            <span class="text-xs text-inkSoft font-normal tabular">${count}件</span>
+          </div>
           ${sectionsHTML}
         </div>
       `).join('');
