@@ -237,6 +237,33 @@ Claude Codeが1件ずつ開いて確認する**（下記タスク1）。
 `highlights` が存在しない・空配列の場合はセクションごと描画しない
 （既存データとの後方互換のため）。
 
+#### 実装上の注意（ここを外すと壊れる）
+
+**(a) 置き場所**：`#view-concern` の `<header>` は `sticky top-12` で常時表示される。
+全体像をこの中に入れると**スクロールしても消えず画面を占有し続ける**ので入れないこと。
+`</header>` と `<main id="concern-content">` の間に、専用のコンテナを1つ置く。
+
+```html
+</header>
+<div id="concern-highlights" class="max-w-2xl mx-auto px-4 pt-6"></div>
+<main id="concern-content" class="max-w-2xl mx-auto px-4 py-6"></main>
+```
+
+**(b) 再描画で消えないようにする**：`renderConcernSet()` は
+`contentEl.innerHTML = ...` で中身を丸ごと置き換える。全体像を
+`#concern-content` の中に描画すると、プロフィール絞り込みのたびに消える。
+**必ず別コンテナ（`#concern-highlights`）に、初期化時に1回だけ描画する。**
+
+**(c) 絞り込みの対象外**：全体像は「水俣市全体でどうか」を示すものなので、
+**プロフィール絞り込み（`itemMatchesProfile`）の影響を受けてはいけない。**
+「小学生」を選んだら給食費だけが残る、といった挙動にしないこと。
+
+**(d) 「一人暮らし・若者支援」タブには出さない**：`renderConcernSet` は両タブで
+共有されているが、`young_adult_support_base.json` に `highlights` は無く、
+今回の対象は子育てタブのみ。**全体像の描画は `renderConcernSet` の中に
+書かないこと**（共有関数に入れると若者タブにも影響する）。子育てタブ専用の
+初期化処理として書く。
+
 ### 1. カテゴリ見出しに件数を添える
 
 現在（[index.html:641](../../../src/index.html#L641)）はカテゴリ名のみ。
@@ -344,6 +371,13 @@ Claude Codeが1件ずつ開いて確認する**（下記タスク1）。
   `scroll-margin-top` をそこから算出する。
 - 画面幅の変更時（`resize`）にも再計算する。
 
+**注意：`scroll-mt-[180px]` は `renderConcernSet()` の中にあり、
+「一人暮らし・若者支援」タブでも同じ値が使われている。**
+しかし若者タブのヘッダーにはプロフィールチップが無いぶん低い。
+**タブごとに実高さを測る**こと（両タブに同じ固定値を入れ直すのは修正になっていない）。
+なお全体像セクション（仕様0）を追加すると子育てタブのヘッダー下の高さが変わるため、
+**仕様0を実装したあとに、この高さ計算を確認する**こと。
+
 ## タスク一覧
 
 各タスクは半日程度で完了する単位。
@@ -378,7 +412,48 @@ Claude Codeが1件ずつ開いて確認する**（下記タスク1）。
 
 | # | タスク | 完了条件 |
 |---|---|---|
-| 10 | 全体の動作確認 | jsdomまたはブラウザで、3タブすべてが例外なく描画される。プロフィール絞り込みの切り替えで件数・表示が正しく追随する。追加後の制度が意図したカテゴリ・困りごとに出ている |
+| 10 | 全体の動作確認 | 下記「検証の方法」の4点すべてを満たす |
+
+### 検証の方法
+
+このプロジェクトにはテストの仕組みが無い。最低限、次を確認すること。
+
+**1. ローカルで実際に開く**（本番と同じ構成を組み立てる）
+
+```bash
+mkdir -p /tmp/dist/data && cp src/index.html /tmp/dist/index.html \
+  && cp -r public/data/. /tmp/dist/data/ && (cd /tmp/dist && python -m http.server 8765)
+```
+
+`daily-update.yml` の `build-and-deploy` と同じ組み立て方。`src/index.html` は
+`./data/*.json` を参照するため、リポジトリのディレクトリ構成のままでは動かない。
+
+**2. 3タブすべてを開き、コンソールにエラーが出ないことを確認する**
+
+2026-08-24に、参照先のDOM要素が無いまま`innerHTML`に代入して
+**サイト全体がエラー画面になる**事故が起きている。子育てタブの変更が
+フィードタブ・若者タブを巻き込んでいないことを必ず確認すること。
+
+**3. 描画関数を実データで直接叩く**（ブラウザが使えない場合にも有効）
+
+```bash
+node -e "
+const fs=require('fs');globalThis.location={href:'https://example.com/'};
+const h=fs.readFileSync('src/index.html','utf8');
+const g=(s,e)=>{const a=h.indexOf(s);return h.slice(a,h.indexOf(e,a));};
+const fn=new Function([g('const ENTRY_TYPE_STYLE','const state ='),g('function esc(v)','function fmtDate'),g('function freshnessNote','function guideCardHTML')].join('\n')+'\nreturn {serviceCardHTML};')();
+const d=JSON.parse(fs.readFileSync('public/data/child_support_base.json','utf8'));
+for(const i of d.items){const o=fn.serviceCardHTML(i);
+  if([...o.matchAll(/href=\"([^\"]*)\"/g)].some(m=>/\/null\$|\/undefined\$/.test(m[1])))console.log('壊れたリンク',i.base_id);}
+console.log('OK');"
+```
+
+**4. プロフィール絞り込みを操作して確認する**
+
+- 「小学生」だけを選んだとき、カテゴリの件数が追随する（仕様1）
+- **全体像セクションは変化しない**（仕様0の注意(c)）
+- すべての制度が消える組み合わせ（例：「妊娠中」＋「障がい児」）でも、
+  見出しだけの空セクションやエラーにならない
 
 **タスク5〜9はタスク2〜3（データ追加）と独立しているため、並行して進めてよい。**
 ただしタスク10は全て終わってから行う。
