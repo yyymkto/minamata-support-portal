@@ -232,6 +232,29 @@
     reference:     { cta: '詳しく見る', badge: '案内',       accent: 'guideAccent', accentSoft: 'guideAccentSoft' },
   };
 
+  // ブラウザ設定でサイトデータがブロックされていると localStorage へのアクセス自体が
+  // 例外を投げる。保存値が壊れていると JSON.parse も失敗する。どちらの場合も
+  // スクリプト全体を止めず、プロフィール未設定として動かす。
+  const PROFILE_KEY = 'minamata_profile';
+  function loadProfile() {
+    try {
+      const p = JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null');
+      return {
+        stages: Array.isArray(p && p.stages) ? p.stages : [],
+        households: Array.isArray(p && p.households) ? p.households : [],
+      };
+    } catch (e) {
+      return { stages: [], households: [] };
+    }
+  }
+  function saveProfile(profile) {
+    try {
+      localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+    } catch (e) {
+      // 保存できなくても、このページを開いている間の絞り込みはそのまま効く
+    }
+  }
+
   const state = {
     activeTab: 'feed', // 'feed' | 'concern' | 'young'
     items: [],
@@ -242,7 +265,7 @@
     query: '',
     audience: 'すべて',
     topic: 'すべて',
-    profile: JSON.parse(localStorage.getItem('minamata_profile') || '{"stages":[],"households":[]}'),
+    profile: loadProfile(),
     // 一人暮らし・若者支援タブ用（子育て支援制度タブとは別データセット）
     yaBaseById: {},
     yaConcerns: [],
@@ -620,7 +643,7 @@
         const idx = state.profile[type].indexOf(label);
         if (idx > -1) state.profile[type].splice(idx, 1);
         else state.profile[type].push(label);
-        localStorage.setItem('minamata_profile', JSON.stringify(state.profile));
+        saveProfile(state.profile);
         renderProfileTags();
         renderConcern();
       });
