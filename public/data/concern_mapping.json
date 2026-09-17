@@ -1,5 +1,5 @@
 {
-  "_note": "UI上の「困りごと」入り口と、child_support_base.json の base_id を紐付けるマッピング定義。related_topic_tags は life_info.json（動的データ）の中から関連する最新記事を併記表示するために使う。 category_id/category_label/priorityを追加（2026-08-15、Gemini提案の4グループ構成を採用）。 ②お金・手当・医療費カテゴリを解像度アップ（2026-08-15、Gemini提案）。単一の大きすぎるチップを廃止し、具体的な4つの入り口に分解。school-cost-money/single-parent-allowance-moneyは他カテゴリと意図的にbase_idが重複（課題解決型UIの設計として複数入り口から同じ制度に到達できることを許容）。",
+  "_note": "UI上の「困りごと」入り口と、child_support_base.json の base_id を紐付けるマッピング定義。related_topic_tags は life_info.json（動的データ）の中から関連する最新記事を併記表示するために使う。 category_id/category_label/priorityを追加（2026-08-15、Gemini提案の4グループ構成を採用）。 ②お金・手当・医療費カテゴリを解像度アップ（2026-08-15、Gemini提案）。単一の大きすぎるチップを廃止し、具体的な4つの入り口に分解。school-cost-money/single-parent-allowance-moneyは他カテゴリと意図的にbase_idが重複（課題解決型UIの設計として複数入り口から同じ制度に到達できることを許容）。 困りごと4件（vaccination/scholarship/places-to-play/child-development-concern）を追加（2026-09-17、設計書 design-specs/2026-09-16_child-support-page-renovation.md タスク3）。あわせて infant-health-check の見出しから「予防接種」を外し、pregnancy-checkup-cost から存在しない base_id（birth-childcare-support-grant）を除去。",
   "concerns": [
     {
       "concern_id": "pregnancy-checkup-cost",
@@ -7,8 +7,7 @@
       "base_ids": [
         "prenatal-checkup-support",
         "postpartum-care",
-        "pregnancy-notification-mchb",
-        "birth-childcare-support-grant"
+        "pregnancy-notification-mchb"
       ],
       "related_topic_tags": [
         "健康・医療",
@@ -20,7 +19,7 @@
     },
     {
       "concern_id": "infant-health-check",
-      "label": "赤ちゃん・子どもの健診や予防接種について知りたい",
+      "label": "赤ちゃん・子どもの健診について知りたい",
       "base_ids": [
         "infant-checkup"
       ],
@@ -45,6 +44,22 @@
       "category_id": "pregnancy",
       "category_label": "妊娠・出産",
       "priority": 3
+    },
+    {
+      "concern_id": "vaccination",
+      "label": "予防接種について知りたい",
+      "base_ids": [
+        "routine-vaccination",
+        "hpv-vaccination",
+        "vaccination-outside-city"
+      ],
+      "related_topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "category_id": "pregnancy",
+      "category_label": "妊娠・出産",
+      "priority": 4
     },
     {
       "concern_id": "child-medical-cost",
@@ -102,6 +117,22 @@
       "category_id": "money",
       "priority": 104,
       "category_label": "お金・手当・医療費"
+    },
+    {
+      "concern_id": "scholarship",
+      "label": "高校・大学の学費（奨学金）について知りたい",
+      "base_ids": [
+        "matsumoto-scholarship-grant",
+        "city-scholarship-loan",
+        "single-parent-welfare-loan"
+      ],
+      "related_topic_tags": [
+        "教育・生涯学習",
+        "税金・年金"
+      ],
+      "category_id": "money",
+      "category_label": "お金・手当・医療費",
+      "priority": 105
     },
     {
       "concern_id": "nursery-placement",
@@ -177,6 +208,20 @@
       "priority": 205
     },
     {
+      "concern_id": "places-to-play",
+      "label": "子どもの遊び場・居場所を知りたい",
+      "base_ids": [
+        "kodomo-center"
+      ],
+      "related_topic_tags": [
+        "子育て",
+        "募集・相談"
+      ],
+      "category_id": "childcare",
+      "category_label": "預ける・学校",
+      "priority": 206
+    },
+    {
       "concern_id": "single-parent-support",
       "label": "ひとり親家庭向けの支援を知りたい",
       "base_ids": [
@@ -184,7 +229,8 @@
         "single-parent-medical-subsidy",
         "single-parent-welfare-loan",
         "single-parent-guidebook",
-        "single-parent-training-subsidy"
+        "single-parent-training-subsidy",
+        "post-divorce-parenting-law"
       ],
       "related_topic_tags": [
         "介護・福祉",
@@ -239,6 +285,21 @@
       "category_id": "special",
       "category_label": "特別なサポート",
       "priority": 304
+    },
+    {
+      "concern_id": "child-development-concern",
+      "label": "子どもの発達が気になる",
+      "base_ids": [
+        "development-support-pamphlet",
+        "child-family-center"
+      ],
+      "related_topic_tags": [
+        "健康・医療",
+        "子育て"
+      ],
+      "category_id": "special",
+      "category_label": "特別なサポート",
+      "priority": 305
     }
   ],
   "_categories": [
