@@ -279,6 +279,8 @@
     yaBaseById: {},
     yaConcerns: [],
     yaCategories: [],
+    // 共有リンクを開いた際の一時的な絞り込み解除フラグ（タスク4）
+    bypassProfileFilter: false,
   };
 
   const el = {
@@ -748,6 +750,10 @@
 
     el.profileTags.querySelectorAll('button').forEach(btn => {
       btn.addEventListener('click', () => {
+        if (state.bypassProfileFilter) {
+          state.bypassProfileFilter = false;
+          hideBypassFilterNotice();
+        }
         const type = btn.dataset.type;
         const label = btn.dataset.label;
         const idx = state.profile[type].indexOf(label);
@@ -764,7 +770,8 @@
 
   // プロフィール（ステージ・世帯状況）が未選択の項目、または選択と合致する項目のみ通す。
   // child_stage/household_typeが空配列の項目は「誰にでも関係する制度」とみなし常に通す。
-  function itemMatchesProfile(item) {
+  function itemMatchesProfile(item, ignoreBypass = false) {
+    if (state.bypassProfileFilter && !ignoreBypass) return true;
     const stages = state.profile.stages || [];
     const households = state.profile.households || [];
     const stageOk = stages.length === 0 || !item.child_stage || item.child_stage.length === 0
@@ -977,7 +984,12 @@
     // 一人暮らし・若者支援タブは独立したtry/catchで初期化する。
     // ここで例外が起きても、上のフィード・子育て支援制度タブには影響させない
     // （2026-08-24、profile-tags要素の欠落で全タブがクラッシュした教訓を踏まえた対応）。
-    initYoungAdult();
+    try {
+      await initYoungAdult();
+    } catch (_) {}
+
+    // 両方の読み込みが終わってからハッシュルーティングを実行（設計書仕様4）
+    handleHashRoute();
   }
 
   async function initYoungAdult() {
@@ -1000,6 +1012,108 @@
       el.yaConcernContent.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">データの読み込みに失敗しました。時間をおいて再度お試しください。</p>`;
       console.error(err);
     }
+  }
+
+  // ===== 共有リンク・ハッシュルーティング（タスク3・4・5） =====
+  function showBypassFilterNotice() {
+    if (!el.concernFilterNotice) return;
+    el.concernFilterNotice.innerHTML = `
+      <div class="flex items-center justify-between gap-2 bg-sand-100 border border-sand-200 text-xs text-ink px-3.5 py-2.5 rounded-xl">
+        <span>共有されたリンクを開いたため、絞り込みを解除して表示しています。</span>
+        <button type="button" id="restore-filter-btn" class="focus-ring text-bay font-medium hover:underline shrink-0 select-none cursor-pointer">［絞り込みに戻す］</button>
+      </div>
+    `;
+    el.concernFilterNotice.classList.remove('hidden');
+    const restoreBtn = document.getElementById('restore-filter-btn');
+    if (restoreBtn) {
+      restoreBtn.addEventListener('click', () => {
+        state.bypassProfileFilter = false;
+        hideBypassFilterNotice();
+        renderConcern();
+      });
+    }
+    scheduleHeaderOffsetUpdate();
+  }
+
+  function hideBypassFilterNotice() {
+    if (!el.concernFilterNotice) return;
+    el.concernFilterNotice.innerHTML = '';
+    el.concernFilterNotice.classList.add('hidden');
+    scheduleHeaderOffsetUpdate();
+  }
+
+  function showNotFoundNotice() {
+    if (!el.notFoundNotice) return;
+    el.notFoundNotice.innerHTML = `
+      <div class="flex items-center justify-between gap-2 bg-sand-100 border border-sand-200 text-xs text-ink px-3.5 py-2.5 rounded-xl">
+        <span>お探しの制度は見つかりませんでした。一覧からお探しください。</span>
+        <button type="button" id="close-not-found-btn" class="focus-ring text-inkSoft hover:text-ink shrink-0 select-none cursor-pointer px-1">✕</button>
+      </div>
+    `;
+    el.notFoundNotice.classList.remove('hidden');
+    const closeBtn = document.getElementById('close-not-found-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        el.notFoundNotice.innerHTML = '';
+        el.notFoundNotice.classList.add('hidden');
+      });
+    }
+  }
+
+  function scrollToBaseCard(baseId) {
+    const doScroll = () => {
+      const target = document.getElementById(`base-${baseId}`);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('ring-2', 'ring-bay/60');
+        setTimeout(() => target.classList.remove('ring-2', 'ring-bay/60'), 2500);
+      }
+    };
+    if (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function') {
+      window.requestAnimationFrame(() => setTimeout(doScroll, 80));
+    } else {
+      setTimeout(doScroll, 80);
+    }
+  }
+
+  function handleHashRoute() {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    if (!hash || !hash.startsWith('#base-')) return;
+    const baseId = hash.slice(6);
+    if (!baseId) return;
+
+    // 1. 子育て支援制度（state.baseById）に属するか？
+    if (state.baseById && state.baseById[baseId]) {
+      const item = state.baseById[baseId];
+      if (!itemMatchesProfile(item, true)) {
+        state.bypassProfileFilter = true;
+        showBypassFilterNotice();
+        renderConcern();
+      } else if (state.bypassProfileFilter) {
+        state.bypassProfileFilter = false;
+        hideBypassFilterNotice();
+        renderConcern();
+      }
+      switchTab('concern');
+      scrollToBaseCard(baseId);
+      return;
+    }
+
+    // 2. 若者支援（state.yaBaseById）に属するか？
+    if (state.yaBaseById && state.yaBaseById[baseId]) {
+      switchTab('young');
+      scrollToBaseCard(baseId);
+      return;
+    }
+
+    // 3. どちらにも属さない場合（存在しないID）
+    switchTab('feed');
+    showNotFoundNotice();
+  }
+
+  if (typeof window !== 'undefined') {
+    window.addEventListener('hashchange', handleHashRoute);
   }
 
   init();
