@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-16T09:04:33.123050+09:00",
+  "last_updated": "2026-09-18T09:00:44.298220+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -77,6 +77,26 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-09-11",
       "collected_at": "2026-09-12T09:00:11.558384+09:00",
+      "status": "active"
+    },
+    {
+      "id": "5eefcecc50b0",
+      "title": "道の駅「ミナマータ」でウナギのつかみどりを開催します！",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "道の駅「ミナマータ」にて、ウナギのつかみどりイベントが開催されます。家族で楽しめる体験型イベントです。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034837/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-10",
+      "collected_at": "2026-09-18T09:00:31.647932+09:00",
       "status": "active"
     },
     {
@@ -2651,6 +2671,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "0768dac5fbe1",
+      "title": "-みなまた初恋通り商店会-ハロウィンマルシェ　開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた初恋通り商店会",
+      "summary": "みなまた初恋通り商店会にてハロウィンマルシェが開催されます。地域の商店街で楽しめるイベントです。",
+      "target": "どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/r8_hatsukoi-hw-marche.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-09-18T09:00:39.794948+09:00",
       "status": "active"
     },
     {
