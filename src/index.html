@@ -141,6 +141,7 @@
     </header>
 
     <main class="max-w-3xl mx-auto px-4 py-5">
+      <div id="not-found-notice" class="hidden mb-3"></div>
       <p id="result-count" class="text-xs text-inkSoft mb-3 tabular"></p>
       <div id="list" class="flex flex-col gap-3"></div>
       <div id="empty" class="hidden text-center py-16">
@@ -166,6 +167,7 @@
       </div>
     </header>
 
+    <div id="concern-filter-notice" class="hidden max-w-2xl mx-auto px-4 pt-4"></div>
     <div id="concern-highlights" class="max-w-2xl mx-auto px-4 pt-6"></div>
     <main id="concern-content" class="max-w-2xl mx-auto px-4 py-6"></main>
   </div>
@@ -207,6 +209,7 @@
   <footer class="text-center text-xs text-inkSoft py-6 border-t border-line">
     みなまた くらしナビ（非公式） ／ 情報元：水俣市ウェブサイト
   </footer>
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-ink/90 text-white text-xs px-4 py-2.5 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none"></div>
 
 <script>
 (() => {
@@ -308,6 +311,11 @@
     // young adult ui（一人暮らし・若者支援タブ）
     yaJumpNav: document.getElementById('ya-jump-nav'),
     yaConcernContent: document.getElementById('ya-concern-content'),
+
+    // notice & toast ui
+    toast: document.getElementById('toast'),
+    notFoundNotice: document.getElementById('not-found-notice'),
+    concernFilterNotice: document.getElementById('concern-filter-notice'),
   };
 
   function esc(v) {
@@ -534,6 +542,91 @@
     if (e.key === 'Escape' && !el.modal.classList.contains('hidden')) closeModal();
   });
 
+  // ===== 共有機能（タスク1・2） =====
+  let toastTimer = null;
+  function showToast(msg) {
+    if (!el.toast) return;
+    el.toast.textContent = msg;
+    el.toast.classList.remove('opacity-0', 'pointer-events-none');
+    el.toast.classList.add('opacity-100');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      el.toast.classList.remove('opacity-100');
+      el.toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2000);
+  }
+
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.btn-share');
+    if (!btn) return;
+    e.preventDefault();
+    const baseId = btn.dataset.baseId;
+    const title = btn.dataset.title || '';
+    if (!baseId) return;
+
+    const origin = (typeof window !== 'undefined' && window.location.origin) ? window.location.origin : '';
+    const pathname = (typeof window !== 'undefined' && window.location.pathname) ? window.location.pathname : '';
+    const shareUrl = `${origin}${pathname}#base-${baseId}`;
+    const shareTitle = `${title}｜みなまた くらしナビ（非公式）`;
+
+    // 1. navigator.share が使える環境（スマホ等）
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({ title: shareTitle, url: shareUrl });
+        return;
+      } catch (err) {
+        // ユーザーが共有をキャンセルした場合は何も表示しない
+        if (err && err.name === 'AbortError') return;
+        // それ以外の失敗時はクリップボードへフォールバック
+      }
+    }
+
+    // 2. クリップボードへコピー（PC等）
+    let copied = false;
+    if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        copied = true;
+      } catch (_) {
+        copied = false;
+      }
+    }
+    if (!copied && typeof document !== 'undefined') {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = shareUrl;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        copied = document.execCommand('copy');
+        document.body.removeChild(ta);
+      } catch (_) {
+        copied = false;
+      }
+    }
+
+    const labelSpan = btn.querySelector('.share-label');
+    if (copied) {
+      if (labelSpan) {
+        const originalText = labelSpan.textContent;
+        labelSpan.textContent = 'コピー完了';
+        btn.classList.add('text-bay', 'font-medium');
+        setTimeout(() => {
+          labelSpan.textContent = originalText;
+          btn.classList.remove('text-bay', 'font-medium');
+        }, 2000);
+      }
+      showToast('リンクをコピーしました');
+    } else {
+      // クリップボードも失敗した場合（file:// 等）、URLを選択可能なプロンプトで表示
+      if (typeof window !== 'undefined' && window.prompt) {
+        window.prompt('制度の共有URLです。コピーしてご利用ください：', shareUrl);
+      }
+    }
+  });
+
 
   // ===== Concern View Logic =====
   function freshnessNote(dateStr) {
@@ -585,6 +678,14 @@
 
     const targetStage = targetStagesHTML(item);
 
+    const verifiedHTML = item.last_verified ? `<p class="text-[11px] text-inkSoft">最終確認：${esc(item.last_verified)}</p>` : '<span></span>';
+    const shareBtnHTML = `
+      <button type="button" class="btn-share focus-ring inline-flex items-center gap-1 text-[11px] text-inkSoft hover:text-bay transition-colors py-0.5 px-1 rounded select-none cursor-pointer shrink-0 ml-auto" data-base-id="${esc(item.base_id)}" data-title="${esc(item.title)}">
+        <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+        <span class="share-label">共有</span>
+      </button>
+    `;
+
     return `
       <article id="base-${esc(item.base_id)}" class="bg-white rounded-xl border border-line overflow-hidden scroll-mt-header">
         <div class="p-4">
@@ -602,16 +703,19 @@
             ${esc(style.cta)}
             <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
-          ${item.last_verified ? `
-          <div class="border-t border-line mt-3 pt-2">
-            <p class="text-[11px] text-inkSoft">最終確認：${esc(item.last_verified)}</p>
-          </div>` : ''}` : `
+          <div class="border-t border-line mt-3 pt-2 flex items-center justify-between gap-2">
+            ${verifiedHTML}
+            ${shareBtnHTML}
+          </div>` : `
           <div class="border-t border-line mt-3 pt-2.5">
-            <p class="text-[11px] text-inkSoft leading-relaxed">
+            <p class="text-[11px] text-inkSoft leading-relaxed mb-2">
               出典：${esc(item.source_note || '記載なし')}<br>
               ※ この制度は市の公式サイトに専用ページがありません
             </p>
-            ${item.last_verified ? `<p class="text-[11px] text-inkSoft mt-1">最終確認：${esc(item.last_verified)}</p>` : ''}
+            <div class="flex items-center justify-between gap-2">
+              ${verifiedHTML}
+              ${shareBtnHTML}
+            </div>
           </div>`}
         </div>
       </article>
