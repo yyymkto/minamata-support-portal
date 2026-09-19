@@ -1,7 +1,49 @@
 {
-  "last_updated": "2026-09-18T09:00:44.298220+09:00",
+  "last_updated": "2026-09-19T09:02:32.030760+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "7c0126fc54fe",
+      "title": "令和８年熊本地震で被災した建物の解体・撤去について（公費解体・自費解体）",
+      "audience_tags": [
+        "全世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "住まい",
+        "環境"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年熊本地震により被災した建物の解体・撤去に関する公費解体および自費解体についての案内です。対象となる建物の所有者や管理者は、手続きの詳細について市公式サイトを確認してください。",
+      "target": "令和8年熊本地震で被災した建物の所有者または管理者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034872/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-18",
+      "collected_at": "2026-09-19T09:02:13.382553+09:00",
+      "status": "active"
+    },
+    {
+      "id": "912311da4737",
+      "title": "令和９年度水俣・芦北地域振興財団　地域振興事業助成事業の募集について",
+      "audience_tags": [
+        "事業者向け",
+        "全世代"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣・芦北地域振興財団",
+      "summary": "水俣・芦北地域における地域振興を目的とした事業に対する助成金の募集です。対象となる事業や応募方法の詳細については、財団の公式サイトまたは水俣市の案内ページをご確認ください。",
+      "target": "水俣・芦北地域で地域振興事業を行う団体や事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034869/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-18",
+      "collected_at": "2026-09-19T09:02:20.998379+09:00",
+      "status": "active"
+    },
     {
       "id": "ab66d5994488",
       "title": "（公社）熊本県宅地建物取引業協会主催「巡回不動産相談会」が開催されます！",
@@ -2671,6 +2713,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "53ed0f83ed49",
+      "title": "県南の うまい！が大集合！「湯の児マルシェ」開催",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "県南地域の美味しいグルメが集まる「湯の児マルシェ」が開催されます。地域の特産品やグルメを楽しめるイベントです。",
+      "target": "どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/r8_yunoko_marche.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-09-19T09:02:27.528125+09:00",
       "status": "active"
     },
     {
