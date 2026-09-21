@@ -281,6 +281,9 @@
     yaCategories: [],
     // 共有リンクを開いた際の一時的な絞り込み解除フラグ（タスク4）
     bypassProfileFilter: false,
+    // 子育て支援制度タブのデータを読み込めたか。読み込みに失敗したときに、
+    // 共有リンクの制度を「見つかりませんでした」と誤って案内しないために使う。
+    mainDataLoaded: false,
   };
 
   const el = {
@@ -974,6 +977,7 @@
       renderFeed();
       renderConcern();
       updateHeaderOffsets();
+      state.mainDataLoaded = true;
     } catch (err) {
       el.loading.classList.add('hidden');
       el.error.classList.remove('hidden');
@@ -1018,8 +1022,8 @@
   function showBypassFilterNotice() {
     if (!el.concernFilterNotice) return;
     el.concernFilterNotice.innerHTML = `
-      <div class="flex items-center justify-between gap-2 bg-sand-100 border border-sand-200 text-xs text-ink px-3.5 py-2.5 rounded-xl">
-        <span>共有されたリンクを開いたため、絞り込みを解除して表示しています。</span>
+      <div class="flex items-center justify-between gap-2 bg-baySoft border border-bay/20 text-xs text-ink px-3.5 py-2.5 rounded-xl">
+        <span>この制度を表示するため、絞り込みを一時的に解除しています。</span>
         <button type="button" id="restore-filter-btn" class="focus-ring text-bay font-medium hover:underline shrink-0 select-none cursor-pointer">［絞り込みに戻す］</button>
       </div>
     `;
@@ -1045,7 +1049,7 @@
   function showNotFoundNotice() {
     if (!el.notFoundNotice) return;
     el.notFoundNotice.innerHTML = `
-      <div class="flex items-center justify-between gap-2 bg-sand-100 border border-sand-200 text-xs text-ink px-3.5 py-2.5 rounded-xl">
+      <div class="flex items-center justify-between gap-2 bg-baySoft border border-bay/20 text-xs text-ink px-3.5 py-2.5 rounded-xl">
         <span>お探しの制度は見つかりませんでした。一覧からお探しください。</span>
         <button type="button" id="close-not-found-btn" class="focus-ring text-inkSoft hover:text-ink shrink-0 select-none cursor-pointer px-1">✕</button>
       </div>
@@ -1078,6 +1082,8 @@
 
   function handleHashRoute() {
     if (typeof window === 'undefined') return;
+    // データの読み込みに失敗している場合はエラー表示に任せる（制度が無いわけではないため）
+    if (!state.mainDataLoaded) return;
     const hash = window.location.hash;
     if (!hash || !hash.startsWith('#base-')) return;
     const baseId = hash.slice(6);
