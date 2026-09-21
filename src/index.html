@@ -86,6 +86,7 @@
     <div class="max-w-3xl mx-auto flex h-full">
       <button id="tab-feed" class="focus-ring flex-1 h-full text-sm font-bold border-b-4 border-white transition-colors">最新のお知らせ</button>
       <button id="tab-concern" class="focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors">子育て支援制度</button>
+      <button id="tab-events" class="focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors">イベント</button>
       <button id="tab-young" class="focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors">一人暮らし・若者支援</button>
     </div>
   </nav>
@@ -189,6 +190,26 @@
     <main id="ya-concern-content" class="max-w-2xl mx-auto px-4 py-6"></main>
   </div>
 
+  <!-- ===== イベントビュー ===== -->
+  <div id="view-events" class="hidden">
+    <header class="sticky top-12 z-30 bg-paper/95 backdrop-blur border-b border-line">
+      <div class="max-w-2xl mx-auto px-4 pt-4 pb-3">
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl leading-snug text-ink">
+          水俣のイベント
+        </h2>
+        <p class="mt-1 text-sm text-inkSoft leading-relaxed">
+          水俣市内で開催予定のお祭り・マルシェ・スポーツ大会などを、開催日が近い順にまとめています。
+        </p>
+        <div class="mt-2.5 flex items-start gap-1.5 text-xs text-inkSoft bg-amber-50/80 border border-amber-200/70 rounded-lg p-2.5">
+          <span class="shrink-0 text-amber-700">⚠</span>
+          <p class="leading-relaxed">日時・内容は変わることがあります。お出かけ前に元のページでご確認ください。</p>
+        </div>
+      </div>
+    </header>
+
+    <main id="events-content" class="max-w-2xl mx-auto px-4 py-6"></main>
+  </div>
+
   <!-- ===== 詳細モーダル (フィード用) ===== -->
   <div id="modal-backdrop" class="hidden fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm" style="display:none"></div>
   <div id="modal" class="hidden fixed inset-x-0 bottom-0 z-[60] sm:inset-0 sm:flex sm:items-center sm:justify-center" style="display:none">
@@ -218,6 +239,7 @@
   const MAPPING_URL = './data/concern_mapping.json';
   const YA_BASE_URL = './data/young_adult_support_base.json';
   const YA_MAPPING_URL = './data/young_adult_concern_mapping.json';
+  const EVENTS_URL = './data/events.json';
 
   const AUDIENCE_STYLE = {
     '子育て・妊娠期': { bar: 'bg-kosodate',  chipOn: 'bg-kosodate text-white border-kosodate',  chipOff: 'bg-kosodateSoft text-kosodate border-transparent' },
@@ -284,14 +306,18 @@
     // 子育て支援制度タブのデータを読み込めたか。読み込みに失敗したときに、
     // 共有リンクの制度を「見つかりませんでした」と誤って案内しないために使う。
     mainDataLoaded: false,
+    // イベントタブ用データ
+    events: [],
   };
 
   const el = {
     tabFeed: document.getElementById('tab-feed'),
     tabConcern: document.getElementById('tab-concern'),
+    tabEvents: document.getElementById('tab-events'),
     tabYoung: document.getElementById('tab-young'),
     viewFeed: document.getElementById('view-feed'),
     viewConcern: document.getElementById('view-concern'),
+    viewEvents: document.getElementById('view-events'),
     viewYoung: document.getElementById('view-young'),
     loading: document.getElementById('loading-view'),
     error: document.getElementById('error-view'),
@@ -312,6 +338,9 @@
     jumpNav: document.getElementById('jump-nav'),
     profileTags: document.getElementById('profile-tags'),
     concernContent: document.getElementById('concern-content'),
+
+    // events ui（イベントタブ）
+    eventsContent: document.getElementById('events-content'),
 
     // young adult ui（一人暮らし・若者支援タブ）
     yaJumpNav: document.getElementById('ya-jump-nav'),
@@ -352,6 +381,7 @@
   const TABS = {
     feed:    { btn: 'tabFeed',    view: 'viewFeed' },
     concern: { btn: 'tabConcern', view: 'viewConcern' },
+    events:  { btn: 'tabEvents',  view: 'viewEvents' },
     young:   { btn: 'tabYoung',   view: 'viewYoung' },
   };
   const TAB_BTN_ACTIVE = "focus-ring flex-1 h-full text-sm font-bold border-b-4 border-white transition-colors text-white";
@@ -378,6 +408,7 @@
 
   el.tabFeed.addEventListener('click', () => switchTab('feed'));
   el.tabConcern.addEventListener('click', () => switchTab('concern'));
+  el.tabEvents.addEventListener('click', () => switchTab('events'));
   el.tabYoung.addEventListener('click', () => switchTab('young'));
 
 
@@ -945,6 +976,155 @@
     scheduleHeaderOffsetUpdate();
   }
 
+  // ===== Events View Logic =====
+  function getLocalDateString(d = new Date()) {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  function getPlusDaysString(days = 7) {
+    const d = new Date();
+    d.setDate(d.getDate() + days);
+    return getLocalDateString(d);
+  }
+
+  function formatEventDateRange(startStr, endStr) {
+    if (!startStr) return '';
+    const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
+    const [sy, sm, sd] = startStr.split('-').map(Number);
+    const sDate = new Date(sy, sm - 1, sd);
+    const sDay = dayNames[sDate.getDay()] || '';
+    const nowYear = new Date().getFullYear();
+    const sYearPrefix = (sy !== nowYear) ? `${sy}/` : '';
+    const startFormatted = `${sYearPrefix}${sm}/${sd}(${sDay})`;
+
+    if (!endStr || startStr === endStr) {
+      return startFormatted;
+    }
+
+    const [ey, em, ed] = endStr.split('-').map(Number);
+    const eDate = new Date(ey, em - 1, ed);
+    const eDay = dayNames[eDate.getDay()] || '';
+    const eYearPrefix = (ey !== nowYear && ey !== sy) ? `${ey}/` : '';
+    const endFormatted = `${eYearPrefix}${em}/${ed}(${eDay})`;
+
+    return `${startFormatted}〜${endFormatted}`;
+  }
+
+  function renderEvents() {
+    if (!el.eventsContent) return;
+    const todayStr = getLocalDateString();
+    const in7DaysStr = getPlusDaysString(7);
+    const nowYear = new Date().getFullYear();
+
+    // 終了日（end_date）が今日より前のものは表示しない
+    const validEvents = (state.events || []).filter(item => {
+      const end = item.end_date || item.start_date;
+      return end >= todayStr;
+    });
+
+    if (!validEvents.length) {
+      el.eventsContent.innerHTML = `
+        <p class="text-sm text-inkSoft text-center py-16">現在掲載しているイベントはありません。</p>
+      `;
+      return;
+    }
+
+    // グループ分け
+    const ongoing = [];
+    const withinWeek = [];
+    const futureByMonth = new Map();
+
+    validEvents.forEach(item => {
+      const start = item.start_date;
+      const end = item.end_date || item.start_date;
+
+      if (start <= todayStr && todayStr <= end) {
+        ongoing.push(item);
+      } else if (start > todayStr && start <= in7DaysStr) {
+        withinWeek.push(item);
+      } else {
+        const [y, m] = start.split('-').map(Number);
+        const key = `${y}-${String(m).padStart(2, '0')}`;
+        const label = (y === nowYear) ? `${m}月` : `${y}年${m}月`;
+        if (!futureByMonth.has(key)) {
+          futureByMonth.set(key, { label, items: [] });
+        }
+        futureByMonth.get(key).items.push(item);
+      }
+    });
+
+    const groups = [];
+    if (ongoing.length) groups.push({ label: '今日・開催中', items: ongoing });
+    if (withinWeek.length) groups.push({ label: '1週間以内', items: withinWeek });
+    const sortedMonthKeys = Array.from(futureByMonth.keys()).sort();
+    sortedMonthKeys.forEach(k => {
+      const grp = futureByMonth.get(k);
+      if (grp.items.length) groups.push(grp);
+    });
+
+    const eventCardHTML = (item) => `
+      <article class="bg-white rounded-xl border border-line p-4 sm:p-5 overflow-hidden">
+        <div class="text-xs font-bold text-bay mb-1.5">${esc(formatEventDateRange(item.start_date, item.end_date))}</div>
+        <h4 class="font-serif font-semibold text-base sm:text-[17px] leading-snug text-ink mb-2">
+          ${esc(item.title)}
+        </h4>
+        ${(item.time_text || item.venue) ? `
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-inkSoft mb-2.5">
+          ${item.time_text ? `<span class="inline-flex items-center gap-1">🕒 <span>${esc(item.time_text)}</span></span>` : ''}
+          ${item.venue ? `<span class="inline-flex items-center gap-1">📍 <span>${esc(item.venue)}</span></span>` : ''}
+        </div>` : ''}
+        ${item.summary ? `<p class="text-xs sm:text-sm text-inkSoft leading-relaxed line-clamp-3 mb-2.5">${esc(item.summary)}</p>` : ''}
+        ${item.organizer ? `<p class="text-[11px] text-inkSoft mb-3">主催：${esc(item.organizer)}</p>` : ''}
+        ${item.source_url ? `
+        <div class="pt-1">
+          <a href="${safeUrl(item.source_url)}" target="_blank" rel="noopener noreferrer"
+             class="focus-ring inline-flex items-center gap-1 text-xs font-medium text-bay hover:text-bay/80 hover:underline py-1">
+            <span>${esc(item.source_label || '詳細')}で詳細</span>
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>` : ''}
+      </article>
+    `;
+
+    const groupsHTML = groups.map(g => `
+      <section class="mb-8">
+        <h3 class="font-serif font-medium text-[15px] text-ink border-l-2 border-bay/40 pl-3 mb-3 leading-snug">
+          ${esc(g.label)}
+        </h3>
+        <div class="flex flex-col gap-3">
+          ${g.items.map(eventCardHTML).join('')}
+        </div>
+      </section>
+    `).join('');
+
+    el.eventsContent.innerHTML = `
+      ${groupsHTML}
+      <p class="text-center text-[11px] text-inkSoft pt-4 pb-8">
+        一部のイベントは、公開されている記事から日時・場所を自動で読み取っています。
+      </p>
+    `;
+  }
+
+  async function initEvents() {
+    try {
+      const res = await fetch(EVENTS_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('events fetch failed');
+      const data = await res.json();
+      state.events = data.items || [];
+      renderEvents();
+    } catch (err) {
+      console.error(err);
+      if (el.eventsContent) {
+        el.eventsContent.innerHTML = `<p class="text-sm text-inkSoft text-center py-16">イベント情報を読み込めませんでした。時間をおいて再度お試しください。</p>`;
+      }
+    }
+  }
+
 
   // ===== Init =====
   async function init() {
@@ -996,6 +1176,11 @@
       el.error.textContent = 'データの読み込みに失敗しました。時間をおいて再度お試しください。';
       console.error(err);
     }
+
+    // イベントタブの初期化（独立したtry/catchで、失敗しても他タブに影響しない）
+    try {
+      await initEvents();
+    } catch (_) {}
 
     // 一人暮らし・若者支援タブは独立したtry/catchで初期化する。
     // ここで例外が起きても、上のフィード・子育て支援制度タブには影響させない
