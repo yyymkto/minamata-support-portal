@@ -83,6 +83,7 @@ minamata-support-portal
 | 「最新のお知らせ→ストック候補」検出機能の実装 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
 | 子育て支援制度タブの改装（制度の追加＋情報階層の整理） | Claude Code（設計・データ）→Antigravity（UI） | 進行中。設計書は`design-specs/2026-09-16_child-support-page-renovation.md`。UI（タスク4a, 4b, 5〜9、Antigravity）とデータ（タスク0b・1〜4、Claude Code）はすべて完了し、2026-09-17に吉野さんの依頼で push 済み（GitHub Pages へ自動デプロイ）。制度数39件。2026-09-17に吉野さんが本番サイトで表示を確認し「良い感じ」との評価。**完了** |
 | 制度カードの共有リンク（共有ボタン＋リンクを開いたときのタブ切り替え） | Claude Code（設計）→Antigravity（UI） | 実装・レビュー完了、2026-09-21に吉野さんの依頼で push 済み。残りは本番URLをLINEに送ってのプレビュー確認（吉野さん） |
+| イベントタブの新設（若者タブを一時オフにして置き換え） | Claude Code（設計・収集スクリプト）→吉野さん（スプレッドシート準備）→Antigravity（UI） | 設計書作成済み（`design-specs/2026-09-21_events-tab.md`）。タスク1（自動抽出 `scripts/update_events.py`）はローカルで46件を試して完了。タスク2〜8は未着手 |
 
 ## 未決定の論点（次に議論すべきこと）
 
@@ -158,6 +159,14 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-09-21: [Claude Code] イベントタブのタスク1として `scripts/update_events.py`（自動抽出部分）を作成し、
+  既存の「イベント」タグ46件でローカル実行（`events.json` 16件、`_events_auto.json` 生成）。結果は設計書「タスク1の結果」に記録。
+  あわせて `update_data.py` の `call_gemini_json` で、429に加えて500/502/503/504も再試行するよう変更した。
+  手動登録（タスク2）の処理とワークフローへの組み込み（タスク3）はまだなので、毎朝の自動更新ではまだ動かない。
+- 2026-09-21: [Claude Code] 吉野さんとの相談で「イベント」タブの新設を決定。SNSは規約上自動収集せず、
+  既存の収集記事からGeminiで開催日・場所を読み取る自動分と、Googleスプレッドシートによる手動登録分を
+  `events.json` にまとめて表示する。「一人暮らし・若者支援」タブはフラグで一時非表示にする。
+  設計書 `design-specs/2026-09-21_events-tab.md`、決定記録 `decisions-log/2026-09-21_events-tab.md` を作成。
 - 2026-09-21: [Claude Code] 共有リンクの実装をレビュー。jsdomで実HTML・実データの
   シナリオテスト37項目を実行し、すべて設計どおりに動くことを確認。次の3点を修正：
   (1) 通知の配色が未定義の色（`sand`）で背景が付いていなかった→既存の `baySoft` に置換、
