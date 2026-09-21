@@ -83,7 +83,7 @@ minamata-support-portal
 | 「最新のお知らせ→ストック候補」検出機能の実装 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
 | 子育て支援制度タブの改装（制度の追加＋情報階層の整理） | Claude Code（設計・データ）→Antigravity（UI） | 進行中。設計書は`design-specs/2026-09-16_child-support-page-renovation.md`。UI（タスク4a, 4b, 5〜9、Antigravity）とデータ（タスク0b・1〜4、Claude Code）はすべて完了し、2026-09-17に吉野さんの依頼で push 済み（GitHub Pages へ自動デプロイ）。制度数39件。2026-09-17に吉野さんが本番サイトで表示を確認し「良い感じ」との評価。**完了** |
 | 制度カードの共有リンク（共有ボタン＋リンクを開いたときのタブ切り替え） | Claude Code（設計）→Antigravity（UI） | 実装・レビュー完了、2026-09-21に吉野さんの依頼で push 済み。残りは本番URLをLINEに送ってのプレビュー確認（吉野さん） |
-| イベントタブの新設（若者タブを一時オフにして置き換え） | Claude Code（設計・収集スクリプト）→吉野さん（スプレッドシート準備）→Antigravity（UI） | 設計書作成済み（`design-specs/2026-09-21_events-tab.md`）。タスク1（自動抽出）・タスク2（スプレッドシート読み込み）完了（`scripts/update_events.py`）。タスク4は手順書 `docs/events-sheet-guide.md` を用意済みで吉野さんの作業待ち。タスク3（ワークフロー組み込み）・5〜8（UI）は未着手 |
+| イベントタブの新設（若者タブを一時オフにして置き換え） | Claude Code（設計・収集スクリプト）→吉野さん（スプレッドシート準備）→Antigravity（UI） | 設計書作成済み（`design-specs/2026-09-21_events-tab.md`）。タスク1（自動抽出）・タスク2（スプレッドシート読み込み）完了（`scripts/update_events.py`）。タスク4は手順書 `docs/events-sheet-guide.md` を用意済みで吉野さんの作業待ち。タスク3（ワークフロー組み込み）はコード変更済みで、push後の手動実行での確認待ち。タスク5〜8（UI、Antigravity）は未着手 |
 
 ## 未決定の論点（次に議論すべきこと）
 
@@ -159,6 +159,9 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-09-22: [Claude Code] イベントタブのタスク3として、`daily-update.yml` に `update_events.py` の実行ステップを追加
+  （`continue-on-error`、Issue起票なし）。`EVENTS_SHEET_CSV_URL` はActions変数から渡す。push後に手動実行で確認する。
+  スプレッドシートは吉野さんがGeminiに作ってもらう方針になり、Gemini向けの指示文を手順書に追加した。
 - 2026-09-22: [Claude Code] イベントタブのタスク2として、`update_events.py` にGoogleスプレッドシート（CSV公開）からの
   手動登録分の読み込みと、自動抽出分の上書き・非表示ルールを追加。サンプルCSVで15項目を確認。前回取得分は
   `_events_manual.json` に保存する（設計書を更新）。吉野さん向けのシート準備・使い方の手順書 `docs/events-sheet-guide.md` を作成。
