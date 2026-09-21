@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-09-22 by Claude Code）
+# 現在の状態（最終更新：2026-09-22 by Antigravity）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -47,14 +47,18 @@ minamata-support-portal
 │       ├── life_info.json
 │       ├── child_support_base.json
 │       ├── concern_mapping.json
+│       ├── events.json              # 新規（イベント一覧、自動抽出＋手動登録）
 │       ├── young_adult_support_base.json     # 新規（一人暮らし・若者支援、手動キュレーション）
 │       ├── young_adult_concern_mapping.json  # 新規（同上の困りごとマッピング）
+│       ├── _events_auto.json        # 自動生成（イベント判定済みURLの記録、UIからは不参照）
+│       ├── _events_manual.json      # 自動生成（手動イベント前回分記録、UIからは不参照）
 │       ├── _monitor_state.json      # 自動生成（監視の内部状態、UIからは不参照）
 │       └── _checked_urls.json       # 自動生成（Gemini判定済みURLの記録、UIからは不参照）
 ├── scripts/
 │   ├── requirements.txt
 │   ├── update_data.py               # SOURCESに3件追加（観光物産協会×2、スポーツRSS）。
 │   │                                 # call_gemini_json()として汎用化済み
+│   ├── update_events.py             # 新規（イベント自動抽出・手動統合）
 │   ├── monitor_stock.py
 │   └── detect_stock_candidates.py   # 新規（フロー→ストック候補の検出、週次）
 ├── src/
@@ -83,7 +87,7 @@ minamata-support-portal
 | 「最新のお知らせ→ストック候補」検出機能の実装 | Claude | 完了（下記「未決定の論点」にCI実地確認が残る） |
 | 子育て支援制度タブの改装（制度の追加＋情報階層の整理） | Claude Code（設計・データ）→Antigravity（UI） | 進行中。設計書は`design-specs/2026-09-16_child-support-page-renovation.md`。UI（タスク4a, 4b, 5〜9、Antigravity）とデータ（タスク0b・1〜4、Claude Code）はすべて完了し、2026-09-17に吉野さんの依頼で push 済み（GitHub Pages へ自動デプロイ）。制度数39件。2026-09-17に吉野さんが本番サイトで表示を確認し「良い感じ」との評価。**完了** |
 | 制度カードの共有リンク（共有ボタン＋リンクを開いたときのタブ切り替え） | Claude Code（設計）→Antigravity（UI） | 実装・レビュー完了、2026-09-21に吉野さんの依頼で push 済み。残りは本番URLをLINEに送ってのプレビュー確認（吉野さん） |
-| イベントタブの新設（若者タブを一時オフにして置き換え） | Claude Code（設計・収集スクリプト）→吉野さん（スプレッドシート準備）→Antigravity（UI） | 設計書作成済み（`design-specs/2026-09-21_events-tab.md`）。タスク1（自動抽出）・タスク2（スプレッドシート読み込み）完了（`scripts/update_events.py`）。タスク4は手順書 `docs/events-sheet-guide.md` を用意済みで吉野さんの作業待ち。タスク3（ワークフロー組み込み）は2026-09-22にpushし、手動実行（run 35635663082）が全ステップ成功、本番に `data/events.json`（16件）が配置されたことを確認。ただし「イベント情報を更新」は `continue-on-error` のためAPI上の成否だけでは判別できず、ステップのログ（要ログイン）で「=== 完了 ===」を確認するまでは念のため未完了扱い。タスク5〜8（UI、Antigravity）は未着手 |
+| イベントタブの新設（若者タブを一時オフにして置き換え） | Claude Code（設計・収集スクリプト）→吉野さん（スプレッドシート準備）→Antigravity（UI） | 設計書`design-specs/2026-09-21_events-tab.md`。Claude担当のタスク1〜3（自動抽出・手動読み込み・CI追加）完了。Antigravity担当のUI（タスク5: 若者タブ一時オフ、タスク6: イベントタブ追加、タスク7: 一覧描画・グループ分け、タスク8: 表示確認・テスト）の実装・検証完了。タスク4（スプレッドシート準備、吉野さん）待ち |
 
 ## 未決定の論点（次に議論すべきこと）
 
@@ -159,6 +163,11 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-09-22: [Antigravity] イベントタブ設計書 `design-specs/2026-09-21_events-tab.md` のUI（タスク5〜8）を `src/index.html` に実装完了。
+  (1) タスク5（若者タブ一時オフ）：定数 `ENABLE_YOUNG_TAB = false` を新設し、若者タブボタンを非表示化、`initYoungAdult()` の実行をスキップ。共有リンクを開いた際は設計通り「お探しの制度は見つかりませんでした」に流れることを確認（true に戻せば元通り動作）。
+  (2) タスク6（イベントタブ追加）：グローバルナビに「イベント」ボタン（並び：お知らせ・子育て・イベント）と `#view-events` コンテナを追加。`events.json` は独立した try/catch で初期化し、失敗時も他タブに影響しないよう保護。
+  (3) タスク7（一覧描画）：開催日順で終了済みを除外し、「今日・開催中」「1週間以内」「各月（年またぎ対応）」にグループ分けして表示。日付（曜日・期間）、時間・場所、概要（3行省略）、主催、情報元付き詳細リンクボタン（別タブ）、注意書き、0件時表示、末尾クレジットを実装。
+  (4) タスク8（表示確認・検証）：自動テストスクリプトにより、本番データ（16件）の描画、特殊ケース（過去除外・開催中・年またぎ）、0件時表示、fetch失敗時のエラー表示と他タブへの無干渉をすべて検証済み。
 - 2026-09-22: [Claude Code] イベントタブのタスク3として、`daily-update.yml` に `update_events.py` の実行ステップを追加
   （`continue-on-error`、Issue起票なし）。`EVENTS_SHEET_CSV_URL` はActions変数から渡す。push後に手動実行で確認する。
   スプレッドシートは吉野さんがGeminiに作ってもらう方針になり、Gemini向けの指示文を手順書に追加した。
