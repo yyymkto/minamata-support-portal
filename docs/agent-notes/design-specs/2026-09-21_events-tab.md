@@ -277,8 +277,8 @@
 ## タスク3の状況（2026-09-22、Claude Code）
 
 `daily-update.yml` に「イベント情報を更新」ステップを追加し、コミット対象に `events.json`・`_events_auto.json`・
-`_events_manual.json`（存在するときのみ）を追加した。push後に workflow_dispatch で実行し、
-`events.json` のコミットとPagesへの配置を確認するまでは未完了扱い。
+`_events_manual.json`（存在するときのみ）を追加した。push後に workflow_dispatch で実行し（run 35635663082）、全ステップ成功・Pagesへの `data/events.json` 配置・
+ステップのログの「=== 完了 ===」（吉野さん確認）を確認して完了（2026-09-22）。データに変化がなかったため自動コミットは発生していない。
 
 ## 実装時の疑問点・ブロッカー（実装担当が記入）
 
