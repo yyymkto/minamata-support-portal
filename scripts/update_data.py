@@ -70,6 +70,7 @@ GEMINI_REQUEST_INTERVAL_SEC = float(os.environ.get("GEMINI_REQUEST_INTERVAL_SEC"
 # 一定回数連続したら残りを打ち切り、ここまでの結果を保存する
 # （2026-08-24、RPM対応後も134件目以降ずっと429が続く事象で発生を確認）。
 GEMINI_CONSECUTIVE_FAILURE_LIMIT = int(os.environ.get("GEMINI_CONSECUTIVE_FAILURE_LIMIT", "3"))
+GEMINI_RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 
 REQUEST_TIMEOUT = 20
 # HTTPヘッダーはASCII(latin-1)のみ許容されるため、日本語を含めないこと。
@@ -451,15 +452,17 @@ def call_gemini_json(
             log.warning("Gemini API 呼び出し失敗: %s (%s)", log_label, e)
             return None
 
-        if resp.status_code == 429 and attempt < GEMINI_MAX_RETRIES:
+        # 503（Service Unavailable）等のサーバー側の一時的な過負荷も同様に再試行する
+        # （2026-09-21、update_events.py の試し実行で503が連続して判定が打ち切られたため追加）。
+        if resp.status_code in GEMINI_RETRYABLE_STATUS and attempt < GEMINI_MAX_RETRIES:
             retry_after = resp.headers.get("Retry-After")
             try:
                 wait_s = float(retry_after) if retry_after else min(2.0 * (2 ** attempt), 30.0)
             except ValueError:
                 wait_s = min(2.0 * (2 ** attempt), 30.0)
             log.warning(
-                "Gemini APIがレート制限中(429): %s。%.1f秒待って再試行します (%d/%d)",
-                log_label, wait_s, attempt + 1, GEMINI_MAX_RETRIES,
+                "Gemini APIが一時的に利用できません(%d): %s。%.1f秒待って再試行します (%d/%d)",
+                resp.status_code, log_label, wait_s, attempt + 1, GEMINI_MAX_RETRIES,
             )
             time.sleep(wait_s)
             continue
