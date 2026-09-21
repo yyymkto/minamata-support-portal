@@ -345,6 +345,9 @@
     } catch { return iso; }
   }
 
+  // ===== タブ表示フラグ（設計書：イベントタブ新設に伴い若者タブを一時オフ） =====
+  const ENABLE_YOUNG_TAB = false;
+
   // ===== Tab Logic =====
   const TABS = {
     feed:    { btn: 'tabFeed',    view: 'viewFeed' },
@@ -357,11 +360,20 @@
   function switchTab(tabId) {
     state.activeTab = tabId;
     Object.entries(TABS).forEach(([id, { btn, view }]) => {
+      if (id === 'young' && !ENABLE_YOUNG_TAB) {
+        if (el[btn]) el[btn].classList.add('hidden');
+        if (el[view]) el[view].classList.add('hidden');
+        return;
+      }
       const active = id === tabId;
       el[btn].className = active ? TAB_BTN_ACTIVE : TAB_BTN_INACTIVE;
       el[view].classList.toggle('hidden', !active);
     });
     scheduleHeaderOffsetUpdate();
+  }
+
+  if (!ENABLE_YOUNG_TAB && el.tabYoung) {
+    el.tabYoung.classList.add('hidden');
   }
 
   el.tabFeed.addEventListener('click', () => switchTab('feed'));
@@ -988,9 +1000,11 @@
     // 一人暮らし・若者支援タブは独立したtry/catchで初期化する。
     // ここで例外が起きても、上のフィード・子育て支援制度タブには影響させない
     // （2026-08-24、profile-tags要素の欠落で全タブがクラッシュした教訓を踏まえた対応）。
-    try {
-      await initYoungAdult();
-    } catch (_) {}
+    if (ENABLE_YOUNG_TAB) {
+      try {
+        await initYoungAdult();
+      } catch (_) {}
+    }
 
     // 両方の読み込みが終わってからハッシュルーティングを実行（設計書仕様4）
     handleHashRoute();
