@@ -353,6 +353,22 @@ def parse_sheet_date(value: str) -> Optional[str]:
         return None
 
 
+def clean_link(link: str) -> Optional[str]:
+    """Instagram等のリンクから共有時に付く追跡用パラメータを取り除く。
+
+    Instagramの「リンクをコピー」で得たURLには ?utm_source=...&stkn=... が付き、
+    stkn は共有した人を識別するトークンとみられるため、サイトに載せない
+    （2026-09-22、実際の登録行で確認）。投稿の特定には ?以降は不要。
+    市サイト等のURLはクエリが意味を持つことがあるため、Instagramに限定する。
+    """
+    link = link.strip()
+    if not link:
+        return None
+    if "instagram.com" in link:
+        link = link.split("?", 1)[0].split("#", 1)[0]
+    return link
+
+
 def default_source_label(link: Optional[str]) -> str:
     if link and "instagram.com" in link:
         return "Instagram"
@@ -380,7 +396,7 @@ def parse_sheet_csv(text: str) -> Optional[dict]:
         if not any(row.values()):
             continue
         title = row.get("イベント名", "")
-        link = row.get("リンク") or None
+        link = clean_link(row.get("リンク", ""))
 
         if row.get("非表示"):
             if link:
