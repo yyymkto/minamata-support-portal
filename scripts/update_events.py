@@ -9,14 +9,19 @@
 1. 自動抽出: life_info.json のうち topic_tags に「イベント」を含む記事について、
    記事ページ本文をGeminiに読ませ、開催日・時間・場所等を取り出す。
    結果は public/data/_events_auto.json にキャッシュし、同じ記事は再判定しない。
-2. 手動登録: Googleスプレッドシート（CSV公開）から読み込む（タスク2で実装予定）。
+2. 手動登録: Googleスプレッドシート（ウェブに公開したCSV）から読み込む。
+   最後に読み込めた内容は public/data/_events_manual.json に残し、
+   CSVを取得できなかった日はそれを使う（一時的な失敗で手動登録分が消えないように）。
 3. 1と2を統合し、終了済みのイベントを除いて events.json に書き出す。
+   スプレッドシートの行の「リンク」が自動抽出イベントのURLと一致する場合は、
+   その行で自動抽出分を上書きする（「非表示」列に何か書いてあれば掲載しない）。
 
 update_data.py の後に実行する想定（daily-update.yml）。
 life_info.json 自体は書き換えない。
 
 環境変数:
     GEMINI_API_KEY          ... Google AI Studio の Gemini API キー（必須）
+    EVENTS_SHEET_CSV_URL    ... 手動登録用スプレッドシートのCSV公開URL（未設定なら手動登録分なし）
     EVENTS_MAX_GEMINI_CALLS ... 1回の実行でGeminiを呼ぶ上限件数（デフォルト40）
 
 実行方法:
@@ -25,7 +30,10 @@ life_info.json 自体は書き換えない。
 
 from __future__ import annotations
 
+import csv
 import datetime as dt
+import hashlib
+import io
 import json
 import logging
 import os
@@ -51,6 +59,9 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 LIFE_INFO_PATH = ROOT_DIR / "public" / "data" / "life_info.json"
 EVENTS_PATH = ROOT_DIR / "public" / "data" / "events.json"
 AUTO_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_auto.json"
+MANUAL_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_manual.json"
+
+EVENTS_SHEET_CSV_URL = os.environ.get("EVENTS_SHEET_CSV_URL", "").strip()
 
 EVENT_TOPIC_TAG = "イベント"
 MAX_GEMINI_CALLS = int(os.environ.get("EVENTS_MAX_GEMINI_CALLS", "40"))
@@ -323,9 +334,144 @@ def dedupe_events(events: list[dict]) -> list[dict]:
     return kept
 
 
-def build_events(cache: dict[str, dict], today: dt.date) -> list[dict]:
+# --------------------------------------------------------------------------
+# 手動登録（Googleスプレッドシート）
+# --------------------------------------------------------------------------
+# スプレッドシートの日付セルは、表示形式によって「2026/10/03」「2026-10-03」
+# 「2026年10月3日」などの文字列でCSVに出力されるため、いずれも受け付ける。
+SHEET_DATE_PATTERN = re.compile(r"^(\d{4})\s*[/\-.年]\s*(\d{1,2})\s*[/\-.月]\s*(\d{1,2})\s*日?")
+REQUIRED_SHEET_COLUMNS = ("イベント名", "開始日")
+
+
+def parse_sheet_date(value: str) -> Optional[str]:
+    m = SHEET_DATE_PATTERN.match(value.strip())
+    if not m:
+        return None
+    try:
+        return dt.date(*(int(g) for g in m.groups())).isoformat()
+    except ValueError:
+        return None
+
+
+def default_source_label(link: Optional[str]) -> str:
+    if link and "instagram.com" in link:
+        return "Instagram"
+    return "詳細"
+
+
+def parse_sheet_csv(text: str) -> Optional[dict]:
+    """CSV本文を {"events": [...], "hidden_urls": [...], "warnings": [...]} に変換する。
+
+    見出し行に必須列が無い場合（シートが公開されておらずログイン画面のHTMLが返ってきた等）は None。
+    """
+    reader = csv.DictReader(io.StringIO(text))
+    headers = [(h or "").strip() for h in (reader.fieldnames or [])]
+    if not all(col in headers for col in REQUIRED_SHEET_COLUMNS):
+        log.error("スプレッドシートの見出し行に %s がありません（見出し: %s）。",
+                  "・".join(REQUIRED_SHEET_COLUMNS), headers[:10])
+        return None
+
+    events: list[dict] = []
+    hidden_urls: list[str] = []
+    warnings: list[str] = []
+    # 1行目が見出しなので、データはスプレッドシート上の2行目から始まる
+    for row_no, raw in enumerate(reader, start=2):
+        row = {(k or "").strip(): (v or "").strip() for k, v in raw.items() if k is not None}
+        if not any(row.values()):
+            continue
+        title = row.get("イベント名", "")
+        link = row.get("リンク") or None
+
+        if row.get("非表示"):
+            if link:
+                hidden_urls.append(link)
+            continue
+
+        start_date = parse_sheet_date(row.get("開始日", ""))
+        if not title or start_date is None:
+            msg = f"{row_no}行目: イベント名または開始日が空か、開始日を日付として読めません（{title or '名前なし'} / {row.get('開始日', '')}）"
+            log.warning("スプレッドシート %s", msg)
+            warnings.append(msg)
+            continue
+
+        end_date = start_date
+        if row.get("終了日"):
+            parsed_end = parse_sheet_date(row["終了日"])
+            if parsed_end is None:
+                msg = f"{row_no}行目: 終了日を日付として読めないため、開始日と同じ日として扱いました（{title} / {row['終了日']}）"
+                log.warning("スプレッドシート %s", msg)
+                warnings.append(msg)
+            elif parsed_end >= start_date:
+                end_date = parsed_end
+
+        digest = hashlib.sha1(f"{title}|{start_date}|{link or ''}".encode("utf-8")).hexdigest()[:10]
+        events.append({
+            "id": f"m-{digest}",
+            "title": title,
+            "start_date": start_date,
+            "end_date": end_date,
+            "time_text": row.get("時間") or None,
+            "venue": row.get("場所") or None,
+            "summary": row.get("概要") or None,
+            "organizer": row.get("主催") or None,
+            "source_url": link,
+            "source_label": row.get("情報元") or None,  # 空欄の既定値は統合時に決める
+            "origin": "manual",
+        })
+
+    return {"events": events, "hidden_urls": hidden_urls, "warnings": warnings}
+
+
+def load_manual() -> dict:
+    """手動登録分を読み込む。取得できなかった場合は前回読み込めた内容を使う。"""
+    empty = {"events": [], "hidden_urls": [], "warnings": []}
+    if not EVENTS_SHEET_CSV_URL:
+        log.info("EVENTS_SHEET_CSV_URL が未設定のため、手動登録分はありません。")
+        return empty
+
+    previous = load_json(MANUAL_CACHE_PATH, empty)
+    resp = http_get(EVENTS_SHEET_CSV_URL)
+    parsed = None
+    if resp is not None:
+        # GoogleのCSVはUTF-8。BOMが付いていても見出し名がずれないよう utf-8-sig で読む
+        parsed = parse_sheet_csv(resp.content.decode("utf-8-sig", errors="replace"))
+    if parsed is None:
+        log.warning("スプレッドシートを読み込めなかったため、前回読み込めた手動登録分（%d件）を使います。",
+                    len(previous.get("events", [])))
+        return previous
+
+    log.info("スプレッドシートから読み込み: 掲載 %d 件 / 非表示指定 %d 件 / 読めなかった行 %d 件",
+             len(parsed["events"]), len(parsed["hidden_urls"]), len(parsed["warnings"]))
+    write_json(MANUAL_CACHE_PATH, {"fetched_at": dt.datetime.now(tz=JST).isoformat(), **parsed})
+    return parsed
+
+
+# --------------------------------------------------------------------------
+# 統合・出力
+# --------------------------------------------------------------------------
+def merge_manual(auto_events: list[dict], manual: dict) -> list[dict]:
+    """自動抽出分にスプレッドシートの上書き・非表示を適用し、手動登録分を足す。"""
+    hidden = set(manual.get("hidden_urls", []))
+    auto_by_url = {e["source_url"]: e for e in auto_events}
+
+    manual_events = []
+    for m in manual.get("events", []):
+        m = dict(m)
+        if m.get("source_url") in hidden:
+            continue
+        if not m.get("source_label"):
+            # 自動抽出分の上書き行なら、情報元の表示は元のまま（例: みなまた観光物産協会）にする
+            overridden = auto_by_url.get(m.get("source_url"))
+            m["source_label"] = overridden["source_label"] if overridden else default_source_label(m.get("source_url"))
+        manual_events.append(m)
+
+    replaced = hidden | {m["source_url"] for m in manual_events if m.get("source_url")}
+    return [e for e in auto_events if e["source_url"] not in replaced] + manual_events
+
+
+def build_events(cache: dict[str, dict], manual: dict, today: dt.date) -> list[dict]:
     events = dedupe_events([e["event"] for e in cache.values() if e.get("event")])
-    # TODO(タスク2): スプレッドシートの手動登録分の読み込み・上書き・非表示ルールをここで適用する
+    events = merge_manual(events, manual)
     today_iso = today.isoformat()
     events = [e for e in events if e["end_date"] >= today_iso]
     events.sort(key=lambda e: (e["start_date"], e["title"]))
@@ -354,7 +500,8 @@ def main() -> int:
     today = dt.datetime.now(tz=JST).date()
     life_items = load_json(LIFE_INFO_PATH, {"items": []}).get("items", [])
     cache = update_auto_cache(life_items, today)
-    save_events(build_events(cache, today))
+    manual = load_manual()
+    save_events(build_events(cache, manual, today))
     log.info("=== 完了 ===")
     return 0
 
