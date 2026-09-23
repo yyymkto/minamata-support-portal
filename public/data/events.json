@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22T04:39:28.099701+09:00",
+  "last_updated": "2026-09-23T09:11:55.952038+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -12,19 +12,6 @@
       "summary": "お店の人がプロならではのコツや知識を教える少人数制のミニ講座。期間中、市内各店舗にて様々なテーマの講座が開催されます。参加には各店舗への事前申し込みが必要です。",
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "id": "e73dd0df64ec",
-      "title": "「第５1回全日本フライングディスク個人総合選手権大会」が開催されます！",
-      "start_date": "2026-09-20",
-      "end_date": "2026-09-22",
-      "time_text": "8:00〜16:30（体験コーナーは10:00〜15:00）",
-      "venue": "水俣市内",
-      "summary": "フライングディスク競技の日本一を決める全国大会。ディスクゴルフやフリースタイルなど7種目が実施され、トッププレーヤーが集結します。誰でも参加できる無料体験コーナーも併設されます。",
-      "organizer": "日本フライングディスク協会（JFDA）",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034841/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
