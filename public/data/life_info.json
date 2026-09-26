@@ -1,7 +1,123 @@
 {
-  "last_updated": "2026-09-24T09:20:04.643416+09:00",
+  "last_updated": "2026-09-26T09:28:09.197715+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "42ee5c17b93d",
+      "title": "～県南の うまい！ が大集合！～「湯の児マルシェ」開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "熊本県南地域の美味しいグルメが集まる「湯の児マルシェ」が開催されます。地域の特産品やグルメを楽しめるイベントです。",
+      "target": "どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034877/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-25",
+      "collected_at": "2026-09-26T09:27:24.507997+09:00",
+      "status": "active"
+    },
+    {
+      "id": "5d7ba3260aba",
+      "title": "令和８年度（第１回）水俣市都市計画審議会を開催します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市都市計画審議会が開催されます。会議は公開で行われ、傍聴を希望する方は指定の手続きを行うことで参加可能です。",
+      "target": "市政に関心のある市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033231/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-25",
+      "collected_at": "2026-09-26T09:27:33.360425+09:00",
+      "status": "active"
+    },
+    {
+      "id": "b8963bb89891",
+      "title": "水俣市介護事業所の生産性向上普及促進事業の実施について",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内の介護事業所を対象に、ICT導入や業務改善による生産性向上を支援する事業を実施します。事業所の業務効率化やサービス向上を目指す取り組みをサポートします。",
+      "target": "水俣市内の介護事業所",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034859/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-25",
+      "collected_at": "2026-09-26T09:27:40.380871+09:00",
+      "status": "active"
+    },
+    {
+      "id": "00957be1f7fd",
+      "title": "劇団「南の星座」とトークショーの集い",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "劇団「南の星座」による公演とトークショーが開催されます。市民が気軽に楽しめる文化イベントです。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034875/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-25",
+      "collected_at": "2026-09-26T09:27:48.008237+09:00",
+      "status": "active"
+    },
+    {
+      "id": "5c2ec29fa81d",
+      "title": "文化会館のトイレが新しくなりました！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "施設案内"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市文化会館のトイレが改修され、新しくなりました。施設を利用する際は快適に利用できます。",
+      "target": "文化会館を利用する市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034369/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-25",
+      "collected_at": "2026-09-26T09:27:55.142347+09:00",
+      "status": "active"
+    },
+    {
+      "id": "93f3ee41e554",
+      "title": "令和８年熊本地震に伴う「無料法律相談会」が開催されます",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年熊本地震の影響を受けた方を対象とした無料法律相談会が開催されます。地震に関連する法律上の悩みについて専門家に相談できる機会です。",
+      "target": "令和8年熊本地震の影響を受けた市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034876/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-25",
+      "collected_at": "2026-09-26T09:28:03.655464+09:00",
+      "status": "active"
+    },
     {
       "id": "7c0126fc54fe",
       "title": "令和８年熊本地震で被災した建物の解体・撤去について（公費解体・自費解体）",

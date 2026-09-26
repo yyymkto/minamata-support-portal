@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-23T09:11:55.952038+09:00",
+  "last_updated": "2026-09-26T09:28:51.701362+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -14,19 +14,6 @@
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
       "source_label": "水俣市",
       "origin": "auto"
-    },
-    {
-      "id": "m-27a7c8f68f",
-      "title": "きちんと焼酎の会",
-      "start_date": "2026-09-25",
-      "end_date": "2026-09-25",
-      "time_text": "18:30",
-      "venue": "きちんと",
-      "summary": "9/25(金)18:30〜\r\n第3回\r\nきちんと焼酎の会開催します👏\r\n\r\n【参加人数】20名\r\n【会費】￥4.500/1人\r\n※飲み物込みコース料理となります。\r\n【応募方法】電話:0966-84-9477\r\n\r\n沢山のご応募お待ちしております‼️",
-      "organizer": null,
-      "source_url": "https://www.instagram.com/p/DdJLHOGTFnn/",
-      "source_label": "Instagram",
-      "origin": "manual"
     },
     {
       "id": "66cdc3712d61",
@@ -94,19 +81,6 @@
       "origin": "auto"
     },
     {
-      "id": "53ed0f83ed49",
-      "title": "県南の うまい！が大集合！「湯の児マルシェ」開催",
-      "start_date": "2026-10-03",
-      "end_date": "2026-10-03",
-      "time_text": "11:00〜16:00",
-      "venue": "水俣市湯の児温泉 湯の児護岸エリア",
-      "summary": "県南地域のグルメが集まるマルシェ。先着200名へのプレゼントや、クイズラリー、フライングディスク体験、ステージイベントなどが楽しめる。",
-      "organizer": "（一社）みなまた観光物産協会",
-      "source_url": "https://www.go-minamata.jp/news-events/r8_yunoko_marche.html",
-      "source_label": "みなまた観光物産協会",
-      "origin": "auto"
-    },
-    {
       "id": "5eefcecc50b0",
       "title": "道の駅「ミナマータ」でウナギのつかみどりを開催します！",
       "start_date": "2026-10-03",
@@ -116,6 +90,19 @@
       "summary": "毎年恒例のウナギのつかみ取りイベント。定員100名のため抽選を実施。つかまえたウナギはその場でさばき、炭火で白焼きにして提供されます。参加費1,000円。濡れても良い服や着替えが必要です。",
       "organizer": "水俣市",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034837/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "id": "42ee5c17b93d",
+      "title": "～県南の うまい！ が大集合！～「湯の児マルシェ」開催します！",
+      "start_date": "2026-10-03",
+      "end_date": "2026-10-03",
+      "time_text": "11:00〜16:00",
+      "venue": "水俣市湯の児温泉 湯の児護岸エリア",
+      "summary": "県南地域の美味しいグルメが集結するマルシェ。クイズラリーやフライングディスク体験会、ステージイベントなども行われます。先着200名へのプレゼント特典あり。",
+      "organizer": "（一社）みなまた観光物産協会",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034877/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
@@ -143,6 +130,19 @@
       "organizer": "みなまた初恋通り商店会",
       "source_url": "https://www.go-minamata.jp/news-events/r8_hatsukoi-hw-marche.html",
       "source_label": "みなまた観光物産協会",
+      "origin": "auto"
+    },
+    {
+      "id": "00957be1f7fd",
+      "title": "劇団「南の星座」とトークショーの集い",
+      "start_date": "2026-10-17",
+      "end_date": "2026-10-17",
+      "time_text": "13:00〜（開場12:30）",
+      "venue": "つなぎ文化センター",
+      "summary": "認知症をテーマにした劇団「南の星座」による演劇と、地域での未来を考えるトークショー。笑いと感動を通じて認知症への理解を深める。",
+      "organizer": "水俣市芦北郡医師会",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034875/index.html",
+      "source_label": "水俣市",
       "origin": "auto"
     },
     {

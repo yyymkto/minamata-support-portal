@@ -232,6 +232,40 @@
         "origin": "auto"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034875/index.html": {
+      "is_event": true,
+      "checked_at": "2026-09-26T09:28:24.601241+09:00",
+      "event": {
+        "id": "00957be1f7fd",
+        "title": "劇団「南の星座」とトークショーの集い",
+        "start_date": "2026-10-17",
+        "end_date": "2026-10-17",
+        "time_text": "13:00〜（開場12:30）",
+        "venue": "つなぎ文化センター",
+        "summary": "認知症をテーマにした劇団「南の星座」による演劇と、地域での未来を考えるトークショー。笑いと感動を通じて認知症への理解を深める。",
+        "organizer": "水俣市芦北郡医師会",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034875/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
+    "https://www.city.minamata.lg.jp/kiji0034877/index.html": {
+      "is_event": true,
+      "checked_at": "2026-09-26T09:28:14.079649+09:00",
+      "event": {
+        "id": "42ee5c17b93d",
+        "title": "～県南の うまい！ が大集合！～「湯の児マルシェ」開催します！",
+        "start_date": "2026-10-03",
+        "end_date": "2026-10-03",
+        "time_text": "11:00〜16:00",
+        "venue": "水俣市湯の児温泉 湯の児護岸エリア",
+        "summary": "県南地域の美味しいグルメが集結するマルシェ。クイズラリーやフライングディスク体験会、ステージイベントなども行われます。先着200名へのプレゼント特典あり。",
+        "organizer": "（一社）みなまた観光物産協会",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034877/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
     "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:50:13.507135+09:00",
