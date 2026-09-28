@@ -1,7 +1,66 @@
 {
-  "last_updated": "2026-09-26T09:28:09.197715+09:00",
+  "last_updated": "2026-09-29T01:41:14.453523+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "685045b39a9d",
+      "title": "【害虫情報】チュウゴクアミガサハゴロモが発生しています",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "環境"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内において、外来種である「チュウゴクアミガサハゴロモ」の発生が確認されています。農作物や庭木への被害が懸念されるため、発見した際の対応や防除方法について確認してください。",
+      "target": "市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034881/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-28",
+      "collected_at": "2026-09-29T01:37:19.807070+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a76834d0c4e1",
+      "title": "令和８年度火のまつりを開催します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年度の「火のまつり」が開催されます。詳細な日時や場所については、市の公式サイトをご確認ください。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034844/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-28",
+      "collected_at": "2026-09-29T01:37:26.348707+09:00",
+      "status": "active"
+    },
+    {
+      "id": "e01e8371b2fe",
+      "title": "労災保険年金・特別遺族年金の定期報告書　提出期限延長のお知らせ",
+      "audience_tags": [
+        "高齢者",
+        "障がいのある方"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "労災保険年金および特別遺族年金の受給者に必要な定期報告書の提出期限が延長されました。対象となる方は、期限内に手続きを行ってください。",
+      "target": "労災保険年金・特別遺族年金の受給者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034879/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-28",
+      "collected_at": "2026-09-29T01:39:50.248229+09:00",
+      "status": "active"
+    },
     {
       "id": "42ee5c17b93d",
       "title": "～県南の うまい！ が大集合！～「湯の児マルシェ」開催します！",

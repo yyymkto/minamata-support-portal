@@ -193,6 +193,23 @@
         "origin": "auto"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034844/index.html": {
+      "is_event": true,
+      "checked_at": "2026-09-29T01:41:23.636104+09:00",
+      "event": {
+        "id": "a76834d0c4e1",
+        "title": "令和８年度火のまつりを開催します",
+        "start_date": "2026-10-31",
+        "end_date": "2026-10-31",
+        "time_text": "17:30〜19:30",
+        "venue": "水俣湾埋立地（エコパーク水俣／親水護岸）",
+        "summary": "水俣病で犠牲となったすべての生命への祈りと地域再生の願いを炎に託す催し。ハイヤ踊りや太鼓の奉納演奏、合唱、公演などが行われます。雨天時は水俣病情報センターで開催。",
+        "organizer": "火のまつり実行委員会",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034844/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034849/index.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:55:24.116510+09:00",
