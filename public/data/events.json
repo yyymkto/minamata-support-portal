@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-26T09:28:51.701362+09:00",
+  "last_updated": "2026-09-28T09:26:54.841586+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -12,19 +12,6 @@
       "summary": "お店の人がプロならではのコツや知識を教える少人数制のミニ講座。期間中、市内各店舗にて様々なテーマの講座が開催されます。参加には各店舗への事前申し込みが必要です。",
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "id": "66cdc3712d61",
-      "title": "令和８年度みなまたニュースポーツＤＡＹ（※名称変更しました）を開催します！！",
-      "start_date": "2026-09-27",
-      "end_date": "2026-09-27",
-      "time_text": "09:00〜",
-      "venue": "水俣市立総合体育館 大アリーナ",
-      "summary": "「水俣市民室内ペタンク大会」をリニューアルしたスポーツイベント。ペタンクと公式輪投げの2種目を3名1組のチーム戦で行う。市内在住・勤務者が対象で、事前申込制。",
-      "organizer": "水俣市",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034795/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
