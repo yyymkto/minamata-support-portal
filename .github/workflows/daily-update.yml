@@ -50,18 +50,22 @@ jobs:
 
       # イベントタブ用（設計書 docs/agent-notes/design-specs/2026-09-21_events-tab.md）。
       # 生活情報の収集が失敗しても、既存の life_info.json を使ってイベント一覧は更新する。
-      # v1ではイベント側の失敗でIssueは起票しない（翌日また自動で再試行される）。
+      # スクリプト自体の失敗ではIssueを起票しない（翌日また自動で再試行される）。
+      # スプレッドシート（手動登録・投稿フォーム）を読み込めなかったときだけ、sheet_error=true が出力され、
+      # 下のステップでIssueを起票する（設計書 docs/agent-notes/design-specs/2026-09-28_event-submission-form.md）。
       - name: イベント情報を更新
+        id: run-events
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           EVENTS_SHEET_CSV_URL: ${{ vars.EVENTS_SHEET_CSV_URL }}
+          EVENTS_FORM_CSV_URL: ${{ vars.EVENTS_FORM_CSV_URL }}
         run: python scripts/update_events.py
 
       - name: 変更を検出
         id: git-check
         run: |
-          if [ -z "$(git status --porcelain -- public/data/life_info.json public/data/_checked_urls.json public/data/events.json public/data/_events_auto.json public/data/_events_manual.json)" ]; then
+          if [ -z "$(git status --porcelain -- public/data/life_info.json public/data/_checked_urls.json public/data/events.json public/data/_events_auto.json public/data/_events_manual.json public/data/_events_form.json)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -75,6 +79,7 @@ jobs:
           git add public/data/life_info.json public/data/_checked_urls.json public/data/events.json public/data/_events_auto.json
           # _events_manual.json はスプレッドシートのURLが未設定の間は作られないため、存在するときだけ追加する
           if [ -f public/data/_events_manual.json ]; then git add public/data/_events_manual.json; fi
+          if [ -f public/data/_events_form.json ]; then git add public/data/_events_form.json; fi
           git commit -m "chore: 生活情報を自動更新 ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
 
           # このジョブは実行に十数分かかるため、その間に他のpush（手動実行や
@@ -90,6 +95,18 @@ jobs:
           done
           echo "::error::5回リトライしてもpushに失敗しました。"
           exit 1
+
+      # デプロイを止めないよう、ワークフローは失敗にしない（前回読み込めた内容で表示を続ける）
+      - name: イベントシートの読み込み失敗をIssueとして起票（既存Issueがあれば更新）
+        if: steps.run-events.outputs.sheet_error == 'true'
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHEET_ERROR_DETAIL: ${{ steps.run-events.outputs.sheet_error_detail }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          filename: .github/workflow-templates/events-sheet-failure-issue.md
+          update_existing: true
 
       - name: Issueテンプレート用の情報を準備
         if: steps.run-update.outcome == 'failure'

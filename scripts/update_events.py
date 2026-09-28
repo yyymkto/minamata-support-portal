@@ -12,9 +12,15 @@
 2. 手動登録: Googleスプレッドシート（ウェブに公開したCSV）から読み込む。
    最後に読み込めた内容は public/data/_events_manual.json に残し、
    CSVを取得できなかった日はそれを使う（一時的な失敗で手動登録分が消えないように）。
-3. 1と2を統合し、終了済みのイベントを除いて events.json に書き出す。
-   スプレッドシートの行の「リンク」が自動抽出イベントのURLと一致する場合は、
-   その行で自動抽出分を上書きする（「非表示」列に何か書いてあれば掲載しない）。
+3. 投稿フォーム: 主催者がGoogleフォームで申し込み、吉野さんが承認した分を、
+   スプレッドシートの「掲載用」タブ（ウェブに公開したCSV）から読み込む
+   （設計書: docs/agent-notes/design-specs/2026-09-28_event-submission-form.md）。
+   最後に読み込めた内容は public/data/_events_form.json に残す。
+4. 1〜3を統合し、終了済みのイベントを除いて events.json に書き出す。
+   優先順位は 自動抽出 < 投稿フォーム < 手動登録。リンクが同じなら優先度の高い方で置き換え、
+   手動登録の「非表示」列に何か書いてある行のリンクは、どの経路のイベントでも掲載しない。
+5. シートを読み込めなかったときは、GitHub Actions の出力 sheet_error=true を書き出す
+   （ワークフローがIssueを起票する）。終了コードは0のまま。
 
 update_data.py の後に実行する想定（daily-update.yml）。
 life_info.json 自体は書き換えない。
@@ -22,6 +28,8 @@ life_info.json 自体は書き換えない。
 環境変数:
     GEMINI_API_KEY          ... Google AI Studio の Gemini API キー（必須）
     EVENTS_SHEET_CSV_URL    ... 手動登録用スプレッドシートのCSV公開URL（未設定なら手動登録分なし）
+    EVENTS_FORM_CSV_URL     ... 投稿フォームの「掲載用」タブのCSV公開URL（未設定なら投稿分なし）
+    GITHUB_OUTPUT           ... GitHub Actions が設定する。シートの読み込み失敗を書き出す先
     EVENTS_MAX_GEMINI_CALLS ... 1回の実行でGeminiを呼ぶ上限件数（デフォルト40）
 
 実行方法:
@@ -60,8 +68,10 @@ LIFE_INFO_PATH = ROOT_DIR / "public" / "data" / "life_info.json"
 EVENTS_PATH = ROOT_DIR / "public" / "data" / "events.json"
 AUTO_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_auto.json"
 MANUAL_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_manual.json"
+FORM_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_form.json"
 
 EVENTS_SHEET_CSV_URL = os.environ.get("EVENTS_SHEET_CSV_URL", "").strip()
+EVENTS_FORM_CSV_URL = os.environ.get("EVENTS_FORM_CSV_URL", "").strip()
 
 EVENT_TOPIC_TAG = "イベント"
 MAX_GEMINI_CALLS = int(os.environ.get("EVENTS_MAX_GEMINI_CALLS", "40"))
@@ -341,6 +351,10 @@ def dedupe_events(events: list[dict]) -> list[dict]:
 # 「2026年10月3日」などの文字列でCSVに出力されるため、いずれも受け付ける。
 SHEET_DATE_PATTERN = re.compile(r"^(\d{4})\s*[/\-.年]\s*(\d{1,2})\s*[/\-.月]\s*(\d{1,2})\s*日?")
 REQUIRED_SHEET_COLUMNS = ("イベント名", "開始日")
+# スプレッドシートの数式エラー。投稿フォームの「掲載用」タブは数式で作るため、フォームの質問タイトルや
+# 「承認」の見出しが変わると #N/A 等になる。1行の読み取りエラーとして流すとフォーム分が黙って
+# 全部消えるので、シートごと読み込み失敗として扱う（2026-09-28、設計書 event-submission-form）。
+SHEET_ERROR_VALUE_PATTERN = re.compile(r"^#(N/A|REF!|VALUE!|NAME\?|ERROR!|DIV/0!|NUM!|NULL!)")
 
 
 def parse_sheet_date(value: str) -> Optional[str]:
@@ -375,10 +389,11 @@ def default_source_label(link: Optional[str]) -> str:
     return "詳細"
 
 
-def parse_sheet_csv(text: str) -> Optional[dict]:
+def parse_sheet_csv(text: str, origin: str = "manual", id_prefix: str = "m") -> Optional[dict]:
     """CSV本文を {"events": [...], "hidden_urls": [...], "warnings": [...]} に変換する。
 
-    見出し行に必須列が無い場合（シートが公開されておらずログイン画面のHTMLが返ってきた等）は None。
+    見出し行に必須列が無い場合（シートが公開されておらずログイン画面のHTMLが返ってきた等）と、
+    数式エラーのセルがある場合は None。
     """
     reader = csv.DictReader(io.StringIO(text))
     headers = [(h or "").strip() for h in (reader.fieldnames or [])]
@@ -395,6 +410,10 @@ def parse_sheet_csv(text: str) -> Optional[dict]:
         row = {(k or "").strip(): (v or "").strip() for k, v in raw.items() if k is not None}
         if not any(row.values()):
             continue
+        error_cells = [f"{k}={v}" for k, v in row.items() if SHEET_ERROR_VALUE_PATTERN.match(v)]
+        if error_cells:
+            log.error("スプレッドシートの%d行目に数式エラーがあります（%s）。", row_no, ", ".join(error_cells))
+            return None
         title = row.get("イベント名", "")
         link = clean_link(row.get("リンク", ""))
 
@@ -422,7 +441,7 @@ def parse_sheet_csv(text: str) -> Optional[dict]:
 
         digest = hashlib.sha1(f"{title}|{start_date}|{link or ''}".encode("utf-8")).hexdigest()[:10]
         events.append({
-            "id": f"m-{digest}",
+            "id": f"{id_prefix}-{digest}",
             "title": title,
             "start_date": start_date,
             "end_date": end_date,
@@ -432,61 +451,95 @@ def parse_sheet_csv(text: str) -> Optional[dict]:
             "organizer": row.get("主催") or None,
             "source_url": link,
             "source_label": row.get("情報元") or None,  # 空欄の既定値は統合時に決める
-            "origin": "manual",
+            "origin": origin,
         })
 
     return {"events": events, "hidden_urls": hidden_urls, "warnings": warnings}
 
 
-def load_manual() -> dict:
-    """手動登録分を読み込む。取得できなかった場合は前回読み込めた内容を使う。"""
+def load_sheet(url: str, cache_path: Path, name: str, origin: str, id_prefix: str,
+               failures: list[str]) -> dict:
+    """公開CSVのシートを読み込む。取得できなかった場合は前回読み込めた内容を使い、failures に理由を足す。
+
+    手動登録用のシート1と、投稿フォームの「掲載用」タブの両方に使う。
+    """
     empty = {"events": [], "hidden_urls": [], "warnings": []}
-    if not EVENTS_SHEET_CSV_URL:
-        log.info("EVENTS_SHEET_CSV_URL が未設定のため、手動登録分はありません。")
+    if not url:
+        log.info("%sのURLが未設定のため、この分のイベントはありません。", name)
         return empty
 
-    previous = load_json(MANUAL_CACHE_PATH, empty)
-    resp = http_get(EVENTS_SHEET_CSV_URL)
+    previous = load_json(cache_path, empty)
+    resp = http_get(url)
     parsed = None
-    if resp is not None:
+    if resp is None:
+        failures.append(f"{name}: CSVを取得できませんでした")
+    else:
         # GoogleのCSVはUTF-8。BOMが付いていても見出し名がずれないよう utf-8-sig で読む
-        parsed = parse_sheet_csv(resp.content.decode("utf-8-sig", errors="replace"))
+        parsed = parse_sheet_csv(resp.content.decode("utf-8-sig", errors="replace"), origin, id_prefix)
+        if parsed is None:
+            failures.append(f"{name}: 見出し行に「イベント名」「開始日」が無いか、#N/A などのエラーが入ったセルがあります")
     if parsed is None:
-        log.warning("スプレッドシートを読み込めなかったため、前回読み込めた手動登録分（%d件）を使います。",
-                    len(previous.get("events", [])))
+        log.warning("%sを読み込めなかったため、前回読み込めた内容（%d件）を使います。",
+                    name, len(previous.get("events", [])))
         return previous
 
-    log.info("スプレッドシートから読み込み: 掲載 %d 件 / 非表示指定 %d 件 / 読めなかった行 %d 件",
-             len(parsed["events"]), len(parsed["hidden_urls"]), len(parsed["warnings"]))
-    write_json(MANUAL_CACHE_PATH, {"fetched_at": dt.datetime.now(tz=JST).isoformat(), **parsed})
+    log.info("%sから読み込み: 掲載 %d 件 / 非表示指定 %d 件 / 読めなかった行 %d 件",
+             name, len(parsed["events"]), len(parsed["hidden_urls"]), len(parsed["warnings"]))
+    write_json(cache_path, {"fetched_at": dt.datetime.now(tz=JST).isoformat(), **parsed})
     return parsed
+
+
+def report_sheet_failures(failures: list[str]) -> None:
+    """シートの読み込み失敗を GitHub Actions のステップ出力に書き出す（ワークフローがIssueを起票する）。"""
+    if not failures:
+        return
+    for f in failures:
+        log.warning("シートの読み込み失敗: %s", f)
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if not output_path:
+        return
+    with open(output_path, "a", encoding="utf-8") as f:
+        f.write("sheet_error=true\n")
+        f.write(f"sheet_error_detail={' / '.join(failures)}\n")
 
 
 # --------------------------------------------------------------------------
 # 統合・出力
 # --------------------------------------------------------------------------
-def merge_manual(auto_events: list[dict], manual: dict) -> list[dict]:
-    """自動抽出分にスプレッドシートの上書き・非表示を適用し、手動登録分を足す。"""
-    hidden = set(manual.get("hidden_urls", []))
-    auto_by_url = {e["source_url"]: e for e in auto_events}
+def _fill_source_label(event: dict, base_by_url: dict[str, dict]) -> dict:
+    """情報元が空欄の行に表示名を決める。
+    置き換える先のイベントがあれば、情報元の表示は元のまま（例: みなまた観光物産協会）にする。"""
+    event = dict(event)
+    if not event.get("source_label"):
+        url = event.get("source_url")
+        overridden = base_by_url.get(url) if url else None
+        event["source_label"] = overridden["source_label"] if overridden else default_source_label(url)
+    return event
 
-    manual_events = []
-    for m in manual.get("events", []):
-        m = dict(m)
-        if m.get("source_url") in hidden:
-            continue
-        if not m.get("source_label"):
-            # 自動抽出分の上書き行なら、情報元の表示は元のまま（例: みなまた観光物産協会）にする
-            overridden = auto_by_url.get(m.get("source_url"))
-            m["source_label"] = overridden["source_label"] if overridden else default_source_label(m.get("source_url"))
-        manual_events.append(m)
+
+def merge_form(auto_events: list[dict], form: dict) -> list[dict]:
+    """自動抽出分に投稿フォーム分を足す。リンクが同じ自動抽出分は、主催者の情報で置き換える。"""
+    auto_by_url = {e["source_url"]: e for e in auto_events if e.get("source_url")}
+    form_events = [_fill_source_label(f, auto_by_url) for f in form.get("events", [])]
+    replaced = {f["source_url"] for f in form_events if f.get("source_url")}
+    return [e for e in auto_events if e["source_url"] not in replaced] + form_events
+
+
+def merge_manual(base_events: list[dict], manual: dict) -> list[dict]:
+    """自動抽出分・投稿フォーム分にスプレッドシート（シート1）の上書き・非表示を適用し、手動登録分を足す。"""
+    hidden = set(manual.get("hidden_urls", []))
+    base_by_url = {e["source_url"]: e for e in base_events if e.get("source_url")}
+
+    manual_events = [_fill_source_label(m, base_by_url) for m in manual.get("events", [])
+                     if m.get("source_url") not in hidden]
 
     replaced = hidden | {m["source_url"] for m in manual_events if m.get("source_url")}
-    return [e for e in auto_events if e["source_url"] not in replaced] + manual_events
+    return [e for e in base_events if not e.get("source_url") or e["source_url"] not in replaced] + manual_events
 
 
-def build_events(cache: dict[str, dict], manual: dict, today: dt.date) -> list[dict]:
+def build_events(cache: dict[str, dict], form: dict, manual: dict, today: dt.date) -> list[dict]:
     events = dedupe_events([e["event"] for e in cache.values() if e.get("event")])
+    events = merge_form(events, form)
     events = merge_manual(events, manual)
     today_iso = today.isoformat()
     events = [e for e in events if e["end_date"] >= today_iso]
@@ -516,8 +569,13 @@ def main() -> int:
     today = dt.datetime.now(tz=JST).date()
     life_items = load_json(LIFE_INFO_PATH, {"items": []}).get("items", [])
     cache = update_auto_cache(life_items, today)
-    manual = load_manual()
-    save_events(build_events(cache, manual, today))
+    failures: list[str] = []
+    manual = load_sheet(EVENTS_SHEET_CSV_URL, MANUAL_CACHE_PATH, "手動登録用シート（シート1）",
+                        "manual", "m", failures)
+    form = load_sheet(EVENTS_FORM_CSV_URL, FORM_CACHE_PATH, "投稿フォームの掲載用タブ",
+                      "form", "f", failures)
+    save_events(build_events(cache, form, manual, today))
+    report_sheet_failures(failures)
     log.info("=== 完了 ===")
     return 0
 
