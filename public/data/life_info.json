@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29T01:44:53.587949+09:00",
+  "last_updated": "2026-09-29T10:40:26.358343+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -59,6 +59,47 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-09-28",
       "collected_at": "2026-09-29T01:39:50.248229+09:00",
+      "status": "active"
+    },
+    {
+      "id": "494a0d147dc0",
+      "title": "地域日本語教室（みなもんくらぶ）2026～",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "教育・生涯学習",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市で活動する地域日本語教室「みなもんくらぶ」の2026年度以降の案内です。日本語学習を希望する方や、学習支援に関心のある方は詳細を確認してください。",
+      "target": "日本語学習を希望する外国人住民および学習支援に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034609/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-28",
+      "collected_at": "2026-09-29T10:40:09.914559+09:00",
+      "status": "active"
+    },
+    {
+      "id": "bd68c9b01b22",
+      "title": "水俣環境アカデミア　プログラミングセミナー「ワクワク!!プログラミングクエスト」（10月17日）を開催します！",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "教育・生涯学習",
+        "イベント"
+      ],
+      "organization": "水俣環境アカデミア",
+      "summary": "10月17日に水俣環境アカデミアにて、プログラミングセミナー「ワクワク!!プログラミングクエスト」が開催されます。プログラミングに興味のある児童・生徒を対象とした体験型のイベントです。",
+      "target": "プログラミングに関心のある児童・生徒",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034842/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-28",
+      "collected_at": "2026-09-29T10:40:20.378170+09:00",
       "status": "active"
     },
     {

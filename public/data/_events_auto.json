@@ -193,6 +193,23 @@
         "origin": "auto"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034842/index.html": {
+      "is_event": true,
+      "checked_at": "2026-09-29T10:40:35.613260+09:00",
+      "event": {
+        "id": "bd68c9b01b22",
+        "title": "水俣環境アカデミア　プログラミングセミナー「ワクワク!!プログラミングクエスト」（10月17日）を開催します！",
+        "start_date": "2026-10-17",
+        "end_date": "2026-10-17",
+        "time_text": "午前の部：10:00〜11:30、午後の部：14:00〜15:30",
+        "venue": "水俣環境アカデミア（水俣市南福寺６番１号）",
+        "summary": "LEGO Education SPIKE PRIMEを使用し、ロボットの組み立てやプログラミングを体験する小中学生向けのセミナー。午前はロボットカー、午後は金庫のプログラムに挑戦する。",
+        "organizer": "水俣環境アカデミア",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034842/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034844/index.html": {
       "is_event": true,
       "checked_at": "2026-09-29T01:41:23.636104+09:00",

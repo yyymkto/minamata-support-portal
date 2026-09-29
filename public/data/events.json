@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29T01:41:54.360052+09:00",
+  "last_updated": "2026-09-29T10:41:03.480924+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -129,6 +129,19 @@
       "summary": "認知症をテーマにした劇団「南の星座」による演劇と、地域での未来を考えるトークショー。笑いと感動を通じて認知症への理解を深める。",
       "organizer": "水俣市芦北郡医師会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034875/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "id": "bd68c9b01b22",
+      "title": "水俣環境アカデミア　プログラミングセミナー「ワクワク!!プログラミングクエスト」（10月17日）を開催します！",
+      "start_date": "2026-10-17",
+      "end_date": "2026-10-17",
+      "time_text": "午前の部：10:00〜11:30、午後の部：14:00〜15:30",
+      "venue": "水俣環境アカデミア（水俣市南福寺６番１号）",
+      "summary": "LEGO Education SPIKE PRIMEを使用し、ロボットの組み立てやプログラミングを体験する小中学生向けのセミナー。午前はロボットカー、午後は金庫のプログラムに挑戦する。",
+      "organizer": "水俣環境アカデミア",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034842/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
