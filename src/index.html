@@ -204,6 +204,7 @@
           <span class="shrink-0 text-amber-700">⚠</span>
           <p class="leading-relaxed">日時・内容は変わることがあります。お出かけ前に元のページでご確認ください。</p>
         </div>
+        <p id="event-submission-guide" class="hidden mt-2 text-xs text-inkSoft leading-relaxed"></p>
       </div>
     </header>
 
@@ -341,6 +342,7 @@
 
     // events ui（イベントタブ）
     eventsContent: document.getElementById('events-content'),
+    eventSubmissionGuide: document.getElementById('event-submission-guide'),
 
     // young adult ui（一人暮らし・若者支援タブ）
     yaJumpNav: document.getElementById('ya-jump-nav'),
@@ -376,6 +378,9 @@
 
   // ===== タブ表示フラグ（設計書：イベントタブ新設に伴い若者タブを一時オフ） =====
   const ENABLE_YOUNG_TAB = false;
+
+  // ===== イベント掲載申し込みフォームURL（設計書：2026-09-28_event-submission-form.md） =====
+  const EVENT_FORM_URL = 'https://forms.gle/9pqaq3Dnd1by9wcb7';
 
   // ===== Tab Logic =====
   const TABS = {
@@ -1110,7 +1115,21 @@
     `;
   }
 
+  function renderEventSubmissionGuide() {
+    if (!el.eventSubmissionGuide) return;
+    if (!EVENT_FORM_URL) {
+      el.eventSubmissionGuide.innerHTML = '';
+      el.eventSubmissionGuide.classList.add('hidden');
+      return;
+    }
+    el.eventSubmissionGuide.innerHTML = `
+      水俣市内でイベントを企画している方へ：<a href="${safeUrl(EVENT_FORM_URL)}" target="_blank" rel="noopener noreferrer" class="focus-ring text-bay font-medium hover:underline inline-flex items-center gap-0.5"><span>掲載を申し込む ↗</span></a>
+    `;
+    el.eventSubmissionGuide.classList.remove('hidden');
+  }
+
   async function initEvents() {
+    renderEventSubmissionGuide();
     try {
       const res = await fetch(EVENTS_URL, { cache: 'no-store' });
       if (!res.ok) throw new Error('events fetch failed');

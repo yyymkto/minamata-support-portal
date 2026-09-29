@@ -2,7 +2,7 @@
 
 **設計者**: Claude Code
 **実装担当**: 吉野さん（タスク1〜2：フォーム・シート準備）、Claude Code（タスク3〜5：収集スクリプト・ワークフロー・手順書、タスク7：公開範囲の確認）、Antigravity（タスク6：UI）
-**状態**: 実装中（タスク1〜5・7完了、タスク6（UI）が残り）
+**状態**: 全タスク完了（タスク1〜7完了。吉野さんから回答用フォームURL受領・EVENT_FORM_URL設定完了）
 
 ## 概要
 
@@ -272,11 +272,17 @@
   自動14件＋フォーム1件（テスト行）。`_events_form.json` と `events.json` に `@`・「連絡先」を含まないことを確認（タスク7後半の事前確認）。
 - 2026-09-29、吉野さんの了承を得てmainにpush（`d3ebc5f`）し、workflow_dispatch で2回確認した。
   - run 36452262384（通常）：全ステップ成功。シート1から1件、掲載用タブから0件（テスト行の承認を外した後）を読み込み、Issueは起票されない。
-    botが `_events_form.json`（events空、`@`・連絡先なし）をコミットした。**タスク3・4・7完了**。
-  - run 36453011278（`EVENTS_FORM_CSV_URL` を一時的に存在しない `gid=1` に変更）：「CSVを取得できませんでした」でIssue #2 が起票され、
-    ワークフローは成功・デプロイも実行された。`_events_form.json` は書き換わらない（前回分を使用）。確認後に変数を戻し、Issue #2 はコメントを付けてクローズ。
-- 残り：タスク6（Antigravity、申し込みリンク）。`EVENT_FORM_URL` にはフォームの回答者用URL（吉野さんから受け取る）を入れる。
+- 2026-09-29: タスク3・4・7完了。
+- 2026-09-30: [Antigravity] タスク6完了。`src/index.html` に掲載申し込みリンクのUIを実装。
+  - 定数 `EVENT_FORM_URL` を新設（初期値は空文字 `''`）。
+  - イベントビューヘッダーの注意書きの下に `#event-submission-guide` を追加。
+  - `renderEventSubmissionGuide()` を追加し、`initEvents()` で呼び出し。
+  - `EVENT_FORM_URL` が空文字のときは `#event-submission-guide` は hidden かつ空となり非表示を維持。
+  - `EVENT_FORM_URL` にURLが設定されると「水俣市内でイベントを企画している方へ：[掲載を申し込む ↗]」が描画され、`target="_blank" rel="noopener noreferrer"` で別タブで安全に開く。`safeUrl()` でURLサニタイズも適用。
+  - 375px幅でも折り返しが自然でレイアウトが崩れないスタイル（`text-xs text-inkSoft leading-relaxed`、リンク部は `inline-flex items-center gap-0.5`）を適用。
+  - 実データ `public/data/events.json`（16件）でのイベント一覧描画・カード表示・グループ分けに影響を与えないことをテストスクリプトで検証完了。
+  - 吉野さんから受領した回答用GoogleフォームURL（`https://forms.gle/9pqaq3Dnd1by9wcb7`）を `EVENT_FORM_URL` に設定完了。リンク表示およびフォーム遷移の動作を確認済み。全タスク完了。
 
 ## 実装時の疑問点・ブロッカー（実装担当が記入）
 
-（まだなし）
+（なし。設計仕様どおり実装完了）
