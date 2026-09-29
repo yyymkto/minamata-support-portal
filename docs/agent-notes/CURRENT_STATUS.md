@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-09-30 by Antigravity）
+# 現在の状態（最終更新：2026-09-30 by Claude Code）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -88,7 +88,7 @@ minamata-support-portal
 | 子育て支援制度タブの改装（制度の追加＋情報階層の整理） | Claude Code（設計・データ）→Antigravity（UI） | 進行中。設計書は`design-specs/2026-09-16_child-support-page-renovation.md`。UI（タスク4a, 4b, 5〜9、Antigravity）とデータ（タスク0b・1〜4、Claude Code）はすべて完了し、2026-09-17に吉野さんの依頼で push 済み（GitHub Pages へ自動デプロイ）。制度数39件。2026-09-17に吉野さんが本番サイトで表示を確認し「良い感じ」との評価。**完了** |
 | 制度カードの共有リンク（共有ボタン＋リンクを開いたときのタブ切り替え） | Claude Code（設計）→Antigravity（UI） | 実装・レビュー完了、2026-09-21に吉野さんの依頼で push 済み。残りは本番URLをLINEに送ってのプレビュー確認（吉野さん） |
 | イベントタブの新設（若者タブを一時オフにして置き換え） | Claude Code（設計・収集スクリプト）→吉野さん（スプレッドシート準備）→Antigravity（UI） | 設計書`design-specs/2026-09-21_events-tab.md`。Claude担当のタスク1〜3（自動抽出・手動読み込み・CI追加）完了。Antigravity担当のUI（タスク5: 若者タブ一時オフ、タスク6: イベントタブ追加、タスク7: 一覧描画・グループ分け、タスク8: 表示確認・テスト）の実装・検証完了。2026-09-22にClaude Codeがレビューし1点修正（「詳細で詳細」表示）、吉野さんの依頼でpush・本番反映済み。手動実行run 35635663082のログで「=== 完了 ===」を吉野さんが確認し、タスク3も完了。タスク4：吉野さんがスプレッドシートを作成・公開（見出し・読み込みをClaude Codeが確認済み）し、1行目のイベントを登録。2026-09-22に吉野さんがActions変数を登録し手動実行（run 35646112708）、bot が `events.json`・`_events_manual.json` をコミットし、本番に手動登録分（きちんと焼酎の会、Instagramリンクは追跡パラメータ除去済み）を含む17件が載ったことを確認。**完了** |
-| イベント投稿フォーム（主催者からの掲載申し込み・承認制） | 吉野さん（フォーム・シート準備）→Claude Code（収集スクリプト・ワークフロー・手順書・公開範囲の確認）→Antigravity（申し込みリンクのUI） | 全タスク完了（設計書 `design-specs/2026-09-28_event-submission-form.md`）。タスク1〜5・7（吉野さん・Claude Code）に続き、2026-09-30にAntigravityがタスク6（イベントタブに「掲載を申し込む」リンクのUI、`EVENT_FORM_URL`新設）を実装・検証完了。吉野さんから受領した回答用GoogleフォームURL（`https://forms.gle/9pqaq3Dnd1by9wcb7`）を `EVENT_FORM_URL` に設定し、リンク表示・フォーム遷移の動作を確認済み。**完了** |
+| イベント投稿フォーム（主催者からの掲載申し込み・承認制） | 吉野さん（フォーム・シート準備）→Claude Code（収集スクリプト・ワークフロー・手順書・公開範囲の確認）→Antigravity（申し込みリンクのUI） | 全タスク完了（設計書 `design-specs/2026-09-28_event-submission-form.md`）。タスク1〜5・7（吉野さん・Claude Code）に続き、2026-09-30にAntigravityがタスク6（イベントタブに「掲載を申し込む」リンクのUI、`EVENT_FORM_URL`新設）を実装・検証完了。吉野さんから受領した回答用GoogleフォームURL（`https://forms.gle/9pqaq3Dnd1by9wcb7`）を `EVENT_FORM_URL` に設定し、リンク表示・フォーム遷移の動作を確認済み。2026-09-30にClaude Codeがレビュー（修正なし、フォームがログインなしで開けることも確認）し、吉野さんの依頼でpush・本番反映済み（run 36591716154）。フォームの受付開始（URLの周知）が可能な状態。**完了** |
 
 ## 未決定の論点（次に議論すべきこと）
 
@@ -164,6 +164,8 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-09-30: [Claude Code] イベント投稿フォームのタスク6（Antigravity実装）をレビュー。設計書の画面仕様どおりで修正なし。
+  フォームURLがログインなしで開けることを確認。吉野さんの依頼でpushし、本番（run 36591716154）に申し込みリンクが載ったことを確認。
 - 2026-09-30: [Antigravity] イベント投稿フォーム設計書 `design-specs/2026-09-28_event-submission-form.md` のタスク6（申し込みリンクのUI）を `src/index.html` に実装完了。
   (1) 定数 `EVENT_FORM_URL` を新設。
   (2) イベントビューヘッダー（注意書きの下）に `#event-submission-guide` を追加し、`renderEventSubmissionGuide()` で「水俣市内でイベントを企画している方へ：[掲載を申し込む ↗]」（別タブで安全に開く設定、safeUrlによるURLサニタイズ付き）を描画。
