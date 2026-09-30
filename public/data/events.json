@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29T10:41:03.480924+09:00",
+  "last_updated": "2026-09-30T10:10:59.502044+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -25,19 +25,6 @@
       "summary": "水俣の夜の街を飲み歩きや食事で楽しむイベント。チケット代の一部は熊本地震被災地支援に充てられます。参加店舗や水俣商工会議所で販売されるチケットを購入して参加します。",
       "organizer": null,
       "source_url": "https://www.go-minamata.jp/news-events/r8_minamata_nominoichi-1026.html",
-      "source_label": "みなまた観光物産協会",
-      "origin": "auto"
-    },
-    {
-      "id": "3fbe6be15817",
-      "title": "市役所マルシェ　9月開催のお知らせ",
-      "start_date": "2026-09-29",
-      "end_date": "2026-09-29",
-      "time_text": "10:00〜13:00",
-      "venue": "市役所1階",
-      "summary": "水俣の季節を感じられる毎月恒例のマルシェ。弁当、惣菜、野菜、パン、ハンドメイド作品などが市内外から集まります。",
-      "organizer": "市役所マルシェ実行委員会",
-      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m9.html",
       "source_label": "みなまた観光物産協会",
       "origin": "auto"
     },
