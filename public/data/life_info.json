@@ -1,7 +1,204 @@
 {
-  "last_updated": "2026-09-29T10:40:26.358343+09:00",
+  "last_updated": "2026-10-01T10:11:19.500148+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "d997a0b3d9df",
+      "title": "令和９年度水俣市奨学金（貸付型）",
+      "audience_tags": [
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "教育・生涯学習",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和9年度の水俣市奨学金（貸付型）の募集案内です。経済的な理由により修学が困難な学生を対象とした貸付制度の詳細を確認できます。",
+      "target": "経済的な理由により修学が困難な学生",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji003130/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-01",
+      "collected_at": "2026-10-01T10:09:52.166719+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4f36c08c8fd0",
+      "title": "広報みなまた令和8年10月号",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "イベント",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の市政情報やイベント、暮らしに役立つお知らせが掲載された広報みなまた令和8年10月号です。市内の最新情報や各種手続き、相談窓口などの案内を確認できます。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034884/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-01",
+      "collected_at": "2026-10-01T10:09:59.428674+09:00",
+      "status": "active"
+    },
+    {
+      "id": "9605e1bbf065",
+      "title": "令和９年度松本眞一同朋奨学金（給付型）",
+      "audience_tags": [
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "返済不要の給付型奨学金である「松本眞一同朋奨学金」の令和9年度募集案内です。詳細な応募資格や募集要項については、市の公式サイトよりご確認ください。",
+      "target": "奨学金を希望する学生",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji003263/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-01",
+      "collected_at": "2026-10-01T10:10:06.733537+09:00",
+      "status": "active"
+    },
+    {
+      "id": "e20913c17ef6",
+      "title": "令和９年４月請求分（令和９年３月検針分）から上下水道料金を改定します。",
+      "audience_tags": [
+        "全世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "令和9年4月請求分（令和9年3月検針分）より、上下水道料金が改定されます。料金改定の詳細については市の公式サイトをご確認ください。",
+      "target": "水俣市の上下水道を利用している全住民および事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034870/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-01",
+      "collected_at": "2026-10-01T10:10:14.121273+09:00",
+      "status": "active"
+    },
+    {
+      "id": "b275710cfeda",
+      "title": "グローバル人材育成事業　令和７年度Stanford e-Minamata成績優秀者がスタンフォード大学での表彰式に出席しました",
+      "audience_tags": [
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市のグローバル人材育成事業「Stanford e-Minamata」において、成績優秀者がスタンフォード大学での表彰式に出席しました。本事業は、次世代を担うグローバル人材の育成を目的として実施されています。",
+      "target": "グローバル人材育成に関心のある学生",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034856/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-30",
+      "collected_at": "2026-10-01T10:10:21.593051+09:00",
+      "status": "active"
+    },
+    {
+      "id": "16ea9bc69b43",
+      "title": "『sunset YOGA』～海×夕日×ヨガ～",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "海と夕日を眺めながらヨガを楽しむイベント『sunset YOGA』が開催されます。心身のリフレッシュに最適な体験型イベントです。",
+      "target": "どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034866/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-30",
+      "collected_at": "2026-10-01T10:10:28.850804+09:00",
+      "status": "active"
+    },
+    {
+      "id": "acf9ee27b490",
+      "title": "水俣市立武道館の指定管理者募集のお知らせ",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "募集・相談",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市立武道館の運営を行う指定管理者を募集しています。応募を検討される事業者は、市公式サイトの募集要項を確認の上、所定の手続きを行ってください。",
+      "target": "指定管理者への応募を検討する法人または団体",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034880/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-30",
+      "collected_at": "2026-10-01T10:10:35.555646+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f19356fa5e85",
+      "title": "『sunset YOGA』～海×夕日×ヨガ～",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "健康・医療"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣の海と夕日を楽しみながら体験できるヨガイベント『sunset YOGA』が開催されます。心身のリフレッシュに最適な屋外ヨガプログラムです。",
+      "target": "ヨガに関心のある方、どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-09-30",
+      "collected_at": "2026-10-01T10:11:02.264976+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f79c892c27c6",
+      "title": "水俣市立武道館の指定管理者募集のお知らせ",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "募集・相談",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市立武道館の管理運営を行う指定管理者を募集しています。応募を検討される事業者は、募集要項等の詳細を市公式サイトで確認してください。",
+      "target": "水俣市立武道館の管理運営を希望する事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034880/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-09-30",
+      "collected_at": "2026-10-01T10:11:09.258853+09:00",
+      "status": "active"
+    },
+    {
+      "id": "fd1bb95a5bc2",
+      "title": "みなまたおさかなまつりを開催します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の特産品である魚介類を楽しめる「みなまたおさかなまつり」が開催されます。詳細な日時や会場については、市の公式サイトをご確認ください。",
+      "target": "水俣市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034838/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-29",
+      "collected_at": "2026-10-01T10:10:48.524463+09:00",
+      "status": "active"
+    },
     {
       "id": "685045b39a9d",
       "title": "【害虫情報】チュウゴクアミガサハゴロモが発生しています",
@@ -2129,6 +2326,25 @@
       "status": "active"
     },
     {
+      "id": "01774c93b500",
+      "title": "Information on Evacuation Shelters and Evacuation Site",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内の避難所および避難場所に関する情報です。災害時に備えて、居住地周辺の避難場所を事前に確認してください。",
+      "target": "水俣市民および滞在者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034747/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-08-01",
+      "collected_at": "2026-10-01T10:10:54.822923+09:00",
+      "status": "active"
+    },
+    {
       "id": "58bee297633f",
       "title": "ネーミングライツパートナーを募集します！！",
       "audience_tags": [
@@ -2929,6 +3145,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4e44e9d09fc5",
+      "title": "江口寿史氏デザイン水俣市観光新作ポスター完成！！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "漫画家・江口寿史氏がデザインした水俣市の新しい観光ポスターが完成しました。市内の観光スポットや施設などで掲示されます。",
+      "target": "水俣市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-information/2020-11-26-13-02.html",
+      "source_name": "みなまた観光物産協会 お知らせ",
+      "published_date": null,
+      "collected_at": "2026-10-01T10:11:14.996874+09:00",
       "status": "active"
     },
     {

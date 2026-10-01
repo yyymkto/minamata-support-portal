@@ -159,6 +159,23 @@
         "origin": "auto"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034838/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-01T10:11:47.997403+09:00",
+      "event": {
+        "id": "fd1bb95a5bc2",
+        "title": "みなまたおさかなまつりを開催します",
+        "start_date": "2026-10-24",
+        "end_date": "2026-10-24",
+        "time_text": "09:00〜12:00",
+        "venue": "道の駅みなまた",
+        "summary": "マダイのつかみどりやタッチングプールなど、海の生き物と触れ合えるイベント。限定60食の鯛の漬け丼販売も行われます。",
+        "organizer": "水俣市",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034838/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034840/index.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:48:25.638899+09:00",
@@ -266,6 +283,23 @@
         "origin": "auto"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034866/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-01T10:11:30.863330+09:00",
+      "event": {
+        "id": "16ea9bc69b43",
+        "title": "『sunset YOGA』～海×夕日×ヨガ～",
+        "start_date": "2026-10-10",
+        "end_date": "2026-10-10",
+        "time_text": "17:00〜18:00",
+        "venue": "エコパーク水俣 親水護岸",
+        "summary": "海に沈む夕日を眺めながら、波の音とともに心と体を整えるヨガ体験会。初心者も歓迎で、ヨガマットは主催者が用意します。18歳以上が対象で、事前申し込みが必要です。",
+        "organizer": "熊本県スポーツ振興事業団 企画推進課",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034866/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034875/index.html": {
       "is_event": true,
       "checked_at": "2026-09-26T09:28:24.601241+09:00",
@@ -299,6 +333,11 @@
         "source_label": "水俣市",
         "origin": "auto"
       }
+    },
+    "https://www.city.minamata.lg.jp/kiji0034884/index.html": {
+      "is_event": false,
+      "checked_at": "2026-10-01T10:11:21.974259+09:00",
+      "event": null
     },
     "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html": {
       "is_event": true,
@@ -407,6 +446,23 @@
         "origin": "auto"
       }
     },
+    "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-01T10:11:38.235174+09:00",
+      "event": {
+        "id": "f19356fa5e85",
+        "title": "『sunset YOGA』～海×夕日×ヨガ～",
+        "start_date": "2026-10-10",
+        "end_date": "2026-10-10",
+        "time_text": "17:00〜18:00",
+        "venue": "エコパーク水俣 親水護岸",
+        "summary": "海に沈む夕日を眺めながら心と体を整えるヨガ体験イベント。初心者も歓迎で、波の音を感じながらゆったりとした時間を過ごせます。ヨガマットは主催者側で用意されます。",
+        "organizer": "熊本県スポーツ振興事業団",
+        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
     "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html": {
       "is_event": false,
       "checked_at": "2026-09-21T23:52:01.487927+09:00",
@@ -506,6 +562,11 @@
         "source_label": "みなまた観光物産協会",
         "origin": "auto"
       }
+    },
+    "https://www.go-minamata.jp/news-information/2020-11-26-13-02.html": {
+      "is_event": false,
+      "checked_at": "2026-10-01T10:12:05.722031+09:00",
+      "event": null
     },
     "https://www.go-minamata.jp/news-information/d_stamp.html": {
       "is_event": false,

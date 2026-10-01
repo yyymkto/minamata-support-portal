@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-30T10:10:59.502044+09:00",
+  "last_updated": "2026-10-01T10:12:22.941981+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -13,19 +13,6 @@
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "id": "abebc2124012",
-      "title": "みなまた呑みの市を開催します！ !",
-      "start_date": "2026-09-29",
-      "end_date": "2026-09-30",
-      "time_text": "18:00〜",
-      "venue": "水俣市内参加店舗",
-      "summary": "水俣の夜の街を飲み歩きや食事で楽しむイベント。チケット代の一部は熊本地震被災地支援に充てられます。参加店舗や水俣商工会議所で販売されるチケットを購入して参加します。",
-      "organizer": null,
-      "source_url": "https://www.go-minamata.jp/news-events/r8_minamata_nominoichi-1026.html",
-      "source_label": "みなまた観光物産協会",
       "origin": "auto"
     },
     {
@@ -77,6 +64,19 @@
       "summary": "県南地域の美味しいグルメが集結するマルシェ。クイズラリーやフライングディスク体験会、ステージイベントなども行われます。先着200名へのプレゼント特典あり。",
       "organizer": "（一社）みなまた観光物産協会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034877/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "id": "16ea9bc69b43",
+      "title": "『sunset YOGA』～海×夕日×ヨガ～",
+      "start_date": "2026-10-10",
+      "end_date": "2026-10-10",
+      "time_text": "17:00〜18:00",
+      "venue": "エコパーク水俣 親水護岸",
+      "summary": "海に沈む夕日を眺めながら、波の音とともに心と体を整えるヨガ体験会。初心者も歓迎で、ヨガマットは主催者が用意します。18歳以上が対象で、事前申し込みが必要です。",
+      "organizer": "熊本県スポーツ振興事業団 企画推進課",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034866/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
@@ -168,6 +168,19 @@
       "summary": "認知症に関する講演と、認知症予防運動「コグニサイズ」の実演を行うフォーラム。人生100年時代を楽しく生きるための知識を学び、体験できる。会場前では脳トレブースも設置される。",
       "organizer": "水俣市",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034824/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "id": "fd1bb95a5bc2",
+      "title": "みなまたおさかなまつりを開催します",
+      "start_date": "2026-10-24",
+      "end_date": "2026-10-24",
+      "time_text": "09:00〜12:00",
+      "venue": "道の駅みなまた",
+      "summary": "マダイのつかみどりやタッチングプールなど、海の生き物と触れ合えるイベント。限定60食の鯛の漬け丼販売も行われます。",
+      "organizer": "水俣市",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034838/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
