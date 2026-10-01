@@ -142,11 +142,14 @@ jobs:
         with:
           ref: main
 
+      # public/ 全体をコピーする（data/ に加えて、ホーム画面に追加するための
+      # manifest.webmanifest と icons/ を公開する。設計書
+      # docs/agent-notes/design-specs/2026-10-01_add-to-home-screen.md）。
       - name: サイトを dist/ に組み立て
         run: |
-          mkdir -p dist/data
+          mkdir -p dist
           cp src/index.html dist/index.html
-          cp -r public/data/. dist/data/
+          cp -r public/. dist/
 
       - name: Pages 用アーティファクトをアップロード
         uses: actions/upload-pages-artifact@v3

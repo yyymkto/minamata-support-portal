@@ -1,0 +1,16 @@
+{
+  "name": "みなまた くらしナビ（非公式）",
+  "short_name": "くらしナビ",
+  "description": "水俣市公式サイトの新着情報を自動収集し、世代や立場ごとに整理する非公式ポータルです。",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F2F1EC",
+  "theme_color": "#1B4B5A",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
