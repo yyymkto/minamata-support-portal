@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-01T10:12:22.941981+09:00",
+  "last_updated": "2026-10-02T10:29:01.516431+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -194,6 +194,19 @@
       "summary": "水俣病で犠牲となったすべての生命への祈りと地域再生の願いを炎に託す催し。ハイヤ踊りや太鼓の奉納演奏、合唱、公演などが行われます。雨天時は水俣病情報センターで開催。",
       "organizer": "火のまつり実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034844/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "id": "2bc922f4c755",
+      "title": "第72回水俣市民文化祭を開催します",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-08",
+      "time_text": "9:00〜17:00（8日は16:00まで）",
+      "venue": "水俣市総合もやい直しセンター「もやい館」、水俣市文化会館",
+      "summary": "市民による美術展や写真展などの総合展示、芸能発表、合唱祭が行われる文化の祭典。もやい館での展示のほか、文化会館では芸能のつどいや合唱祭が開催される。",
+      "organizer": "第72回水俣市民文化祭実行委員会",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034770/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },

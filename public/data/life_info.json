@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-01T10:11:19.500148+09:00",
+  "last_updated": "2026-10-02T10:28:30.999089+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -178,6 +178,26 @@
       "source_name": "水俣市 スポーツ情報",
       "published_date": "2026-09-30",
       "collected_at": "2026-10-01T10:11:09.258853+09:00",
+      "status": "active"
+    },
+    {
+      "id": "2bc922f4c755",
+      "title": "第72回水俣市民文化祭を開催します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "第72回水俣市民文化祭が開催されます。市民による文化芸術活動の発表の場として、様々な展示や催しが行われます。",
+      "target": "水俣市民および文化芸術に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034770/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-09-30",
+      "collected_at": "2026-10-02T10:28:13.342544+09:00",
       "status": "active"
     },
     {
@@ -3145,6 +3165,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "3be20c147089",
+      "title": "防災情報（通常時）",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の防災に関する通常時の情報ページです。避難所情報や防災マップ、災害への備えなど、住民が日頃から確認しておくべき防災情報がまとめられています。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/classset006.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": null,
+      "collected_at": "2026-10-02T10:28:25.122027+09:00",
       "status": "active"
     },
     {
