@@ -1,7 +1,105 @@
 {
-  "last_updated": "2026-10-02T10:28:30.999089+09:00",
+  "last_updated": "2026-10-03T10:01:20.667758+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "781c18ba6135",
+      "title": "市内の事業所を紹介します！",
+      "audience_tags": [
+        "全世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市内の事業所を紹介するページです。市内の産業や企業を知るための情報が掲載されています。",
+      "target": "市内事業所に関心のある市民および事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034524/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-02",
+      "collected_at": "2026-10-03T10:00:46.847725+09:00",
+      "status": "active"
+    },
+    {
+      "id": "35c0c3217503",
+      "title": "地震と津波を想定した住民避難訓練",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "地震と津波の発生を想定した住民避難訓練が実施されます。災害時の避難経路や避難場所を確認し、万が一に備えましょう。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034883/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-02",
+      "collected_at": "2026-10-03T10:00:55.203595+09:00",
+      "status": "active"
+    },
+    {
+      "id": "2454ee382069",
+      "title": "中尾山コスモス園の開花情報・中尾山写真コンテストについて",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "中尾山コスモス園の開花状況が公開されています。また、園内で撮影した写真を対象とした中尾山写真コンテストも実施されています。",
+      "target": "中尾山コスモス園への来園者および写真コンテストへの応募者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034411/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-02",
+      "collected_at": "2026-10-03T10:01:01.773007+09:00",
+      "status": "active"
+    },
+    {
+      "id": "7823cfcc5ac9",
+      "title": "水俣芦北圏域基幹相談支援センター「キャンバス」がオープンします",
+      "audience_tags": [
+        "障がいのある方",
+        "全世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣芦北圏域における障がい者支援の拠点となる基幹相談支援センター「キャンバス」が開設されます。障がいのある方やその家族からの相談を受け付け、地域での生活をサポートします。",
+      "target": "障がいのある方、そのご家族、および関係者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034887/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-02",
+      "collected_at": "2026-10-03T10:01:08.886028+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c2ca90624f94",
+      "title": "地震と津波を想定した住民避難訓練",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "地震と津波の発生を想定した住民避難訓練が実施されます。災害時の避難行動を確認し、万が一に備えましょう。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034883/index.html",
+      "source_name": "水俣市 防災サイトのお知らせ",
+      "published_date": "2026-10-02",
+      "collected_at": "2026-10-03T10:01:15.306113+09:00",
+      "status": "active"
+    },
     {
       "id": "d997a0b3d9df",
       "title": "令和９年度水俣市奨学金（貸付型）",
