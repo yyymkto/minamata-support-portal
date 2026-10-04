@@ -2,8 +2,7 @@
 
 **設計者**: Claude Code
 **実装担当**: Claude Code（アイコン・マニフェスト・デプロイ設定）→ Antigravity（`src/index.html`）→ 吉野さん（実機確認）
-**状態**: 実装中。吉野さんが設計を了承（2026-10-01）。タスク1〜3は完了・本番反映済み。
-Antigravityがタスク4〜9に着手（2026-10-01に吉野さんが依頼）
+**状態**: 実装完了（タスク1〜9完了。吉野さんの実機確認待ち）
 
 ## 概要
 
@@ -444,8 +443,14 @@ Safariで設定した子育てタブの絞り込みは、ホーム画面から�
   吉野さんの了承で push（コミット `3e83c7a`、run 36879048051 成功）。本番で
   `manifest.webmanifest`（`application/manifest+json` で配信）とアイコン3枚が開けること、
   `data/life_info.json`・`events.json`・`child_support_base.json` とトップページが従来どおり開けることを確認した。
+- **タスク4〜9（2026-10-01、Antigravity）**: `src/index.html` にホーム画面追加・ブックマーク案内のUIと動作を実装完了。
+  - **タスク4（`<head>`タグ追加）**: `manifest.webmanifest`、`theme-color`（`#1B4B5A`）、192px PNGアイコン、180px apple-touch-icon、`apple-mobile-web-app-title` を追加。
+  - **タスク5（常設案内・ボタン）**: `#about` 直前に `#add-to-home` を追加し、`#about` 側の `mt-8` を削除。`beforeinstallprompt` 合図の受信処理をデータ読み込み待たずに先頭で登録。合図があればブラウザプロンプトを実行、合図が無ければ手順画面を開く。スタンドアロン表示時はセクションごと非表示。
+  - **タスク6（手順画面）**: モーダル表示処理を `showModal(html)` として共通化（既存 `openModal` の動作・見た目は完全に維持）。端末判定（iOS・Android・PC、LINE等アプリ内判定）を行い、該当OSの手順を先頭に、他OSは `<details>` に折りたたみ。LINE等アプリ内ブラウザ時は最上部に警告を表示。
+  - **タスク7（一行のお知らせ）**: フィードタブ上部（`#not-found-notice` 直前）に `#a2hs-notice` を新設。スマホかつ非スタンドアロンかつ未非表示時のみ表示。✕や［追加方法］タップ、追加完了時に `localStorage`（`minamata_a2hs_dismissed`）に記録して非表示化。`localStorage` が使えない環境でもエラーなく非表示。
+  - **タスク8（古い情報の更新）**: `init()` 時に `state.lastUpdated` を記録。`visibilitychange` で画面復帰時、30分以上経過または初期失敗時に `life_info.json` をバックグラウンド取得し、`last_updated` 変更時のみ `location.reload()`（モーダル表示中は更新見送り、圏外等失敗時は何もしない）。
+  - **タスク9（表示確認・テスト）**: Node.js による自動テストスイート（全10項目：各UA・合図・アプリ内・PC・スタンドアロン・`localStorage`例外・復帰時更新・モーダル・ハッシュルーティング）を実行し、全テスト合格を確認。ローカル `dist/` 組み立て検証も完了。
 
 ## 実装時の疑問点・ブロッカー（実装担当が記入）
 
-（設計書と食い違う点、判断に迷った点があればここに追記し、無断で仕様を変えずに報告する。
- 解決したら日付と結論を追記して残す）
+（なし。設計仕様どおり実装・検証完了）

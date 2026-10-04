@@ -11,6 +11,11 @@
 <meta property="og:description" content="水俣市公式サイトの新着情報を自動収集し、世代や立場ごとに整理する非公式ポータルです。" />
 <meta property="og:url" content="https://yyymkto.github.io/minamata-support-portal/" />
 <meta name="twitter:card" content="summary" />
+<link rel="manifest" href="./manifest.webmanifest" />
+<meta name="theme-color" content="#1B4B5A" />
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="くらしナビ" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,6 +147,7 @@
     </header>
 
     <main class="max-w-3xl mx-auto px-4 py-5">
+      <div id="a2hs-notice" class="hidden mb-3"></div>
       <div id="not-found-notice" class="hidden mb-3"></div>
       <p id="result-count" class="text-xs text-inkSoft mb-3 tabular"></p>
       <div id="list" class="flex flex-col gap-3"></div>
@@ -219,8 +225,22 @@
     </div>
   </div>
 
+  <!-- ===== ホーム画面に追加 ===== -->
+  <section id="add-to-home" class="max-w-3xl mx-auto px-4 py-8 border-t border-line mt-8">
+    <h2 class="font-serif font-bold text-lg mb-2">ホーム画面に追加</h2>
+    <p class="text-sm text-inkSoft leading-relaxed mb-4">このサイトは、スマホのホーム画面に追加できます。</p>
+    <div class="mb-4">
+      <button type="button" id="a2hs-button" class="focus-ring h-11 rounded-xl border border-bay text-bay hover:bg-baySoft/50 font-medium text-sm px-5 inline-flex items-center gap-2 transition-colors">
+        ホーム画面に追加
+      </button>
+    </div>
+    <p class="text-xs text-inkSoft leading-relaxed">
+      ブックマークに入れる場合は、パソコンでは Ctrl + D（Macは ⌘ + D）、スマホではブラウザのメニューから追加できます。
+    </p>
+  </section>
+
   <!-- ===== このサイトについて ===== -->
-  <section id="about" class="max-w-3xl mx-auto px-4 py-10 border-t border-line mt-8">
+  <section id="about" class="max-w-3xl mx-auto px-4 py-10 border-t border-line">
     <h2 class="font-serif font-bold text-lg mb-2">このサイトについて</h2>
     <ul class="text-sm text-inkSoft leading-relaxed space-y-2 list-disc pl-5">
       <li>本サイトは有志が運営する<strong class="text-ink">非公式の情報まとめサイト</strong>です。水俣市公式サイトの新着情報をもとに、毎朝自動で収集・分類しています。</li>
@@ -268,6 +288,7 @@
   // 例外を投げる。保存値が壊れていると JSON.parse も失敗する。どちらの場合も
   // スクリプト全体を止めず、プロフィール未設定として動かす。
   const PROFILE_KEY = 'minamata_profile';
+  const A2HS_DISMISSED_KEY = 'minamata_a2hs_dismissed';
   function loadProfile() {
     try {
       const p = JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null');
@@ -284,6 +305,60 @@
       localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
     } catch (e) {
       // 保存できなくても、このページを開いている間の絞り込みはそのまま効く
+    }
+  }
+
+  function isA2HSDismissed() {
+    try {
+      return localStorage.getItem(A2HS_DISMISSED_KEY) !== null;
+    } catch {
+      return true; // 読めない環境では出さない（仕様3）
+    }
+  }
+
+  function setA2HSDismissed() {
+    try {
+      localStorage.setItem(A2HS_DISMISSED_KEY, '1');
+    } catch {}
+  }
+
+  function detectPlatform() {
+    const ua = (typeof navigator !== 'undefined' && navigator.userAgent) ? navigator.userAgent : '';
+    const platform = (typeof navigator !== 'undefined' && navigator.platform) ? navigator.platform : '';
+    const maxTouchPoints = (typeof navigator !== 'undefined' && navigator.maxTouchPoints) ? navigator.maxTouchPoints : 0;
+    const isIOS = /iPhone|iPad|iPod/.test(ua)
+      || (platform === 'MacIntel' && maxTouchPoints > 1); // iPadはMacと名乗る
+    const isAndroid = /Android/.test(ua);
+    const inApp = /\bLine\/|FBAN|FBAV|Instagram/i.test(ua); // LINE・Facebook・Instagramのアプリ内
+    return { os: isIOS ? 'ios' : (isAndroid ? 'android' : 'desktop'), inApp };
+  }
+
+  function isStandalone() {
+    if (typeof window === 'undefined') return false;
+    return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+      || (typeof navigator !== 'undefined' && navigator.standalone === true);
+  }
+
+  // ===== ホーム画面追加の合図（beforeinstallprompt）受信用 =====
+  // データ読み込みを待たずに先頭で登録する（仕様4）
+  let deferredPrompt = null;
+  if (typeof window !== 'undefined') {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+      hideA2HSUI();
+      setA2HSDismissed();
+    });
+  }
+
+  function hideA2HSUI() {
+    if (el.addToHomeSection) el.addToHomeSection.classList.add('hidden');
+    if (el.a2hsNotice) {
+      el.a2hsNotice.innerHTML = '';
+      el.a2hsNotice.classList.add('hidden');
     }
   }
 
@@ -309,6 +384,8 @@
     mainDataLoaded: false,
     // イベントタブ用データ
     events: [],
+    // 画面復帰時の自動再読み込み判定用（仕様5）
+    lastUpdated: null,
   };
 
   const el = {
@@ -347,6 +424,11 @@
     // young adult ui（一人暮らし・若者支援タブ）
     yaJumpNav: document.getElementById('ya-jump-nav'),
     yaConcernContent: document.getElementById('ya-concern-content'),
+
+    // a2hs ui（ホーム画面に追加・案内）
+    a2hsNotice: document.getElementById('a2hs-notice'),
+    addToHomeSection: document.getElementById('add-to-home'),
+    a2hsButton: document.getElementById('a2hs-button'),
 
     // notice & toast ui
     toast: document.getElementById('toast'),
@@ -548,8 +630,19 @@
     renderFeed();
   });
 
+  function showModal(html) {
+    el.modalContent.innerHTML = html;
+    el.modalBackdrop.style.removeProperty('display');
+    el.modal.style.removeProperty('display');
+    el.modalBackdrop.classList.remove('hidden');
+    el.modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    const closeBtn = document.getElementById('modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  }
+
   function openModal(item) {
-    el.modalContent.innerHTML = `
+    const html = `
       <div class="flex items-start justify-between gap-3 mb-3">
         <div class="flex flex-wrap gap-1.5">
           ${(item.audience_tags || []).map(t => `<span class="text-xs px-2 py-0.5 rounded-full ${audienceStyleFor([t]).chipOn}">${esc(t)}</span>`).join('')}
@@ -574,12 +667,155 @@
       </a>
       <p class="text-[11px] text-inkSoft text-center mt-3">申請の可否は必ず公式情報でご確認ください。</p>
     `;
-    el.modalBackdrop.style.removeProperty('display');
-    el.modal.style.removeProperty('display');
-    el.modalBackdrop.classList.remove('hidden');
-    el.modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('modal-close').addEventListener('click', closeModal);
+    showModal(html);
+  }
+
+  // ===== ホーム画面追加の手順モーダル（仕様4の後半） =====
+  function openAddToHomeGuide() {
+    const { os, inApp } = detectPlatform();
+    const shareIconSVG = `<svg class="inline-block h-4 w-4 align-text-bottom text-bay mx-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>`;
+
+    const guideBlocks = {
+      ios: `
+        <section>
+          <h3 class="font-medium text-sm text-ink mb-2">iPhone・iPad</h3>
+          <ol class="list-decimal pl-5 text-sm text-ink leading-relaxed space-y-1.5">
+            <li>共有ボタン${shareIconSVG}（四角から上向きの矢印が出ているマーク）を押す。見当たらないときは「…」を押すと中にあります。</li>
+            <li>一覧を下に送り、「ホーム画面に追加」を選ぶ。</li>
+            <li>右上の「追加」を押す。</li>
+          </ol>
+        </section>
+      `,
+      android: `
+        <section>
+          <h3 class="font-medium text-sm text-ink mb-2">Android</h3>
+          <ol class="list-decimal pl-5 text-sm text-ink leading-relaxed space-y-1.5">
+            <li>右上の「︙」を押す。</li>
+            <li>「ホーム画面に追加」を選ぶ（「アプリをインストール」と出る場合もあります）。</li>
+            <li>「追加」または「インストール」を押す。</li>
+          </ol>
+        </section>
+      `,
+      desktop: `
+        <section>
+          <h3 class="font-medium text-sm text-ink mb-2">パソコン</h3>
+          <p class="text-sm text-ink leading-relaxed space-y-1">
+            ブックマークに入れるには Ctrl + D（Macは ⌘ + D）を押す。<br>
+            Chrome・Edgeでは、アドレスバー右端のインストールのマークからアプリとして追加することもできます。
+          </p>
+        </section>
+      `
+    };
+
+    const primaryBlock = guideBlocks[os] || guideBlocks.desktop;
+    const otherKeys = ['ios', 'android', 'desktop'].filter(k => k !== os);
+    const otherBlocks = otherKeys.map(k => guideBlocks[k]).join('<div class="my-3"></div>');
+
+    const appWarningHTML = inApp ? `
+      <div class="mb-4 bg-warnAccentSoft text-ink text-xs rounded-lg p-3 leading-relaxed">
+        LINEなどのアプリの中で開いているときは追加できません。メニューから「ブラウザで開く」（iPhoneでは「Safariで開く」）を選んでから、もう一度お試しください。
+      </div>
+    ` : '';
+
+    const html = `
+      <div class="flex items-center justify-between gap-3 mb-4">
+        <h2 class="font-serif font-bold text-lg text-ink">ホーム画面に追加する</h2>
+        <button id="modal-close" aria-label="閉じる" class="focus-ring shrink-0 h-8 w-8 flex items-center justify-center rounded-full text-inkSoft hover:bg-line/60">✕</button>
+      </div>
+
+      ${appWarningHTML}
+
+      <div class="space-y-4">
+        ${primaryBlock}
+
+        <details class="mt-4 pt-3 border-t border-line/60">
+          <summary class="text-xs font-medium text-bay cursor-pointer hover:underline select-none">ほかの端末の場合</summary>
+          <div class="mt-3 space-y-3">
+            ${otherBlocks}
+          </div>
+        </details>
+
+        <p class="mt-4 pt-3 border-t border-line/60 text-xs text-inkSoft leading-relaxed">
+          ブックマーク（お気に入り）に入れる場合は、スマホでも同じメニューの中の「ブックマークに追加」「お気に入りに追加」から追加できます。
+        </p>
+      </div>
+    `;
+
+    showModal(html);
+  }
+
+  // ===== ホーム画面追加ボタン・お知らせの動作（仕様4の前半） =====
+  async function handleA2HSAction() {
+    if (deferredPrompt) {
+      const promptEvent = deferredPrompt;
+      deferredPrompt = null; // 合図は1回しか使えない
+      try {
+        await promptEvent.prompt();
+        const choice = await promptEvent.userChoice;
+        if (choice && choice.outcome === 'accepted') {
+          hideA2HSUI();
+          setA2HSDismissed();
+        }
+      } catch (_) {}
+      return;
+    }
+    openAddToHomeGuide();
+  }
+
+  // ===== フィードタブ上部の一行のお知らせ（仕様3） =====
+  function renderA2HSNotice() {
+    if (!el.a2hsNotice) return;
+    const platform = detectPlatform();
+    if (platform.os === 'desktop' || isStandalone() || isA2HSDismissed()) {
+      el.a2hsNotice.innerHTML = '';
+      el.a2hsNotice.classList.add('hidden');
+      return;
+    }
+
+    el.a2hsNotice.innerHTML = `
+      <div class="flex items-center justify-between gap-2 bg-baySoft border border-bay/20 text-xs text-ink px-3.5 py-2.5 rounded-xl">
+        <span class="leading-relaxed">このサイトはホーム画面に追加できます。</span>
+        <div class="flex items-center gap-2 shrink-0">
+          <button type="button" id="a2hs-notice-guide-btn" class="focus-ring text-bay font-medium hover:underline select-none cursor-pointer">［追加方法］</button>
+          <button type="button" id="a2hs-notice-close-btn" class="focus-ring text-inkSoft hover:text-ink select-none cursor-pointer px-1" aria-label="閉じる">✕</button>
+        </div>
+      </div>
+    `;
+    el.a2hsNotice.classList.remove('hidden');
+
+    const guideBtn = document.getElementById('a2hs-notice-guide-btn');
+    if (guideBtn) {
+      guideBtn.addEventListener('click', () => {
+        setA2HSDismissed();
+        if (el.a2hsNotice) {
+          el.a2hsNotice.innerHTML = '';
+          el.a2hsNotice.classList.add('hidden');
+        }
+        handleA2HSAction();
+      });
+    }
+
+    const closeBtn = document.getElementById('a2hs-notice-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        setA2HSDismissed();
+        if (el.a2hsNotice) {
+          el.a2hsNotice.innerHTML = '';
+          el.a2hsNotice.classList.add('hidden');
+        }
+      });
+    }
+  }
+
+  function initA2HS() {
+    if (isStandalone()) {
+      hideA2HSUI();
+      return;
+    }
+    if (el.a2hsButton) {
+      el.a2hsButton.addEventListener('click', handleA2HSAction);
+    }
+    renderA2HSNotice();
   }
 
   function closeModal() {
@@ -1172,6 +1408,7 @@
         return bDate.localeCompare(aDate);
       });
       if (dataLife.last_updated) {
+        state.lastUpdated = dataLife.last_updated;
         const d = new Date(dataLife.last_updated);
         el.updatedAt.textContent = `最終更新：${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
       }
@@ -1195,6 +1432,11 @@
       el.error.textContent = 'データの読み込みに失敗しました。時間をおいて再度お試しください。';
       console.error(err);
     }
+
+    // ホーム画面追加・案内の初期化（仕様2・3）
+    try {
+      initA2HS();
+    } catch (_) {}
 
     // イベントタブの初期化（独立したtry/catchで、失敗しても他タブに影響しない）
     try {
@@ -1338,6 +1580,46 @@
 
   if (typeof window !== 'undefined') {
     window.addEventListener('hashchange', handleHashRoute);
+  }
+
+  // ===== 古い情報の更新（仕様5） =====
+  let lastCheckedTime = Date.now();
+  const RESUME_CHECK_INTERVAL_MS = 30 * 60 * 1000; // 30分
+
+  async function checkDataUpdateOnResume() {
+    if (typeof document === 'undefined' || document.visibilityState !== 'visible') return;
+
+    // 詳細モーダル表示中は再読み込みしない（仕様5）
+    if (el.modal && !el.modal.classList.contains('hidden')) return;
+
+    const now = Date.now();
+    const shouldCheck = !state.mainDataLoaded || (now - lastCheckedTime >= RESUME_CHECK_INTERVAL_MS);
+    if (!shouldCheck) return;
+
+    lastCheckedTime = now;
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!state.mainDataLoaded) {
+        // 初期読み込み失敗からの復帰
+        if (typeof window !== 'undefined' && window.location) {
+          window.location.reload();
+        }
+        return;
+      }
+      if (state.lastUpdated && data.last_updated && data.last_updated !== state.lastUpdated) {
+        if (typeof window !== 'undefined' && window.location) {
+          window.location.reload();
+        }
+      }
+    } catch (_) {
+      // 取得失敗（圏外など）は何もしない（エラー表示もしない）
+    }
+  }
+
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', checkDataUpdateOnResume);
   }
 
   init();
