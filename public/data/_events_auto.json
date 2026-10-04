@@ -585,6 +585,11 @@
         "origin": "auto"
       }
     },
+    "https://www.go-minamata.jp/news-information/2020-09-16-08-17-19.html": {
+      "is_event": false,
+      "checked_at": "2026-10-04T09:25:35.042049+09:00",
+      "event": null
+    },
     "https://www.go-minamata.jp/news-information/2020-11-26-13-02.html": {
       "is_event": false,
       "checked_at": "2026-10-01T10:12:05.722031+09:00",

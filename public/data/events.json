@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-02T10:29:01.516431+09:00",
+  "last_updated": "2026-10-04T09:25:52.525516+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -12,58 +12,6 @@
       "summary": "お店の人がプロならではのコツや知識を教える少人数制のミニ講座。期間中、市内各店舗にて様々なテーマの講座が開催されます。参加には各店舗への事前申し込みが必要です。",
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "id": "a515bc244b4c",
-      "title": "水俣病公式確認70年事業「水俣の祈り」",
-      "start_date": "2026-10-03",
-      "end_date": "2026-10-03",
-      "time_text": "18:00〜21:00",
-      "venue": "エコパーク水俣 親水護岸",
-      "summary": "水俣病公式確認70年事業として、エコパーク水俣の魂石に和紙の提灯を供え、人間国宝の大倉正之助さんによる大鼓と谷口実紗さんによるアカペラ独唱を奉納する祈りの催し。",
-      "organizer": "本願の会",
-      "source_url": "https://www.go-minamata.jp/news-information/inori_70.html",
-      "source_label": "みなまた観光物産協会",
-      "origin": "auto"
-    },
-    {
-      "id": "284fcc53db95",
-      "title": "湯の児花火あそび　開催されます！",
-      "start_date": "2026-10-03",
-      "end_date": "2026-10-03",
-      "time_text": "18:30〜",
-      "venue": "湯の児海水浴場",
-      "summary": "筒井時正玩具花火製造所の国産手持ち花火を楽しめるイベント。小型水中花火の演出や、特別な花火演出も予定されています。参加には事前申込（先着60組）が必要です。",
-      "organizer": "水俣アウトリガーカヌークラブ",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034775/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "id": "5eefcecc50b0",
-      "title": "道の駅「ミナマータ」でウナギのつかみどりを開催します！",
-      "start_date": "2026-10-03",
-      "end_date": "2026-10-03",
-      "time_text": "10:00〜（50名）、13:00〜（50名）",
-      "venue": "道の駅「Ｓｈｏｐ＆Ｃａｆｅミナマータ」",
-      "summary": "毎年恒例のウナギのつかみ取りイベント。定員100名のため抽選を実施。つかまえたウナギはその場でさばき、炭火で白焼きにして提供されます。参加費1,000円。濡れても良い服や着替えが必要です。",
-      "organizer": "水俣市",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034837/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "id": "42ee5c17b93d",
-      "title": "～県南の うまい！ が大集合！～「湯の児マルシェ」開催します！",
-      "start_date": "2026-10-03",
-      "end_date": "2026-10-03",
-      "time_text": "11:00〜16:00",
-      "venue": "水俣市湯の児温泉 湯の児護岸エリア",
-      "summary": "県南地域の美味しいグルメが集結するマルシェ。クイズラリーやフライングディスク体験会、ステージイベントなども行われます。先着200名へのプレゼント特典あり。",
-      "organizer": "（一社）みなまた観光物産協会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034877/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },

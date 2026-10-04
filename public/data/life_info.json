@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-03T10:01:20.667758+09:00",
+  "last_updated": "2026-10-04T09:25:13.801091+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -3263,6 +3263,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4e713d887781",
+      "title": "「水俣よかとこばい！」観光ＰＲラッピングトラック運行中！！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市の観光をPRするラッピングトラックが運行中です。市内の魅力を発信する取り組みとして、市内外を走行し観光地としての水俣を広く周知しています。",
+      "target": "市民および市外の方",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-information/2020-09-16-08-17-19.html",
+      "source_name": "みなまた観光物産協会 お知らせ",
+      "published_date": null,
+      "collected_at": "2026-10-04T09:25:09.297712+09:00",
       "status": "active"
     },
     {
