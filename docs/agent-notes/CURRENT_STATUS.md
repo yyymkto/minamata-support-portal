@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-10-01 by Antigravity）
+# 現在の状態（最終更新：2026-10-04 by Claude Code）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -91,7 +91,7 @@ minamata-support-portal
 | 制度カードの共有リンク（共有ボタン＋リンクを開いたときのタブ切り替え） | Claude Code（設計）→Antigravity（UI） | 実装・レビュー完了、2026-09-21に吉野さんの依頼で push 済み。残りは本番URLをLINEに送ってのプレビュー確認（吉野さん） |
 | イベントタブの新設（若者タブを一時オフにして置き換え） | Claude Code（設計・収集スクリプト）→吉野さん（スプレッドシート準備）→Antigravity（UI） | 設計書`design-specs/2026-09-21_events-tab.md`。Claude担当のタスク1〜3（自動抽出・手動読み込み・CI追加）完了。Antigravity担当のUI（タスク5: 若者タブ一時オフ、タスク6: イベントタブ追加、タスク7: 一覧描画・グループ分け、タスク8: 表示確認・テスト）の実装・検証完了。2026-09-22にClaude Codeがレビューし1点修正（「詳細で詳細」表示）、吉野さんの依頼でpush・本番反映済み。手動実行run 35635663082のログで「=== 完了 ===」を吉野さんが確認し、タスク3も完了。タスク4：吉野さんがスプレッドシートを作成・公開（見出し・読み込みをClaude Codeが確認済み）し、1行目のイベントを登録。2026-09-22に吉野さんがActions変数を登録し手動実行（run 35646112708）、bot が `events.json`・`_events_manual.json` をコミットし、本番に手動登録分（きちんと焼酎の会、Instagramリンクは追跡パラメータ除去済み）を含む17件が載ったことを確認。**完了** |
 | イベント投稿フォーム（主催者からの掲載申し込み・承認制） | 吉野さん（フォーム・シート準備）→Claude Code（収集スクリプト・ワークフロー・手順書・公開範囲の確認）→Antigravity（申し込みリンクのUI） | 全タスク完了（設計書 `design-specs/2026-09-28_event-submission-form.md`）。タスク1〜5・7（吉野さん・Claude Code）に続き、2026-09-30にAntigravityがタスク6（イベントタブに「掲載を申し込む」リンクのUI、`EVENT_FORM_URL`新設）を実装・検証完了。吉野さんから受領した回答用GoogleフォームURL（`https://forms.gle/9pqaq3Dnd1by9wcb7`）を `EVENT_FORM_URL` に設定し、リンク表示・フォーム遷移の動作を確認済み。2026-09-30にClaude Codeがレビュー（修正なし、フォームがログインなしで開けることも確認）し、吉野さんの依頼でpush・本番反映済み（run 36591716154）。フォームの受付開始（URLの周知）が可能な状態。**完了** |
-| ホーム画面に追加・ブックマークの案内 | Claude Code（設計・アイコン・マニフェスト・デプロイ設定）→Antigravity（`src/index.html`）→吉野さん（実機確認） | タスク1〜9完了（設計書 `design-specs/2026-10-01_add-to-home-screen.md`、決定記録 `decisions-log/2026-10-01_add-to-home-screen.md`）。Claude Codeのタスク1〜3（アイコン3枚・マニフェスト・デプロイ設定）完了・本番反映済みに続き、Antigravity担当のタスク4〜9（`src/index.html`：`<head>`タグ追加・常設案内ボタン・手順画面モーダル・一行のお知らせ・画面復帰時更新・自動テスト）を実装・検証完了（全10テストパス）。残りはClaude Codeレビューおよび吉野さんの実機確認（タスク10） |
+| ホーム画面に追加・ブックマークの案内 | Claude Code（設計・アイコン・マニフェスト・デプロイ設定）→Antigravity（`src/index.html`）→吉野さん（実機確認） | タスク1〜9完了（設計書 `design-specs/2026-10-01_add-to-home-screen.md`、決定記録 `decisions-log/2026-10-01_add-to-home-screen.md`）。Claude Codeのタスク1〜3（アイコン3枚・マニフェスト・デプロイ設定）完了・本番反映済みに続き、Antigravity担当のタスク4〜9（`src/index.html`：`<head>`タグ追加・常設案内ボタン・手順画面モーダル・一行のお知らせ・画面復帰時更新・自動テスト）を実装・検証完了（全10テストパス）。2026-10-04にClaude Codeがレビュー（jsdomで50項目、修正なし）。**`e2e1e9c` は未push**。push後、吉野さんの実機確認（タスク10：iPhone Safari・Android Chrome・LINE内）で手順の文言と見た目を確認する |
 
 ## 未決定の論点（次に議論すべきこと）
 
@@ -167,6 +167,9 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-10-04: [Claude Code] ホーム画面に追加のタスク4〜9（Antigravity実装、`e2e1e9c`）をレビュー。設計書の仕様どおりで修正なし。
+  jsdomで実HTML・実データのシナリオテスト50項目（端末別の表示・追加の合図・アプリ内の注意書き・ホーム画面から開いた場合・
+  `localStorage` が使えない場合・画面復帰時の更新・既存のモーダルと共有リンク）がすべて通過。実ブラウザでの確認は未実施（実機確認で行う）。
 - 2026-10-01: [Antigravity] ホーム画面に追加・ブックマークの案内（設計書 `design-specs/2026-10-01_add-to-home-screen.md`）のタスク4〜9を `src/index.html` に実装完了。
   (1) タスク4：`<head>` にマニフェスト（`manifest.webmanifest`）、テーマカラー（`#1B4B5A`）、192px PNGアイコン、180px apple-touch-icon、`apple-mobile-web-app-title` を追加。
   (2) タスク5：`#about` の直前に常設案内セクション `#add-to-home` を追加し、余白二重防止のため `#about` の `mt-8` を削除。`beforeinstallprompt` 合図の受け取りと、合図があればブラウザプロンプト／無ければ手順画面を開く処理を実装。スタンドアロン時はセクション非表示。
