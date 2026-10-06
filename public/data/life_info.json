@@ -1,7 +1,45 @@
 {
-  "last_updated": "2026-10-04T09:25:13.801091+09:00",
+  "last_updated": "2026-10-06T11:09:16.488069+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "5ec24b3e1f4b",
+      "title": "レアスポーツフェスティバルが開催されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市にてレアスポーツフェスティバルが開催されます。詳細は市のスポーツサイトにてご確認ください。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034893/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-06",
+      "collected_at": "2026-10-06T11:08:47.467736+09:00",
+      "status": "active"
+    },
+    {
+      "id": "533e72254c4c",
+      "title": "レアスポーツフェスティバルが開催されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市にてレアスポーツフェスティバルが開催されます。詳細な開催日時や内容については、市の公式サイトをご確認ください。",
+      "target": "水俣市民およびスポーツに関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-10-06",
+      "collected_at": "2026-10-06T11:09:11.985176+09:00",
+      "status": "active"
+    },
     {
       "id": "781c18ba6135",
       "title": "市内の事業所を紹介します！",

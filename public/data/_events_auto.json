@@ -361,6 +361,23 @@
       "checked_at": "2026-10-01T10:11:21.974259+09:00",
       "event": null
     },
+    "https://www.city.minamata.lg.jp/kiji0034893/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-06T11:09:26.640515+09:00",
+      "event": {
+        "id": "5ec24b3e1f4b",
+        "title": "レアスポーツフェスティバルが開催されます！",
+        "start_date": "2026-10-25",
+        "end_date": "2026-10-25",
+        "time_text": "10:00〜16:00",
+        "venue": "エコパーク水俣 ふるさと広場",
+        "summary": "普段あまり体験できない珍しいスポーツを楽しめるイベント。フリーパスまたは種目ごとの料金で参加可能で、初心者も歓迎。受付は15時30分まで。",
+        "organizer": "エコパーク水俣管理事務所",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034893/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
     "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:50:13.507135+09:00",
@@ -481,6 +498,23 @@
         "summary": "海に沈む夕日を眺めながら心と体を整えるヨガ体験イベント。初心者も歓迎で、波の音を感じながらゆったりとした時間を過ごせます。ヨガマットは主催者側で用意されます。",
         "organizer": "熊本県スポーツ振興事業団",
         "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html",
+        "source_label": "水俣市",
+        "origin": "auto"
+      }
+    },
+    "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-06T11:09:50.152305+09:00",
+      "event": {
+        "id": "533e72254c4c",
+        "title": "レアスポーツフェスティバルが開催されます！",
+        "start_date": "2026-10-25",
+        "end_date": "2026-10-25",
+        "time_text": "10:00〜16:00",
+        "venue": "エコパーク水俣 ふるさと広場",
+        "summary": "初めての方も大歓迎のスポーツイベント。フリーパスまたは種目ごとの参加費で、様々なスポーツを体験できます。",
+        "organizer": "エコパーク水俣管理事務所",
+        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html",
         "source_label": "水俣市",
         "origin": "auto"
       }
