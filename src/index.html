@@ -81,6 +81,13 @@
   .jump-nav a.active { background: #1B4B5A; color: #F2F1EC; }
   .scroll-mt-header { scroll-margin-top: var(--concern-header-h, 180px); }
   #view-young .scroll-mt-header { scroll-margin-top: var(--ya-header-h, 180px); }
+  #view-events .scroll-mt-header { scroll-margin-top: var(--events-header-h, 180px); }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::marker { display: none; }
+  details[open] .concern-preview { display: none; }
+  .concern-chevron { transition: transform .15s ease; }
+  details[open] .concern-chevron { transform: rotate(180deg); }
 </style>
 </head>
 
@@ -373,6 +380,8 @@
     audience: 'すべて',
     topic: 'すべて',
     profile: loadProfile(),
+    // 開いている困りごとのキー（Set<string>）。キーは `${タブ}:${concern_id}`
+    openConcerns: new Set(),
     // 一人暮らし・若者支援タブ用（子育て支援制度タブとは別データセット）
     yaBaseById: {},
     yaConcerns: [],
@@ -1068,7 +1077,49 @@
     return stageOk && householdOk;
   }
 
-  function concernSectionHTML(concern, baseById = state.baseById) {
+  function updateToggleAllButton(contentEl) {
+    if (!contentEl) return;
+    const btn = contentEl.querySelector('.btn-toggle-all');
+    if (!btn) return;
+    const detailsList = [...contentEl.querySelectorAll('details.concern-details')];
+    if (!detailsList.length) return;
+    const allOpen = detailsList.every(d => d.open);
+    btn.textContent = allOpen ? 'すべて閉じる' : 'すべて開く';
+  }
+
+  function setupConcernCollapseEvents(contentEl) {
+    if (!contentEl) return;
+    contentEl.addEventListener('toggle', (e) => {
+      const d = e.target.closest('details.concern-details');
+      if (!d) return;
+      const key = d.dataset.key;
+      if (key) {
+        if (d.open) state.openConcerns.add(key);
+        else state.openConcerns.delete(key);
+      }
+      updateToggleAllButton(contentEl);
+    }, true);
+
+    contentEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-toggle-all');
+      if (!btn) return;
+      const detailsList = [...contentEl.querySelectorAll('details.concern-details')];
+      if (!detailsList.length) return;
+      const allOpen = detailsList.every(d => d.open);
+      const targetState = !allOpen;
+      detailsList.forEach(d => {
+        d.open = targetState;
+        const key = d.dataset.key;
+        if (key) {
+          if (targetState) state.openConcerns.add(key);
+          else state.openConcerns.delete(key);
+        }
+      });
+      btn.textContent = targetState ? 'すべて閉じる' : 'すべて開く';
+    });
+  }
+
+  function concernSectionHTML(concern, baseById = state.baseById, tab = 'concern') {
     const items = concern.base_ids.map(id => baseById[id]).filter(Boolean).filter(itemMatchesProfile);
     const serviceItems = items.filter(i => i.info_type === 'service');
     const guideItems = items.filter(i => i.info_type === 'guide');
@@ -1076,26 +1127,39 @@
     // 選択したプロフィールに合致する項目が1件もない場合は、見出しだけの空セクションを出さない。
     if (!serviceItems.length && !guideItems.length) return '';
 
+    const key = `${tab}:${concern.concern_id}`;
+    const isOpen = state.openConcerns.has(key);
+    const itemNamesPreview = items.map(i => i.title).join('・');
+
     return `
-      <section class="mb-8 mt-6">
-        <h3 class="font-serif font-medium text-[15px] text-ink border-l-2 border-bay/40 pl-3 mb-3 leading-snug">${esc(concern.label)}</h3>
-        <div class="flex flex-col gap-3 mb-3">
+      <details class="concern-details border-b border-line" data-key="${esc(key)}" ${isOpen ? 'open' : ''}>
+        <summary class="focus-ring cursor-pointer select-none py-3">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="font-serif font-medium text-[15px] text-ink border-l-2 border-bay/40 pl-3 leading-snug flex-1">${esc(concern.label)}</h3>
+            <div class="flex items-center gap-1.5 shrink-0 text-xs text-inkSoft tabular">
+              <span>${items.length}件</span>
+              <svg class="concern-chevron h-4 w-4 self-center" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <p class="concern-preview text-xs text-inkSoft truncate pl-3 mt-1 leading-relaxed">${esc(itemNamesPreview)}</p>
+        </summary>
+        <div class="pt-2 pb-4 flex flex-col gap-3">
           ${serviceItems.map(serviceCardHTML).join('')}
+          ${guideItems.length ? `
+            <div class="flex flex-col gap-2">
+              ${guideItems.map(guideCardHTML).join('')}
+            </div>` : ''}
         </div>
-        ${guideItems.length ? `
-          <div class="flex flex-col gap-2 mb-3">
-            ${guideItems.map(guideCardHTML).join('')}
-          </div>` : ''}
-      </section>
+      </details>
     `;
   }
 
-  function renderConcernSet(categories, concerns, baseById, jumpNavEl, contentEl, emptyMessage) {
+  function renderConcernSet(categories, concerns, baseById, jumpNavEl, contentEl, emptyMessage, tab = 'concern') {
     // カテゴリごとに、絞り込み後も中身が残るものだけを対象にする
     // （空になったカテゴリの見出しだけが残る・ジャンプナビが空リンクになる、を防ぐ）
     const catSections = categories.map(cat => {
       const inCat = concerns.filter(c => c.category_id === cat.category_id);
-      const sectionsHTML = inCat.map(c => concernSectionHTML(c, baseById)).join('');
+      const sectionsHTML = inCat.map(c => concernSectionHTML(c, baseById, tab)).join('');
 
       const catBaseIds = new Set();
       inCat.forEach(c => {
@@ -1118,15 +1182,25 @@
     if (!catSections.length) {
       contentEl.innerHTML = `<p class="text-sm text-inkSoft text-center py-10">${esc(emptyMessage)}</p>`;
     } else {
-      contentEl.innerHTML = catSections.map(({ cat, sectionsHTML, count }) => `
+      const toggleAllHTML = `
+        <div class="flex justify-end mb-3">
+          <button type="button" class="btn-toggle-all focus-ring text-xs text-bay font-medium hover:underline select-none cursor-pointer">
+            すべて開く
+          </button>
+        </div>
+      `;
+      contentEl.innerHTML = toggleAllHTML + catSections.map(({ cat, sectionsHTML, count }) => `
         <div id="cat-${esc(cat.category_id)}" class="category-section mb-10 scroll-mt-header">
           <div class="flex items-baseline justify-between mb-4 pb-2 border-b-2 border-bay/20">
             <h2 class="font-serif font-bold text-xl text-ink">${esc(cat.category_label)}</h2>
             <span class="text-xs text-inkSoft font-normal tabular">${count}件</span>
           </div>
-          ${sectionsHTML}
+          <div>
+            ${sectionsHTML}
+          </div>
         </div>
       `).join('');
+      updateToggleAllButton(contentEl);
     }
 
     // スクロール連動ハイライト
@@ -1185,6 +1259,11 @@
       const totalH = globalNavH + yaHeader.offsetHeight + 12;
       document.documentElement.style.setProperty('--ya-header-h', `${totalH}px`);
     }
+    const eventsHeader = document.querySelector('#view-events header');
+    if (eventsHeader && eventsHeader.offsetHeight) {
+      const totalH = globalNavH + eventsHeader.offsetHeight + 12;
+      document.documentElement.style.setProperty('--events-header-h', `${totalH}px`);
+    }
   }
 
   function scheduleHeaderOffsetUpdate() {
@@ -1204,7 +1283,7 @@
     renderHighlights(state.highlights);
     renderConcernSet(
       state.categories, state.concerns, state.baseById, el.jumpNav, el.concernContent,
-      '選択した条件に合う制度が見つかりませんでした。上のタグを見直してみてください。'
+      '選択した条件に合う制度が見つかりませんでした。上のタグを見直してみてください。', 'concern'
     );
     scheduleHeaderOffsetUpdate();
   }
@@ -1212,7 +1291,7 @@
   function renderYoungAdult() {
     renderConcernSet(
       state.yaCategories, state.yaConcerns, state.yaBaseById, el.yaJumpNav, el.yaConcernContent,
-      '該当する制度が見つかりませんでした。'
+      '該当する制度が見つかりませんでした。', 'young'
     );
     scheduleHeaderOffsetUpdate();
   }
@@ -1258,6 +1337,7 @@
     if (!el.eventsContent) return;
     const todayStr = getLocalDateString();
     const in7DaysStr = getPlusDaysString(7);
+    const in14DaysStr = getPlusDaysString(14);
     const nowYear = new Date().getFullYear();
 
     // 終了日（end_date）が今日より前のものは表示しない
@@ -1272,6 +1352,51 @@
       `;
       return;
     }
+
+    // 申し込みの締切が近いイベント（今日〜14日後、要申込／一部要申込で締切あり）
+    const upcomingDeadlineEvents = validEvents.filter(item => {
+      if (item.registration !== 'required' && item.registration !== 'partial') return false;
+      const dl = item.registration_deadline;
+      if (!dl) return false;
+      return todayStr <= dl && dl <= in14DaysStr;
+    }).sort((a, b) => {
+      if (a.registration_deadline !== b.registration_deadline) {
+        return a.registration_deadline.localeCompare(b.registration_deadline);
+      }
+      return (a.start_date || '').localeCompare(b.start_date || '');
+    });
+
+    const upcomingDeadlineHTML = upcomingDeadlineEvents.length ? `
+      <section class="mb-8">
+        <h3 class="font-serif font-medium text-[15px] text-ink border-l-2 border-bay/40 pl-3 mb-3 leading-snug">
+          申し込みの締切が近いイベント
+        </h3>
+        <div class="bg-white rounded-xl border border-line divide-y divide-line overflow-hidden">
+          ${upcomingDeadlineEvents.map(item => {
+            const isToday = item.registration_deadline === todayStr;
+            const deadlineLabel = isToday ? '今日締切' : `${formatEventDateRange(item.registration_deadline, item.registration_deadline)}締切`;
+            const dateRange = formatEventDateRange(item.start_date, item.end_date);
+            return `
+              <button type="button" class="btn-scroll-to-event w-full text-left p-3.5 hover:bg-baySoft/30 transition-colors focus-ring block select-none cursor-pointer" data-event-id="${esc(item.id)}">
+                <div class="flex items-baseline justify-between gap-2">
+                  <div class="flex items-baseline gap-2 min-w-0 flex-1">
+                    <span class="text-xs font-bold text-warnAccent shrink-0">${esc(deadlineLabel)}</span>
+                    <span class="text-sm font-medium text-ink truncate">${esc(item.title)}</span>
+                  </div>
+                  <span class="text-inkSoft/40 text-xs ml-2 select-none shrink-0" aria-hidden="true">›</span>
+                </div>
+                <div class="text-[11px] text-inkSoft mt-1">
+                  開催 ${esc(dateRange)}
+                </div>
+              </button>
+            `;
+          }).join('')}
+        </div>
+        <p class="text-[11px] text-inkSoft mt-2">
+          ※ 締切は元のページから読み取ったものです。申し込む前に元のページでご確認ください。
+        </p>
+      </section>
+    ` : '';
 
     // グループ分け
     const ongoing = [];
@@ -1306,8 +1431,52 @@
       if (grp.items.length) groups.push(grp);
     });
 
+    const eventRegistrationHTML = (item) => {
+      const reg = item.registration;
+      if (!reg) return '';
+
+      let badgeText = '';
+      let badgeClass = '';
+      let detailsText = '';
+
+      const deadline = item.registration_deadline;
+      const note = item.registration_note;
+
+      if (reg === 'required' || reg === 'partial') {
+        const isExpired = deadline && deadline < todayStr;
+        if (isExpired) {
+          badgeText = '受付終了';
+          badgeClass = 'bg-line text-inkSoft';
+          detailsText = `${formatEventDateRange(deadline, deadline)}締切`;
+        } else {
+          badgeText = reg === 'required' ? '要申込' : '一部要申込';
+          badgeClass = 'bg-warnAccentSoft text-warnAccent';
+          const deadlinePart = deadline
+            ? (deadline === todayStr ? '今日締切' : `${formatEventDateRange(deadline, deadline)}締切`)
+            : '';
+          const parts = [];
+          if (deadlinePart) parts.push(deadlinePart);
+          if (note) parts.push(esc(note));
+          detailsText = parts.join(' ・ ');
+        }
+      } else if (reg === 'not_required') {
+        badgeText = '申込不要';
+        badgeClass = 'bg-baySoft text-bay';
+        detailsText = note ? esc(note) : '';
+      } else {
+        return '';
+      }
+
+      return `
+        <div class="flex items-baseline gap-1.5 text-xs text-inkSoft mb-2.5 line-clamp-2 leading-relaxed">
+          <span class="text-[11px] font-bold px-1.5 py-0.5 rounded ${badgeClass} shrink-0 self-center">${esc(badgeText)}</span>
+          ${detailsText ? `<span>${detailsText}</span>` : ''}
+        </div>
+      `;
+    };
+
     const eventCardHTML = (item) => `
-      <article class="bg-white rounded-xl border border-line p-4 sm:p-5 overflow-hidden">
+      <article id="event-${esc(item.id)}" class="bg-white rounded-xl border border-line p-4 sm:p-5 overflow-hidden scroll-mt-header">
         <div class="text-xs font-bold text-bay mb-1.5">${esc(formatEventDateRange(item.start_date, item.end_date))}</div>
         <h4 class="font-serif font-semibold text-base sm:text-[17px] leading-snug text-ink mb-2">
           ${esc(item.title)}
@@ -1317,6 +1486,7 @@
           ${item.time_text ? `<span class="inline-flex items-center gap-1">🕒 <span>${esc(item.time_text)}</span></span>` : ''}
           ${item.venue ? `<span class="inline-flex items-center gap-1">📍 <span>${esc(item.venue)}</span></span>` : ''}
         </div>` : ''}
+        ${eventRegistrationHTML(item)}
         ${item.summary ? `<p class="text-xs sm:text-sm text-inkSoft leading-relaxed line-clamp-3 mb-2.5">${esc(item.summary)}</p>` : ''}
         ${item.organizer ? `<p class="text-[11px] text-inkSoft mb-3">主催：${esc(item.organizer)}</p>` : ''}
         ${item.source_url ? `
@@ -1344,11 +1514,24 @@
     `).join('');
 
     el.eventsContent.innerHTML = `
+      ${upcomingDeadlineHTML}
       ${groupsHTML}
-      <p class="text-center text-[11px] text-inkSoft pt-4 pb-8">
-        一部のイベントは、公開されている記事から日時・場所を自動で読み取っています。
+      <p class="text-center text-[11px] text-inkSoft pt-4 pb-8 leading-relaxed">
+        一部のイベントは、公開されている記事から日時・場所・申し込みの情報を自動で読み取っています。<br>申し込みの要否・締切は、元のページでご確認ください。
       </p>
     `;
+
+    el.eventsContent.querySelectorAll('.btn-scroll-to-event').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const eventId = btn.dataset.eventId;
+        const target = document.getElementById(`event-${eventId}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.classList.add('ring-2', 'ring-bay/40');
+          setTimeout(() => target.classList.remove('ring-2', 'ring-bay/40'), 1500);
+        }
+      });
+    });
   }
 
   function renderEventSubmissionGuide() {
@@ -1425,6 +1608,8 @@
       renderFeed();
       renderConcern();
       updateHeaderOffsets();
+      setupConcernCollapseEvents(el.concernContent);
+      setupConcernCollapseEvents(el.yaConcernContent);
       state.mainDataLoaded = true;
     } catch (err) {
       el.loading.classList.add('hidden');
@@ -1528,6 +1713,15 @@
     const doScroll = () => {
       const target = document.getElementById(`base-${baseId}`);
       if (target) {
+        const parentDetails = target.closest('details.concern-details');
+        if (parentDetails) {
+          parentDetails.open = true;
+          if (parentDetails.dataset.key) {
+            state.openConcerns.add(parentDetails.dataset.key);
+          }
+          const container = target.closest('#view-concern') ? el.concernContent : el.yaConcernContent;
+          updateToggleAllButton(container);
+        }
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         target.classList.add('ring-2', 'ring-bay/60');
         setTimeout(() => target.classList.remove('ring-2', 'ring-bay/60'), 2500);
@@ -1538,6 +1732,19 @@
     } else {
       setTimeout(doScroll, 80);
     }
+  }
+
+  if (typeof document !== 'undefined') {
+    document.addEventListener('click', (e) => {
+      const anchor = e.target.closest('a[href^="#base-"]');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      const baseId = href ? href.slice(6) : '';
+      if (!baseId) return;
+      if (typeof window !== 'undefined' && window.location.hash === `#base-${baseId}`) {
+        scrollToBaseCard(baseId);
+      }
+    });
   }
 
   function handleHashRoute() {
