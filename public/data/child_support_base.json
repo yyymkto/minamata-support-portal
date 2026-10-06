@@ -1,6 +1,6 @@
 {
   "_schema_note": "この静的データは水俣市の子育て支援制度の基礎情報です。動的データ（life_info.json）とは異なり、GitHub Actionsによる自動更新の対象外です。年1〜数回、手動でメンテナンスすることを想定しています。各制度ページの内容は last_verified 時点のものであり、必ず official_url で最新情報をご確認ください。 / entry_typeとpermanenceフィールドを追加（2026-08-15）。permanence=time_limitedの項目は静的データから除外し、動的データ（life_info.json）側のタグマッチングでのみ表示する方針。 / official_url に null を許容し、source_note（出典名の文字列）を追加（2026-09-16）。市の公式サイトに制度ページが存在しない制度のための例外措置であり、公式ページの有無を実際に確認した上でのみ null を使うこと。official_url=null の項目は monitor_stock.py の自動監視対象外になるため、年度替わり（4〜5月）に人手で確認する必要がある。またUI側はCTAボタンを描画せず source_note を表示する（設計書 design-specs/2026-09-16_child-support-page-renovation.md 仕様3b）。",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-10-07",
   "_highlights_note": "タブ冒頭の「全体像」セクション用（設計書 design-specs/2026-09-16_child-support-page-renovation.md 仕様0）。4〜5件まで。fact は公式ページに書かれた事実の言い換えで済む範囲に限り、書き手の評価・呼びかけ（「子育てしやすい」「ぜひご活用ください」等）は入れない。base_id は items 内に存在すること。年度で変わる事実には年度を明記する。",
   "highlights": [
     {
@@ -570,6 +570,32 @@
       "entry_type": "reference",
       "permanence": "ongoing",
       "info_type": "guide"
+    },
+    {
+      "base_id": "kikan-soudan-canvas",
+      "title": "水俣芦北圏域基幹相談支援センター「キャンバス」",
+      "description": "障がい（身体・知的・精神）や難病のある人とその家族の相談に応じる、水俣・芦北圏域の相談窓口（令和8年10月開所）。福祉サービスの利用、暮らしのこと、専門機関の紹介などの相談を受け、必要に応じて医療・福祉・教育・就労などの関係機関につなぐ。",
+      "child_stage": [
+        "乳幼児",
+        "未就学",
+        "小学生",
+        "中学生",
+        "高校生"
+      ],
+      "household_type": [],
+      "conditions_note": "子ども専用ではなく、障がいのある人とその家族全般が対象です。開所は月曜〜金曜の8時30分〜17時30分（土日祝・年末年始は休み）。所在地は芦北町芦北2688-1（芦北地域振興局の道向かい付近）で、訪問や出張での相談も行っています。",
+      "how_to_apply": "電話（0966-83-5577）、FAX（0966-83-6666）、メール、またはセンターのホームページの問い合わせフォームで相談。",
+      "related_tags": [
+        "子育て",
+        "介護・福祉",
+        "募集・相談"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/kiji0034887/index.html",
+      "last_verified": "2026-10-02",
+      "verification_status": "確認済み（2026-10-07に市の記事と、センターのホームページ https://minaashi-canvas.jp を確認。開所日・対象・相談内容・開所時間・所在地・連絡先を確認。訪問・出張相談、身体・知的・精神・難病の別はホームページの記載）。★市の記事は開所のお知らせで、常設の説明ページではない。市の障がい者福祉カテゴリに常設ページができたら official_url を差し替えること。★子ども専用の窓口ではないため conditions_note に明記した。child_stage は子育てタブの対象年代に合わせた。last_verified は市の記事の最終更新日。Issue #4 で検知。",
+      "entry_type": "consultation",
+      "permanence": "ongoing",
+      "info_type": "service"
     },
     {
       "base_id": "online-pediatric-obgyn-consultation",
