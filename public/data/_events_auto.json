@@ -39,8 +39,12 @@
         "organizer": "水俣市・水俣市教育委員会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034718/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": null,
+        "registration_note": "全席指定5,500円。各プレイガイド、ローソンチケット、教育課生涯学習室にて前売券販売"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034769/index.html": {
       "is_event": false,
@@ -61,8 +65,12 @@
         "organizer": "第72回水俣市民文化祭実行委員会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034770/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034772/index.html": {
       "is_event": false,
@@ -122,8 +130,12 @@
         "organizer": "水俣市",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034810/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "partial",
+        "registration_deadline": null,
+        "registration_note": "教室は事前申込制で受付終了。トークショーは申込不要で観覧無料"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034822/index.html": {
       "is_event": true,
@@ -139,8 +151,12 @@
         "organizer": "水俣市・水俣市スポーツ協会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034822/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "partial",
+        "registration_deadline": null,
+        "registration_note": "申し込み不要（バスケットボール教室を除く）"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034823/index.html": {
       "is_event": false,
@@ -161,8 +177,12 @@
         "organizer": "水俣市",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034824/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034837/index.html": {
       "is_event": true,
@@ -195,8 +215,12 @@
         "organizer": "水俣市",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034838/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034840/index.html": {
       "is_event": true,
@@ -212,8 +236,12 @@
         "organizer": "世界フライングディスク連盟、日本フライングディスク協会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034840/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034841/index.html": {
       "is_event": true,
@@ -246,8 +274,12 @@
         "organizer": "水俣環境アカデミア",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034842/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-10-11",
+        "registration_note": "二次元コードから回答、またはチラシ裏面に記入しメールかFAXで申込。各回先着10名程度"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034844/index.html": {
       "is_event": true,
@@ -263,8 +295,12 @@
         "organizer": "火のまつり実行委員会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034844/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034849/index.html": {
       "is_event": true,
@@ -280,8 +316,12 @@
         "organizer": "水俣まちゼミ実行委員会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": null,
+        "registration_note": "参加店舗に事前に電話などで申し込んでください"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034858/index.html": {
       "is_event": false,
@@ -302,8 +342,12 @@
         "organizer": "公益財団法人 日本ソフトボール協会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034865/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034866/index.html": {
       "is_event": true,
@@ -319,8 +363,12 @@
         "organizer": "熊本県スポーツ振興事業団 企画推進課",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034866/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-10-08",
+        "registration_note": "チラシ右下のQRコードから申し込み。定員30名程度"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034875/index.html": {
       "is_event": true,
@@ -336,8 +384,12 @@
         "organizer": "水俣市芦北郡医師会",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034875/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": null,
+        "registration_note": "電話、FAX、メール、QRコードで申し込み。チラシのハガキは不可"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/kiji0034877/index.html": {
       "is_event": true,
@@ -375,8 +427,12 @@
         "organizer": "エコパーク水俣管理事務所",
         "source_url": "https://www.city.minamata.lg.jp/kiji0034893/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "not_required",
+        "registration_deadline": null,
+        "registration_note": "当日、ふるさと広場内の大型テントで受付（最終受付15:30）"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html": {
       "is_event": true,
@@ -409,8 +465,12 @@
         "organizer": "水俣市スポーツ推進課",
         "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034810/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "partial",
+        "registration_deadline": null,
+        "registration_note": "バスケットボール教室は事前申込制（受付終了）。トークショーは申込不要で観覧無料"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/sports/kiji0034822/index.html": {
       "is_event": true,
@@ -426,8 +486,12 @@
         "organizer": "水俣市・水俣市スポーツ協会",
         "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034822/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "partial",
+        "registration_deadline": null,
+        "registration_note": "バスケットボール教室は受付終了。その他は申し込み不要で当日会場へ"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/sports/kiji0034823/index.html": {
       "is_event": false,
@@ -448,8 +512,12 @@
         "organizer": "世界フライングディスク連盟、日本フライングディスク協会",
         "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034840/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/sports/kiji0034841/index.html": {
       "is_event": true,
@@ -482,8 +550,12 @@
         "organizer": "公益財団法人 日本ソフトボール協会",
         "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034865/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html": {
       "is_event": true,
@@ -499,8 +571,12 @@
         "organizer": "熊本県スポーツ振興事業団",
         "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-10-08",
+        "registration_note": "チラシ右下のQRコードから申し込み。定員30名程度"
+      },
+      "schema": 2
     },
     "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html": {
       "is_event": true,
@@ -548,8 +624,12 @@
         "organizer": "みなまた初恋通り商店会",
         "source_url": "https://www.go-minamata.jp/news-events/r8_hatsukoi-hw-marche.html",
         "source_label": "みなまた観光物産協会",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      },
+      "schema": 2
     },
     "https://www.go-minamata.jp/news-events/r8_minamata_nominoichi-1026.html": {
       "is_event": true,

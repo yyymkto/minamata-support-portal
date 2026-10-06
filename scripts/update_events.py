@@ -9,6 +9,8 @@
 1. 自動抽出: life_info.json のうち topic_tags に「イベント」を含む記事について、
    記事ページ本文をGeminiに読ませ、開催日・時間・場所等を取り出す。
    結果は public/data/_events_auto.json にキャッシュし、同じ記事は再判定しない。
+   申し込み情報（要否・締切・方法）もここで取り出す。申し込み情報が入る前の形式のキャッシュは、
+   開催前のものだけ1回判定し直す（設計書: docs/agent-notes/design-specs/2026-10-07_event-registration.md）。
 2. 手動登録: Googleスプレッドシート（ウェブに公開したCSV）から読み込む。
    最後に読み込めた内容は public/data/_events_manual.json に残し、
    CSVを取得できなかった日はそれを使う（一時的な失敗で手動登録分が消えないように）。
@@ -94,7 +96,10 @@ EVENT_EXTRACTION_SYSTEM_PROMPT = """\
   "time_text": "開始・終了時刻（例: 10:00〜15:00）" または null,
   "venue": "会場名" または null,
   "summary": "どんな催しかを120字以内で。日付・会場の繰り返しは不要" または null,
-  "organizer": "主催者名" または null
+  "organizer": "主催者名" または null,
+  "registration": "required" または "partial" または "not_required" または null,
+  "registration_deadline": "YYYY-MM-DD" または null,
+  "registration_note": "申込方法と条件を50字以内で" または null
 }
 
 is_event を true にするもの:
@@ -122,7 +127,44 @@ is_event を false にするもの:
 - 1日だけの催しは end_date を start_date と同じにしてください。
 - 本文から開催日を特定できない場合は start_date を null にしてください（推測で埋めないこと）。
 - 「最終更新日」「掲載日」は開催日ではありません。
+
+申し込みのルール（対象は「タイトルが示す催し」。本文に書いてあることだけを返し、推測で埋めないこと）:
+- registration:
+  - "required": 参加・入場・観覧のために、事前の申し込み・予約・チケット購入・整理券の事前入手が必要
+  - "partial": 催しの中の一部の企画だけが事前申し込み制で、ほかは申し込みなしで参加・来場できる
+    （例:「申し込み不要（〇〇教室を除く）」）
+  - "not_required": 事前の申し込みが要らないことを示す言葉が本文にそのまま書いてあるときだけ
+    （「申込不要」「申し込みは不要」「予約不要」「自由参加」「直接会場へお越しください」「当日会場で受付」など）
+  - null: 上のどれにも当たらないとき。次の言葉だけでは "not_required" にしないこと:
+    「どなたでも」「お気軽に」「入場無料」「観覧無料」「ご来場ください」「ご参加をお待ちしております」
+    （申し込みが要らないとは書いていないため）。祭り・マルシェ・展示だからといって推測しないこと
+  - 当日会場で行う抽選・整理券配布・先着販売（例: 限定〇食の当日抽選）は事前の申し込みではありません
+- registration_deadline: 「申込締切」「〆切」「〜日まで」「申込期間 〜〇日」など、申し込みの期限として書かれた日付だけ。
+  受付開始日・開催日・掲載日は入れない。「定員になり次第締切」だけで日付が無ければ null。
+  当日券・当日受付もある場合は、前売りや事前申込の期限があっても null。
+  registration が "required" か "partial" でなければ null。
+- registration_note: 申込方法（QRコード・電話・FAX・メール・窓口・各店舗など）と、定員・先着・抽選の別、当日券の有無を50字以内で。
+  本文に書いてあることだけを短くまとめ、本文に無い言葉を足さないこと。電話番号は本文に書いてあるものだけ。URLは入れない。
+  registration が null なら null。"not_required" なら当日の受付方法など補足があるときだけ。
 """
+
+REGISTRATION_VALUES = ("required", "partial", "not_required")
+# 自動抽出キャッシュの形式。2で申し込み情報（registration*）を追加した（2026-10-07、設計書 event-registration）。
+# これより古いエントリのうち開催前のイベントは、申し込み情報を取り出すために1回だけ判定し直す。
+CACHE_SCHEMA = 2
+REGISTRATION_NOTE_MAX_CHARS = 60
+URL_IN_TEXT_PATTERN = re.compile(r"https?://\S+")
+# AIの判定を本文の言葉で裏づける（2026-10-07、試し実行で「どなた様もお気軽に」だけの記事に
+# 「当日直接会場へ」と本文に無い文を作って「申込不要」にした例があったため）。
+# 「申込不要」は、申し込みが要らないと書いてある言葉が本文にあるときだけ残す。
+NOT_REQUIRED_EVIDENCE = re.compile(
+    r"(申し?込み?|予約|事前登録)(は|の必要は)?(不要|必要(あり|ござい)?ません)|参加自由|自由参加|入退場自由|"
+    r"直接(会場|お越し)|当日(会場で|、?会場にて|に会場で)?受付|"
+    r"(会場|現地|テント|本部)[^。]{0,10}で受付"  # 例:「ふるさと広場内の大型テントで受付します」
+)
+# 「要申込」「一部要申込」は、申し込みに関わる言葉が本文に1つも無ければ捨てる
+# （当日会場での抽選・受付だけの催しを「一部要申込」にした例があったため）。
+REQUIRED_EVIDENCE = re.compile(r"申し?込|予約|チケット|前売|整理券|応募|エントリー|受付終了")
 
 DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # 市サイトのカテゴリ一覧ページ（例: /list00321.html）は個別の記事ではないため判定しない
@@ -178,6 +220,41 @@ def clean_text(value: Any) -> Optional[str]:
     return value or None
 
 
+def normalize_registration(registration: Any, deadline: Any, note: Any,
+                           end_date: Optional[str]) -> dict[str, Optional[str]]:
+    """申し込み情報の3項目を、表示してよい組み合わせに整える。
+
+    - 締切は「要申込」「一部要申込」のときだけ持つ。終了日より後の締切は読み違いとみなして捨てる。
+    - 申込方法は、要否が不明（null）なら持たない。URLは取り除く（元ページから申し込んでもらうため）。
+    """
+    reg = registration if registration in REGISTRATION_VALUES else None
+    dl = parse_iso_date(deadline) if reg in ("required", "partial") else None
+    if dl and end_date and dl > end_date:
+        dl = None
+    text = clean_text(note) if reg else None
+    if text:
+        text = clean_text(URL_IN_TEXT_PATTERN.sub("", text).strip(" 　、。:："))
+    if text and len(text) > REGISTRATION_NOTE_MAX_CHARS:
+        text = text[:REGISTRATION_NOTE_MAX_CHARS - 1] + "…"
+    return {"registration": reg, "registration_deadline": dl, "registration_note": text}
+
+
+def registration_from_article(result: dict, article_text: str, end_date: Optional[str]) -> dict[str, Optional[str]]:
+    """Geminiの判定結果から申し込み情報を作る。本文に裏づけの言葉が無い判定は null にする。"""
+    reg = result.get("registration")
+    if reg == "not_required" and not NOT_REQUIRED_EVIDENCE.search(article_text):
+        reg = None
+    elif reg in ("required", "partial") and not REQUIRED_EVIDENCE.search(article_text):
+        reg = None
+    return normalize_registration(reg, result.get("registration_deadline"),
+                                  result.get("registration_note"), end_date)
+
+
+def with_registration_defaults(event: dict) -> dict:
+    """古い形式のイベント（申し込み項目が無い）にも3項目を null で持たせる。"""
+    return {"registration": None, "registration_deadline": None, "registration_note": None, **event}
+
+
 def source_label_for(source_name: str) -> str:
     if source_name.startswith("みなまた観光物産協会"):
         return "みなまた観光物産協会"
@@ -210,18 +287,21 @@ def pick_result(result: Any, today: dt.date) -> Optional[dict]:
     return dicts[0]
 
 
-def extract_event(item: dict, today: dt.date) -> tuple[Optional[dict], str]:
-    """(キャッシュに記録するエントリ or None, 結果) を返す。
+def extract_event(item: dict, today: dt.date) -> tuple[Optional[dict], str, dict]:
+    """(キャッシュに記録するエントリ or None, 結果, 申し込み情報) を返す。
 
     結果は "answered"（判定できた）/ "fetch_failed"（記事ページを取得できなかった）/
     "gemini_failed"（Geminiから回答を得られなかった）のいずれか。
     取得失敗・Gemini呼び出し失敗は一時的な可能性があるため、
     キャッシュに記録せず次回また判定する（update_data.py の _checked_urls.json と同じ方針）。
+
+    申し込み情報は、イベントではないと判定された場合も返す（判定し直しで使う。refresh_registration 参照）。
     """
+    no_registration = normalize_registration(None, None, None, None)
     url = item["source_url"]
     text = fetch_article_text(url)
     if text is None:
-        return None, "fetch_failed"
+        return None, "fetch_failed", no_registration
 
     user_content = (
         f"今日の日付: {today.isoformat()}\n"
@@ -236,17 +316,18 @@ def extract_event(item: dict, today: dt.date) -> tuple[Optional[dict], str]:
     if result is None:
         if raw is not None:
             log.warning("Gemini応答の形式が想定外です: %s", str(raw)[:200])
-        return None, "gemini_failed"
+        return None, "gemini_failed", no_registration
 
     now = dt.datetime.now(tz=JST).isoformat()
-    entry: dict[str, Any] = {"is_event": bool(result.get("is_event")), "checked_at": now, "event": None}
+    entry: dict[str, Any] = {"is_event": bool(result.get("is_event")), "checked_at": now,
+                             "schema": CACHE_SCHEMA, "event": None}
     start_date = parse_iso_date(result.get("start_date"))
-    if not entry["is_event"] or start_date is None:
-        return entry, "answered"
-
     end_date = parse_iso_date(result.get("end_date")) or start_date
-    if end_date < start_date:
+    if start_date and end_date < start_date:
         end_date = start_date
+    registration = registration_from_article(result, text, end_date)
+    if not entry["is_event"] or start_date is None:
+        return entry, "answered", registration
 
     entry["event"] = {
         "id": make_id(url),
@@ -260,8 +341,31 @@ def extract_event(item: dict, today: dt.date) -> tuple[Optional[dict], str]:
         "source_url": url,
         "source_label": source_label_for(item.get("source_name") or ""),
         "origin": "auto",
+        **registration,
     }
-    return entry, "answered"
+    return entry, "answered", registration
+
+
+def needs_registration_refresh(entry: dict, today_iso: str) -> bool:
+    """申し込み情報が無い古い形式のエントリのうち、まだ終わっていないイベントか。"""
+    event = entry.get("event")
+    return (entry.get("schema", 1) < CACHE_SCHEMA
+            and bool(event)
+            and (event.get("end_date") or "") >= today_iso)
+
+
+def refresh_registration(old: dict, registration: dict) -> dict:
+    """古いエントリに、判定し直した結果の申し込み情報だけを足す。
+
+    開催日・会場などは掲載済みの内容のまま変えない（判定し直しでイベントが消えたり日付が動いたりしないように）。
+    判定し直しで「イベントではない」「開催日が分からない」と揺れた場合も、申し込み情報は使い、掲載は続ける
+    （2026-10-07、試し実行でまちゼミの判定が揺れたため）。締切は掲載済みの終了日で確かめ直す。
+    """
+    event = old["event"]
+    registration = normalize_registration(
+        registration["registration"], registration["registration_deadline"],
+        registration["registration_note"], event.get("end_date"))
+    return {**old, "schema": CACHE_SCHEMA, "event": {**event, **registration}}
 
 
 def update_auto_cache(life_items: list[dict], today: dt.date) -> dict[str, dict]:
@@ -271,13 +375,20 @@ def update_auto_cache(life_items: list[dict], today: dt.date) -> dict[str, dict]
     live_urls = {i["source_url"] for i in life_items}
     cache = {url: e for url, e in cache.items() if url in live_urls}
 
-    targets = [
+    new_targets = [
         i for i in life_items
         if EVENT_TOPIC_TAG in (i.get("topic_tags") or [])
         and not LIST_PAGE_PATTERN.search(i["source_url"])
         and i["source_url"] not in cache
     ]
-    log.info("イベント判定の対象（未判定）: %d 件", len(targets))
+    # 新しい記事の掲載が遅れないよう、申し込み情報のための判定し直しは未判定の記事の後に回す
+    refresh_targets = [
+        i for i in life_items
+        if i["source_url"] in cache and needs_registration_refresh(cache[i["source_url"]], today.isoformat())
+    ]
+    log.info("イベント判定の対象: 未判定 %d 件 / 申し込み情報の判定し直し %d 件",
+             len(new_targets), len(refresh_targets))
+    targets = new_targets + refresh_targets
     if len(targets) > MAX_GEMINI_CALLS:
         log.info("1回あたりの上限%d件を超えるため、残り%d件は次回に回します。",
                  MAX_GEMINI_CALLS, len(targets) - MAX_GEMINI_CALLS)
@@ -285,10 +396,13 @@ def update_auto_cache(life_items: list[dict], today: dt.date) -> dict[str, dict]
 
     consecutive_failures = 0
     for n, item in enumerate(targets, start=1):
-        log.info("[%d/%d] イベント判定中: %s", n, len(targets), item["title"])
-        entry, outcome = extract_event(item, today)
+        url = item["source_url"]
+        is_refresh = url in cache
+        log.info("[%d/%d] %s: %s", n, len(targets),
+                 "申し込み情報を判定し直し中" if is_refresh else "イベント判定中", item["title"])
+        entry, outcome, registration = extract_event(item, today)
         if outcome == "answered":
-            cache[item["source_url"]] = entry
+            cache[url] = refresh_registration(cache[url], registration) if is_refresh else entry
             consecutive_failures = 0
         elif outcome == "gemini_failed":
             # 記事ページの取得失敗（削除済みページの404等）はGeminiの障害とは無関係なので数えない
@@ -355,6 +469,8 @@ REQUIRED_SHEET_COLUMNS = ("イベント名", "開始日")
 # 「承認」の見出しが変わると #N/A 等になる。1行の読み取りエラーとして流すとフォーム分が黙って
 # 全部消えるので、シートごと読み込み失敗として扱う（2026-09-28、設計書 event-submission-form）。
 SHEET_ERROR_VALUE_PATTERN = re.compile(r"^#(N/A|REF!|VALUE!|NAME\?|ERROR!|DIV/0!|NUM!|NULL!)")
+# 「申込」列の値（2026-10-07、設計書 event-registration）。列自体が無いシートも読める（任意列）。
+SHEET_REGISTRATION_VALUES = {"必要": "required", "一部必要": "partial", "不要": "not_required"}
 
 
 def parse_sheet_date(value: str) -> Optional[str]:
@@ -439,6 +555,34 @@ def parse_sheet_csv(text: str, origin: str = "manual", id_prefix: str = "m") -> 
             elif parsed_end >= start_date:
                 end_date = parsed_end
 
+        registration = None
+        reg_text = row.get("申込", "")
+        if reg_text:
+            registration = SHEET_REGISTRATION_VALUES.get(reg_text)
+            if registration is None:
+                msg = f"{row_no}行目: 申込は「必要」「一部必要」「不要」のどれかで書いてください。空欄として扱いました（{title} / {reg_text}）"
+                log.warning("スプレッドシート %s", msg)
+                warnings.append(msg)
+        deadline = None
+        if row.get("申込締切"):
+            deadline = parse_sheet_date(row["申込締切"])
+            if deadline is None:
+                msg = f"{row_no}行目: 申込締切を日付として読めないため、空欄として扱いました（{title} / {row['申込締切']}）"
+                log.warning("スプレッドシート %s", msg)
+                warnings.append(msg)
+            elif deadline > end_date:
+                msg = f"{row_no}行目: 申込締切がイベントの終了日より後のため、空欄として扱いました（{title} / {row['申込締切']}）"
+                log.warning("スプレッドシート %s", msg)
+                warnings.append(msg)
+                deadline = None
+        # 手で書いた申込方法は文字数で切らない（フォームは50字までに制限している）
+        note = row.get("申込方法") or None
+        reg_fields = {
+            "registration": registration,
+            "registration_deadline": deadline if registration in ("required", "partial") else None,
+            "registration_note": note if registration else None,
+        }
+
         digest = hashlib.sha1(f"{title}|{start_date}|{link or ''}".encode("utf-8")).hexdigest()[:10]
         events.append({
             "id": f"{id_prefix}-{digest}",
@@ -452,6 +596,7 @@ def parse_sheet_csv(text: str, origin: str = "manual", id_prefix: str = "m") -> 
             "source_url": link,
             "source_label": row.get("情報元") or None,  # 空欄の既定値は統合時に決める
             "origin": origin,
+            **reg_fields,  # 「申込」が空欄の上書き行は、統合時に置き換え先の値を引き継ぐ
         })
 
     return {"events": events, "hidden_urls": hidden_urls, "warnings": warnings}
@@ -508,12 +653,20 @@ def report_sheet_failures(failures: list[str]) -> None:
 # --------------------------------------------------------------------------
 def _fill_source_label(event: dict, base_by_url: dict[str, dict]) -> dict:
     """情報元が空欄の行に表示名を決める。
-    置き換える先のイベントがあれば、情報元の表示は元のまま（例: みなまた観光物産協会）にする。"""
+    置き換える先のイベントがあれば、情報元の表示は元のまま（例: みなまた観光物産協会）にする。
+
+    「申込」が空欄の行も、置き換える先のイベントがあれば、その申し込み情報を引き継ぐ
+    （申込の列ができる前に作った上書き行で、自動抽出した申し込み情報が消えないように。2026-10-07）。
+    """
     event = dict(event)
+    url = event.get("source_url")
+    overridden = base_by_url.get(url) if url else None
     if not event.get("source_label"):
-        url = event.get("source_url")
-        overridden = base_by_url.get(url) if url else None
         event["source_label"] = overridden["source_label"] if overridden else default_source_label(url)
+    if not event.get("registration") and overridden:
+        base = with_registration_defaults(overridden)
+        for key in ("registration", "registration_deadline", "registration_note"):
+            event[key] = base[key]
     return event
 
 
@@ -542,7 +695,7 @@ def build_events(cache: dict[str, dict], form: dict, manual: dict, today: dt.dat
     events = merge_form(events, form)
     events = merge_manual(events, manual)
     today_iso = today.isoformat()
-    events = [e for e in events if e["end_date"] >= today_iso]
+    events = [with_registration_defaults(e) for e in events if e["end_date"] >= today_iso]
     events.sort(key=lambda e: (e["start_date"], e["title"]))
     return events
 
