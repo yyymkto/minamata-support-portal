@@ -1,5 +1,26 @@
 {
   "entries": {
+    "https://www.city.minamata.lg.jp/kiji0033860/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-07T01:13:23.938217+09:00",
+      "schema": 2,
+      "event": {
+        "id": "c8c5b9116ef1",
+        "title": "令和８年度水俣市健康まつりを開催します！！",
+        "start_date": "2026-11-28",
+        "end_date": "2026-11-28",
+        "time_text": "09:00〜12:00",
+        "venue": "水俣市総合もやい直しセンター もやい館",
+        "summary": "生活習慣病予防をテーマに、健康に関する展示、相談、体験コーナーを実施。健康づくり作品展示や表彰式、ハイハイ・よちよちレースも同時開催。",
+        "organizer": "水俣市",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0033860/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "partial",
+        "registration_deadline": null,
+        "registration_note": "ハイハイ・よちよちレースはWeb申請が必要。詳細は外部リンクを参照"
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0033884/index.html": {
       "is_event": false,
       "checked_at": "2026-09-21T23:49:27.623473+09:00",
@@ -413,6 +434,48 @@
       "checked_at": "2026-10-01T10:11:21.974259+09:00",
       "event": null
     },
+    "https://www.city.minamata.lg.jp/kiji0034891/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-07T01:13:35.803934+09:00",
+      "schema": 2,
+      "event": {
+        "id": "4a68ef5e1db3",
+        "title": "第６回お米の学びなおし講習会を開催します",
+        "start_date": "2026-10-25",
+        "end_date": "2026-10-25",
+        "time_text": "09:00〜12:00",
+        "venue": "津奈木町千代地区",
+        "summary": "お米作りを学びなおすための講習会。初心者から経験者までを対象に、たんぼの準備から収穫後の作業までを学ぶ全9回の講座のうち、第6回現地講習会を開催する。",
+        "organizer": "芦北地方農業振興協議会（水俣市、芦北町、津奈木町、熊本県、JAあしきた）",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034891/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-10-21",
+        "registration_note": "電話または窓口にて申し込み"
+      }
+    },
+    "https://www.city.minamata.lg.jp/kiji0034892/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-07T01:14:10.783408+09:00",
+      "schema": 2,
+      "event": {
+        "id": "59c179febc7a",
+        "title": "「第10回九州のお米食味コンクールin多良木」の開催のお知らせ",
+        "start_date": "2026-11-29",
+        "end_date": "2026-11-29",
+        "time_text": null,
+        "venue": "多良木町多目的研修センター",
+        "summary": "九州産米のPRと地位向上を目的に、九州各地のお米を一堂に集めて食味を競うコンクール。",
+        "organizer": "多良木町役場",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034892/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034893/index.html": {
       "is_event": true,
       "checked_at": "2026-10-06T11:09:26.640515+09:00",
@@ -592,8 +655,12 @@
         "organizer": "エコパーク水俣管理事務所",
         "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html",
         "source_label": "水俣市",
-        "origin": "auto"
-      }
+        "origin": "auto",
+        "registration": "not_required",
+        "registration_deadline": null,
+        "registration_note": "当日ふるさと広場内の大型テントで受付（最終受付15:30）"
+      },
+      "schema": 2
     },
     "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html": {
       "is_event": false,

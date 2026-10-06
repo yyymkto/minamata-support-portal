@@ -1,8 +1,11 @@
 {
-  "last_updated": "2026-10-06T11:10:17.552438+09:00",
+  "last_updated": "2026-10-07T01:15:30.421375+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
+      "registration": "required",
+      "registration_deadline": null,
+      "registration_note": "参加店舗に事前に電話などで申し込んでください",
       "id": "c257a1d07b0c",
       "title": "お店の人が教えてくれる♪「みなまたまちゼミ２０２６」が開催されます",
       "start_date": "2026-09-15",
@@ -16,6 +19,9 @@
       "origin": "auto"
     },
     {
+      "registration": "required",
+      "registration_deadline": "2026-10-08",
+      "registration_note": "チラシ右下のQRコードから申し込み。定員30名程度",
       "id": "16ea9bc69b43",
       "title": "『sunset YOGA』～海×夕日×ヨガ～",
       "start_date": "2026-10-10",
@@ -29,6 +35,9 @@
       "origin": "auto"
     },
     {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "520f44dceb1d",
       "title": "エコパーク水俣で「第55回日本男子ソフトボールリーグ第4節熊本大会」が開催されます！",
       "start_date": "2026-10-10",
@@ -42,6 +51,9 @@
       "origin": "auto"
     },
     {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "0768dac5fbe1",
       "title": "-みなまた初恋通り商店会-ハロウィンマルシェ　開催します！",
       "start_date": "2026-10-12",
@@ -55,6 +67,9 @@
       "origin": "auto"
     },
     {
+      "registration": "required",
+      "registration_deadline": null,
+      "registration_note": "電話、FAX、メール、QRコードで申し込み。チラシのハガキは不可",
       "id": "00957be1f7fd",
       "title": "劇団「南の星座」とトークショーの集い",
       "start_date": "2026-10-17",
@@ -68,6 +83,9 @@
       "origin": "auto"
     },
     {
+      "registration": "required",
+      "registration_deadline": "2026-10-11",
+      "registration_note": "二次元コードから回答、またはチラシ裏面に記入しメールかFAXで申込。各回先着10名程度",
       "id": "bd68c9b01b22",
       "title": "水俣環境アカデミア　プログラミングセミナー「ワクワク!!プログラミングクエスト」（10月17日）を開催します！",
       "start_date": "2026-10-17",
@@ -81,6 +99,9 @@
       "origin": "auto"
     },
     {
+      "registration": "partial",
+      "registration_deadline": null,
+      "registration_note": "申し込み不要（バスケットボール教室を除く）",
       "id": "02f53019b2a3",
       "title": "「みなまたスポーツフェスタ2026」を開催します！",
       "start_date": "2026-10-18",
@@ -94,6 +115,9 @@
       "origin": "auto"
     },
     {
+      "registration": "partial",
+      "registration_deadline": null,
+      "registration_note": "教室は事前申込制で受付終了。トークショーは申込不要で観覧無料",
       "id": "77a712256dba",
       "title": "オリンピアンによるバスケットボール教室＆トークショー",
       "start_date": "2026-10-18",
@@ -107,6 +131,9 @@
       "origin": "auto"
     },
     {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "3a5ae8f46e48",
       "title": "「脳の健康フォーラム」のお知らせ",
       "start_date": "2026-10-24",
@@ -120,6 +147,9 @@
       "origin": "auto"
     },
     {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "fd1bb95a5bc2",
       "title": "みなまたおさかなまつりを開催します",
       "start_date": "2026-10-24",
@@ -133,6 +163,9 @@
       "origin": "auto"
     },
     {
+      "registration": "not_required",
+      "registration_deadline": null,
+      "registration_note": "当日、ふるさと広場内の大型テントで受付（最終受付15:30）",
       "id": "5ec24b3e1f4b",
       "title": "レアスポーツフェスティバルが開催されます！",
       "start_date": "2026-10-25",
@@ -146,6 +179,25 @@
       "origin": "auto"
     },
     {
+      "registration": "required",
+      "registration_deadline": "2026-10-21",
+      "registration_note": "電話または窓口にて申し込み",
+      "id": "4a68ef5e1db3",
+      "title": "第６回お米の学びなおし講習会を開催します",
+      "start_date": "2026-10-25",
+      "end_date": "2026-10-25",
+      "time_text": "09:00〜12:00",
+      "venue": "津奈木町千代地区",
+      "summary": "お米作りを学びなおすための講習会。初心者から経験者までを対象に、たんぼの準備から収穫後の作業までを学ぶ全9回の講座のうち、第6回現地講習会を開催する。",
+      "organizer": "芦北地方農業振興協議会（水俣市、芦北町、津奈木町、熊本県、JAあしきた）",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034891/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "a76834d0c4e1",
       "title": "令和８年度火のまつりを開催します",
       "start_date": "2026-10-31",
@@ -159,6 +211,9 @@
       "origin": "auto"
     },
     {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "2bc922f4c755",
       "title": "第72回水俣市民文化祭を開催します",
       "start_date": "2026-11-06",
@@ -172,6 +227,41 @@
       "origin": "auto"
     },
     {
+      "registration": "partial",
+      "registration_deadline": null,
+      "registration_note": "ハイハイ・よちよちレースはWeb申請が必要。詳細は外部リンクを参照",
+      "id": "c8c5b9116ef1",
+      "title": "令和８年度水俣市健康まつりを開催します！！",
+      "start_date": "2026-11-28",
+      "end_date": "2026-11-28",
+      "time_text": "09:00〜12:00",
+      "venue": "水俣市総合もやい直しセンター もやい館",
+      "summary": "生活習慣病予防をテーマに、健康に関する展示、相談、体験コーナーを実施。健康づくり作品展示や表彰式、ハイハイ・よちよちレースも同時開催。",
+      "organizer": "水俣市",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033860/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "59c179febc7a",
+      "title": "「第10回九州のお米食味コンクールin多良木」の開催のお知らせ",
+      "start_date": "2026-11-29",
+      "end_date": "2026-11-29",
+      "time_text": null,
+      "venue": "多良木町多目的研修センター",
+      "summary": "九州産米のPRと地位向上を目的に、九州各地のお米を一堂に集めて食味を競うコンクール。",
+      "organizer": "多良木町役場",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034892/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "required",
+      "registration_deadline": null,
+      "registration_note": "全席指定5,500円。各プレイガイド、ローソンチケット、教育課生涯学習室にて前売券販売",
       "id": "d96de7b98a91",
       "title": "自主文化事業　岸谷香「KAORI PARADISE 2026 -10回目のひとり旅-」開催のお知らせ",
       "start_date": "2026-12-19",
@@ -185,6 +275,9 @@
       "origin": "auto"
     },
     {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "f1a55a25d489",
       "title": "フライングディスク世界大会の開催決定！！",
       "start_date": "2027-09-19",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-06T11:09:16.488069+09:00",
+  "last_updated": "2026-10-07T01:13:19.202611+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -38,6 +38,67 @@
       "source_name": "水俣市 スポーツ情報",
       "published_date": "2026-10-06",
       "collected_at": "2026-10-06T11:09:11.985176+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c8c5b9116ef1",
+      "title": "令和８年度水俣市健康まつりを開催します！！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年度の水俣市健康まつりが開催されます。健康づくりに関する様々な体験や情報提供が行われるイベントです。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033860/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-06",
+      "collected_at": "2026-10-07T01:12:28.626037+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4a68ef5e1db3",
+      "title": "第６回お米の学びなおし講習会を開催します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "お米に関する知識を深めるための「第6回お米の学びなおし講習会」が開催されます。詳細な開催日時や場所については、市の公式サイトをご確認ください。",
+      "target": "お米について学びたい市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034891/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-06",
+      "collected_at": "2026-10-07T01:12:49.744684+09:00",
+      "status": "active"
+    },
+    {
+      "id": "59c179febc7a",
+      "title": "「第10回九州のお米食味コンクールin多良木」の開催のお知らせ",
+      "audience_tags": [
+        "全世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "イベント",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "九州各地のお米の食味を競う「第10回九州のお米食味コンクールin多良木」が開催されます。お米の品質向上や産地間交流を目的としたイベントです。",
+      "target": "米生産者およびお米に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034892/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-06",
+      "collected_at": "2026-10-07T01:12:57.803760+09:00",
       "status": "active"
     },
     {
