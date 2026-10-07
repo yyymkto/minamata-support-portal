@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07T01:27:14.577861+09:00",
+  "last_updated": "2026-10-07T10:19:45.603457+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -225,22 +225,6 @@
       "source_url": "https://www.city.minamata.lg.jp/kiji0034770/index.html",
       "source_label": "水俣市",
       "origin": "auto"
-    },
-    {
-      "registration": "required",
-      "registration_deadline": "2026-11-05",
-      "registration_note": "テスト用です",
-      "id": "f-585f83cc57",
-      "title": "テスト申し込み",
-      "start_date": "2026-11-07",
-      "end_date": "2026-11-07",
-      "time_text": null,
-      "venue": "tet",
-      "summary": "test",
-      "organizer": "test",
-      "source_url": null,
-      "source_label": "詳細",
-      "origin": "form"
     },
     {
       "registration": "partial",
