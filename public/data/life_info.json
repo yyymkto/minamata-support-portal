@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07T01:13:19.202611+09:00",
+  "last_updated": "2026-10-08T10:39:54.324974+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -3362,6 +3362,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "6c0d3b3b2ee2",
+      "title": "水俣ローズフェスタ秋2026",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市で開催される秋のバラの祭典です。バラの見頃に合わせて様々なイベントが予定されています。",
+      "target": "市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-10-08T10:39:49.821619+09:00",
       "status": "active"
     },
     {

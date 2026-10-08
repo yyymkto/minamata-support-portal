@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07T10:19:45.603457+09:00",
+  "last_updated": "2026-10-08T10:40:33.248692+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -208,6 +208,22 @@
       "organizer": "火のまつり実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034844/index.html",
       "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "partial",
+      "registration_deadline": null,
+      "registration_note": "アフタヌーンティーのみ電話予約制（0966-62-2003）。定員になり次第終了",
+      "id": "6c0d3b3b2ee2",
+      "title": "水俣ローズフェスタ秋2026",
+      "start_date": "2026-10-31",
+      "end_date": "2026-11-15",
+      "time_text": null,
+      "venue": "エコパーク水俣バラ園（道の駅みなまた）",
+      "summary": "バラの苗販売やマルシェ、ハロウィンブース、和紅茶フェアなどが行われる秋の恒例イベント。期間中、アフタヌーンティーなどの企画も実施されます。",
+      "organizer": "ローズフェスタ実行委員会（水俣市経済観光戦略課）",
+      "source_url": "https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html",
+      "source_label": "みなまた観光物産協会",
       "origin": "auto"
     },
     {
