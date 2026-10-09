@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08T10:39:54.324974+09:00",
+  "last_updated": "2026-10-09T10:53:09.971530+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -3362,6 +3362,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "934505df63e2",
+      "title": "みなまたスポーツフェスタ2026　開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市にて「みなまたスポーツフェスタ2026」が開催されます。詳細なプログラムや参加方法については、公式サイトをご確認ください。",
+      "target": "市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/sports-festa-2026.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-10-09T10:53:05.467893+09:00",
       "status": "active"
     },
     {

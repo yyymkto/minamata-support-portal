@@ -770,6 +770,12 @@
         "origin": "auto"
       }
     },
+    "https://www.go-minamata.jp/news-events/sports-festa-2026.html": {
+      "is_event": true,
+      "checked_at": "2026-10-09T10:53:35.101652+09:00",
+      "schema": 2,
+      "event": null
+    },
     "https://www.go-minamata.jp/news-events/yunoko_hanabi_2026.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:53:10.505794+09:00",
