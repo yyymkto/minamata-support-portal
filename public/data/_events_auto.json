@@ -497,6 +497,48 @@
       },
       "schema": 2
     },
+    "https://www.city.minamata.lg.jp/kiji0034896/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-10T10:36:02.833086+09:00",
+      "schema": 2,
+      "event": {
+        "id": "9965012d15bd",
+        "title": "みなまたパドルフェスティバル２０２６開催！",
+        "start_date": "2026-11-15",
+        "end_date": "2026-11-15",
+        "time_text": "08:30〜16:00",
+        "venue": "エコパーク水俣（水俣港ビジターバース付近）",
+        "summary": "水俣の伝統「競り舟」と世界で人気の「ドラゴンボート」のレース大会。国内外から参加者が集まり、200mの速さを競います。個人エントリー枠もあり、チームに所属していなくても参加可能です。",
+        "organizer": "みなまたパドルフェスティバル実行委員会、水俣市競り舟協会、みなまた競り舟大会実行委員会",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034896/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": null,
+        "registration_note": "詳細は大会要項を確認。水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課へ連絡"
+      }
+    },
+    "https://www.city.minamata.lg.jp/kiji0034898/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-10T10:36:13.209903+09:00",
+      "schema": 2,
+      "event": {
+        "id": "07fef936cdd8",
+        "title": "水俣ローズフェスタ秋2026を開催します！",
+        "start_date": "2026-10-31",
+        "end_date": "2026-11-15",
+        "time_text": null,
+        "venue": "エコパーク水俣バラ園（道の駅みなまた）",
+        "summary": "秋バラが咲き誇る園内で、マルシェやハロウィンブース、和紅茶フェアなど多彩なイベントが開催されます。期間中、バラの苗販売やキャラクターとの交流も楽しめます。",
+        "organizer": null,
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034898/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "partial",
+        "registration_deadline": null,
+        "registration_note": "アフタヌーンティーのみ電話予約が必要（0966-62-2003）"
+      }
+    },
     "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:50:13.507135+09:00",
@@ -661,6 +703,27 @@
         "registration_note": "当日ふるさと広場内の大型テントで受付（最終受付15:30）"
       },
       "schema": 2
+    },
+    "https://www.city.minamata.lg.jp/sports/kiji0034896/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-10T10:36:20.009326+09:00",
+      "schema": 2,
+      "event": {
+        "id": "3edca84202e5",
+        "title": "みなまたパドルフェスティバル２０２６開催！",
+        "start_date": "2026-11-15",
+        "end_date": "2026-11-15",
+        "time_text": "8:30〜16:00",
+        "venue": "エコパーク水俣（水俣港ビジターバース付近）",
+        "summary": "水俣の伝統「競り舟」と「ドラゴンボート」のレース大会。国内外から参加者が集まり、200mの速さを競う熱いレースが繰り広げられます。個人エントリー枠もあり、チーム未所属でも参加可能です。",
+        "organizer": "みなまたパドルフェスティバル実行委員会、水俣市競り舟協会、みなまた競り舟大会実行委員会",
+        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034896/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": null,
+        "registration_note": "詳細は大会要項を確認。問い合わせは水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課（0966-…"
+      }
     },
     "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html": {
       "is_event": false,

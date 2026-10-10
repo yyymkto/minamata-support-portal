@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08T10:40:33.248692+09:00",
+  "last_updated": "2026-10-10T10:36:48.261524+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -239,6 +239,22 @@
       "summary": "市民による美術展や写真展などの総合展示、芸能発表、合唱祭が行われる文化の祭典。もやい館での展示のほか、文化会館では芸能のつどいや合唱祭が開催される。",
       "organizer": "第72回水俣市民文化祭実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034770/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "required",
+      "registration_deadline": null,
+      "registration_note": "詳細は大会要項を確認。水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課へ連絡",
+      "id": "9965012d15bd",
+      "title": "みなまたパドルフェスティバル２０２６開催！",
+      "start_date": "2026-11-15",
+      "end_date": "2026-11-15",
+      "time_text": "08:30〜16:00",
+      "venue": "エコパーク水俣（水俣港ビジターバース付近）",
+      "summary": "水俣の伝統「競り舟」と世界で人気の「ドラゴンボート」のレース大会。国内外から参加者が集まり、200mの速さを競います。個人エントリー枠もあり、チームに所属していなくても参加可能です。",
+      "organizer": "みなまたパドルフェスティバル実行委員会、水俣市競り舟協会、みなまた競り舟大会実行委員会",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034896/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
