@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-10T10:36:48.261524+09:00",
+  "last_updated": "2026-10-11T09:45:39.979844+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -15,22 +15,6 @@
       "summary": "お店の人がプロならではのコツや知識を教える少人数制のミニ講座。期間中、市内各店舗にて様々なテーマの講座が開催されます。参加には各店舗への事前申し込みが必要です。",
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": "required",
-      "registration_deadline": "2026-10-08",
-      "registration_note": "チラシ右下のQRコードから申し込み。定員30名程度",
-      "id": "16ea9bc69b43",
-      "title": "『sunset YOGA』～海×夕日×ヨガ～",
-      "start_date": "2026-10-10",
-      "end_date": "2026-10-10",
-      "time_text": "17:00〜18:00",
-      "venue": "エコパーク水俣 親水護岸",
-      "summary": "海に沈む夕日を眺めながら、波の音とともに心と体を整えるヨガ体験会。初心者も歓迎で、ヨガマットは主催者が用意します。18歳以上が対象で、事前申し込みが必要です。",
-      "organizer": "熊本県スポーツ振興事業団 企画推進課",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034866/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
