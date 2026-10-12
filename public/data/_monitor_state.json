@@ -69,6 +69,9 @@
     "medical-care-child-guideline": {
       "last_page_date": "2026-08-10"
     },
+    "kikan-soudan-canvas": {
+      "last_page_date": "2026-10-02"
+    },
     "online-pediatric-obgyn-consultation": {
       "last_page_date": "2026-06-02"
     },
@@ -97,7 +100,7 @@
       "last_page_date": "2026-10-01"
     },
     "kodomo-center": {
-      "last_page_date": "2026-09-28"
+      "last_page_date": "2026-10-07"
     },
     "development-support-pamphlet": {
       "last_page_date": "2025-06-25"
@@ -115,5 +118,5 @@
       "last_page_date": "2025-10-01"
     }
   },
-  "last_run": "2026-10-05T10:37:53.582001+09:00"
+  "last_run": "2026-10-12T11:05:09.359864+09:00"
 }
