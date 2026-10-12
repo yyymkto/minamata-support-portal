@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-11T09:45:39.979844+09:00",
+  "last_updated": "2026-10-12T10:06:42.815527+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -15,22 +15,6 @@
       "summary": "お店の人がプロならではのコツや知識を教える少人数制のミニ講座。期間中、市内各店舗にて様々なテーマの講座が開催されます。参加には各店舗への事前申し込みが必要です。",
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "520f44dceb1d",
-      "title": "エコパーク水俣で「第55回日本男子ソフトボールリーグ第4節熊本大会」が開催されます！",
-      "start_date": "2026-10-10",
-      "end_date": "2026-10-11",
-      "time_text": null,
-      "venue": "エコパーク水俣 特設ソフトボール場",
-      "summary": "日本トップリーグで戦う9チームによる男子ソフトボールリーグの熊本大会。熊本の「熊本嶋田クラブ」を含む強豪チームのハイレベルな試合を観戦できる貴重な機会です。",
-      "organizer": "公益財団法人 日本ソフトボール協会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034865/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
