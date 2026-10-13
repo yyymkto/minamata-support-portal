@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-12T10:06:42.815527+09:00",
+  "last_updated": "2026-10-13T11:56:06.466724+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -16,22 +16,6 @@
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "0768dac5fbe1",
-      "title": "-みなまた初恋通り商店会-ハロウィンマルシェ　開催します！",
-      "start_date": "2026-10-12",
-      "end_date": "2026-10-12",
-      "time_text": "10:00〜16:00",
-      "venue": "みなまた初恋通り商店会",
-      "summary": "42店舗が集合するマルシェや、ダンス、仮装パレード、コンテスト、鬼退治ゲームなどが楽しめるハロウィンイベント。仮装での来場も歓迎しており、家族や友人と楽しめる内容です。",
-      "organizer": "みなまた初恋通り商店会",
-      "source_url": "https://www.go-minamata.jp/news-events/r8_hatsukoi-hw-marche.html",
-      "source_label": "みなまた観光物産協会",
       "origin": "auto"
     },
     {
