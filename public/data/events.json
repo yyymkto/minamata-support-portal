@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-13T11:56:06.466724+09:00",
+  "last_updated": "2026-10-14T10:02:09.714070+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -79,6 +79,22 @@
       "summary": "2016リオデジャネイロオリンピック元女子バスケットボール日本代表・間宮佑圭さんを招いたバスケットボール教室とトークショー。小学生・中高生向けの教室と、誰でも参加可能なトークショーが行われます。",
       "organizer": "水俣市",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034810/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-10-21",
+      "registration_note": "申込書をエコパーク窓口へ提出または電話で申し込み。定員各10名",
+      "id": "e2472b001432",
+      "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
+      "start_date": "2026-10-22",
+      "end_date": "2026-11-19",
+      "time_text": "19:00〜20:30",
+      "venue": "エコパーク水俣 テニスコート",
+      "summary": "初心者向けの「はじめてFUNクラス」と経験者向けの「スキルアップクラス」に分かれ、全5回でテニスを学ぶ教室。11月29日には参加者限定のイベントも予定。",
+      "organizer": "エコパーク水俣 管理事務所",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034902/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },

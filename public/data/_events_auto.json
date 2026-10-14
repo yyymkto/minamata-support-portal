@@ -539,6 +539,27 @@
         "registration_note": "アフタヌーンティーのみ電話予約が必要（0966-62-2003）"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034902/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-14T10:01:34.694040+09:00",
+      "schema": 2,
+      "event": {
+        "id": "e2472b001432",
+        "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
+        "start_date": "2026-10-22",
+        "end_date": "2026-11-19",
+        "time_text": "19:00〜20:30",
+        "venue": "エコパーク水俣 テニスコート",
+        "summary": "初心者向けの「はじめてFUNクラス」と経験者向けの「スキルアップクラス」に分かれ、全5回でテニスを学ぶ教室。11月29日には参加者限定のイベントも予定。",
+        "organizer": "エコパーク水俣 管理事務所",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034902/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-10-21",
+        "registration_note": "申込書をエコパーク窓口へ提出または電話で申し込み。定員各10名"
+      }
+    },
     "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:50:13.507135+09:00",
@@ -723,6 +744,27 @@
         "registration": "required",
         "registration_deadline": null,
         "registration_note": "詳細は大会要項を確認。問い合わせは水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課（0966-…"
+      }
+    },
+    "https://www.city.minamata.lg.jp/sports/kiji0034902/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-14T10:01:40.922083+09:00",
+      "schema": 2,
+      "event": {
+        "id": "34e15c17a8ad",
+        "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
+        "start_date": "2026-10-22",
+        "end_date": "2026-11-19",
+        "time_text": "19:00〜20:30",
+        "venue": "エコパーク水俣 テニスコート",
+        "summary": "初心者向けの「はじめてFUNクラス」と経験者向けの「スキルアップクラス」に分かれ、全5回でテニスを学ぶ教室。11月29日には参加者限定イベントも開催予定。",
+        "organizer": "水俣市スポーツ推進課",
+        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034902/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-10-21",
+        "registration_note": "申込書に記入の上、エコパーク窓口へ直接または電話で申し込み。定員各10名"
       }
     },
     "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html": {

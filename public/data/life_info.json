@@ -1,7 +1,47 @@
 {
-  "last_updated": "2026-10-13T11:55:41.758796+09:00",
+  "last_updated": "2026-10-14T10:01:31.870187+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "e2472b001432",
+      "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
+      "audience_tags": [
+        "現役世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "仕事帰りに気軽にテニスを楽しめる「エコパーク仕事終わりのテニスクラブ」が開催されます。運動不足の解消やリフレッシュの場として参加可能です。",
+      "target": "仕事帰りにテニスを楽しみたい現役世代の方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034902/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-13",
+      "collected_at": "2026-10-14T10:01:06.914288+09:00",
+      "status": "active"
+    },
+    {
+      "id": "34e15c17a8ad",
+      "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
+      "audience_tags": [
+        "現役世代",
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "イベント",
+        "健康・医療"
+      ],
+      "organization": "水俣市",
+      "summary": "エコパークにて、仕事終わりに参加できるテニスクラブが開催されます。運動不足の解消や健康づくりにぜひご参加ください。",
+      "target": "仕事終わりの運動を希望する方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034902/index.html",
+      "source_name": "水俣市 スポーツ情報",
+      "published_date": "2026-10-13",
+      "collected_at": "2026-10-14T10:01:27.367935+09:00",
+      "status": "active"
+    },
     {
       "id": "9965012d15bd",
       "title": "みなまたパドルフェスティバル２０２６開催！",
@@ -372,6 +412,27 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-01",
       "collected_at": "2026-10-01T10:10:14.121273+09:00",
+      "status": "active"
+    },
+    {
+      "id": "77c2233652ed",
+      "title": "水俣市カスタマーハラスメント対策マニュアル",
+      "audience_tags": [
+        "事業者向け",
+        "全世代"
+      ],
+      "topic_tags": [
+        "産業・事業支援",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市が策定したカスタマーハラスメント対策マニュアルが公開されました。事業者や市民がハラスメントへの対応方針や具体的な対策を確認できる資料です。",
+      "target": "市内事業者および市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034900/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-01",
+      "collected_at": "2026-10-14T10:01:19.372658+09:00",
       "status": "active"
     },
     {
