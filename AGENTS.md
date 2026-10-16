@@ -31,6 +31,11 @@
 - データ: `public/data/*.json`
 - 自動更新: `.github/workflows/daily-update.yml`（新着情報のみ、毎朝7:00 JST）
 
+## よくある依頼
+
+- **イベントのスクリーンショットが貼られたら**：`docs/events-sheet-guide.md` の
+  「スクリーンショットから追加する」の決まりに従い、スプレッドシートに貼る1行を作る。
+
 ## 運用ルール
 
 - **状態の変更を伴う作業をしたら、必ず `CURRENT_STATUS.md` を更新すること。**
