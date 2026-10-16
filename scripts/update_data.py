@@ -118,7 +118,7 @@ SOURCES: list[Source] = [
         base_url="https://www.city.minamata.lg.jp",
     ),
     # 水俣市 スポーツ情報の新着（RSSが提供されているためRSSとして取得。
-    # 「水俣市 新着情報」にも一部重複するが、source_urlキーでマージされるため問題ない）
+    # 「水俣市 新着情報」にも同じ記事が /sports/kijiNNN/ の別URLで載るため、article_key で1件にまとめる）
     Source(
         name="水俣市 スポーツ情報",
         url="https://www.city.minamata.lg.jp/sports/new_list.xml",
@@ -168,6 +168,18 @@ class Candidate:
 
 def make_id(url: str) -> str:
     return hashlib.sha1(url.encode("utf-8")).hexdigest()[:12]
+
+
+# 市公式サイトでは、同じ記事が新着情報の /kijiNNN/ と、スポーツ・防災サイトの
+# /sports/kijiNNN/・/bousai/kijiNNN/ の別URLで公開される（記事番号は共通）。
+# URLのままだと同じ記事が2件並ぶため（2026-10-17、吉野さんの指摘で18組を確認）、
+# 重複の判定はURLではなくこのキーで行う。
+CITY_ARTICLE_PATTERN = re.compile(r"^https?://www\.city\.minamata\.lg\.jp/(?:[a-z_]+/)?(kiji\d+)/")
+
+
+def article_key(url: str) -> str:
+    m = CITY_ARTICLE_PATTERN.match(url)
+    return f"city:{m.group(1)}" if m else url
 
 
 def http_get(url: str) -> Optional[requests.Response]:
@@ -349,9 +361,10 @@ def collect_all_candidates() -> tuple[list[Candidate], int, int]:
         all_candidates.extend(filtered)
         time.sleep(1)
 
+    # SOURCES の並び順（新着情報が先頭）で先に見つかったものを残す
     dedup: dict[str, Candidate] = {}
     for c in all_candidates:
-        dedup.setdefault(c.link, c)
+        dedup.setdefault(article_key(c.link), c)
     return list(dedup.values()), sources_ok, len(SOURCES)
 
 
@@ -583,10 +596,16 @@ def sort_key(item: dict) -> tuple[int, str]:
 
 
 def merge_items(existing_items: list[dict], new_items: list[dict]) -> list[dict]:
-    by_url: dict[str, dict] = {item["source_url"]: item for item in existing_items}
+    by_key: dict[str, dict] = {}
+    for item in existing_items:
+        key = article_key(item["source_url"])
+        kept = by_key.get(key)
+        # 既に同じ記事が重複して入っている場合は、サブサイトでない（URLが短い）新着情報の版を残す
+        if kept is None or len(item["source_url"]) < len(kept["source_url"]):
+            by_key[key] = item
     for item in new_items:
-        by_url[item["source_url"]] = item
-    merged = list(by_url.values())
+        by_key[article_key(item["source_url"])] = item
+    merged = list(by_key.values())
     merged.sort(key=sort_key, reverse=True)
     return merged[:MAX_ITEMS]
 
@@ -628,7 +647,8 @@ def main() -> int:
         return 0
 
     checked_urls = load_checked_urls()
-    unseen = [c for c in candidates if c.link not in checked_urls]
+    checked_keys = {article_key(u) for u in checked_urls}
+    unseen = [c for c in candidates if article_key(c.link) not in checked_keys]
     log.info(
         "うち未判定の候補: %d 件（判定済みとしてスキップ: %d 件）",
         len(unseen), len(candidates) - len(unseen),

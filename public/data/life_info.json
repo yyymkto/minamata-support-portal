@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-15T09:22:27.814542+09:00",
+  "last_updated": "2026-10-17T01:51:05.702114+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -19,27 +19,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-13",
       "collected_at": "2026-10-14T10:01:06.914288+09:00",
-      "status": "active"
-    },
-    {
-      "id": "34e15c17a8ad",
-      "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
-      "audience_tags": [
-        "現役世代",
-        "学生・若者"
-      ],
-      "topic_tags": [
-        "イベント",
-        "健康・医療"
-      ],
-      "organization": "水俣市",
-      "summary": "エコパークにて、仕事終わりに参加できるテニスクラブが開催されます。運動不足の解消や健康づくりにぜひご参加ください。",
-      "target": "仕事終わりの運動を希望する方",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034902/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-10-13",
-      "collected_at": "2026-10-14T10:01:27.367935+09:00",
       "status": "active"
     },
     {
@@ -119,25 +98,6 @@
       "status": "active"
     },
     {
-      "id": "3edca84202e5",
-      "title": "みなまたパドルフェスティバル２０２６開催！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント"
-      ],
-      "organization": "水俣市",
-      "summary": "水俣市にて「みなまたパドルフェスティバル2026」が開催されます。詳細なプログラムや参加方法については、市の公式サイトをご確認ください。",
-      "target": "水俣市民および観光客",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034896/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-10-09",
-      "collected_at": "2026-10-10T10:35:55.511396+09:00",
-      "status": "active"
-    },
-    {
       "id": "5ec24b3e1f4b",
       "title": "レアスポーツフェスティバルが開催されます！",
       "audience_tags": [
@@ -154,25 +114,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-06",
       "collected_at": "2026-10-06T11:08:47.467736+09:00",
-      "status": "active"
-    },
-    {
-      "id": "533e72254c4c",
-      "title": "レアスポーツフェスティバルが開催されます！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント"
-      ],
-      "organization": "水俣市",
-      "summary": "水俣市にてレアスポーツフェスティバルが開催されます。詳細な開催日時や内容については、市の公式サイトをご確認ください。",
-      "target": "水俣市民およびスポーツに関心のある方",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-10-06",
-      "collected_at": "2026-10-06T11:09:11.985176+09:00",
       "status": "active"
     },
     {
@@ -313,25 +254,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-02",
       "collected_at": "2026-10-03T10:01:08.886028+09:00",
-      "status": "active"
-    },
-    {
-      "id": "c2ca90624f94",
-      "title": "地震と津波を想定した住民避難訓練",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "防災・災害"
-      ],
-      "organization": "水俣市",
-      "summary": "地震と津波の発生を想定した住民避難訓練が実施されます。災害時の避難行動を確認し、万が一に備えましょう。",
-      "target": "水俣市民全般",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034883/index.html",
-      "source_name": "水俣市 防災サイトのお知らせ",
-      "published_date": "2026-10-02",
-      "collected_at": "2026-10-03T10:01:15.306113+09:00",
       "status": "active"
     },
     {
@@ -491,46 +413,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-09-30",
       "collected_at": "2026-10-01T10:10:35.555646+09:00",
-      "status": "active"
-    },
-    {
-      "id": "f19356fa5e85",
-      "title": "『sunset YOGA』～海×夕日×ヨガ～",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント",
-        "健康・医療"
-      ],
-      "organization": "水俣市",
-      "summary": "水俣の海と夕日を楽しみながら体験できるヨガイベント『sunset YOGA』が開催されます。心身のリフレッシュに最適な屋外ヨガプログラムです。",
-      "target": "ヨガに関心のある方、どなたでも参加可能です。",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-09-30",
-      "collected_at": "2026-10-01T10:11:02.264976+09:00",
-      "status": "active"
-    },
-    {
-      "id": "f79c892c27c6",
-      "title": "水俣市立武道館の指定管理者募集のお知らせ",
-      "audience_tags": [
-        "事業者向け"
-      ],
-      "topic_tags": [
-        "募集・相談",
-        "産業・事業支援"
-      ],
-      "organization": "水俣市",
-      "summary": "水俣市立武道館の管理運営を行う指定管理者を募集しています。応募を検討される事業者は、募集要項等の詳細を市公式サイトで確認してください。",
-      "target": "水俣市立武道館の管理運営を希望する事業者",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034880/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-09-30",
-      "collected_at": "2026-10-01T10:11:09.258853+09:00",
       "status": "active"
     },
     {
@@ -870,25 +752,6 @@
       "status": "active"
     },
     {
-      "id": "df6c7453508d",
-      "title": "エコパーク水俣で「第55回日本男子ソフトボールリーグ第4節熊本大会」が開催されます！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント"
-      ],
-      "organization": "水俣市",
-      "summary": "エコパーク水俣にて、第55回日本男子ソフトボールリーグ第4節熊本大会が開催されます。トップレベルのソフトボールの試合を観戦できる貴重な機会です。",
-      "target": "市民およびソフトボールファン",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034865/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-09-14",
-      "collected_at": "2026-09-15T09:25:42.234735+09:00",
-      "status": "active"
-    },
-    {
       "id": "d97b6efcc1d8",
       "title": "日本赤十字社熊本県支部で受付中の義援金・救援金について",
       "audience_tags": [
@@ -1167,28 +1030,6 @@
       "status": "active"
     },
     {
-      "id": "9f48c0b6b80c",
-      "title": "「みなまたスポーツフェスタ2026」の出店者を募集しています！",
-      "audience_tags": [
-        "事業者向け",
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント",
-        "募集・相談",
-        "産業・事業支援"
-      ],
-      "organization": "水俣市",
-      "summary": "「みなまたスポーツフェスタ2026」の会場で出店を行う事業者を募集しています。イベントでの販売やPRを希望する方は、詳細を確認の上、指定の方法で申し込みを行ってください。",
-      "target": "イベントでの出店を希望する事業者や団体",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034823/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-09-03",
-      "collected_at": "2026-09-04T08:54:06.968651+09:00",
-      "status": "active"
-    },
-    {
       "id": "6c9fb45b4f8a",
       "title": "家族や職場など、身近な人との会話が楽しくなる「共感トランプ講座」が開催されます。",
       "audience_tags": [
@@ -1449,47 +1290,6 @@
       "status": "active"
     },
     {
-      "id": "c808b751c900",
-      "title": "オリンピアンによるバスケットボール教室＆トークショー",
-      "audience_tags": [
-        "子育て・妊娠期",
-        "学生・若者",
-        "現役世代"
-      ],
-      "topic_tags": [
-        "イベント",
-        "教育・生涯学習"
-      ],
-      "organization": "水俣市",
-      "summary": "オリンピアンを講師に招いたバスケットボール教室とトークショーが開催されます。スポーツを通じた交流や学びの機会として、子どもから大人まで参加可能です。",
-      "target": "バスケットボールに関心のある市民",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034810/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-08-31",
-      "collected_at": "2026-09-02T08:55:06.387843+09:00",
-      "status": "active"
-    },
-    {
-      "id": "c684cd042704",
-      "title": "「みなまたスポーツフェスタ2026」を開催します！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント"
-      ],
-      "organization": "水俣市",
-      "summary": "市民がスポーツに親しむためのイベント「みなまたスポーツフェスタ2026」が開催されます。詳細については市の公式サイトをご確認ください。",
-      "target": "水俣市民",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034822/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-08-31",
-      "collected_at": "2026-09-02T08:55:11.872646+09:00",
-      "status": "active"
-    },
-    {
       "id": "975f56319446",
       "title": "水俣市公式LINEポイント付与事業「みなeポイント」対象イベントについて",
       "audience_tags": [
@@ -1585,44 +1385,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-08-27",
       "collected_at": "2026-08-28T15:02:35.143612+09:00",
-      "status": "active"
-    },
-    {
-      "id": "0918fa3d7035",
-      "title": "フライングディスク世界大会の開催決定！！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント"
-      ],
-      "organization": "水俣市",
-      "summary": "水俣市にてフライングディスクの世界大会が開催されることが決定しました。詳細な日程や会場等の情報は、市のスポーツ情報ページにて順次公開されます。",
-      "target": "水俣市民およびフライングディスク競技に関心のある方",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034840/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-08-27",
-      "collected_at": "2026-08-28T15:02:42.425613+09:00",
-      "status": "active"
-    },
-    {
-      "id": "aa553bb74439",
-      "title": "「第５1回全日本フライングディスク個人総合選手権大会」が開催されます！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント"
-      ],
-      "organization": "水俣市",
-      "summary": "水俣市で「第51回全日本フライングディスク個人総合選手権大会」が開催されます。スポーツに関心のある方はぜひ観戦や応援にお越しください。",
-      "target": "市民およびスポーツファン",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034841/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-08-27",
-      "collected_at": "2026-08-28T15:02:48.189458+09:00",
       "status": "active"
     },
     {
@@ -1786,7 +1548,7 @@
       "status": "active"
     },
     {
-      "id": "777fc8eaa074",
+      "id": "329df21db36e",
       "title": "災害情報一覧",
       "audience_tags": [
         "全世代"
@@ -1795,13 +1557,13 @@
         "防災・災害"
       ],
       "organization": "水俣市",
-      "summary": "水俣市内の現在の災害情報や避難情報などを確認できるポータルページです。緊急時に備えて、最新の気象情報や避難所の開設状況を随時確認してください。",
+      "summary": "水俣市内の災害発生状況や避難情報などを確認できるポータルサイトです。緊急時に備え、日頃から確認しておくことを推奨します。",
       "target": "水俣市民および市内に滞在している方",
       "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
-      "source_name": "水俣市 防災サイトのお知らせ",
+      "source_url": "https://www.city.minamata.lg.jp/kiji003257/index.html",
+      "source_name": "水俣市 新着情報",
       "published_date": "2026-08-21",
-      "collected_at": "2026-08-25T19:39:28.706874+09:00",
+      "collected_at": "2026-08-25T19:31:18.276977+09:00",
       "status": "active"
     },
     {
@@ -1844,45 +1606,6 @@
       "status": "active"
     },
     {
-      "id": "329df21db36e",
-      "title": "災害情報一覧",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "防災・災害"
-      ],
-      "organization": "水俣市",
-      "summary": "水俣市内の災害発生状況や避難情報などを確認できるポータルサイトです。緊急時に備え、日頃から確認しておくことを推奨します。",
-      "target": "水俣市民および市内に滞在している方",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji003257/index.html",
-      "source_name": "水俣市 新着情報",
-      "published_date": "2026-08-21",
-      "collected_at": "2026-08-25T19:31:18.276977+09:00",
-      "status": "active"
-    },
-    {
-      "id": "9ff68d6ac72a",
-      "title": "令和８年熊本地震に伴う体育施設開館状況（8月21日付）",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "防災・災害",
-        "施設案内"
-      ],
-      "organization": "水俣市",
-      "summary": "令和8年熊本地震の影響に伴う、市内の体育施設の開館状況を更新しました。利用を予定されている方は、最新の開館状況を公式サイトでご確認ください。",
-      "target": "体育施設を利用する市民全般",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034836/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-08-21",
-      "collected_at": "2026-08-25T19:41:39.452288+09:00",
-      "status": "active"
-    },
-    {
       "id": "3a5ae8f46e48",
       "title": "「脳の健康フォーラム」のお知らせ",
       "audience_tags": [
@@ -1905,7 +1628,7 @@
       "status": "active"
     },
     {
-      "id": "424082cc2efc",
+      "id": "09ce1f8c2ea1",
       "title": "令和８年熊本地震に関する支援等",
       "audience_tags": [
         "全世代"
@@ -1914,13 +1637,13 @@
         "防災・災害"
       ],
       "organization": "水俣市",
-      "summary": "令和8年熊本地震に関する被災者支援や関連情報をまとめています。罹災証明書の発行や各種相談窓口など、被災された方が必要とする手続きや支援内容を確認できます。",
-      "target": "被災された市民および関係者",
+      "summary": "令和8年熊本地震に関する市からの支援情報や関連するお知らせを掲載しています。被災された方や支援を必要とする方は、最新の情報を公式サイトでご確認ください。",
+      "target": "被災された市民および支援を必要とする方",
       "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034805/index.html",
-      "source_name": "水俣市 防災サイトのお知らせ",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034805/index.html",
+      "source_name": "水俣市 新着情報",
       "published_date": "2026-08-20",
-      "collected_at": "2026-08-25T19:39:34.493562+09:00",
+      "collected_at": "2026-08-25T19:31:45.810317+09:00",
       "status": "active"
     },
     {
@@ -1941,25 +1664,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-08-20",
       "collected_at": "2026-08-25T19:31:51.538236+09:00",
-      "status": "active"
-    },
-    {
-      "id": "09ce1f8c2ea1",
-      "title": "令和８年熊本地震に関する支援等",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "防災・災害"
-      ],
-      "organization": "水俣市",
-      "summary": "令和8年熊本地震に関する市からの支援情報や関連するお知らせを掲載しています。被災された方や支援を必要とする方は、最新の情報を公式サイトでご確認ください。",
-      "target": "被災された市民および支援を必要とする方",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034805/index.html",
-      "source_name": "水俣市 新着情報",
-      "published_date": "2026-08-20",
-      "collected_at": "2026-08-25T19:31:45.810317+09:00",
       "status": "active"
     },
     {
@@ -2141,25 +1845,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-08-14",
       "collected_at": "2026-08-25T19:32:36.159981+09:00",
-      "status": "active"
-    },
-    {
-      "id": "f5d97146cdbf",
-      "title": "スポーツコミッションみなまたのロゴマークのデザイン案を募集します！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "募集・相談"
-      ],
-      "organization": "スポーツコミッションみなまた",
-      "summary": "スポーツコミッションみなまたのシンボルとなるロゴマークのデザイン案を募集しています。採用された作品は、市のスポーツ振興やPR活動において幅広く活用されます。",
-      "target": "どなたでも応募可能です。",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034735/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-08-14",
-      "collected_at": "2026-08-25T19:41:45.142608+09:00",
       "status": "active"
     },
     {
@@ -2355,25 +2040,6 @@
       "source_name": "水俣市",
       "published_date": "2026-08-06",
       "collected_at": "2026-08-15T09:00:00+09:00",
-      "status": "active"
-    },
-    {
-      "id": "59886317ff12",
-      "title": "令和８年度みなまたニュースポーツＤＡＹ（※名称変更しました）を開催します！！",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "イベント"
-      ],
-      "organization": "水俣市",
-      "summary": "誰でも気軽に楽しめるニュースポーツ体験イベント「みなまたニュースポーツＤＡＹ」を開催します。詳細な開催日時や内容については、市の公式サイトをご確認ください。",
-      "target": "市民全般",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html",
-      "source_name": "水俣市 スポーツ情報",
-      "published_date": "2026-08-06",
-      "collected_at": "2026-08-25T19:41:50.754745+09:00",
       "status": "active"
     },
     {
@@ -2799,7 +2465,7 @@
       "status": "active"
     },
     {
-      "id": "ac6710f2e041",
+      "id": "17070695704f",
       "title": "熊本県に住む外国人の皆さんへ（熊本地震について）",
       "audience_tags": [
         "全世代"
@@ -2808,13 +2474,13 @@
         "防災・災害"
       ],
       "organization": "水俣市",
-      "summary": "熊本地震に関する外国語での防災情報です。災害時の対応や避難に関する情報が多言語で提供されています。",
-      "target": "熊本県内に在住する外国人住民",
+      "summary": "熊本県に在住する外国人の方向けに、地震発生時の対応や防災に関する情報を多言語で提供しています。緊急時の備えや避難行動について確認できます。",
+      "target": "水俣市に在住する外国人の方",
       "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034790/index.html",
-      "source_name": "水俣市 防災サイトのお知らせ",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034790/index.html",
+      "source_name": "水俣市 新着情報",
       "published_date": "2026-07-29",
-      "collected_at": "2026-08-25T19:39:40.173942+09:00",
+      "collected_at": "2026-08-25T19:36:21.298847+09:00",
       "status": "active"
     },
     {
@@ -2854,25 +2520,6 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-07-29",
       "collected_at": "2026-08-25T19:36:32.336740+09:00",
-      "status": "active"
-    },
-    {
-      "id": "17070695704f",
-      "title": "熊本県に住む外国人の皆さんへ（熊本地震について）",
-      "audience_tags": [
-        "全世代"
-      ],
-      "topic_tags": [
-        "防災・災害"
-      ],
-      "organization": "水俣市",
-      "summary": "熊本県に在住する外国人の方向けに、地震発生時の対応や防災に関する情報を多言語で提供しています。緊急時の備えや避難行動について確認できます。",
-      "target": "水俣市に在住する外国人の方",
-      "deadline": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034790/index.html",
-      "source_name": "水俣市 新着情報",
-      "published_date": "2026-07-29",
-      "collected_at": "2026-08-25T19:36:21.298847+09:00",
       "status": "active"
     },
     {
