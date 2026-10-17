@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-14T10:02:09.714070+09:00",
+  "last_updated": "2026-10-17T09:14:40.145502+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -49,6 +49,22 @@
       "source_url": "https://www.city.minamata.lg.jp/kiji0034842/index.html",
       "source_label": "水俣市",
       "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "m-497c0c9864",
+      "title": "MINAMATA MUSIC FESTIVAL 2026",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "time_text": "13:30開演（13:00開場）",
+      "venue": "水俣市文化会館ホール",
+      "summary": "入場無料の音楽フェス。出演はMINAMA、sui、ミニスパゲティ、やすお、でこぽんほか。",
+      "organizer": null,
+      "source_url": null,
+      "source_label": "詳細",
+      "origin": "manual"
     },
     {
       "registration": "partial",
@@ -212,6 +228,38 @@
     },
     {
       "registration": "required",
+      "registration_deadline": "2026-10-30",
+      "registration_note": "申し込みフォームから申し込み。定員10組程度、先着順",
+      "id": "8e0fbe0b21c0",
+      "title": "「グリーンスポーツみなまた2026オータムナイト」",
+      "start_date": "2026-11-07",
+      "end_date": "2026-11-08",
+      "time_text": "13:00〜翌10:00",
+      "venue": "グリーンスポーツみなまた",
+      "summary": "自然豊かな公園で、園内の片付けや枝拾い、遊び、夕食づくり、キャンプなどを楽しむイベント。中学生以下は保護者同伴が必要。",
+      "organizer": "水俣市、Mrs.GREEN SPORT",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034912/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "required",
+      "registration_deadline": null,
+      "registration_note": "Googleフォーム（forms.gle/6seq7fSC72ARdgA87）。定員10組程度",
+      "id": "m-058ab3e19b",
+      "title": "グリーンスポーツみなまた 2026 オータムナイト",
+      "start_date": "2026-11-07",
+      "end_date": "2026-11-08",
+      "time_text": "13:00集合〜翌10:00解散",
+      "venue": "グリーンスポーツみなまた（入口前駐車場集合）",
+      "summary": "参加者どうしで協力して楽しむ1泊2日のキャンプ。片付け・夕食づくり・テント泊・朝ごはん。1人1,000円以下、道具は各自持参。中学生以下は保護者同伴。",
+      "organizer": "Mrs.GREEN SPORT（共催：水俣市）",
+      "source_url": null,
+      "source_label": "詳細",
+      "origin": "manual"
+    },
+    {
+      "registration": "required",
       "registration_deadline": null,
       "registration_note": "詳細は大会要項を確認。水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課へ連絡",
       "id": "9965012d15bd",
@@ -225,6 +273,22 @@
       "source_url": "https://www.city.minamata.lg.jp/kiji0034896/index.html",
       "source_label": "水俣市",
       "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "m-96ad53f449",
+      "title": "みなまた和紅茶アフタヌーンティー",
+      "start_date": "2026-11-22",
+      "end_date": "2026-11-22",
+      "time_text": "11:30〜13:00",
+      "venue": "エコパーク水俣ふるさと広場",
+      "summary": "和紅茶サミットの企画として開かれる、みなまた和紅茶のアフタヌーンティー。参加費5,500円。",
+      "organizer": "水俣・芦北地域雇用創造協議会",
+      "source_url": null,
+      "source_label": "詳細",
+      "origin": "manual"
     },
     {
       "registration": "partial",

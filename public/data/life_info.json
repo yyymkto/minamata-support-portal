@@ -1,7 +1,26 @@
 {
-  "last_updated": "2026-10-17T01:51:05.702114+09:00",
+  "last_updated": "2026-10-17T09:14:00.170876+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "8e0fbe0b21c0",
+      "title": "「グリーンスポーツみなまた2026オータムナイト」",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "グリーンスポーツみなまたで開催される秋の夜のイベントです。詳細な開催内容や参加方法については、公式サイトをご確認ください。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034912/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-16",
+      "collected_at": "2026-10-17T09:13:53.981142+09:00",
+      "status": "active"
+    },
     {
       "id": "e2472b001432",
       "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",

@@ -560,211 +560,25 @@
         "registration_note": "申込書をエコパーク窓口へ提出または電話で申し込み。定員各10名"
       }
     },
-    "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html": {
+    "https://www.city.minamata.lg.jp/kiji0034912/index.html": {
       "is_event": true,
-      "checked_at": "2026-09-21T23:50:13.507135+09:00",
-      "event": {
-        "id": "59886317ff12",
-        "title": "令和８年度みなまたニュースポーツＤＡＹ（※名称変更しました）を開催します！！",
-        "start_date": "2026-09-27",
-        "end_date": "2026-09-27",
-        "time_text": "09:00〜",
-        "venue": "水俣市立総合体育館 大アリーナ",
-        "summary": "「水俣市民室内ペタンク大会」から名称変更しリニューアルしたスポーツイベント。ペタンクと公式輪投げの2種目を3名1組のチーム戦で行う。",
-        "organizer": "水俣市 スポーツ推進課",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034795/index.html",
-        "source_label": "水俣市",
-        "origin": "auto"
-      }
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034810/index.html": {
-      "is_event": true,
-      "checked_at": "2026-09-21T23:47:33.175680+09:00",
-      "event": {
-        "id": "c808b751c900",
-        "title": "オリンピアンによるバスケットボール教室＆トークショー",
-        "start_date": "2026-10-18",
-        "end_date": "2026-10-18",
-        "time_text": "09:15〜13:00",
-        "venue": "水俣市立総合体育館２階大アリーナ",
-        "summary": "元女子バスケットボール日本代表の間宮佑圭さんを招いたバスケットボール教室とトークショー。小学生・中高生向けの教室のほか、誰でも観覧可能なトークショーが行われます。参加は事前申込制（先着順）です。",
-        "organizer": "水俣市スポーツ推進課",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034810/index.html",
-        "source_label": "水俣市",
-        "origin": "auto",
-        "registration": "partial",
-        "registration_deadline": null,
-        "registration_note": "バスケットボール教室は事前申込制（受付終了）。トークショーは申込不要で観覧無料"
-      },
-      "schema": 2
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034822/index.html": {
-      "is_event": true,
-      "checked_at": "2026-09-21T23:47:44.056709+09:00",
-      "event": {
-        "id": "c684cd042704",
-        "title": "「みなまたスポーツフェスタ2026」を開催します！",
-        "start_date": "2026-10-18",
-        "end_date": "2026-10-18",
-        "time_text": "8:30〜16:30",
-        "venue": "水俣市立総合体育館",
-        "summary": "誰もが気軽に様々なスポーツを体験できるイベント。オリンピアンによるバスケットボール教室やトークショー、飲食ブース、お楽しみ抽選会などが実施されます。小さいお子さんから高齢の方まで楽しめる種目が多数用意されています。",
-        "organizer": "水俣市・水俣市スポーツ協会",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034822/index.html",
-        "source_label": "水俣市",
-        "origin": "auto",
-        "registration": "partial",
-        "registration_deadline": null,
-        "registration_note": "バスケットボール教室は受付終了。その他は申し込み不要で当日会場へ"
-      },
-      "schema": 2
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034823/index.html": {
-      "is_event": false,
-      "checked_at": "2026-09-21T23:46:44.367175+09:00",
-      "event": null
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034840/index.html": {
-      "is_event": true,
-      "checked_at": "2026-09-21T23:48:40.416400+09:00",
-      "event": {
-        "id": "0918fa3d7035",
-        "title": "フライングディスク世界大会の開催決定！！",
-        "start_date": "2027-09-19",
-        "end_date": "2027-09-24",
-        "time_text": null,
-        "venue": "エコパーク水俣",
-        "summary": "個人競技の世界一を決めるフライングディスクの国際大会。日本で初めて開催される記念すべき大会であり、世界各国から選手が集結する。",
-        "organizer": "世界フライングディスク連盟、日本フライングディスク協会",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034840/index.html",
-        "source_label": "水俣市",
-        "origin": "auto",
-        "registration": null,
-        "registration_deadline": null,
-        "registration_note": null
-      },
-      "schema": 2
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034841/index.html": {
-      "is_event": true,
-      "checked_at": "2026-09-21T23:48:49.364597+09:00",
-      "event": {
-        "id": "aa553bb74439",
-        "title": "「第５1回全日本フライングディスク個人総合選手権大会」が開催されます！",
-        "start_date": "2026-09-20",
-        "end_date": "2026-09-22",
-        "time_text": "08:00〜16:30",
-        "venue": "エコパーク水俣",
-        "summary": "フライングディスク競技の各種個人種目及び個人総合の日本一を決める全国大会。ディスクゴルフやディスタンスなど7種目が行われ、無料体験コーナーも併設されます。",
-        "organizer": "水俣市スポーツ推進課",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034841/index.html",
-        "source_label": "水俣市",
-        "origin": "auto"
-      }
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034865/index.html": {
-      "is_event": true,
-      "checked_at": "2026-09-21T23:45:43.229320+09:00",
-      "event": {
-        "id": "df6c7453508d",
-        "title": "エコパーク水俣で「第55回日本男子ソフトボールリーグ第4節熊本大会」が開催されます！",
-        "start_date": "2026-10-10",
-        "end_date": "2026-10-11",
-        "time_text": null,
-        "venue": "エコパーク水俣 特設ソフトボール場",
-        "summary": "日本トップリーグで戦う9チームが集結する男子ソフトボールリーグの熊本大会。熊本嶋田クラブを含む強豪チームによるハイレベルな試合を観戦できます。",
-        "organizer": "公益財団法人 日本ソフトボール協会",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034865/index.html",
-        "source_label": "水俣市",
-        "origin": "auto",
-        "registration": null,
-        "registration_deadline": null,
-        "registration_note": null
-      },
-      "schema": 2
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html": {
-      "is_event": true,
-      "checked_at": "2026-10-01T10:11:38.235174+09:00",
-      "event": {
-        "id": "f19356fa5e85",
-        "title": "『sunset YOGA』～海×夕日×ヨガ～",
-        "start_date": "2026-10-10",
-        "end_date": "2026-10-10",
-        "time_text": "17:00〜18:00",
-        "venue": "エコパーク水俣 親水護岸",
-        "summary": "海に沈む夕日を眺めながら心と体を整えるヨガ体験イベント。初心者も歓迎で、波の音を感じながらゆったりとした時間を過ごせます。ヨガマットは主催者側で用意されます。",
-        "organizer": "熊本県スポーツ振興事業団",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034866/index.html",
-        "source_label": "水俣市",
-        "origin": "auto",
-        "registration": "required",
-        "registration_deadline": "2026-10-08",
-        "registration_note": "チラシ右下のQRコードから申し込み。定員30名程度"
-      },
-      "schema": 2
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html": {
-      "is_event": true,
-      "checked_at": "2026-10-06T11:09:50.152305+09:00",
-      "event": {
-        "id": "533e72254c4c",
-        "title": "レアスポーツフェスティバルが開催されます！",
-        "start_date": "2026-10-25",
-        "end_date": "2026-10-25",
-        "time_text": "10:00〜16:00",
-        "venue": "エコパーク水俣 ふるさと広場",
-        "summary": "初めての方も大歓迎のスポーツイベント。フリーパスまたは種目ごとの参加費で、様々なスポーツを体験できます。",
-        "organizer": "エコパーク水俣管理事務所",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034893/index.html",
-        "source_label": "水俣市",
-        "origin": "auto",
-        "registration": "not_required",
-        "registration_deadline": null,
-        "registration_note": "当日ふるさと広場内の大型テントで受付（最終受付15:30）"
-      },
-      "schema": 2
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034896/index.html": {
-      "is_event": true,
-      "checked_at": "2026-10-10T10:36:20.009326+09:00",
+      "checked_at": "2026-10-17T09:14:09.952202+09:00",
       "schema": 2,
       "event": {
-        "id": "3edca84202e5",
-        "title": "みなまたパドルフェスティバル２０２６開催！",
-        "start_date": "2026-11-15",
-        "end_date": "2026-11-15",
-        "time_text": "8:30〜16:00",
-        "venue": "エコパーク水俣（水俣港ビジターバース付近）",
-        "summary": "水俣の伝統「競り舟」と「ドラゴンボート」のレース大会。国内外から参加者が集まり、200mの速さを競う熱いレースが繰り広げられます。個人エントリー枠もあり、チーム未所属でも参加可能です。",
-        "organizer": "みなまたパドルフェスティバル実行委員会、水俣市競り舟協会、みなまた競り舟大会実行委員会",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034896/index.html",
+        "id": "8e0fbe0b21c0",
+        "title": "「グリーンスポーツみなまた2026オータムナイト」",
+        "start_date": "2026-11-07",
+        "end_date": "2026-11-08",
+        "time_text": "13:00〜翌10:00",
+        "venue": "グリーンスポーツみなまた",
+        "summary": "自然豊かな公園で、園内の片付けや枝拾い、遊び、夕食づくり、キャンプなどを楽しむイベント。中学生以下は保護者同伴が必要。",
+        "organizer": "水俣市、Mrs.GREEN SPORT",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034912/index.html",
         "source_label": "水俣市",
         "origin": "auto",
         "registration": "required",
-        "registration_deadline": null,
-        "registration_note": "詳細は大会要項を確認。問い合わせは水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課（0966-…"
-      }
-    },
-    "https://www.city.minamata.lg.jp/sports/kiji0034902/index.html": {
-      "is_event": true,
-      "checked_at": "2026-10-14T10:01:40.922083+09:00",
-      "schema": 2,
-      "event": {
-        "id": "34e15c17a8ad",
-        "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
-        "start_date": "2026-10-22",
-        "end_date": "2026-11-19",
-        "time_text": "19:00〜20:30",
-        "venue": "エコパーク水俣 テニスコート",
-        "summary": "初心者向けの「はじめてFUNクラス」と経験者向けの「スキルアップクラス」に分かれ、全5回でテニスを学ぶ教室。11月29日には参加者限定イベントも開催予定。",
-        "organizer": "水俣市スポーツ推進課",
-        "source_url": "https://www.city.minamata.lg.jp/sports/kiji0034902/index.html",
-        "source_label": "水俣市",
-        "origin": "auto",
-        "registration": "required",
-        "registration_deadline": "2026-10-21",
-        "registration_note": "申込書に記入の上、エコパーク窓口へ直接または電話で申し込み。定員各10名"
+        "registration_deadline": "2026-10-30",
+        "registration_note": "申し込みフォームから申し込み。定員10組程度、先着順"
       }
     },
     "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html": {
