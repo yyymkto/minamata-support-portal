@@ -1,7 +1,48 @@
 {
-  "last_updated": "2026-10-17T09:14:00.170876+09:00",
+  "last_updated": "2026-10-19T09:02:12.667944+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "ee9042cec5c8",
+      "title": "水俣うめど夕陽が丘団地",
+      "audience_tags": [
+        "現役世代",
+        "全世代"
+      ],
+      "topic_tags": [
+        "住まい",
+        "施設案内"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣うめど夕陽が丘団地の施設案内です。入居条件や団地の概要について確認できます。",
+      "target": "市営住宅への入居を検討している方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji003760/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-19",
+      "collected_at": "2026-10-19T09:01:53.250966+09:00",
+      "status": "active"
+    },
+    {
+      "id": "ee1ab49e3a72",
+      "title": "「いきいき健康食育の日」受けましょう健診及び検診",
+      "audience_tags": [
+        "現役世代",
+        "高齢者"
+      ],
+      "topic_tags": [
+        "健康・医療"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市では「いきいき健康食育の日」として、各種健診・検診の受診を呼びかけています。自身の健康管理のため、定期的な健診・検診を受けましょう。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034910/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-19",
+      "collected_at": "2026-10-19T09:02:06.193259+09:00",
+      "status": "active"
+    },
     {
       "id": "8e0fbe0b21c0",
       "title": "「グリーンスポーツみなまた2026オータムナイト」",

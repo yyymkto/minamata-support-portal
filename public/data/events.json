@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-18T08:53:41.304591+09:00",
+  "last_updated": "2026-10-19T09:02:36.422583+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -15,54 +15,6 @@
       "summary": "お店の人がプロならではのコツや知識を教える少人数制のミニ講座。期間中、市内各店舗にて様々なテーマの講座が開催されます。参加には各店舗への事前申し込みが必要です。",
       "organizer": "水俣まちゼミ実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "m-497c0c9864",
-      "title": "MINAMATA MUSIC FESTIVAL 2026",
-      "start_date": "2026-10-18",
-      "end_date": "2026-10-18",
-      "time_text": "13:30開演（13:00開場）",
-      "venue": "水俣市文化会館ホール",
-      "summary": "入場無料の音楽フェス。出演はMINAMA、sui、ミニスパゲティ、やすお、でこぽんほか。",
-      "organizer": null,
-      "source_url": null,
-      "source_label": "詳細",
-      "origin": "manual"
-    },
-    {
-      "registration": "partial",
-      "registration_deadline": null,
-      "registration_note": "申し込み不要（バスケットボール教室を除く）",
-      "id": "02f53019b2a3",
-      "title": "「みなまたスポーツフェスタ2026」を開催します！",
-      "start_date": "2026-10-18",
-      "end_date": "2026-10-18",
-      "time_text": "08:30〜16:30",
-      "venue": "水俣市立総合体育館",
-      "summary": "誰もが気軽に様々なスポーツを体験できるイベント。オリンピアンによるバスケットボール教室やトークショー、飲食ブース、お楽しみ抽選会などが実施されます。事前申し込み不要で参加可能です（一部教室を除く）。",
-      "organizer": "水俣市・水俣市スポーツ協会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034822/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": "partial",
-      "registration_deadline": null,
-      "registration_note": "教室は事前申込制で受付終了。トークショーは申込不要で観覧無料",
-      "id": "77a712256dba",
-      "title": "オリンピアンによるバスケットボール教室＆トークショー",
-      "start_date": "2026-10-18",
-      "end_date": "2026-10-18",
-      "time_text": "09:15〜13:00",
-      "venue": "水俣市立総合体育館２階大アリーナ",
-      "summary": "2016リオデジャネイロオリンピック元女子バスケットボール日本代表・間宮佑圭さんを招いたバスケットボール教室とトークショー。小学生・中高生向けの教室と、誰でも参加可能なトークショーが行われます。",
-      "organizer": "水俣市",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034810/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
