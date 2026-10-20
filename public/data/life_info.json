@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-19T09:02:12.667944+09:00",
+  "last_updated": "2026-10-20T10:00:00.692600+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -41,6 +41,65 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-19",
       "collected_at": "2026-10-19T09:02:06.193259+09:00",
+      "status": "active"
+    },
+    {
+      "id": "9f45c4202a7e",
+      "title": "地域提案事業【一般社団法人　水俣・写真家の眼】",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "環境",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の地域提案事業として実施されている「水俣・写真家の眼」に関する情報です。写真を通じて水俣の環境や地域の魅力を発信する活動を紹介しています。",
+      "target": "水俣市の環境や地域活動に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-19",
+      "collected_at": "2026-10-20T09:59:22.635988+09:00",
+      "status": "active"
+    },
+    {
+      "id": "528ffea8c195",
+      "title": "インバウンド実践セミナー",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "インバウンド（訪日外国人観光客）誘致を検討している事業者向けのセミナーです。実践的な知識やノウハウを学ぶことができます。",
+      "target": "市内の事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034914/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-19",
+      "collected_at": "2026-10-20T09:59:30.072134+09:00",
+      "status": "active"
+    },
+    {
+      "id": "e119a82de9db",
+      "title": "令和８年熊本地震に伴う水俣市利子補給金について",
+      "audience_tags": [
+        "現役世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年熊本地震の影響を受けた事業者等を対象に、融資にかかる利子の一部を補給する制度です。詳細な対象要件や申請方法については、市の公式サイトをご確認ください。",
+      "target": "令和8年熊本地震により被害を受けた事業者等",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034895/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-19",
+      "collected_at": "2026-10-20T09:59:54.511887+09:00",
       "status": "active"
     },
     {

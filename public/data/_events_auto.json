@@ -1,5 +1,26 @@
 {
   "entries": {
+    "https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-20T10:00:02.911608+09:00",
+      "schema": 2,
+      "event": {
+        "id": "9f45c4202a7e",
+        "title": "地域提案事業【一般社団法人　水俣・写真家の眼】",
+        "start_date": "2026-10-28",
+        "end_date": "2026-11-13",
+        "time_text": "8:30〜20:00",
+        "venue": "東京外国語大学 研究講義棟1階ガレリア",
+        "summary": "写真集『水俣からあなたへ』に収録された写真家9人の作品から42点を展示する巡回写真展。水俣病公式確認70年の節目に、水俣から何を学ぶのかを問いかける。",
+        "organizer": "一般社団法人 水俣・写真家の眼",
+        "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0033860/index.html": {
       "is_event": true,
       "checked_at": "2026-10-07T01:13:23.938217+09:00",
