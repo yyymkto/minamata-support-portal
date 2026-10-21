@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-10-17 by Antigravity）
+# 現在の状態（最終更新：2026-10-21 by Claude Code）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -174,6 +174,10 @@ minamata-support-portal
   決定記録 `decisions-log/2026-10-07_concern-collapse.md`（2026-08-15の「常時展開」のうち、カードの常時展開をやめる）。検索は入れない。
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
+
+- 2026-10-21: [Claude Code] 吉野さんの依頼で「ホーム画面に追加」ブロック（`#add-to-home`）をページ最下部から
+  グローバルタブ直下（全タブ共通・サイト名の上）へ移動。余白を `py-8 border-t mt-8` → `py-4 border-b` に変更。
+  スマホのお知らせタブでは一行のお知らせ（`#a2hs-notice`）と案内が2回出るが、吉野さんの判断でそのままにする。未push。
 
 - 2026-10-17: [Antigravity] 子育て支援制度：固定部分を小さくする（設計書 `design-specs/2026-10-17_concern-header-compact.md` タスク1〜3）を `src/index.html` に実装完了。
   タイトル（h2）・説明文を固定ヘッダー外の通常 `<div>` に移動してスクロールさせ、`<header>` 内はあてはまるもの（`#profile-tags`）と場面ジャンプ（`#jump-nav`）のみをsticky固定（`pt-3` で間隔調整）。`updateHeaderOffsets()` の計測により飛び先オフセットも自動追従。他タブへの影響なしを確認。
