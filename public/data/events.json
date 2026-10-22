@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-20T10:00:32.856966+09:00",
+  "last_updated": "2026-10-22T09:33:21.736035+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -96,6 +96,22 @@
       "organizer": "芦北地方農業振興協議会（水俣市、芦北町、津奈木町、熊本県、JAあしきた）",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034891/index.html",
       "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "fa7e18f46fd6",
+      "title": "市役所マルシェ　10月開催のお知らせ",
+      "start_date": "2026-10-27",
+      "end_date": "2026-10-27",
+      "time_text": "10:00〜13:00",
+      "venue": "市役所１階",
+      "summary": "水俣の季節を感じられるマルシェ。弁当、惣菜、野菜、パン、ハンドメイド作品などが市内外から集まります。",
+      "organizer": "市役所マルシェ実行委員会",
+      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m10.html",
+      "source_label": "みなまた観光物産協会",
       "origin": "auto"
     },
     {
@@ -207,6 +223,22 @@
       "summary": "水俣の伝統「競り舟」と世界で人気の「ドラゴンボート」のレース大会。国内外から参加者が集まり、200mの速さを競います。個人エントリー枠もあり、チームに所属していなくても参加可能です。",
       "organizer": "みなまたパドルフェスティバル実行委員会、水俣市競り舟協会、みなまた競り舟大会実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034896/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "c2ed7159876a",
+      "title": "11月21日（土曜日）第16回みなまた産業団地まつりを開催します！",
+      "start_date": "2026-11-21",
+      "end_date": "2026-11-21",
+      "time_text": "09:30〜15:00",
+      "venue": "水俣産業団地ほか（受付・抽選会場：尾上商事）",
+      "summary": "水俣産業団地の企業を知るイベント。工場見学スタンプラリー、キッチンカー出店、ステージイベント、お楽しみ抽選会などが実施されます。",
+      "organizer": "みなまた産業団地まつり実行委員会事務局",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033042/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },

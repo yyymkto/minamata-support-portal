@@ -21,6 +21,27 @@
         "registration_note": null
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0033042/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-22T09:32:39.731003+09:00",
+      "schema": 2,
+      "event": {
+        "id": "c2ed7159876a",
+        "title": "11月21日（土曜日）第16回みなまた産業団地まつりを開催します！",
+        "start_date": "2026-11-21",
+        "end_date": "2026-11-21",
+        "time_text": "09:30〜15:00",
+        "venue": "水俣産業団地ほか（受付・抽選会場：尾上商事）",
+        "summary": "水俣産業団地の企業を知るイベント。工場見学スタンプラリー、キッチンカー出店、ステージイベント、お楽しみ抽選会などが実施されます。",
+        "organizer": "みなまた産業団地まつり実行委員会事務局",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0033042/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0033860/index.html": {
       "is_event": true,
       "checked_at": "2026-10-07T01:13:23.938217+09:00",
@@ -691,6 +712,27 @@
         "registration": "partial",
         "registration_deadline": null,
         "registration_note": "アフタヌーンティーのみ電話予約制（0966-62-2003）。定員になり次第終了"
+      }
+    },
+    "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m10.html": {
+      "is_event": true,
+      "checked_at": "2026-10-22T09:33:04.992401+09:00",
+      "schema": 2,
+      "event": {
+        "id": "fa7e18f46fd6",
+        "title": "市役所マルシェ　10月開催のお知らせ",
+        "start_date": "2026-10-27",
+        "end_date": "2026-10-27",
+        "time_text": "10:00〜13:00",
+        "venue": "市役所１階",
+        "summary": "水俣の季節を感じられるマルシェ。弁当、惣菜、野菜、パン、ハンドメイド作品などが市内外から集まります。",
+        "organizer": "市役所マルシェ実行委員会",
+        "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m10.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
       }
     },
     "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m9.html": {

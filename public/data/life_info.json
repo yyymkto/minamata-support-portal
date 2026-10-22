@@ -1,7 +1,47 @@
 {
-  "last_updated": "2026-10-21T09:28:36.157504+09:00",
+  "last_updated": "2026-10-22T09:32:25.325604+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "f145765a198e",
+      "title": "果樹の新規就農希望者向けの園地見学ツアーを開催します！",
+      "audience_tags": [
+        "現役世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "就労・仕事",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市で果樹の新規就農を検討している方に向けた園地見学ツアーを開催します。実際の果樹園を見学し、就農に向けた具体的なイメージを深めることができます。",
+      "target": "果樹の新規就農を希望する方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034913/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-21",
+      "collected_at": "2026-10-22T09:31:35.311959+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c2ed7159876a",
+      "title": "11月21日（土曜日）第16回みなまた産業団地まつりを開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "11月21日（土曜日）に「第16回みなまた産業団地まつり」が開催されます。地域の産業や製品に触れられるイベントです。",
+      "target": "水俣市民および近隣住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033042/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-21",
+      "collected_at": "2026-10-22T09:31:57.617877+09:00",
+      "status": "active"
+    },
     {
       "id": "ee9042cec5c8",
       "title": "水俣うめど夕陽が丘団地",
@@ -3284,6 +3324,44 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "566797d900d5",
+      "title": "湯の鶴温泉保健センター ほたるの湯　営業時間を延長します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "施設案内"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "湯の鶴温泉保健センター「ほたるの湯」の営業時間が延長されます。利用を検討されている方は、公式サイトにて最新の営業時間をご確認ください。",
+      "target": "ほたるの湯の利用者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-information/r8_hotaru_time.html",
+      "source_name": "みなまた観光物産協会 お知らせ",
+      "published_date": null,
+      "collected_at": "2026-10-22T09:32:20.821947+09:00",
+      "status": "active"
+    },
+    {
+      "id": "fa7e18f46fd6",
+      "title": "市役所マルシェ　10月開催のお知らせ",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市役所にて10月にマルシェが開催されます。地域の特産品やグルメなどが楽しめるイベントです。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m10.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-10-22T09:32:07.885639+09:00",
       "status": "active"
     },
     {
