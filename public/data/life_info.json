@@ -1,7 +1,85 @@
 {
-  "last_updated": "2026-10-22T09:32:25.325604+09:00",
+  "last_updated": "2026-10-23T09:30:27.756504+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "6c3a8079388f",
+      "title": "湯の鶴温泉保健センターの営業時間延長について（お知らせ）",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "施設案内"
+      ],
+      "organization": "水俣市",
+      "summary": "湯の鶴温泉保健センターの営業時間が延長されました。利用を検討されている方は、公式サイトにて詳細な営業時間をご確認ください。",
+      "target": "湯の鶴温泉保健センターの利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034921/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-22",
+      "collected_at": "2026-10-23T09:29:12.062275+09:00",
+      "status": "active"
+    },
+    {
+      "id": "0ca1282f5a1f",
+      "title": "南九州西回り自動車道（芦北出水道路）の開通時期について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "交通"
+      ],
+      "organization": "水俣市",
+      "summary": "南九州西回り自動車道（芦北出水道路）の開通時期に関する情報です。詳細についてはリンク先をご確認ください。",
+      "target": "水俣市民および周辺地域で当該道路を利用する方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034923/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-22",
+      "collected_at": "2026-10-23T09:29:36.501745+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4c8a9af570ae",
+      "title": "水俣市上下水道局のホームページを一時閉鎖しています。",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市上下水道局",
+      "summary": "水俣市上下水道局のホームページが現在一時閉鎖されています。水道料金の確認や各種手続き等で影響が出る可能性があるため、緊急の用件がある場合は直接電話等で問い合わせてください。",
+      "target": "水俣市の水道利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034926/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-22",
+      "collected_at": "2026-10-23T09:29:46.416602+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d5821fa7ce30",
+      "title": "水俣市立図書館のホームページを一時的に停止します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市立図書館",
+      "summary": "システムメンテナンスに伴い、水俣市立図書館のホームページを一時的に停止します。期間中は蔵書検索や予約などのオンラインサービスが利用できなくなります。",
+      "target": "図書館の利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034927/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-22",
+      "collected_at": "2026-10-23T09:30:06.182845+09:00",
+      "status": "active"
+    },
     {
       "id": "f145765a198e",
       "title": "果樹の新規就農希望者向けの園地見学ツアーを開催します！",
@@ -40,6 +118,27 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-21",
       "collected_at": "2026-10-22T09:31:57.617877+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c917f32e146f",
+      "title": "令和７年度（2025年度）野生鳥獣による農作物被害状況について",
+      "audience_tags": [
+        "現役世代",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "環境",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "令和7年度における野生鳥獣による農作物被害状況についての報告です。農作物への被害状況を把握し、今後の対策検討に役立てるための情報です。",
+      "target": "農業従事者および農作物被害に関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034909/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-21",
+      "collected_at": "2026-10-23T09:30:22.405397+09:00",
       "status": "active"
     },
     {
