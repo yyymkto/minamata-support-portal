@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-22T09:33:21.736035+09:00",
+  "last_updated": "2026-10-24T09:27:33.471305+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -211,6 +211,22 @@
       "origin": "manual"
     },
     {
+      "registration": "partial",
+      "registration_deadline": null,
+      "registration_note": "各回2日前までに窓口または電話(0966-62-7501)で受付。定員20名（先着順）、空きがあれば当日参加可",
+      "id": "6590c806be25",
+      "title": "『FLYING DISC CLUB－2nd season－』水俣でディスクプレイヤーになろう！！",
+      "start_date": "2026-11-11",
+      "end_date": "2026-12-16",
+      "time_text": "18:00〜19:30",
+      "venue": "エコパーク水俣 潮騒の広場",
+      "summary": "アルティメット日本代表の丹波大士さんを講師に迎え、初心者でも楽しめるフライングディスク競技を学ぶ全6回の練習会。小学生以上が対象。",
+      "organizer": "エコパーク水俣管理事務所",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034920/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
       "registration": "required",
       "registration_deadline": null,
       "registration_note": "詳細は大会要項を確認。水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課へ連絡",
@@ -230,6 +246,22 @@
       "registration": null,
       "registration_deadline": null,
       "registration_note": null,
+      "id": "1428a33f9249",
+      "title": "図書館感謝デー 11月１５日に延期します！",
+      "start_date": "2026-11-15",
+      "end_date": "2026-11-15",
+      "time_text": null,
+      "venue": "水俣市立図書館",
+      "summary": "台風の影響で延期となった図書館感謝デー。当日は皆様の来場をお待ちしています。",
+      "organizer": "水俣市",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034933/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "c2ed7159876a",
       "title": "11月21日（土曜日）第16回みなまた産業団地まつりを開催します！",
       "start_date": "2026-11-21",
@@ -239,6 +271,22 @@
       "summary": "水俣産業団地の企業を知るイベント。工場見学スタンプラリー、キッチンカー出店、ステージイベント、お楽しみ抽選会などが実施されます。",
       "organizer": "みなまた産業団地まつり実行委員会事務局",
       "source_url": "https://www.city.minamata.lg.jp/kiji0033042/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "partial",
+      "registration_deadline": null,
+      "registration_note": "アフタヌーンティーと茶席は事前予約制（先着順）。公式ホームページのリンクから申込",
+      "id": "f3bc245ffaa7",
+      "title": "11月22日開催！「第８回九州和紅茶サミットinみなまた」",
+      "start_date": "2026-11-22",
+      "end_date": "2026-11-22",
+      "time_text": "09:30〜15:00",
+      "venue": "エコパーク水俣ふるさと広場",
+      "summary": "九州各地の和紅茶の飲み比べ、みなまたスウィーツの販売、アフタヌーンティーや茶席などが楽しめるイベント。",
+      "organizer": "みなまた和紅茶実行委員会",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033921/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
@@ -287,6 +335,22 @@
       "summary": "九州産米のPRと地位向上を目的に、九州各地のお米を一堂に集めて食味を競うコンクール。",
       "organizer": "多良木町役場",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034892/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-12-07",
+      "registration_note": "いきいき健康課へ電話、または申し込みフォームから申し込み",
+      "id": "a6dcd2194d34",
+      "title": "65歳以上対象『歩き方教室』開催！",
+      "start_date": "2026-12-08",
+      "end_date": "2026-12-08",
+      "time_text": "10:00〜12:00",
+      "venue": "総合体育館 3階 会議室C",
+      "summary": "体に負担の少ない歩き方やストレッチ、筋トレ方法を学び、運動習慣づくりアプリやウォーキングを通じた地域見守り活動について紹介する教室。",
+      "organizer": "水俣市いきいき健康課",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034924/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },

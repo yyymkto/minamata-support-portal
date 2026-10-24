@@ -1,7 +1,203 @@
 {
-  "last_updated": "2026-10-23T09:30:27.756504+09:00",
+  "last_updated": "2026-10-24T09:26:32.805299+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "603679493088",
+      "title": "台風30号関連情報",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "台風30号に関する最新の防災情報です。避難所開設状況や気象警報など、安全確保に必要な情報を確認できます。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034934/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:24:50.831099+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f3bc245ffaa7",
+      "title": "11月22日開催！「第８回九州和紅茶サミットinみなまた」",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "11月22日に「第8回九州和紅茶サミットinみなまた」が開催されます。九州各地の和紅茶が集まるイベントで、地域の特産品や食文化に触れることができます。",
+      "target": "どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033921/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:25:15.425295+09:00",
+      "status": "active"
+    },
+    {
+      "id": "3074a16daaee",
+      "title": "水俣市ふれあいセンターは台風接近により休館します（10月26日月曜日）",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "施設案内"
+      ],
+      "organization": "水俣市",
+      "summary": "台風接近に伴い、10月26日（月）は水俣市ふれあいセンターが臨時休館となります。利用を予定されている方はご注意ください。",
+      "target": "水俣市ふれあいセンターの利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji003173/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:25:22.435430+09:00",
+      "status": "active"
+    },
+    {
+      "id": "fd744f9bf6d2",
+      "title": "英語会話テーブル中止のお知らせ",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市で開催予定であった英語会話テーブルが中止となりました。参加を予定されていた方はご注意ください。",
+      "target": "英語会話テーブルへの参加を検討していた方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034932/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:25:29.526589+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1001788d3fa5",
+      "title": "１０月２６日の水俣市集団健診を１０月３１日に延期します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "健康・医療"
+      ],
+      "organization": "水俣市",
+      "summary": "10月26日に予定されていた水俣市集団健診は、10月31日に延期となりました。受診を予定されていた方は日程変更にご注意ください。",
+      "target": "集団健診の受診を予定している市民",
+      "deadline": "2024-10-31",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034931/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:25:36.699794+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a6dcd2194d34",
+      "title": "65歳以上対象『歩き方教室』開催！",
+      "audience_tags": [
+        "高齢者"
+      ],
+      "topic_tags": [
+        "健康・医療",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "65歳以上の方を対象とした「歩き方教室」が開催されます。正しい歩き方を学び、健康づくりに役立てるためのイベントです。",
+      "target": "65歳以上の市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034924/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:25:43.513195+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1428a33f9249",
+      "title": "図書館感謝デー 11月１５日に延期します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市立図書館",
+      "summary": "水俣市立図書館で開催予定の「図書館感謝デー」が、11月15日に延期となりました。詳細は図書館の案内をご確認ください。",
+      "target": "図書館利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034933/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:26:04.800799+09:00",
+      "status": "active"
+    },
+    {
+      "id": "6590c806be25",
+      "title": "『FLYING DISC CLUB－2nd season－』水俣でディスクプレイヤーになろう！！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "フライングディスクを楽しむスポーツクラブ「FLYING DISC CLUB」の第2シーズンが開催されます。初心者から経験者まで、水俣でディスクプレイヤーとして活動したい方を募集しています。",
+      "target": "フライングディスクに興味のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034920/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:26:11.700398+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1097b652f89d",
+      "title": "台風30号の接近に伴うごみ収集について（１０月２６日（月曜日）収集分）",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "環境",
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "台風30号の接近に伴い、10月26日（月曜日）のごみ収集に関するお知らせです。収集の実施状況や変更の可能性があるため、最新情報を確認してください。",
+      "target": "水俣市内の全住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0031417/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:26:18.618041+09:00",
+      "status": "active"
+    },
+    {
+      "id": "ac083085afdb",
+      "title": "令和８年度水俣市火災防御訓練を実施します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市による火災防御訓練が実施されます。防災意識の向上と災害時の対応確認を目的としています。",
+      "target": "水俣市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034868/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-23",
+      "collected_at": "2026-10-24T09:26:26.901123+09:00",
+      "status": "active"
+    },
     {
       "id": "6c3a8079388f",
       "title": "湯の鶴温泉保健センターの営業時間延長について（お知らせ）",
