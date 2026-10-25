@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-24T09:27:33.471305+09:00",
+  "last_updated": "2026-10-25T09:08:37.833353+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -31,38 +31,6 @@
       "summary": "初心者向けの「はじめてFUNクラス」と経験者向けの「スキルアップクラス」に分かれ、全5回でテニスを学ぶ教室。11月29日には参加者限定のイベントも予定。",
       "organizer": "エコパーク水俣 管理事務所",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034902/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "3a5ae8f46e48",
-      "title": "「脳の健康フォーラム」のお知らせ",
-      "start_date": "2026-10-24",
-      "end_date": "2026-10-24",
-      "time_text": "14:00〜15:00",
-      "venue": "水俣市総合もやい直しセンター「もやい館」3階 もやいホール",
-      "summary": "認知症に関する講演と、認知症予防運動「コグニサイズ」の実演を行うフォーラム。人生100年時代を楽しく生きるための知識を学び、体験できる。会場前では脳トレブースも設置される。",
-      "organizer": "水俣市",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034824/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "fd1bb95a5bc2",
-      "title": "みなまたおさかなまつりを開催します",
-      "start_date": "2026-10-24",
-      "end_date": "2026-10-24",
-      "time_text": "09:00〜12:00",
-      "venue": "道の駅みなまた",
-      "summary": "マダイのつかみどりやタッチングプールなど、海の生き物と触れ合えるイベント。限定60食の鯛の漬け丼販売も行われます。",
-      "organizer": "水俣市",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034838/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
