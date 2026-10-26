@@ -1,7 +1,46 @@
 {
-  "last_updated": "2026-10-24T09:26:32.805299+09:00",
+  "last_updated": "2026-10-26T08:59:44.318836+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "6a380da8a1b5",
+      "title": "一般乗合旅客自動車運送事業の運賃に関する意見を募集します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "交通",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "市内を運行する一般乗合旅客自動車（路線バス等）の運賃改定に関する市民意見を募集しています。提出された意見は、今後の運賃認可申請等の検討資料として活用されます。",
+      "target": "水俣市に在住、通勤、通学している方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034120/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-26",
+      "collected_at": "2026-10-26T08:59:28.470961+09:00",
+      "status": "active"
+    },
+    {
+      "id": "67ea8d4cc678",
+      "title": "夕方のミュージックチャイムの放送時刻が変わります",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "夕方のミュージックチャイムの放送時刻が変更されます。詳細は水俣市の防災サイトをご確認ください。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/bousai/kiji0034419/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-26",
+      "collected_at": "2026-10-26T08:59:38.410800+09:00",
+      "status": "active"
+    },
     {
       "id": "603679493088",
       "title": "台風30号関連情報",
