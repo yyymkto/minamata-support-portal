@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-26T08:59:44.318836+09:00",
+  "last_updated": "2026-10-27T10:19:41.878389+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -39,6 +39,47 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-26",
       "collected_at": "2026-10-26T08:59:38.410800+09:00",
+      "status": "active"
+    },
+    {
+      "id": "631e608408ce",
+      "title": "ながら見守り！てくてくパトロール！参加者募集！！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "日常の散歩や買い物などの外出時に、地域の見守り活動を行う「てくてくパトロール」の参加者を募集しています。特別な準備は不要で、無理のない範囲で地域防犯に貢献できる活動です。",
+      "target": "地域での見守り活動に関心のある市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034917/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-26",
+      "collected_at": "2026-10-27T10:19:21.691135+09:00",
+      "status": "active"
+    },
+    {
+      "id": "7ebc32104cd6",
+      "title": "ミズノビクトリークリニックin水俣",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者",
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "ミズノの専門コーチによるスポーツ教室「ミズノビクトリークリニック」が水俣市で開催されます。スポーツを通じた技術向上や交流を目的としたイベントです。",
+      "target": "スポーツに関心のある市民（詳細は公式サイトを確認）",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034922/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-26",
+      "collected_at": "2026-10-27T10:19:35.085996+09:00",
       "status": "active"
     },
     {

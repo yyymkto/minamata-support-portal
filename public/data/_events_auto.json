@@ -665,6 +665,27 @@
         "registration_note": "各回2日前までに窓口または電話(0966-62-7501)で受付。定員20名（先着順）、空きがあれば当日参加可"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034922/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-27T10:19:46.787469+09:00",
+      "schema": 2,
+      "event": {
+        "id": "7ebc32104cd6",
+        "title": "ミズノビクトリークリニックin水俣",
+        "start_date": "2026-12-19",
+        "end_date": "2026-12-19",
+        "time_text": "10:00〜12:00",
+        "venue": "エコパーク水俣 潮騒の広場 野球場",
+        "summary": "水俣市軟式野球連盟が選抜する中学生を対象とした野球教室。参加費は500円で、当日のSNS発信は禁止されています。",
+        "organizer": "（一財）熊本県スポーツ振興事業団",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034922/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034924/index.html": {
       "is_event": true,
       "checked_at": "2026-10-24T09:26:48.764142+09:00",
