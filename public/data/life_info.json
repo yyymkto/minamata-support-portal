@@ -1,7 +1,27 @@
 {
-  "last_updated": "2026-10-27T10:19:41.878389+09:00",
+  "last_updated": "2026-10-28T10:03:37.398452+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "22970ae6c362",
+      "title": "初心者向けロボットコンテストJRCへの参加者募集します！",
+      "audience_tags": [
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "教育・生涯学習",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "初心者向けのロボットコンテスト「JRC」の参加者を募集しています。ロボット製作に興味のある方は、ぜひこの機会にご応募ください。",
+      "target": "ロボット製作に関心のある初心者の方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034936/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-27",
+      "collected_at": "2026-10-28T10:03:31.696627+09:00",
+      "status": "active"
+    },
     {
       "id": "6a380da8a1b5",
       "title": "一般乗合旅客自動車運送事業の運賃に関する意見を募集します",
