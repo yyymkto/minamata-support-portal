@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-28T10:04:09.360793+09:00",
+  "last_updated": "2026-10-29T10:40:15.177029+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -192,6 +192,22 @@
       "organizer": "みなまた産業団地まつり実行委員会事務局",
       "source_url": "https://www.city.minamata.lg.jp/kiji0033042/index.html",
       "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "666a2dd0da53",
+      "title": "第１６回 みなまた産業団地まつり",
+      "start_date": "2026-11-21",
+      "end_date": "2026-11-21",
+      "time_text": "9:30〜15:00",
+      "venue": "水俣産業団地",
+      "summary": "水俣の企業や工場を見学できるイベント。工場見学スタンプラリーやペア宿泊・お食事券が当たる抽選会、ステージイベントなどが実施されます。",
+      "organizer": "みなまた産業団地まつり事務局",
+      "source_url": "https://www.go-minamata.jp/news-events/r8_sangyoudanchi_festival.html",
+      "source_label": "みなまた観光物産協会",
       "origin": "auto"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-28T10:03:37.398452+09:00",
+  "last_updated": "2026-10-29T10:39:40.557577+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -3570,6 +3570,25 @@
       "status": "active"
     },
     {
+      "id": "5db0bcbeb545",
+      "title": "水俣市ホームページのバナー広告を募集します",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市ホームページに掲載するバナー広告を募集しています。市の公式サイトを活用した広報活動やPRを検討されている事業者は、詳細を確認の上お申し込みください。",
+      "target": "市ホームページへの広告掲載を希望する事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0031850/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2024-07-01",
+      "collected_at": "2026-10-29T10:39:28.199442+09:00",
+      "status": "active"
+    },
+    {
       "id": "9fe609306457",
       "title": "避難所・避難場所",
       "audience_tags": [
@@ -3719,6 +3738,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "666a2dd0da53",
+      "title": "第１６回 みなまた産業団地まつり",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "第16回みなまた産業団地まつりが開催されます。地域の産業や物産に触れられるイベントです。",
+      "target": "市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/r8_sangyoudanchi_festival.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-10-29T10:39:36.052135+09:00",
       "status": "active"
     },
     {

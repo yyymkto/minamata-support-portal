@@ -793,6 +793,27 @@
         "origin": "auto"
       }
     },
+    "https://www.go-minamata.jp/news-events/r8_sangyoudanchi_festival.html": {
+      "is_event": true,
+      "checked_at": "2026-10-29T10:39:54.397693+09:00",
+      "schema": 2,
+      "event": {
+        "id": "666a2dd0da53",
+        "title": "第１６回 みなまた産業団地まつり",
+        "start_date": "2026-11-21",
+        "end_date": "2026-11-21",
+        "time_text": "9:30〜15:00",
+        "venue": "水俣産業団地",
+        "summary": "水俣の企業や工場を見学できるイベント。工場見学スタンプラリーやペア宿泊・お食事券が当たる抽選会、ステージイベントなどが実施されます。",
+        "organizer": "みなまた産業団地まつり事務局",
+        "source_url": "https://www.go-minamata.jp/news-events/r8_sangyoudanchi_festival.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.go-minamata.jp/news-events/r8_yunoko_marche.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:50:54.472126+09:00",
