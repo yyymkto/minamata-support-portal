@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-29T10:40:15.177029+09:00",
+  "last_updated": "2026-10-30T10:46:42.824026+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -182,6 +182,22 @@
       "registration": null,
       "registration_deadline": null,
       "registration_note": null,
+      "id": "4569d4fb971c",
+      "title": "市役所マルシェ　11月15日開催のお知らせ",
+      "start_date": "2026-11-15",
+      "end_date": "2026-11-15",
+      "time_text": "10:00〜15:00",
+      "venue": "市役所 屋外テラス",
+      "summary": "弁当・惣菜・野菜・パン・ハンドメイドなどが集まるマルシェ。今回は休日開催となり、エコパークのバラ園で開催されるローズフェスタ・ローズマルシェと合わせて水俣を周遊できる一日です。",
+      "organizer": "市役所マルシェ実行委員会",
+      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html",
+      "source_label": "みなまた観光物産協会",
+      "origin": "auto"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
       "id": "c2ed7159876a",
       "title": "11月21日（土曜日）第16回みなまた産業団地まつりを開催します！",
       "start_date": "2026-11-21",
@@ -255,6 +271,22 @@
       "summary": "生活習慣病予防をテーマに、健康に関する展示、相談、体験コーナーを実施。健康づくり作品展示や表彰式、ハイハイ・よちよちレースも同時開催。",
       "organizer": "水俣市",
       "source_url": "https://www.city.minamata.lg.jp/kiji0033860/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-11-26",
+      "registration_note": "専用フォーム、電話、メール、FAXで申込。先着100名程度",
+      "id": "081a9e5bd82c",
+      "title": "水俣環境アカデミア設立10周年記念特別市民公開講座「なぜ、私たちは潜るのか？～ダイバーが伝える、水俣の海の世界～」参加者募集",
+      "start_date": "2026-11-28",
+      "end_date": "2026-11-28",
+      "time_text": "14:00〜15:30",
+      "venue": "水俣環境アカデミア（水俣市南福寺6番1号 旧水俣高校跡）",
+      "summary": "水俣の海をテーマにした特別市民公開講座。地元ダイバーとNHKアナウンサーが、水俣の海の世界や取材の裏側について語ります。",
+      "organizer": "水俣市",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034882/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },

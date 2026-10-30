@@ -1,7 +1,87 @@
 {
-  "last_updated": "2026-10-29T10:39:40.557577+09:00",
+  "last_updated": "2026-10-30T10:46:01.326667+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "081a9e5bd82c",
+      "title": "水俣環境アカデミア設立10周年記念特別市民公開講座「なぜ、私たちは潜るのか？～ダイバーが伝える、水俣の海の世界～」参加者募集",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣環境アカデミア",
+      "summary": "水俣環境アカデミア設立10周年を記念した特別市民公開講座が開催されます。ダイバーの視点から水俣の海の世界について学ぶ内容となっており、参加者を募集しています。",
+      "target": "水俣市民および関心のある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034882/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-30",
+      "collected_at": "2026-10-30T10:45:16.217090+09:00",
+      "status": "active"
+    },
+    {
+      "id": "db08fe493d93",
+      "title": "広報みなまた令和8年11月号",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "イベント",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市の市政情報やイベント、相談窓口などが掲載された広報誌の最新号です。市内の暮らしに関する様々な情報が網羅されています。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-30",
+      "collected_at": "2026-10-30T10:45:34.244028+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c294945388f9",
+      "title": "飼い主のいない猫の避妊去勢手術支援事業について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "環境"
+      ],
+      "organization": "水俣市",
+      "summary": "飼い主のいない猫によるトラブル防止や繁殖抑制のため、避妊・去勢手術費用の一部を支援する事業です。対象となる猫や申請方法などの詳細は、市の環境サイトをご確認ください。",
+      "target": "市内に生息する飼い主のいない猫の管理を行っている方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034873/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-29",
+      "collected_at": "2026-10-30T10:45:40.718649+09:00",
+      "status": "active"
+    },
+    {
+      "id": "de0c7a1cb273",
+      "title": "水俣市上下水道局のホームページは水俣市ホームページへ移行します。",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市上下水道局",
+      "summary": "水俣市上下水道局のホームページが水俣市公式サイトへ統合・移行されます。今後は水俣市ホームページから上下水道関連の情報をご確認ください。",
+      "target": "水俣市の水道利用者全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034929/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-29",
+      "collected_at": "2026-10-30T10:45:47.213022+09:00",
+      "status": "active"
+    },
     {
       "id": "22970ae6c362",
       "title": "初心者向けロボットコンテストJRCへの参加者募集します！",
@@ -3738,6 +3818,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "4569d4fb971c",
+      "title": "市役所マルシェ　11月15日開催のお知らせ",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "11月15日に市役所マルシェが開催されます。地域の特産品や物産が楽しめるイベントです。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-10-30T10:45:56.821073+09:00",
       "status": "active"
     },
     {

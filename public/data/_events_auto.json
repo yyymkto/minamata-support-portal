@@ -492,6 +492,27 @@
         "origin": "auto"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034882/index.html": {
+      "is_event": true,
+      "checked_at": "2026-10-30T10:46:03.369128+09:00",
+      "schema": 2,
+      "event": {
+        "id": "081a9e5bd82c",
+        "title": "水俣環境アカデミア設立10周年記念特別市民公開講座「なぜ、私たちは潜るのか？～ダイバーが伝える、水俣の海の世界～」参加者募集",
+        "start_date": "2026-11-28",
+        "end_date": "2026-11-28",
+        "time_text": "14:00〜15:30",
+        "venue": "水俣環境アカデミア（水俣市南福寺6番1号 旧水俣高校跡）",
+        "summary": "水俣の海をテーマにした特別市民公開講座。地元ダイバーとNHKアナウンサーが、水俣の海の世界や取材の裏側について語ります。",
+        "organizer": "水俣市",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034882/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-11-26",
+        "registration_note": "専用フォーム、電話、メール、FAXで申込。先着100名程度"
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034884/index.html": {
       "is_event": false,
       "checked_at": "2026-10-01T10:11:21.974259+09:00",
@@ -740,6 +761,12 @@
       "schema": 2,
       "event": null
     },
+    "https://www.city.minamata.lg.jp/kiji0034938/index.html": {
+      "is_event": false,
+      "checked_at": "2026-10-30T10:46:09.953567+09:00",
+      "schema": 2,
+      "event": null
+    },
     "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html": {
       "is_event": false,
       "checked_at": "2026-09-21T23:52:01.487927+09:00",
@@ -866,6 +893,27 @@
         "summary": "水俣の季節を感じられるマルシェ。弁当、惣菜、野菜、パン、ハンドメイド作品などが市内外から集まります。",
         "organizer": "市役所マルシェ実行委員会",
         "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m10.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
+    "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html": {
+      "is_event": true,
+      "checked_at": "2026-10-30T10:46:26.764985+09:00",
+      "schema": 2,
+      "event": {
+        "id": "4569d4fb971c",
+        "title": "市役所マルシェ　11月15日開催のお知らせ",
+        "start_date": "2026-11-15",
+        "end_date": "2026-11-15",
+        "time_text": "10:00〜15:00",
+        "venue": "市役所 屋外テラス",
+        "summary": "弁当・惣菜・野菜・パン・ハンドメイドなどが集まるマルシェ。今回は休日開催となり、エコパークのバラ園で開催されるローズフェスタ・ローズマルシェと合わせて水俣を周遊できる一日です。",
+        "organizer": "市役所マルシェ実行委員会",
+        "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html",
         "source_label": "みなまた観光物産協会",
         "origin": "auto",
         "registration": null,
