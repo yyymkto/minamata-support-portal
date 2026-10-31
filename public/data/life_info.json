@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-30T10:46:01.326667+09:00",
+  "last_updated": "2026-10-31T10:28:14.117390+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -41,6 +41,46 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-10-30",
       "collected_at": "2026-10-30T10:45:34.244028+09:00",
+      "status": "active"
+    },
+    {
+      "id": "0023f6fa7573",
+      "title": "水俣市公式LINEの受信設定を確認してください",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市公式LINEの受信設定を確認するよう呼びかけています。必要な情報を受け取れるよう、設定状況を改めて確認してください。",
+      "target": "水俣市公式LINEの登録者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034871/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-30",
+      "collected_at": "2026-10-31T10:28:01.632089+09:00",
+      "status": "active"
+    },
+    {
+      "id": "efd0213cfb32",
+      "title": "公共下水道排水設備指定工事店",
+      "audience_tags": [
+        "事業者向け",
+        "全世代"
+      ],
+      "topic_tags": [
+        "住まい",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市における公共下水道排水設備指定工事店の一覧です。排水設備の設置や改修工事を依頼する際の参考にしてください。",
+      "target": "排水設備の工事を検討している住民および指定工事店への登録を希望する事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034939/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-10-30",
+      "collected_at": "2026-10-31T10:28:08.888582+09:00",
       "status": "active"
     },
     {
