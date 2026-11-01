@@ -1,7 +1,27 @@
 {
-  "last_updated": "2026-10-31T10:28:14.117390+09:00",
+  "last_updated": "2026-11-01T09:51:01.979846+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "bb2a650840d1",
+      "title": "令和８年度水俣市防災フェスタの開催について（お知らせ）",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "防災意識の向上を目的とした「水俣市防災フェスタ」が開催されます。防災に関する展示や体験を通じて、災害への備えを学ぶことができます。",
+      "target": "市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034424/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-01",
+      "collected_at": "2026-11-01T09:50:55.910038+09:00",
+      "status": "active"
+    },
     {
       "id": "081a9e5bd82c",
       "title": "水俣環境アカデミア設立10周年記念特別市民公開講座「なぜ、私たちは潜るのか？～ダイバーが伝える、水俣の海の世界～」参加者募集",

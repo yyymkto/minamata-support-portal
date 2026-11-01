@@ -104,6 +104,27 @@
       "checked_at": "2026-10-03T10:01:23.224739+09:00",
       "event": null
     },
+    "https://www.city.minamata.lg.jp/kiji0034424/index.html": {
+      "is_event": true,
+      "checked_at": "2026-11-01T09:51:04.145164+09:00",
+      "schema": 2,
+      "event": {
+        "id": "bb2a650840d1",
+        "title": "令和８年度水俣市防災フェスタの開催について（お知らせ）",
+        "start_date": "2026-11-08",
+        "end_date": "2026-11-08",
+        "time_text": "09:00〜15:00",
+        "venue": "エコパーク水俣 潮騒の広場及び水俣港ビジターバース",
+        "summary": "警察、消防、自衛隊、消防団などによる展示や体験を通じて防災を学べるイベント。露店やキッチンカーの出店もあり、水俣市ローズフェスタ・秋2026も同時開催される。",
+        "organizer": "水俣市",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034424/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034517/index.html": {
       "is_event": false,
       "checked_at": "2026-09-21T23:50:46.304333+09:00",

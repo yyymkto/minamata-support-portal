@@ -1,23 +1,7 @@
 {
-  "last_updated": "2026-10-30T10:46:42.824026+09:00",
+  "last_updated": "2026-11-01T09:51:32.275145+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "参加店舗に事前に電話などで申し込んでください",
-      "id": "c257a1d07b0c",
-      "title": "お店の人が教えてくれる♪「みなまたまちゼミ２０２６」が開催されます",
-      "start_date": "2026-09-15",
-      "end_date": "2026-10-31",
-      "time_text": null,
-      "venue": "市内各参加店舗",
-      "summary": "お店の人がプロならではのコツや知識を教える少人数制のミニ講座。期間中、市内各店舗にて様々なテーマの講座が開催されます。参加には各店舗への事前申し込みが必要です。",
-      "organizer": "水俣まちゼミ実行委員会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034849/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
     {
       "registration": "required",
       "registration_deadline": "2026-10-21",
@@ -47,22 +31,6 @@
       "summary": "写真集『水俣からあなたへ』に収録された写真家9人の作品から42点を展示する巡回写真展。水俣病公式確認70年の節目に、水俣から何を学ぶのかを問いかける。",
       "organizer": "一般社団法人 水俣・写真家の眼",
       "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html",
-      "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "a76834d0c4e1",
-      "title": "令和８年度火のまつりを開催します",
-      "start_date": "2026-10-31",
-      "end_date": "2026-10-31",
-      "time_text": "17:30〜19:30",
-      "venue": "水俣湾埋立地（エコパーク水俣／親水護岸）",
-      "summary": "水俣病で犠牲となったすべての生命への祈りと地域再生の願いを炎に託す催し。ハイヤ踊りや太鼓の奉納演奏、合唱、公演などが行われます。雨天時は水俣病情報センターで開催。",
-      "organizer": "火のまつり実行委員会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034844/index.html",
       "source_label": "水俣市",
       "origin": "auto"
     },
@@ -129,6 +97,22 @@
       "source_url": null,
       "source_label": "詳細",
       "origin": "manual"
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "bb2a650840d1",
+      "title": "令和８年度水俣市防災フェスタの開催について（お知らせ）",
+      "start_date": "2026-11-08",
+      "end_date": "2026-11-08",
+      "time_text": "09:00〜15:00",
+      "venue": "エコパーク水俣 潮騒の広場及び水俣港ビジターバース",
+      "summary": "警察、消防、自衛隊、消防団などによる展示や体験を通じて防災を学べるイベント。露店やキッチンカーの出店もあり、水俣市ローズフェスタ・秋2026も同時開催される。",
+      "organizer": "水俣市",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034424/index.html",
+      "source_label": "水俣市",
+      "origin": "auto"
     },
     {
       "registration": "partial",
