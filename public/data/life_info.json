@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-01T09:51:01.979846+09:00",
+  "last_updated": "2026-11-02T23:02:56.511576+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -20,6 +20,26 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-11-01",
       "collected_at": "2026-11-01T09:50:55.910038+09:00",
+      "status": "active"
+    },
+    {
+      "id": "29a1b427cb30",
+      "title": "水俣市児童館（こどもセンター）の指定管理者募集について",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "募集・相談",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市児童館（こどもセンター）の運営を行う指定管理者を募集しています。応募を検討される事業者は、詳細な募集要項を市公式サイトで確認してください。",
+      "target": "児童館の運営を希望する法人または団体",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034919/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-01",
+      "collected_at": "2026-11-02T23:02:49.808747+09:00",
       "status": "active"
     },
     {
