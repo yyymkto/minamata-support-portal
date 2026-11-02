@@ -426,7 +426,11 @@ audience_tagsの判断基準:
 
 
 def call_gemini_json(
-    system_prompt: str, user_content: str, *, log_label: str
+    system_prompt: str,
+    user_content: str,
+    *,
+    log_label: str,
+    timeout: int = REQUEST_TIMEOUT,
 ) -> Optional[dict[str, Any]]:
     """system_prompt + user_content をGeminiに渡し、JSON形式の応答をパースして返す。
 
@@ -459,8 +463,19 @@ def call_gemini_json(
     for attempt in range(GEMINI_MAX_RETRIES + 1):
         try:
             resp = requests.post(
-                GEMINI_ENDPOINT, headers=headers, json=payload, timeout=REQUEST_TIMEOUT
+                GEMINI_ENDPOINT, headers=headers, json=payload, timeout=timeout
             )
+        except requests.Timeout as e:
+            if attempt < GEMINI_MAX_RETRIES:
+                wait_s = min(2.0 * (2 ** attempt), 30.0)
+                log.warning(
+                    "Gemini API タイムアウト: %s。%.1f秒待って再試行します (%d/%d)",
+                    log_label, wait_s, attempt + 1, GEMINI_MAX_RETRIES,
+                )
+                time.sleep(wait_s)
+                continue
+            log.warning("Gemini API 呼び出しタイムアウト（上限到達）: %s (%s)", log_label, e)
+            return None
         except requests.RequestException as e:
             log.warning("Gemini API 呼び出し失敗: %s (%s)", log_label, e)
             return None

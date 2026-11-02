@@ -41,6 +41,7 @@ life_info.json 自体は書き換えない。
 from __future__ import annotations
 
 import csv
+import difflib
 import datetime as dt
 import hashlib
 import io
@@ -53,7 +54,12 @@ import time
 from pathlib import Path
 from typing import Any, Optional
 
+import calendar
+import unicodedata
+from urllib.parse import urljoin
+
 from bs4 import BeautifulSoup
+import pypdf
 
 from update_data import (
     GEMINI_API_KEY,
@@ -71,6 +77,10 @@ EVENTS_PATH = ROOT_DIR / "public" / "data" / "events.json"
 AUTO_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_auto.json"
 MANUAL_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_manual.json"
 FORM_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_form.json"
+KOHO_CACHE_PATH = ROOT_DIR / "public" / "data" / "_events_koho.json"
+
+KOHO_LIST_URL = "https://www.city.minamata.lg.jp/list00422.html"
+KOHO_PAGE_MIN_CHARS = 200
 
 EVENTS_SHEET_CSV_URL = os.environ.get("EVENTS_SHEET_CSV_URL", "").strip()
 EVENTS_FORM_CSV_URL = os.environ.get("EVENTS_FORM_CSV_URL", "").strip()
@@ -148,6 +158,77 @@ is_event を false にするもの:
   registration が null なら null。"not_required" なら当日の受付方法など補足があるときだけ。
 """
 
+KOHO_EVENT_EXTRACTION_SYSTEM_PROMPT = """\
+あなたは熊本県水俣市の地域情報サイトの編集者です。
+市の広報紙「広報みなまた」の紙面テキストから、一般の人が参加・観覧・来場できる催しの開催情報を取り出してください。
+
+出力は次のJSONのみ:
+{
+  "events": [
+    {
+      "title": "催しの名前（簡潔に）",
+      "start_date": "YYYY-MM-DD",
+      "end_date": "YYYY-MM-DD" または null,
+      "time_text": "開始・終了時刻（例: 10:00〜15:00）" または null,
+      "venue": "会場名" または null,
+      "summary": "どんな催しかを120字以内で。日付・会場の繰り返しは不要" または null,
+      "organizer": "主催者名（団体名のみ）" または null,
+      "registration": "required" または "partial" または "not_required" または null,
+      "registration_deadline": "YYYY-MM-DD" または null,
+      "registration_note": "申込方法と条件を50字以内で" または null
+    }
+  ]
+}
+
+対象:
+- 水俣市内で開かれ、一般の人が参加・観覧・来場できる催し（祭り、展示、公演、講座、教室、体験会、交流会、地区の文化祭など）
+
+対象外（events に含めない）:
+- 水俣市外の会場の催し（芦北町・津奈木町など）
+- 訪問先・見学先が水俣市外の見学・研修・視察・バスツアーなど（集合場所が市内であっても対象外）
+- 業者・事業者・団体向けの説明会、現地見学会、企画提案募集、入札関連（指定管理者の現地見学会など）
+- 個別相談会、出張相談会、常設の相談窓口（タイトルが「相談会」「相談所」で終わるものなど）
+- 手続きや証明書発行の窓口の開設（休日窓口、マイナンバーカード窓口など）
+- 開催済みの報告（フォトリポート、まちのわだい）
+- 参加者・出店者・ボランティアなどの募集だけの告知、市の手続きのお知らせ
+
+1件の単位:
+- 名前の違う催しは別々の1件にしてください（例: こどもセンターの①〜⑦の講座は7件）。
+- 催しの中の個別のブースや企画・体験コーナー（例: 健康まつり内の測定ブースなど）は別の1件にせず、催し全体で1件にしてください。
+- 同じ名前の連続講座は1件にし、start_date は初回、end_date は最終回とし、各回の日付は summary に書いてください。
+
+日付のルール:
+- 年が省略されている場合は、発行年月から補ってください（例: 11月号に書かれた 3/13 は翌年）。
+- 雨天時の順延日・予備日は end_date に含めないでください。
+- 1日だけの催しは end_date を start_date と同じにしてください。
+- 別々の日に開く相談会や催し（例:「11/10、11/24」など）を期間（start_dateからend_dateまで）として扱わないでください（相談会はそもそも対象外ですが、複数回開催を連続期間にしないこと）。
+- 本文から開催日を特定できないものは除外してください。
+
+カレンダー形式のページ（「くらしのカレンダー」等、日付が「日 曜日 行事」で並んでいるページ）での特別なルール:
+- 日付: 日付は各行の「日の数字＋曜日」から読み取ってください（例:「21 土」なら発行年月の21日）。
+- 同じ名前の催しが複数の日にある場合（例: 英語会話テーブルなど）: 期間としてまとめず、日ごとに別の1件として出力してください（各回の start_date / end_date をその日にし、その日の時刻・会場を出力する。カレンダーでは summary に各回の日付を書けないため）。
+- 開始日: 1日の行に「【～】」が付く催しだけ出力しないでください（前月以前から継続開催されており開始日を特定できないため）。2日以降の行は「【～】」が付いていても、その行の日を開始日にして出力してください（例: 6日の行の「総合展示【〜11/8】」は開始日を6日として出力する）。
+- 説明文と申し込み: カレンダーには名前・時刻・会場しか書かれていないため、summary と registration は必ず null にしてください（名前から内容や申込方法を推測して創作しないこと）。
+
+個人情報のルール:
+- 個人の氏名と携帯電話番号は絶対に出力しないでください。
+- organizer は団体名だけにし、個人の名前や、団体名が分からなければ null にしてください。
+
+申し込みのルール（本文に書いてあることだけを返し、推測で埋めないこと）:
+- registration:
+  - "required": 参加・入場・観覧のために事前の申し込み・予約・チケット購入・整理券の事前入手が必要と本文に明記されているとき
+  - チケット購入が必要な公演・コンサート・催しは registration を "required" にし、チケット料金・入場料を summary に書いてください。
+  - 参加者募集の告知や定員の記載があることだけを理由に推測で "required" にしないでください。事前の申し込みが必要である旨が本文に明記されている場合のみ "required" にしてください。
+  - "partial": 催しの中の一部の企画だけが事前申し込み制で、ほかは自由に参加できる
+  - "not_required": 事前の申し込みが要らないことが本文にそのまま書いてあるときだけ（「申込不要」「自由参加」「当日受付」など）
+  - null: 上のどれにも当てはまらない、または記載がないとき。推測で "not_required" にしないこと
+  - 「当日参加も可能」「当日参加可」と書かれているものは "partial" にしないでください（registration は null にしてください）。
+- registration_deadline: 申し込みの期限として書かれた日付だけ。無ければ null。registration が "required" か "partial" でなければ null。
+- registration_note: 申込方法（QRコード・電話・メール・窓口など）と定員・先着・抽選の別を50字以内で。個人の氏名や携帯電話番号は含めないこと。URLは入れない。
+  - 本文に書かれていない申込方法（「電話にて」など）を推測で補わないこと。
+"""
+
+
 REGISTRATION_VALUES = ("required", "partial", "not_required")
 # 自動抽出キャッシュの形式。2で申し込み情報（registration*）を追加した（2026-10-07、設計書 event-registration）。
 # これより古いエントリのうち開催前のイベントは、申し込み情報を取り出すために1回だけ判定し直す。
@@ -170,6 +251,12 @@ DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # 市サイトのカテゴリ一覧ページ（例: /list00321.html）は個別の記事ではないため判定しない
 # （2026-09-21、試し実行で一覧ページが10/3のイベントとして拾われたため追加）。
 LIST_PAGE_PATTERN = re.compile(r"/list\d+\.html$")
+
+KOHO_TITLE_PATTERN = re.compile(
+    r"広報みなまた\s*令和\s*(\d+|元)\s*年\s*(\d+)(?:[・/／~〜\-\s]+\d+)?\s*月(?:号|合併号)?"
+)
+MOBILE_PHONE_PATTERN = re.compile(r"0[789]0-?\d{4}-?\d{4}")
+
 
 
 # --------------------------------------------------------------------------
@@ -424,11 +511,12 @@ TITLE_NOISE_PATTERN = re.compile(r"[\s　「」『』【】（）()！!？?・�
 
 
 def normalize_title(title: str) -> str:
-    return TITLE_NOISE_PATTERN.sub("", title)
+    nfkc = unicodedata.normalize("NFKC", title)
+    return TITLE_NOISE_PATTERN.sub("", nfkc)
 
 
 def filled_count(event: dict) -> int:
-    return sum(1 for k in ("time_text", "venue", "summary", "organizer") if event.get(k))
+    return sum(1 for k in ("time_text", "venue", "summary", "organizer", "registration_note") if event.get(k))
 
 
 def dedupe_events(events: list[dict]) -> list[dict]:
@@ -459,6 +547,494 @@ def dedupe_events(events: list[dict]) -> list[dict]:
 
 
 # --------------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------------
+# 広報みなまた自動抽出（設計書: docs/agent-notes/design-specs/2026-11-02_koho-events.md）
+# --------------------------------------------------------------------------
+def parse_koho_title(text: str) -> Optional[tuple[int, int]]:
+    """「広報みなまた令和N年M月号」から (西暦年, 最初の手の発行月) を返す。
+    全角数字や合併号（7・8月号等）にも対応する。
+    """
+    normalized = unicodedata.normalize("NFKC", text).strip()
+    m = KOHO_TITLE_PATTERN.search(normalized)
+    if not m:
+        return None
+    era_str, month_str = m.groups()
+    era_year = 1 if era_str == "元" else int(era_str)
+    year = 2018 + era_year
+    month = int(month_str)
+    if not (1 <= month <= 12):
+        return None
+    return year, month
+
+
+def fetch_koho_issues(list_url: str = KOHO_LIST_URL) -> list[dict[str, str]]:
+    """広報みなまた一覧ページから号一覧を取得する。新しい号が先頭になる。"""
+    resp = http_get(list_url)
+    if resp is None:
+        log.warning("広報一覧ページの取得に失敗しました: %s", list_url)
+        return []
+    soup = BeautifulSoup(resp.text, "html.parser")
+    issues: list[dict[str, str]] = []
+    seen_urls: set[str] = set()
+    for a in soup.find_all("a"):
+        text = a.get_text(strip=True)
+        parsed = parse_koho_title(text)
+        if not parsed:
+            continue
+        href = a.get("href")
+        if not href:
+            continue
+        url = urljoin(list_url, href)
+        if url in seen_urls:
+            continue
+        if LIST_PAGE_PATTERN.search(url):
+            continue
+        seen_urls.add(url)
+        year, month = parsed
+        issue_month = f"{year:04d}-{month:02d}"
+        clean_title = unicodedata.normalize("NFKC", text).strip()
+        issues.append({
+            "url": url,
+            "title": clean_title,
+            "issue_month": issue_month,
+        })
+    issues.sort(key=lambda x: x["issue_month"], reverse=True)
+    return issues
+
+
+def fetch_koho_pdf_url(kiji_url: str) -> Optional[str]:
+    """号の記事ページからPDFのリンクを取得する。"""
+    resp = http_get(kiji_url)
+    if resp is None:
+        log.warning("広報記事ページの取得に失敗しました: %s", kiji_url)
+        return None
+    soup = BeautifulSoup(resp.text, "html.parser")
+    for a in soup.find_all("a"):
+        href = a.get("href", "")
+        if href.lower().endswith(".pdf"):
+            return urljoin(kiji_url, href)
+    log.warning("広報記事ページ内にPDFリンクが見つかりませんでした: %s", kiji_url)
+    return None
+
+
+def extract_pages_from_pdf(pdf_url: str) -> list[tuple[int, str]]:
+    """PDFをダウンロードし、各ページの (ページ番号(1始まり), 抽出テキスト) のリストを返す。"""
+    resp = http_get(pdf_url)
+    if resp is None or not resp.content:
+        log.warning("広報PDFの取得に失敗しました: %s", pdf_url)
+        return []
+    reader = pypdf.PdfReader(io.BytesIO(resp.content))
+    pages: list[tuple[int, str]] = []
+    for idx, page in enumerate(reader.pages, 1):
+        txt = page.extract_text() or ""
+        pages.append((idx, txt))
+    return pages
+
+
+def sanitize_mobile_phones(text: Optional[str]) -> Optional[str]:
+    """個人の携帯電話番号パターンを取り除く。"""
+    if not text:
+        return None
+    cleaned = MOBILE_PHONE_PATTERN.sub("", text).strip(" 　、。:：,/")
+    return cleaned or None
+
+
+def is_date_supported_in_text(
+    date_str: str,
+    page_text: str,
+    issue_month: Optional[str] = None,
+) -> bool:
+    """ページ本文に前後に数字が続かない M/D または M月D日 が含まれているか確認する。
+    「くらしのカレンダー」を含むページでは、(?<!\d)日の数字+曜日[^\d■]{0,8}■ の形式で確認する。
+    """
+    try:
+        d = dt.date.fromisoformat(date_str)
+    except ValueError:
+        return False
+
+    # 丸数字（①〜⑳等）は直後の日付（11月等）と連結して「111月」とならないよう分離記号に置換
+    cleaned_text = re.sub(r"[①-⑳㉑-㉟㊱-㊿㈠-㈩\u2460-\u2473\u24b6-\u24ea]", "■", page_text)
+    norm_text = re.sub(r"\s+", "", unicodedata.normalize("NFKC", cleaned_text))
+
+    # 前後に数字が続かない M/D または M月D日
+    p1 = rf"(?<!\d){d.month}/{d.day}(?!\d)"
+    p2 = rf"(?<!\d){d.month}月{d.day}日(?!\d)"
+    if re.search(p1, norm_text) or re.search(p2, norm_text):
+        return True
+
+    # カレンダーの扱い: 「くらしのカレンダー」を含むページに限定
+    if "くらしのカレンダー" in norm_text and issue_month:
+        try:
+            iy, im = int(issue_month[:4]), int(issue_month[5:7])
+            if d.year == iy and d.month == im:
+                weekday_char = ["月", "火", "水", "木", "金", "土", "日"][d.weekday()]
+                p_cal = rf"(?<!\d){d.day}{weekday_char}[^\d■]{{0,8}}■"
+                if re.search(p_cal, norm_text):
+                    return True
+        except Exception:
+            pass
+
+    return False
+
+
+def is_date_in_koho_range(date_str: str, issue_month: str) -> bool:
+    """start_date が発行月の前月1日より前、または発行月の12か月後より後でないか確認する。"""
+    try:
+        d = dt.date.fromisoformat(date_str)
+        y, m = int(issue_month[:4]), int(issue_month[5:7])
+        prev_y = y if m > 1 else y - 1
+        prev_m = m - 1 if m > 1 else 12
+        min_date = dt.date(prev_y, prev_m, 1)
+        max_y = y + 1
+        max_m = m
+        max_d = calendar.monthrange(max_y, max_m)[1]
+        max_date = dt.date(max_y, max_m, max_d)
+        return min_date <= d <= max_date
+    except Exception:
+        return False
+
+
+def extract_start_time(time_text: Optional[str]) -> Optional[str]:
+    """time_text から最初の H:MM を抽出する。"""
+    if not time_text:
+        return None
+    m = re.search(r"(\d{1,2}:\d{2})", unicodedata.normalize("NFKC", time_text))
+    return m.group(1) if m else None
+
+
+def dedupe_koho_events(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """広報どうしの重複を除く。
+    開始日が同じで、次のいずれかを満たす場合、同じイベントとみなす：
+    1. タイトルの類似度が0.8以上（difflib）
+    2. normalize_title() 後のタイトルの一方がもう一方に含まれる
+    3. 会場と開始時刻が同じ（会場は normalize_title() で正規化して比較、開始時刻は最初の H:MM を比較）
+    項目が多く埋まっているほうを残す。同数ならURLが短いほう。
+    """
+    ranked = sorted(
+        events, key=lambda e: (-filled_count(e), len(e.get("source_url") or ""))
+    )
+    kept: list[dict[str, Any]] = []
+    for e in ranked:
+        t_norm = normalize_title(e["title"])
+        v_e = normalize_title(e.get("venue") or "")
+        st_e = extract_start_time(e.get("time_text"))
+        is_dup = False
+        for k in kept:
+            if k.get("start_date") == e.get("start_date"):
+                k_norm = normalize_title(k["title"])
+                ratio = difflib.SequenceMatcher(None, t_norm, k_norm).ratio()
+                is_sub = (t_norm in k_norm) or (k_norm in t_norm)
+                v_k = normalize_title(k.get("venue") or "")
+                st_k = extract_start_time(k.get("time_text"))
+                same_venue_time = bool(v_e and v_k and v_e == v_k and st_e and st_k and st_e == st_k)
+
+                if ratio >= 0.8 or is_sub or same_venue_time:
+                    is_dup = True
+                    reason = ("類似度>=0.8" if ratio >= 0.8 else
+                              ("タイトル包含" if is_sub else "会場・開始時刻一致"))
+                    log.info("広報重複統合（%s）: '%s' を残し '%s' を除外",
+                             reason, k["title"], e["title"])
+                    break
+        if not is_dup:
+            kept.append(e)
+    kept.sort(key=lambda e: (e.get("start_date") or "", e.get("title") or ""))
+    return kept
+
+
+def validate_koho_event(
+    raw: dict[str, Any],
+    page_text: str,
+    page_num: int,
+    issue_month: str,
+    pdf_url: str,
+) -> Optional[dict[str, Any]]:
+    """Geminiの抽出結果1件をプログラム側で検査・整形する。不適格なら None を返す。"""
+    title = clean_text(raw.get("title"))
+    if not title:
+        return None
+    title = sanitize_mobile_phones(title)
+    if not title:
+        return None
+
+    # タイトルが「相談会」「相談所」で終わるものを除外
+    clean_title = re.sub(r"[」』）\)\]】\s　]+$", "", title)
+    if clean_title.endswith("相談会") or clean_title.endswith("相談所"):
+        log.info("広報イベント除外（相談会・相談所）: %s", title)
+        return None
+
+    # 手続きや証明書発行の窓口を除外
+    if "窓口" in title or "休日窓口" in title:
+        log.info("広報イベント除外（窓口開設）: %s", title)
+        return None
+
+    # 業者・事業者・団体向け説明会・見学会を除外
+    if ("見学会" in title or "説明会" in title) and ("指定管理者" in title or "事業者" in title or "業者" in title):
+        log.info("広報イベント除外（事業者向け説明会・見学会）: %s", title)
+        return None
+
+    # 市外訪問・見学を除外
+    if any(w in title for w in ("合志", "菊池", "芦北", "津奈木", "出水", "八代", "熊本市")):
+        if "見学" in title or "訪問" in title or "研修" in title:
+            log.info("広報イベント除外（市外訪問・見学）: %s", title)
+            return None
+
+    start_date = parse_iso_date(raw.get("start_date"))
+    if not start_date:
+        log.info("広報イベント除外（開始日なし）: %s", title)
+        return None
+
+    # 日付の範囲
+    if not is_date_in_koho_range(start_date, issue_month):
+        log.info("広報イベント除外（日付範囲外 %s for %s）: %s", start_date, issue_month, title)
+        return None
+
+    # 日付の裏づけ
+    if not is_date_supported_in_text(start_date, page_text, issue_month=issue_month):
+        log.info("広報イベント除外（紙面に日付記載なし %s）: %s", start_date, title)
+        return None
+
+    venue = clean_text(raw.get("venue"))
+    venue = sanitize_mobile_phones(venue)
+    # 市外（芦北町・津奈木町・合志市・出水市など）
+    if venue and any(w in venue for w in ("合志", "菊池", "芦北", "津奈木", "出水", "八代", "熊本市")):
+        log.info("広報イベント除外（市外会場 %s）: %s", venue, title)
+        return None
+
+    # カレンダーの扱い（カレンダーページなら summary / registration を null にする）
+    norm_page = re.sub(r"\s+", "", unicodedata.normalize("NFKC", page_text))
+    is_calendar_page = "くらしのカレンダー" in norm_page
+
+    # カレンダー月初（1日）で【〜11/15】等が付く前月からの継続催しは除外
+    if is_calendar_page:
+        try:
+            d = dt.date.fromisoformat(start_date)
+            if d.day == 1:
+                norm_t = re.sub(r"\s+", "", unicodedata.normalize("NFKC", clean_title))
+                prefix = re.escape(norm_t[:min(len(norm_t), 6)])
+                if re.search(rf"{prefix}[^【]{{0,15}}【[~～]", norm_page):
+                    log.info("広報イベント除外（カレンダー月初継続イベント %s）: %s", start_date, title)
+                    return None
+        except Exception:
+            pass
+
+    end_date = parse_iso_date(raw.get("end_date")) or start_date
+    if end_date < start_date:
+        end_date = start_date
+
+    # 申し込み情報の確認
+    if is_calendar_page:
+        registration = {"registration": None, "registration_deadline": None, "registration_note": None}
+    else:
+        registration = registration_from_article(raw, page_text, end_date)
+        reg_note = sanitize_mobile_phones(registration.get("registration_note"))
+        registration["registration_note"] = reg_note
+
+    time_text = sanitize_mobile_phones(clean_text(raw.get("time_text")))
+    summary = None if is_calendar_page else sanitize_mobile_phones(clean_text(raw.get("summary")))
+    organizer = sanitize_mobile_phones(clean_text(raw.get("organizer")))
+
+    month_num = int(issue_month.split("-")[1])
+    event_hash = hashlib.sha1(f"{title}|{start_date}".encode("utf-8")).hexdigest()[:10]
+    source_url = f"{pdf_url}#page={page_num}&event={event_hash}"
+    source_label = f"広報みなまた{month_num}月号（PDF {page_num}ページ）"
+
+    return {
+        "id": make_id(source_url),
+        "title": title,
+        "start_date": start_date,
+        "end_date": end_date,
+        "time_text": time_text,
+        "venue": venue,
+        "summary": summary,
+        "organizer": organizer,
+        "source_url": source_url,
+        "source_label": source_label,
+        "origin": "koho",
+        **registration,
+    }
+
+
+def extract_events_from_koho_page(
+    page_text: str,
+    page_num: int,
+    issue_title: str,
+    issue_month: str,
+    pdf_url: str,
+    today: dt.date,
+    *,
+    timeout: int = 30,
+) -> tuple[list[dict[str, Any]], bool]:
+    """1ページの紙面テキストからGeminiでイベントを抽出し、(イベント一覧, 成功したか) を返す。"""
+    user_content = (
+        f"今日の日付: {today.isoformat()}\n"
+        f"広報紙の号: {issue_title}\n"
+        f"発行年月: {issue_month}\n"
+        f"PDFページ番号: {page_num}\n"
+        f"紙面テキスト:\n{page_text}\n"
+    )
+    result = call_gemini_json(
+        KOHO_EVENT_EXTRACTION_SYSTEM_PROMPT,
+        user_content,
+        log_label=f"{issue_title} p.{page_num}",
+        timeout=timeout,
+    )
+    if result is None:
+        return [], False
+
+    raw_events = result.get("events")
+    if not isinstance(raw_events, list):
+        log.warning("Gemini応答に events リストがありません: %s", str(result)[:200])
+        return [], False
+
+    valid_events: list[dict[str, Any]] = []
+    for raw in raw_events:
+        if isinstance(raw, dict):
+            ev = validate_koho_event(raw, page_text, page_num, issue_month, pdf_url)
+            if ev:
+                valid_events.append(ev)
+
+    return valid_events, True
+
+
+def load_koho_cache() -> dict[str, Any]:
+    return load_json(KOHO_CACHE_PATH, {"last_list_ok_date": None, "issues": {}})
+
+
+def save_koho_cache(cache: dict[str, Any]) -> None:
+    write_json(KOHO_CACHE_PATH, cache)
+
+
+def is_koho_issue_done(issue: dict[str, Any]) -> bool:
+    """号の全ページを処理済みか。PDFを読めていない号（total_pages なし）は未完了とする。"""
+    total_pages = issue.get("total_pages")
+    done = set(issue.get("pages_done", [])) | set(issue.get("pages_skipped", []))
+    return bool(total_pages) and len(done) >= total_pages
+
+
+def update_koho_cache(
+    today: dt.date,
+    cache: Optional[dict[str, Any]] = None,
+    max_calls: int = MAX_GEMINI_CALLS,
+) -> tuple[dict[str, Any], int, bool]:
+    """広報みなまたからイベントを抽出しキャッシュを更新する。
+    (更新後キャッシュ, Gemini呼び出し回数, 一覧取得成功フラグ) を返す。
+    """
+    if cache is None:
+        cache = load_koho_cache()
+
+    issues = fetch_koho_issues(KOHO_LIST_URL)
+    list_ok = len(issues) > 0
+    if list_ok:
+        cache["last_list_ok_date"] = today.isoformat()
+    else:
+        log.warning("広報一覧から号を取得できませんでした。")
+
+    if not issues:
+        return cache, 0, list_ok
+
+    # 初回（issues が空）は最新号のみを対象とし、過去号は遡らない
+    existing_issues = cache.get("issues", {})
+    if not existing_issues:
+        target_issues = [issues[0]]
+        log.info("初回実行: 最新号 %s のみを対象にします。", target_issues[0]["title"])
+    else:
+        # 記録済みの最新号より新しい号と、全ページが完了していない号を対象とする。
+        # 過去の号はさかのぼらず、完了した号はPDFを取得し直さない。
+        latest_month = max(e.get("issue_month") or "" for e in existing_issues.values())
+        target_issues = []
+        for iss in issues:
+            entry = existing_issues.get(iss["url"])
+            if entry is None:
+                if iss["issue_month"] > latest_month:
+                    target_issues.append(iss)
+            elif not is_koho_issue_done(entry):
+                target_issues.append(iss)
+
+    calls = 0
+    consecutive_failures = 0
+
+    for iss in target_issues:
+        if calls >= max_calls or consecutive_failures >= GEMINI_CONSECUTIVE_FAILURE_LIMIT:
+            break
+
+        url = iss["url"]
+        entry = cache.setdefault("issues", {}).setdefault(url, {
+            "title": iss["title"],
+            "issue_month": iss["issue_month"],
+            "pdf_url": "",
+            "pages_done": [],
+            "pages_skipped": [],
+            "events": [],
+        })
+
+        pdf_url = entry.get("pdf_url")
+        if not pdf_url:
+            pdf_url = fetch_koho_pdf_url(url)
+            if not pdf_url:
+                continue
+            entry["pdf_url"] = pdf_url
+            save_koho_cache(cache)
+
+        pages = extract_pages_from_pdf(pdf_url)
+        if not pages:
+            continue
+        entry["total_pages"] = len(pages)
+
+        pages_done = set(entry.get("pages_done", []))
+        pages_skipped = set(entry.get("pages_skipped", []))
+
+        for page_num, page_text in pages:
+            if calls >= max_calls or consecutive_failures >= GEMINI_CONSECUTIVE_FAILURE_LIMIT:
+                break
+            if page_num in pages_done or page_num in pages_skipped:
+                continue
+
+            # 200字未満はスキップ
+            if len(page_text.strip()) < KOHO_PAGE_MIN_CHARS:
+                log.info("%s p.%d は文字数不足(%d字)のためスキップします。", iss["title"], page_num, len(page_text.strip()))
+                entry["pages_skipped"].append(page_num)
+                entry["pages_skipped"].sort()
+                save_koho_cache(cache)
+                continue
+
+            # Gemini抽出
+            log.info("%s p.%d (%d字) のイベント抽出を実行します...", iss["title"], page_num, len(page_text))
+            start_t = time.time()
+            events, ok = extract_events_from_koho_page(
+                page_text=page_text,
+                page_num=page_num,
+                issue_title=iss["title"],
+                issue_month=iss["issue_month"],
+                pdf_url=pdf_url,
+                today=today,
+            )
+            elapsed = time.time() - start_t
+            calls += 1
+
+            if ok:
+                consecutive_failures = 0
+                entry["pages_done"].append(page_num)
+                entry["pages_done"].sort()
+                # 既存イベントから同じ source_url のものを差し替え/追加し、広報内重複を除去
+                existing_evs = [e for e in entry.get("events", [])
+                                if not any(ne["source_url"] == e.get("source_url") for ne in events)]
+                entry["events"] = dedupe_koho_events(existing_evs + events)
+                log.info("%s p.%d 完了: %d件抽出 (所要時間: %.2f秒)", iss["title"], page_num, len(events), elapsed)
+                save_koho_cache(cache)
+                time.sleep(GEMINI_REQUEST_INTERVAL_SEC)
+            else:
+                consecutive_failures += 1
+                log.warning("%s p.%d 失敗 (連続失敗: %d/%d, 所要時間: %.2f秒)",
+                            iss["title"], page_num, consecutive_failures, GEMINI_CONSECUTIVE_FAILURE_LIMIT, elapsed)
+                if consecutive_failures >= GEMINI_CONSECUTIVE_FAILURE_LIMIT:
+                    log.warning("Gemini API の連続失敗が上限(%d)に達したため、本日の広報抽出を中断します。",
+                                GEMINI_CONSECUTIVE_FAILURE_LIMIT)
+                    break
+
+    return cache, calls, list_ok
+
 # 手動登録（Googleスプレッドシート）
 # --------------------------------------------------------------------------
 # スプレッドシートの日付セルは、表示形式によって「2026/10/03」「2026-10-03」
@@ -690,10 +1266,158 @@ def merge_manual(base_events: list[dict], manual: dict) -> list[dict]:
     return [e for e in base_events if not e.get("source_url") or e["source_url"] not in replaced] + manual_events
 
 
-def build_events(cache: dict[str, dict], form: dict, manual: dict, today: dt.date) -> list[dict]:
+def get_koho_events(koho_cache: dict) -> list[dict]:
+    """広報キャッシュから全号のイベントを収集し、各イベントに issue_month を付与して返す。"""
+    events = []
+    for issue in koho_cache.get("issues", {}).values():
+        issue_month = issue.get("issue_month")
+        for ev in issue.get("events", []):
+            item = dict(ev)
+            item["issue_month"] = issue_month
+            events.append(item)
+    return events
+
+
+def drop_koho_duplicates(events: list[dict]) -> list[dict]:
+    """広報イベントの重複を除去する。
+    開始日が同じで、normalize_title() 後のタイトルの一方がもう一方に含まれるイベントを同じものとみなす。
+    - 広報以外の経路と重なれば、広報分を捨てる（記事ページのほうが軽く、詳しく開けるため）。
+    - 広報どうしで重なれば、新しい号を残す（号が同じなら情報量が多い方を残す）。
+    """
+    non_koho = [e for e in events if e.get("origin") != "koho"]
+    koho = [e for e in events if e.get("origin") == "koho"]
+
+    # 1. 広報以外の経路と重なる広報分を捨てる
+    filtered_koho = []
+    for k in koho:
+        k_norm = normalize_title(k["title"])
+        k_sd = k.get("start_date")
+        overlaps_non_koho = any(
+            nk.get("start_date") == k_sd
+            and (k_norm in normalize_title(nk["title"]) or normalize_title(nk["title"]) in k_norm)
+            for nk in non_koho
+        )
+        if overlaps_non_koho:
+            log.info("広報重複除外（一般記事優先）: '%s' を除外", k["title"])
+            continue
+        filtered_koho.append(k)
+
+    # 2. 広報どうしで重なる場合、新しい号を残す（号が同じなら filled_count が多い方）
+    sorted_koho = sorted(
+        filtered_koho,
+        key=lambda e: (
+            e.get("issue_month") or "",
+            filled_count(e),
+            -len(e.get("source_url") or "")
+        ),
+        reverse=True
+    )
+    kept_koho: list[dict] = []
+    for k in sorted_koho:
+        k_norm = normalize_title(k["title"])
+        k_sd = k.get("start_date")
+        is_dup = any(
+            kk.get("start_date") == k_sd
+            and (k_norm in normalize_title(kk["title"]) or normalize_title(kk["title"]) in k_norm)
+            for kk in kept_koho
+        )
+        if not is_dup:
+            kept_koho.append(k)
+        else:
+            log.info("広報重複除外（新しい号・情報量優先）: '%s' を除外", k["title"])
+
+    # issue_month は重複判定用。events.json には出さない
+    return non_koho + [{key: v for key, v in k.items() if key != "issue_month"} for k in kept_koho]
+
+
+def cleanup_koho_cache(cache: dict, today: dt.date) -> None:
+    """終了済みイベントしか残っていない号は、events を空にして号の記録だけ残す（再処理を防ぐため）。"""
+    today_iso = today.isoformat()
+    changed = False
+    for iss in cache.get("issues", {}).values():
+        if is_koho_issue_done(iss):
+            evs = iss.get("events", [])
+            if evs and all(e.get("end_date", "") < today_iso for e in evs):
+                log.info("%s のイベントは全件終了したため、events を空にして保持します。", iss.get("title"))
+                iss["events"] = []
+                iss["expired_cleared"] = True
+                changed = True
+    if changed:
+        save_koho_cache(cache)
+
+
+def report_koho_errors(cache: dict, today: dt.date, extra_errors: Optional[list[str]] = None) -> list[str]:
+    """広報処理の異常を検出し、GitHub Actions のステップ出力に書き出す。"""
+    errors = list(extra_errors or [])
+    # 1. 一覧取得の失敗が3日続いたか
+    last_ok = cache.get("last_list_ok_date")
+    if last_ok:
+        try:
+            days_since = (today - dt.date.fromisoformat(last_ok)).days
+            if days_since >= 3:
+                errors.append(f"広報一覧の取得成功（{last_ok}）から{days_since}日経過しています")
+        except Exception:
+            pass
+    else:
+        errors.append("広報一覧の取得成功記録がありません")
+
+    # 2. 最新号の issue_month が今月より2か月以上古いか
+    issues = cache.get("issues", {})
+    if issues:
+        latest_month = max((iss.get("issue_month") or "") for iss in issues.values())
+        if latest_month:
+            try:
+                iy, im = int(latest_month[:4]), int(latest_month[5:7])
+                month_diff = (today.year - iy) * 12 + (today.month - im)
+                if month_diff >= 2:
+                    errors.append(f"広報最新号の発行年月（{latest_month}）が今月より{month_diff}か月古いです")
+            except Exception:
+                pass
+    else:
+        errors.append("広報キャッシュに号データがありません")
+
+    # 3. 全ページ処理した号のイベントが0件
+    for iss in issues.values():
+        if not iss.get("total_pages"):
+            errors.append(f"号（{iss.get('title')}）のPDFを読み込めていません")
+        elif is_koho_issue_done(iss):
+            if len(iss.get("events", [])) == 0 and not iss.get("expired_cleared"):
+                errors.append(f"全ページ処理した号（{iss.get('title')}）のイベントが0件です")
+
+    if not errors:
+        return []
+
+    for err in errors:
+        log.warning("広報処理の異常検知: %s", err)
+
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        with open(output_path, "a", encoding="utf-8") as f:
+            f.write("koho_error=true\n")
+            f.write(f"koho_error_detail={' / '.join(errors)}\n")
+
+    return errors
+
+
+def build_events(
+    cache: dict[str, dict],
+    form: dict,
+    manual: dict,
+    today: dt.date,
+    koho_cache: Optional[dict] = None,
+) -> list[dict]:
+    # 1. 自動抽出分を dedupe_events() でまとめる
     events = dedupe_events([e["event"] for e in cache.values() if e.get("event")])
+    # 2. 投稿フォーム分を足す
     events = merge_form(events, form)
+    # 3. 広報分を足す
+    if koho_cache:
+        events = events + get_koho_events(koho_cache)
+    # 4. 手動登録の上書き・非表示を適用する
     events = merge_manual(events, manual)
+    # 5. drop_koho_duplicates() を実行する
+    events = drop_koho_duplicates(events)
+
     today_iso = today.isoformat()
     events = [with_registration_defaults(e) for e in events if e["end_date"] >= today_iso]
     events.sort(key=lambda e: (e["start_date"], e["title"]))
@@ -725,10 +1449,22 @@ def main() -> int:
     failures: list[str] = []
     manual = load_sheet(EVENTS_SHEET_CSV_URL, MANUAL_CACHE_PATH, "手動登録用シート（シート1）",
                         "manual", "m", failures)
+    # 広報みなまた自動抽出
+    # 広報の処理で例外が起きても、他の経路のイベントは更新する（壊れたPDFなど）
+    koho_cache = load_koho_cache()
+    koho_exception: list[str] = []
+    try:
+        koho_cache, _, _ = update_koho_cache(today, koho_cache)
+        cleanup_koho_cache(koho_cache, today)
+    except Exception as e:
+        log.exception("広報の処理に失敗しました。")
+        koho_exception.append(f"広報の処理で例外が発生しました: {type(e).__name__}")
+
     form = load_sheet(EVENTS_FORM_CSV_URL, FORM_CACHE_PATH, "投稿フォームの掲載用タブ",
                       "form", "f", failures)
-    save_events(build_events(cache, form, manual, today))
+    save_events(build_events(cache, form, manual, today, koho_cache))
     report_sheet_failures(failures)
+    report_koho_errors(koho_cache, today, koho_exception)
     log.info("=== 完了 ===")
     return 0
 
