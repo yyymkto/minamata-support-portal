@@ -646,7 +646,7 @@ def is_date_supported_in_text(
     page_text: str,
     issue_month: Optional[str] = None,
 ) -> bool:
-    """ページ本文に前後に数字が続かない M/D または M月D日 が含まれているか確認する。
+    r"""ページ本文に前後に数字が続かない M/D または M月D日 が含まれているか確認する。
     「くらしのカレンダー」を含むページでは、(?<!\d)日の数字+曜日[^\d■]{0,8}■ の形式で確認する。
     """
     try:
@@ -928,6 +928,9 @@ def update_koho_cache(
     list_ok = len(issues) > 0
     if list_ok:
         cache["last_list_ok_date"] = today.isoformat()
+        # 新しい号がない日もファイルに残す。残さないと、次に一覧取得が1回失敗しただけで
+        # 古い日付から3日以上たったと判定され、誤って通知が出る。
+        save_koho_cache(cache)
     else:
         log.warning("広報一覧から号を取得できませんでした。")
 
