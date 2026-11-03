@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-02T23:03:24.423311+09:00",
+  "last_updated": "2026-11-03T12:23:51.567379+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -49,22 +49,6 @@
       "source_url": "https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html",
       "source_label": "みなまた観光物産協会",
       "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "ca34588e4e68",
-      "title": "没後70年 第20回蘇峰先生顕彰会",
-      "start_date": "2026-11-02",
-      "end_date": "2026-11-02",
-      "time_text": "10:00〜",
-      "venue": "市公民館 2階ホール",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=1204e3d8f1",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
     },
     {
       "registration": null,
