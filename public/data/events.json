@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-03T12:23:51.567379+09:00",
+  "last_updated": "2026-11-04T11:02:52.570096+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -49,22 +49,6 @@
       "source_url": "https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html",
       "source_label": "みなまた観光物産協会",
       "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "3ee1b4448b16",
-      "title": "17区ふれあい祭り",
-      "start_date": "2026-11-03",
-      "end_date": "2026-11-03",
-      "time_text": "17:00〜",
-      "venue": "袋小中体育館",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=ffddc5052d",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
     },
     {
       "registration": null,
@@ -640,22 +624,6 @@
       "organizer": "県環境センター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=564654d4de",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "10b3748847c6",
-      "title": "市役所マルシェ",
-      "start_date": "2026-11-24",
-      "end_date": "2026-11-24",
-      "time_text": "10:00〜",
-      "venue": "市役所1階",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=bc580d4890",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
       "origin": "koho"
     },
     {

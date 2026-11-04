@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-03T12:23:49.293832+09:00",
+  "fetched_at": "2026-11-04T11:02:50.625598+09:00",
   "events": [
     {
       "id": "m-27a7c8f68f",
@@ -66,6 +66,8 @@
       "registration_note": null
     }
   ],
-  "hidden_urls": [],
+  "hidden_urls": [
+    "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=bc580d4890"
+  ],
   "warnings": []
 }

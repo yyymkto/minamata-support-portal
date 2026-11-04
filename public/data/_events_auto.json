@@ -788,6 +788,27 @@
       "schema": 2,
       "event": null
     },
+    "https://www.go-minamata.jp/news-events/8th_wakocha_summit_minamata.html": {
+      "is_event": true,
+      "checked_at": "2026-11-04T11:02:28.448000+09:00",
+      "schema": 2,
+      "event": {
+        "id": "38f2dc40bfde",
+        "title": "第８回 九州和紅茶サミットinみなまた",
+        "start_date": "2026-11-22",
+        "end_date": "2026-11-22",
+        "time_text": "09:30〜15:00",
+        "venue": "エコパーク水俣 ふるさと広場",
+        "summary": "九州各地の和紅茶の飲み比べや、みなまたスウィーツの販売、アフタヌーンティー、茶席などが楽しめるイベント。",
+        "organizer": "みなまた和紅茶実行委員会事務局",
+        "source_url": "https://www.go-minamata.jp/news-events/8th_wakocha_summit_minamata.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": "partial",
+        "registration_deadline": null,
+        "registration_note": "一部イベントは事前予約制。詳細はホームページのQRコードから確認"
+      }
+    },
     "https://www.go-minamata.jp/news-events/asada_namadesu_tabisarada-2.html": {
       "is_event": false,
       "checked_at": "2026-09-21T23:52:01.487927+09:00",
@@ -797,6 +818,27 @@
       "is_event": false,
       "checked_at": "2026-09-21T23:51:25.653092+09:00",
       "event": null
+    },
+    "https://www.go-minamata.jp/news-events/minamata_paddle_fes2026.html": {
+      "is_event": true,
+      "checked_at": "2026-11-04T11:02:34.786809+09:00",
+      "schema": 2,
+      "event": {
+        "id": "511729f4b2e5",
+        "title": "みなまたパドルフェスティバル2026　開催！！",
+        "start_date": "2026-11-15",
+        "end_date": "2026-11-15",
+        "time_text": "8:30〜16:00",
+        "venue": "エコパーク水俣（水俣港ビジターバース付近）",
+        "summary": "ドラゴンボートと水俣の伝統「競り舟」のレース大会。国内外からチームが集まり、スピード感あふれる熱戦が繰り広げられます。会場には飲食や物販の出店ブースも並び、観覧・応援は自由です。",
+        "organizer": "水俣市スポーツ推進課",
+        "source_url": "https://www.go-minamata.jp/news-events/minamata_paddle_fes2026.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
     },
     "https://www.go-minamata.jp/news-events/onsen_sousenkyo_2025.html": {
       "is_event": false,
