@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-04T11:02:15.132089+09:00",
+  "last_updated": "2026-11-05T11:08:13.643857+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -20,6 +20,26 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-11-04",
       "collected_at": "2026-11-04T11:01:58.887282+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c92d44da523f",
+      "title": "令和９年１月から給与支払報告書の電子提出義務基準が「３０枚以上」に引き下げられます",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "税金・年金",
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "令和9年1月より、給与支払報告書の電子提出義務基準が、前々年の提出枚数「100枚以上」から「30枚以上」に引き下げられます。対象となる事業者は、eLTAX等を利用した電子提出の準備が必要です。",
+      "target": "給与支払報告書を提出する事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034942/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-04",
+      "collected_at": "2026-11-05T11:06:37.283415+09:00",
       "status": "active"
     },
     {
@@ -3918,6 +3938,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a0602392470e",
+      "title": "みなまた茶＆みなまた和紅茶フェア2026",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市内で生産される「みなまた茶」と「みなまた和紅茶」の魅力を楽しむフェアが開催されます。地域の特産品に触れられるイベントです。",
+      "target": "水俣市民および観光客",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-05T11:08:09.139920+09:00",
       "status": "active"
     },
     {
