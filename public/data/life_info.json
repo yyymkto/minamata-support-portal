@@ -1,7 +1,26 @@
 {
-  "last_updated": "2026-11-05T11:08:13.643857+09:00",
+  "last_updated": "2026-11-06T11:07:01.342867+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "fc80d053a5a1",
+      "title": "オンライン申請サービス（Logoフォーム）の復旧について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "停止していたオンライン申請サービス（Logoフォーム）が復旧しました。現在は通常通り各種申請手続きが可能です。",
+      "target": "オンライン申請サービスを利用する全市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034949/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-05",
+      "collected_at": "2026-11-06T11:06:55.752466+09:00",
+      "status": "active"
+    },
     {
       "id": "d49fde578071",
       "title": "【重要】オンライン申請サービス（Logoフォーム）の緊急メンテナンスについて",

@@ -819,6 +819,27 @@
       "checked_at": "2026-09-21T23:51:25.653092+09:00",
       "event": null
     },
+    "https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html": {
+      "is_event": true,
+      "checked_at": "2026-11-06T11:07:15.411209+09:00",
+      "schema": 2,
+      "event": {
+        "id": "a0602392470e",
+        "title": "みなまた茶＆みなまた和紅茶フェア2026",
+        "start_date": "2026-11-14",
+        "end_date": "2026-12-28",
+        "time_text": null,
+        "venue": "市内12店舗",
+        "summary": "水俣市内の対象12店舗にて、みなまた茶やみなまた和紅茶を使用したスイーツが販売されるフェア。各店舗自慢の味を楽しめる。",
+        "organizer": "みなまた和紅茶実行委員会",
+        "source_url": "https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.go-minamata.jp/news-events/minamata_paddle_fes2026.html": {
       "is_event": true,
       "checked_at": "2026-11-04T11:02:34.786809+09:00",
