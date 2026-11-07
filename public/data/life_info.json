@@ -1,7 +1,28 @@
 {
-  "last_updated": "2026-11-06T11:07:01.342867+09:00",
+  "last_updated": "2026-11-07T10:43:55.633020+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "f650a6b67ba2",
+      "title": "排水設備（水洗化）工事の申し込みから完成まで",
+      "audience_tags": [
+        "現役世代",
+        "高齢者"
+      ],
+      "topic_tags": [
+        "住まい",
+        "くらしの手続き"
+      ],
+      "organization": "水俣市",
+      "summary": "水洗トイレへの切り替えに伴う排水設備工事の申し込みから完成までの流れを解説しています。工事を依頼する指定工事店の選定から、申請手続き、検査までの手順を確認できます。",
+      "target": "水洗化工事を検討している市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034940/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-06",
+      "collected_at": "2026-11-07T10:43:49.469611+09:00",
+      "status": "active"
+    },
     {
       "id": "fc80d053a5a1",
       "title": "オンライン申請サービス（Logoフォーム）の復旧について",
