@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-06T11:07:33.109751+09:00",
+  "last_updated": "2026-11-08T10:13:51.964437+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -84,22 +84,6 @@
     },
     {
       "registration": "required",
-      "registration_deadline": "2026-11-05",
-      "registration_note": "電話にて申し込み",
-      "id": "dbbf0f76a5d8",
-      "title": "みなまた和紅茶ワークショップ（手もみ体験）",
-      "start_date": "2026-11-07",
-      "end_date": "2026-11-07",
-      "time_text": "10:00〜11:30",
-      "venue": "もやい館",
-      "summary": "和紅茶を自分で作る手もみ体験。参加料500円。希望する開催日の2日前までに電話で申し込み",
-      "organizer": "もやい館",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=1ceaa269a9",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
-    },
-    {
-      "registration": "required",
       "registration_deadline": null,
       "registration_note": "Googleフォーム（forms.gle/6seq7fSC72ARdgA87）。定員10組程度",
       "id": "m-058ab3e19b",
@@ -113,38 +97,6 @@
       "source_url": null,
       "source_label": "詳細",
       "origin": "manual"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "beb55938fdd1",
-      "title": "第72回水俣市民文化祭 芸能のつどい",
-      "start_date": "2026-11-07",
-      "end_date": "2026-11-07",
-      "time_text": "12:00〜",
-      "venue": "市文化会館",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=bba4c4b9e8",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "fbb9acd3c012",
-      "title": "英語会話テーブル",
-      "start_date": "2026-11-07",
-      "end_date": "2026-11-07",
-      "time_text": "14:00〜",
-      "venue": "市ふれあいセンター",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=d40440d156",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
     },
     {
       "registration": null,
