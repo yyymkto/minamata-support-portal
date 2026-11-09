@@ -1,7 +1,45 @@
 {
-  "last_updated": "2026-11-07T10:43:55.633020+09:00",
+  "last_updated": "2026-11-09T10:32:14.052365+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "50f66daf0308",
+      "title": "南九州西回り自動車道の工事に伴う市道野川・袋線の通行経路変更について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "交通"
+      ],
+      "organization": "水俣市",
+      "summary": "南九州西回り自動車道の工事に伴い、市道野川・袋線の通行経路が変更されます。付近を通行される方は現地の案内看板や誘導に従い、安全に通行してください。",
+      "target": "市道野川・袋線を利用するすべての住民および通行者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034945/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-09",
+      "collected_at": "2026-11-09T10:31:56.154126+09:00",
+      "status": "active"
+    },
+    {
+      "id": "52f28ce5627d",
+      "title": "特設人権相談所を開設します （12月）",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "人権擁護委員による特設人権相談所が12月に開設されます。日常生活における悩みや困りごとについて、無料で相談が可能です。",
+      "target": "日常生活で悩みや困りごとがある市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0031527/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-09",
+      "collected_at": "2026-11-09T10:32:08.765343+09:00",
+      "status": "active"
+    },
     {
       "id": "f650a6b67ba2",
       "title": "排水設備（水洗化）工事の申し込みから完成まで",
