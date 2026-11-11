@@ -136,7 +136,7 @@ Googleカレンダーは使わない（吉野さんの判断、2026-11-11。理�
 - URLはページの場所から作る（ローカル確認でも動くように）：
   - `const icsUrl = new URL('./data/events.ics', location.href).href;`
   - iPhone・Mac：`icsUrl` の `https:`（または `http:`）を `webcal:` に置き換えたもの。`target` なしで開く。
-  - Google：`https://calendar.google.com/calendar/r?cid=` + `encodeURIComponent(webcalのURL)`。別タブで開く（`rel="noopener noreferrer"`）。
+  - Google：`https://calendar.google.com/calendar/r?cid=` + webcalのURL（**エンコードしない**。エンコードすると追加されない。2026-11-12 実機で確認）。別タブで開く（`rel="noopener noreferrer"`）。
 - 定数 `EVENT_CALENDAR_ENABLED`（初期値 `true`）を作り、`false` ならこの案内とカードの追加リンクを出さない（不具合時にすぐ止めるため）。
 
 ### B. カテゴリの絞り込み（固定ヘッダーの一番下）
@@ -275,6 +275,14 @@ Googleカレンダーは使わない（吉野さんの判断、2026-11-11。理�
 - 吉野さんの依頼でpush（4コミット：431e84d・3f0e225・dec4336・e699072）。デプロイ run 43050277593 は成功。
 - 本番で `data/events.ics`（56件）と `data/ics/<id>.ics` がどちらも200・`Content-Type: text/calendar` で開けることを確認。
 - 本番の `events.json` にはまだ `category`・`calendar` がない。次の自動更新（2026-11-13 7:00）で付き、絞り込みとGoogleの追加リンクが出る。
+
+## タスク7の結果（吉野さん）
+
+- 2026-11-12 (3) Android：**未確認（訂正）**。「水俣漁師市」が表示されたのは、吉野さんがもともと入れていた別のカレンダーだった。
+  購読用URLを開くと「カレンダーを追加しました」と出るが、アプリのカレンダー一覧にも、Web版の「他のカレンダー」にも出てこない。
+  PCのWeb版で「URLで追加」に `https://…/data/events.ics` を貼ると追加できた。.ics の中身・配信は問題なく、**購読ボタンのリンクの形（`cid=` に `webcal:` をエンコードして渡す）が原因**とみられる。リンクの形を3つ試してもらい、エンコードしない `cid=webcal://…` で追加できた（2026-11-12）。`src/index.html` をその形に修正。
+  そのため「事前確認の記録」（2026-11-11）の「追加・同期された」も確かではない。
+- (1) iPhone・(2) PC・(4) カードからの1件追加は未確認。
 
 ## 実装時の疑問点・ブロッカー（実装担当が記入）
 

@@ -179,6 +179,7 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-11-12: [Claude Code] Androidの購読はまだ確認できていない（訂正）。漁師市が出たのは吉野さんがもともと入れていた別のカレンダーだった。購読用URLで「追加しました」と出るのに一覧に出ない。原因は購読ボタンのリンクの形で、`cid=` に webcal の URL をエンコードせずに渡す形なら追加できることを吉野さんが確認。`src/index.html` を修正。
 - 2026-11-12: [Claude Code] 吉野さんの依頼でイベントのカレンダー連携をpush・本番反映（run 43050277593）。本番の `data/events.ics`（56件）が `text/calendar` で開けることを確認。
 - 2026-11-12: [Claude Code] タスク5（Antigravity、`src/index.html`）をレビューし5点修正。iPhone・Macの購読ボタンが `#` になって動かない不具合、375px幅で追加リンクの中身がはみ出す問題など。未push。
 - 2026-11-12: [Claude Code] タスク4（Antigravity、`daily-update.yml`）をレビュー。修正なし。.ics の改行がWindowsでのコミット時に変わらないよう `.gitattributes` を追加。未push。
@@ -186,7 +187,7 @@ minamata-support-portal
 - 2026-11-12: [Claude Code] イベントのカレンダー連携のタスク1（Antigravity）をレビューし2点修正（日付の壊れた1件で一覧の更新全体が止まる問題など）。
   タスク2でカテゴリを66件確認（63件妥当）、スポーツの言葉から「大会」を外した。未push。
 - 2026-11-11: [Antigravity] イベントのカレンダー連携のタスク1を実装（`scripts/event_calendar.py` 新設、`update_events.py` の `build_events()` に `category`・`calendar` を追加）。
-- 2026-11-11: [Claude Code] 吉野さんがAndroidで購読用URLを開き、カレンダーの追加・同期まで特別な操作なしでできたことを確認（設計書「事前確認の記録」）。.ics の公開前のため、イベントの表示は未確認。
+- 2026-11-11: [Claude Code] 吉野さんがAndroidで購読用URLを開き、カレンダーの追加・同期まで特別な操作なしでできたと報告（設計書「事前確認の記録」。2026-11-12に、別のカレンダーを見ていた可能性があると判明）。.ics の公開前のため、イベントの表示は未確認。
 - 2026-11-11: [Claude Code] 吉野さんの依頼で、イベントのカレンダー連携の設計書 `design-specs/2026-11-11_event-calendar.md` と決定記録 `decisions-log/2026-11-11_event-calendar.md` を作成。
   Googleカレンダーを正本にする案は、66件中64件が自動抽出でカレンダーに入っていないため採らず、`events.json` から `.ics` を作る。コード変更はまだなし。
 - 2026-11-03: [Claude Code] 広報みなまた自動抽出の本番を確認。11/2の手動実行と11/3の自動実行は成功し、本番の `events.json` に広報分45件が載った。
