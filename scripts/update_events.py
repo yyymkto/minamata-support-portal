@@ -61,6 +61,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import pypdf
 
+from event_calendar import calendar_slot, classify_category
 from update_data import (
     GEMINI_API_KEY,
     GEMINI_CONSECUTIVE_FAILURE_LIMIT,
@@ -1423,6 +1424,15 @@ def build_events(
 
     today_iso = today.isoformat()
     events = [with_registration_defaults(e) for e in events if e["end_date"] >= today_iso]
+    for e in events:
+        e["category"] = classify_category(e)
+        # 日付が壊れた1件のために全体の更新が止まらないよう、失敗したら calendar を付けない
+        # （画面は calendar がないとGoogleの追加リンクを出さない。設計書 2026-11-11_event-calendar.md）
+        try:
+            e["calendar"] = calendar_slot(e)
+        except (ValueError, TypeError) as err:
+            log.warning("カレンダーの日時を決められません（%s）: %s", e.get("id"), err)
+            e.pop("calendar", None)
     events.sort(key=lambda e: (e["start_date"], e["title"]))
     return events
 
