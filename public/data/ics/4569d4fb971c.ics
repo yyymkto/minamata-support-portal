@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:市役所マルシェ　11月15日開催のお知らせ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:4569d4fb971c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261115T010000Z
+DTEND:20261115T060000Z
+SUMMARY:市役所マルシェ　11月15日開催のお知らせ
+LOCATION:市役所 屋外テラス
+CATEGORIES:マルシェ・物産
+URL:https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html
+DESCRIPTION:弁当・惣菜・野菜・パン・ハンドメイドなどが
+ 集まるマルシェ。今回は休日開催となり、エコパーク
+ のバラ園で開催されるローズフェスタ・ローズマルシ
+ ェと合わせて水俣を周遊できる一日です。\n時間：10:00
+ 〜15:00\n主催：市役所マルシェ実行委員会\n詳細：https://
+ www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+END:VCALENDAR

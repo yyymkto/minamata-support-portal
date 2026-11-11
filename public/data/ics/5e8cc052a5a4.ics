@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:育児講座「親子ヨガ」
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5e8cc052a5a4@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261117T013000Z
+DTEND:20261117T030000Z
+SUMMARY:育児講座「親子ヨガ」
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=e7e9bf8e4f
+DESCRIPTION:未就学児の親子を対象とした親子ヨガ講座です
+ \n時間：10:30〜12:00\n要申込、要予約。詳細は市こどもセ
+ ンターへ問い合わせ\n主催：市こどもセンター\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&
+ event=e7e9bf8e4f\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

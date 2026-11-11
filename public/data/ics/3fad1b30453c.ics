@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:たまひよ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3fad1b30453c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261126T050000Z
+DTEND:20261126T060000Z
+SUMMARY:たまひよ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=63a630139f
+DESCRIPTION:妊婦さん・1歳前後の親子を対象とした交流会
+ です\n時間：14:00〜15:00\n要申込、要予約。詳細は市こど
+ もセンターへ問い合わせ\n主催：市こどもセンター\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#p
+ age=12&event=63a630139f\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:むかしあそび
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:58f064c77087@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T010000Z
+DTEND:20261114T020000Z
+SUMMARY:むかしあそび
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=29ff576f5c
+DESCRIPTION:小学生を対象としたむかしあそび体験です\n時
+ 間：10:00〜11:00\n要申込、要予約。詳細は市こどもセン
+ ターへ問い合わせ\n主催：市こどもセンター\n詳細：http
+ s://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&eve
+ nt=29ff576f5c\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

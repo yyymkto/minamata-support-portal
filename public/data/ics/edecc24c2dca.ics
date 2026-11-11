@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:こども若者とつくるアートワークショップ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:edecc24c2dca@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261125T010000Z
+DTEND:20261125T020000Z
+SUMMARY:こども若者とつくるアートワークショップ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=8103274f9c
+DESCRIPTION:どなたでも参加できるアートワークショップで
+ す\n時間：午前の部 10:00〜12:00、午後の部 14:00〜16:30\n要
+ 申込、要予約。詳細は市こどもセンターへ問い合わせ\n
+ 主催：市こどもセンター\n詳細：https://www.city.minamata.lg.j
+ p/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8103274f9c\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+END:VCALENDAR

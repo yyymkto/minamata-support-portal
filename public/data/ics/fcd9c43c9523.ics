@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:地域・子ども食堂「水俣すまいる食堂」
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:fcd9c43c9523@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T013000Z
+DTEND:20261114T033000Z
+SUMMARY:地域・子ども食堂「水俣すまいる食堂」
+LOCATION:市ふれあいセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=c87b94ae57
+DESCRIPTION:食から考える防災ワークショップ。防災食をお
+ いしくいただく方法や、災害時の思いやりについて学
+ びます。参加料：大人300円、子ども無料。持ち物：飲
+ み物、タオル\n時間：10:30〜12:30\n主催：市ふれあいセン
+ ター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvm
+ v7eo1.pdf#page=12&event=c87b94ae57\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:「第10回九州のお米食味コンクールin多良木」
+ の開催のお知らせ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:59c179febc7a@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:「第10回九州のお米食味コンクールin多良木」の開
+ 催のお知らせ
+LOCATION:多良木町多目的研修センター
+URL:https://www.city.minamata.lg.jp/kiji0034892/index.html
+DESCRIPTION:九州産米のPRと地位向上を目的に、九州各地の
+ お米を一堂に集めて食味を競うコンクール。\n主催：多
+ 良木町役場\n詳細：https://www.city.minamata.lg.jp/kiji0034892/inde
+ x.html\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

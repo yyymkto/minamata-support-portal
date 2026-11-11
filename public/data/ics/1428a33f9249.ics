@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:図書館感謝デー 11月１５日に延期します！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1428a33f9249@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:図書館感謝デー 11月１５日に延期します！
+LOCATION:水俣市立図書館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034933/index.html
+DESCRIPTION:台風の影響で延期となった図書館感謝デー。当
+ 日は皆様の来場をお待ちしています。\n主催：水俣市\n
+ 詳細：https://www.city.minamata.lg.jp/kiji0034933/index.html\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+END:VCALENDAR

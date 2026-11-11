@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた和紅茶アフタヌーンティー
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:m-96ad53f449@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261122T023000Z
+DTEND:20261122T040000Z
+SUMMARY:みなまた和紅茶アフタヌーンティー
+LOCATION:エコパーク水俣ふるさと広場
+CATEGORIES:お祭り・催し
+DESCRIPTION:和紅茶サミットの企画として開かれる、みなま
+ た和紅茶のアフタヌーンティー。参加費5\,500円。\n時間
+ ：11:30〜13:00\n主催：水俣・芦北地域雇用創造協議会\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+END:VCALENDAR

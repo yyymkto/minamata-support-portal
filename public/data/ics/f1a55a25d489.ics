@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:フライングディスク世界大会の開催決定！！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f1a55a25d489@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20270919
+DTEND;VALUE=DATE:20270925
+SUMMARY:フライングディスク世界大会の開催決定！！
+LOCATION:エコパーク水俣
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034840/index.html
+DESCRIPTION:個人競技の世界一を決めるフライングディスク
+ の国際大会。日本で初めて水俣市で開催される。\n主催
+ ：世界フライングディスク連盟、日本フライングディ
+ スク協会\n詳細：https://www.city.minamata.lg.jp/kiji0034840/index.h
+ tml\nみなまた くらしナビ（非公式）掲載。日時・内容
+ は変わることがあります。
+END:VEVENT
+END:VCALENDAR

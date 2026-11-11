@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:水俣市観光振興計画策定ワークショップ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:28826f016709@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T043000Z
+DTEND:20261129T060000Z
+SUMMARY:水俣市観光振興計画策定ワークショップ
+LOCATION:市役所１階多目的室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =8&event=45c8aab2ef
+DESCRIPTION:水俣の資源活用や訪問したくなるモノ・コトに
+ ついて、アイデアを出し合うワークショップです\n時間
+ ：13:30〜15:00\n要申込、11/26締切、申込フォームまたは電
+ 話にて申し込み\n主催：経済観光戦略課\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=8&event=45c8
+ aab2ef\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

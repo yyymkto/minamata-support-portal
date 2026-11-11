@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:都市計画区域マスタープラン素案住民説明会
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:eee827a2e0c5@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261201T093000Z
+DTEND:20261201T103000Z
+SUMMARY:都市計画区域マスタープラン素案住民説明会
+LOCATION:市役所1階多目的室
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =4&event=78adfa0bdd
+DESCRIPTION:水俣都市計画区域マスタープランおよび芦北都
+ 市計画区域マスタープランの見直しに関する住民説明
+ 会\n時間：18:30\n申込不要\n主催：熊本県\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=4&event=78ad
+ fa0bdd\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:「エコパーク仕事終わりのテニスクラブ」が
+ 開催されます！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:e2472b001432@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:「エコパーク仕事終わりのテニスクラブ」が開催
+ されます！（〜11/19）
+LOCATION:エコパーク水俣 テニスコート
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034902/index.html
+DESCRIPTION:初心者向けの「はじめてFUNクラス」と経験者向
+ けの「スキルアップクラス」に分かれ、全5回でテニス
+ を学ぶ教室。11月29日には参加者限定のイベントも予定
+ 。\n時間：19:00〜20:30\n期間：10/22〜11/19（開催日は元の
+ ページでご確認ください）\n要申込、10/21締切、申込書
+ をエコパーク窓口へ提出または電話で申し込み。定員
+ 各10名\n主催：エコパーク水俣 管理事務所\n詳細：https:/
+ /www.city.minamata.lg.jp/kiji0034902/index.html\nみなまた くらしナ
+ ビ（非公式）掲載。日時・内容は変わることがありま
+ す。
+END:VEVENT
+END:VCALENDAR

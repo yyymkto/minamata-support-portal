@@ -1,0 +1,972 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた くらしナビ イベント（非公式）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:e2472b001432@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261023
+SUMMARY:「エコパーク仕事終わりのテニスクラブ」が開催
+ されます！（〜11/19）
+LOCATION:エコパーク水俣 テニスコート
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034902/index.html
+DESCRIPTION:初心者向けの「はじめてFUNクラス」と経験者向
+ けの「スキルアップクラス」に分かれ、全5回でテニス
+ を学ぶ教室。11月29日には参加者限定のイベントも予定
+ 。\n時間：19:00〜20:30\n期間：10/22〜11/19（開催日は元の
+ ページでご確認ください）\n要申込、10/21締切、申込書
+ をエコパーク窓口へ提出または電話で申し込み。定員
+ 各10名\n主催：エコパーク水俣 管理事務所\n詳細：https:/
+ /www.city.minamata.lg.jp/kiji0034902/index.html\nみなまた くらしナ
+ ビ（非公式）掲載。日時・内容は変わることがありま
+ す。
+END:VEVENT
+BEGIN:VEVENT
+UID:9f45c4202a7e@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:地域提案事業【一般社団法人　水俣・写真家の眼
+ 】（〜11/13）
+LOCATION:東京外国語大学 研究講義棟1階ガレリア
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html
+DESCRIPTION:写真集『水俣からあなたへ』に収録された写真
+ 家9人の作品から42点を展示する巡回写真展。水俣病公
+ 式確認70年の節目に、水俣から何を学ぶのかを問いかけ
+ る。\n時間：8:30〜20:00\n期間：10/28〜11/13（開催日は元の
+ ページでご確認ください）\n主催：一般社団法人 水俣
+ ・写真家の眼\n詳細：https://www.city.minamata.lg.jp/kankyo/kiji00
+ 34915/index.html\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:6c0d3b3b2ee2@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:水俣ローズフェスタ秋2026（〜11/15）
+LOCATION:エコパーク水俣バラ園（道の駅みなまた）
+CATEGORIES:お祭り・催し
+URL:https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html
+DESCRIPTION:バラの苗販売やマルシェ、ハロウィンブース、
+ 和紅茶フェアなどが行われる秋の恒例イベント。期間
+ 中、アフタヌーンティーなどの企画も実施されます。\n
+ 期間：10/31〜11/15（開催日は元のページでご確認くださ
+ い）\n一部要申込、アフタヌーンティーのみ電話予約制
+ （0966-62-2003）。定員になり次第終了\n主催：ローズフェ
+ スタ実行委員会（水俣市経済観光戦略課）\n詳細：https:
+ //www.go-minamata.jp/news-events/rose-festa-fall-2026.html\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:6590c806be25@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:『FLYING DISC CLUB－2nd season－』水俣でディスクプレ
+ イヤーになろう！！（〜12/16）
+LOCATION:エコパーク水俣 潮騒の広場
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034920/index.html
+DESCRIPTION:アルティメット日本代表の丹波大士さんを講師
+ に迎え、初心者でも楽しめるフライングディスク競技
+ を学ぶ全6回の練習会。小学生以上が対象。\n時間：18:00
+ 〜19:30\n期間：11/11〜12/16（開催日は元のページでご確認
+ ください）\n一部要申込、各回2日前までに窓口または
+ 電話(0966-62-7501)で受付。定員20名（先着順）、空きがあ
+ れば当日参加可\n主催：エコパーク水俣管理事務所\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034920/index.html\nみなまた
+  くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:da65ab6721cd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261111T033000Z
+DTEND:20261111T043000Z
+SUMMARY:英語会話テーブル
+LOCATION:市役所3階会議室C
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=0d9cfa5527
+DESCRIPTION:時間：12:30〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=0d9cfa5527\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:37956b8aa4f9@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T013000Z
+DTEND:20261112T030000Z
+SUMMARY:10、11月生まれのお誕生会
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=57d1410d43
+DESCRIPTION:未就学児の親子を対象としたお誕生会です\n時
+ 間：10:30〜12:00\n要申込、要予約。詳細は市こどもセン
+ ターへ問い合わせ\n主催：市こどもセンター\n詳細：http
+ s://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&eve
+ nt=57d1410d43\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:6523e7aeb802@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T043000Z
+DTEND:20261112T060000Z
+SUMMARY:ひきこもりファミリーサロン
+LOCATION:水俣市社会福祉協議会多目的ルーム
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=b60a163db5
+DESCRIPTION:ひきこもっている人を支える家族同士の交流・
+ 情報交換会\n時間：13:30〜15:00\n主催：みなまた安心セン
+ ター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvm
+ v7eo1.pdf#page=13&event=b60a163db5\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c74a707c648d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T100000Z
+DTEND:20261112T110000Z
+SUMMARY:みなまた和紅茶ワークショップ（淹れ方講座）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=8afe686f1e
+DESCRIPTION:ご家庭でも和紅茶をより美味しく淹れるための
+ 講座。参加料500円。希望する開催日の2日前までに電話
+ で申し込み\n時間：19:00〜20:00\n要申込、11/10締切、電話
+ にて申し込み\n主催：もやい館\n詳細：https://www.city.minam
+ ata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8afe686f1e\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:eeafc05084cd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:深堀ビートルズ講座（〜12/17）
+LOCATION:もやい館 2階ふれあい広場
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=65970da7e1
+DESCRIPTION:ビートルズの映像と音源を楽しみながら語り合
+ う講座。開催日：11/12、19、12/3、10、17\n時間：19:00〜20:3
+ 0\n期間：11/12〜12/17（開催日は元のページでご確認くだ
+ さい）\n要申込、定員15人。電話で申込\n主催：もやい
+ 館\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=13&event=65970da7e1\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:a76604977aad@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T010000Z
+DTEND:20261112T020000Z
+SUMMARY:脳の健康度セルフチェック会
+LOCATION:市保健センター
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =5&event=16d6a4dff9
+DESCRIPTION:アプリ「のうKNOW」を使用して脳の健康度をセ
+ ルフチェックします。スマートフォンを持参してくだ
+ さい\n時間：10:00\n一部要申込、窓口または電話で申し
+ 込み。当日参加も可能\n主催：いきいき健康課\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&e
+ vent=16d6a4dff9\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:e481f08b4d79@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:男女共同参画に関する図書のミニ特設コーナー（
+ 〜11/29）
+LOCATION:図書館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =7&event=8a0d30f385
+DESCRIPTION:男女共同参画に関する図書を集めたミニ特設コ
+ ーナーを設置します\n期間：11/13〜11/29（開催日は元の
+ ページでご確認ください）\n詳細：https://www.city.minamata.l
+ g.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=7&event=8a0d30f385\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:034013319e12@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261113T010000Z
+DTEND:20261113T020000Z
+SUMMARY:脳の健康度セルフチェック会
+LOCATION:市保健センター
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =5&event=badc642c72
+DESCRIPTION:アプリ「のうKNOW」を使用して脳の健康度をセ
+ ルフチェックします。スマートフォンを持参してくだ
+ さい\n時間：10:00\n一部要申込、窓口または電話で申し
+ 込み。当日参加も可能\n主催：いきいき健康課\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&e
+ vent=badc642c72\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:a0602392470e@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:みなまた茶＆みなまた和紅茶フェア2026（〜12/28）
+LOCATION:市内12店舗
+URL:https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html
+DESCRIPTION:水俣市内の対象12店舗にて、みなまた茶やみな
+ また和紅茶を使用したスイーツが販売されるフェア。
+ 各店舗自慢の味を楽しめる。\n期間：11/14〜12/28（開催
+ 日は元のページでご確認ください）\n主催：みなまた和
+ 紅茶実行委員会\n詳細：https://www.go-minamata.jp/news-events/min
+ a-cha_fair_2026.html\nみなまた くらしナビ（非公式）掲載。
+ 日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:58f064c77087@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T010000Z
+DTEND:20261114T020000Z
+SUMMARY:むかしあそび
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=29ff576f5c
+DESCRIPTION:小学生を対象としたむかしあそび体験です\n時
+ 間：10:00〜11:00\n要申込、要予約。詳細は市こどもセン
+ ターへ問い合わせ\n主催：市こどもセンター\n詳細：http
+ s://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&eve
+ nt=29ff576f5c\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:ae80d8e2f097@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T020000Z
+DTEND:20261114T023000Z
+SUMMARY:図書館からのおはなし会
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=a84180c196
+DESCRIPTION:どなたでも参加できるおはなし会です\n時間：1
+ 1:00〜11:30\n主催：市こどもセンター\n詳細：https://www.city
+ .minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=a84180c19
+ 6\nみなまた くらしナビ（非公式）掲載。日時・内容は
+ 変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:fcd9c43c9523@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T013000Z
+DTEND:20261114T033000Z
+SUMMARY:地域・子ども食堂「水俣すまいる食堂」
+LOCATION:市ふれあいセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=c87b94ae57
+DESCRIPTION:食から考える防災ワークショップ。防災食をお
+ いしくいただく方法や、災害時の思いやりについて学
+ びます。参加料：大人300円、子ども無料。持ち物：飲
+ み物、タオル\n時間：10:30〜12:30\n主催：市ふれあいセン
+ ター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvm
+ v7eo1.pdf#page=12&event=c87b94ae57\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:492aaed64c2d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261113T235000Z
+DTEND:20261114T005000Z
+SUMMARY:水俣漁師市
+LOCATION:丸島漁港
+CATEGORIES:マルシェ・物産
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=a7f6c543cb
+DESCRIPTION:時間：8:50〜\n詳細：https://www.city.minamata.lg.jp/kiji
+ 0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=a7f6c543cb\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:df9111efbdbf@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261117
+SUMMARY:第59回 蘇峰筆塚顕彰書道展
+LOCATION:もやい館３階もやいホール
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=30ed0fdda1
+DESCRIPTION:徳富蘇峰の遺徳と筆塚を顕彰し、水俣市・津奈
+ 木町の小・中・高生の作品を一堂に集め展示します\n時
+ 間：09:00〜17:00（16日は13時まで）\n主催：もやい館\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#p
+ age=12&event=30ed0fdda1\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:9965012d15bd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T233000Z
+DTEND:20261115T070000Z
+SUMMARY:みなまたパドルフェスティバル２０２６開催！
+LOCATION:エコパーク水俣（水俣港ビジターバース付近）
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034896/index.html
+DESCRIPTION:水俣の伝統「競り舟」と世界で人気の「ドラゴ
+ ンボート」のレース大会。国内外から参加者が集まり
+ 、200mの速さを競います。個人エントリー枠もあり、チ
+ ームに所属していなくても参加可能です。\n時間：08:30
+ 〜16:00\n要申込、詳細は大会要項を確認。水俣市競り舟
+ 協会（090-1199-8707）または水俣市スポーツ推進課へ連絡\
+ n主催：みなまたパドルフェスティバル実行委員会、水
+ 俣市競り舟協会、みなまた競り舟大会実行委員会\n詳細
+ ：https://www.city.minamata.lg.jp/kiji0034896/index.html\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:1428a33f9249@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:図書館感謝デー 11月１５日に延期します！
+LOCATION:水俣市立図書館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034933/index.html
+DESCRIPTION:台風の影響で延期となった図書館感謝デー。当
+ 日は皆様の来場をお待ちしています。\n主催：水俣市\n
+ 詳細：https://www.city.minamata.lg.jp/kiji0034933/index.html\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:4569d4fb971c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261115T010000Z
+DTEND:20261115T060000Z
+SUMMARY:市役所マルシェ　11月15日開催のお知らせ
+LOCATION:市役所 屋外テラス
+CATEGORIES:マルシェ・物産
+URL:https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html
+DESCRIPTION:弁当・惣菜・野菜・パン・ハンドメイドなどが
+ 集まるマルシェ。今回は休日開催となり、エコパーク
+ のバラ園で開催されるローズフェスタ・ローズマルシ
+ ェと合わせて水俣を周遊できる一日です。\n時間：10:00
+ 〜15:00\n主催：市役所マルシェ実行委員会\n詳細：https://
+ www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:5e8cc052a5a4@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261117T013000Z
+DTEND:20261117T030000Z
+SUMMARY:育児講座「親子ヨガ」
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=e7e9bf8e4f
+DESCRIPTION:未就学児の親子を対象とした親子ヨガ講座です
+ \n時間：10:30〜12:00\n要申込、要予約。詳細は市こどもセ
+ ンターへ問い合わせ\n主催：市こどもセンター\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&
+ event=e7e9bf8e4f\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:b1348f05dd7c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261118T013000Z
+DTEND:20261118T030000Z
+SUMMARY:ママリラ〜首肩マッサージ〜
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=2906ef0d51
+DESCRIPTION:子育て中の保護者を対象とした首肩マッサージ
+ の講座です\n時間：10:30〜12:00\n要申込、要予約。詳細は
+ 市こどもセンターへ問い合わせ\n主催：市こどもセンタ
+ ー\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=12&event=2906ef0d51\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:015f04d0f311@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261120T030000Z
+DTEND:20261120T034500Z
+SUMMARY:水鳥千鶴子トーク＆ハープライブ演奏会
+LOCATION:市役所１階市民交流フロア
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =6&event=6564495a20
+DESCRIPTION:ハープ演者でミュージックセラピストの水鳥千
+ 鶴子さんによる、心の癒しを届ける演奏会です\n時間：
+ 12:00〜12:45\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938
+ _up_vvmv7eo1.pdf#page=6&event=6564495a20\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:413c0c6a4acd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:第21回3区自治会「ミニミニ文化祭（作品展）」
+LOCATION:3区地域リビング館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=def8d433df
+DESCRIPTION:地域の皆さんの趣味や創作活動による作品展示
+ 会\n時間：09:00〜16:00\n主催：3区自治会\n詳細：https://www.
+ city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=def8d
+ 433df\nみなまた くらしナビ（非公式）掲載。日時・内容
+ は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c2ed7159876a@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T003000Z
+DTEND:20261121T060000Z
+SUMMARY:11月21日（土曜日）第16回みなまた産業団地まつり
+ を開催します！
+LOCATION:水俣産業団地ほか（受付・抽選会場：尾上商事）
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033042/index.html
+DESCRIPTION:水俣産業団地の企業を知るイベント。工場見学
+ スタンプラリー、キッチンカー出店、ステージイベン
+ ト、お楽しみ抽選会などが実施されます。\n時間：09:30
+ 〜15:00\n主催：みなまた産業団地まつり実行委員会事務
+ 局\n詳細：https://www.city.minamata.lg.jp/kiji0033042/index.html\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:b2410a8b3bf2@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T020000Z
+DTEND:20261121T030000Z
+SUMMARY:こども地域食堂ポパイ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=66084e4f10
+DESCRIPTION:時間：11:00〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=66084e4f10\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:bda03421c498@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T050000Z
+DTEND:20261121T060000Z
+SUMMARY:石川さゆりコンサート
+LOCATION:市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=76e09193a7
+DESCRIPTION:時間：①14:00〜 ②18:00〜\n詳細：https://www.city.min
+ amata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76e09193a7\n
+ みなまた くらしナビ（非公式）掲載。日時・内容は変
+ わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:f3bc245ffaa7@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261122T003000Z
+DTEND:20261122T060000Z
+SUMMARY:11月22日開催！「第８回九州和紅茶サミットinみな
+ また」
+LOCATION:エコパーク水俣ふるさと広場
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033921/index.html
+DESCRIPTION:九州各地の和紅茶の飲み比べ、みなまたスウィ
+ ーツの販売、アフタヌーンティーや茶席などが楽しめ
+ るイベント。\n時間：09:30〜15:00\n一部要申込、アフタヌ
+ ーンティーと茶席は事前予約制（先着順）。公式ホー
+ ムページのリンクから申込\n主催：みなまた和紅茶実行
+ 委員会\n詳細：https://www.city.minamata.lg.jp/kiji0033921/index.html
+ \nみなまた くらしナビ（非公式）掲載。日時・内容は
+ 変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:m-96ad53f449@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261122T023000Z
+DTEND:20261122T040000Z
+SUMMARY:みなまた和紅茶アフタヌーンティー
+LOCATION:エコパーク水俣ふるさと広場
+CATEGORIES:お祭り・催し
+DESCRIPTION:和紅茶サミットの企画として開かれる、みなま
+ た和紅茶のアフタヌーンティー。参加費5\,500円。\n時間
+ ：11:30〜13:00\n主催：水俣・芦北地域雇用創造協議会\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:232a7c4d067f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261123T010000Z
+DTEND:20261123T030000Z
+SUMMARY:クリスマス飾りを作ろう！
+LOCATION:県環境センター
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=564654d4de
+DESCRIPTION:木や森について学びながら、自然の材料を使っ
+ てリースなどのクリスマス飾りを作ります。定員30人程
+ 度（抽選）。参加無料\n時間：10:00〜12:00\n要申込、11/9
+ 締切、申込フォームより申し込み\n主催：県環境センタ
+ ー\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=12&event=564654d4de\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:edecc24c2dca@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261125T010000Z
+DTEND:20261125T020000Z
+SUMMARY:こども若者とつくるアートワークショップ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=8103274f9c
+DESCRIPTION:どなたでも参加できるアートワークショップで
+ す\n時間：午前の部 10:00〜12:00、午後の部 14:00〜16:30\n要
+ 申込、要予約。詳細は市こどもセンターへ問い合わせ\n
+ 主催：市こどもセンター\n詳細：https://www.city.minamata.lg.j
+ p/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8103274f9c\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:3fad1b30453c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261126T050000Z
+DTEND:20261126T060000Z
+SUMMARY:たまひよ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=63a630139f
+DESCRIPTION:妊婦さん・1歳前後の親子を対象とした交流会
+ です\n時間：14:00〜15:00\n要申込、要予約。詳細は市こど
+ もセンターへ問い合わせ\n主催：市こどもセンター\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#p
+ age=12&event=63a630139f\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:8a1b578b7ee6@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T043000Z
+DTEND:20261128T053000Z
+SUMMARY:みなまたヒューマンライツ・セミナー
+LOCATION:市公民館２階第一研修室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =6&event=82b0f2c0d8
+DESCRIPTION:人権指導員と一緒に「言葉と人権」をテーマに
+ 話し合う学習会です\n時間：13:30〜14:30\n要申込、11/26締
+ 切、電話または市教育課窓口にて申し込み\n詳細：https:
+ //www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=6&event=
+ 82b0f2c0d8\nみなまた くらしナビ（非公式）掲載。日時・
+ 内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:31ae8b6d4e4f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T050000Z
+DTEND:20261128T060000Z
+SUMMARY:みなまた和紅茶ワークショップ（テイスティング
+ ）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=3fb0e61aa1
+DESCRIPTION:お気に入りのお茶を見つけるテイスティング。
+ 参加料500円。希望する開催日の2日前までに電話で申し
+ 込み\n時間：14:00〜15:00\n要申込、11/26締切、電話にて申
+ し込み\n主催：もやい館\n詳細：https://www.city.minamata.lg.jp
+ /kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=3fb0e61aa1\nみなまた
+  くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:9bcf8a5f65b1@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T010000Z
+DTEND:20261128T020000Z
+SUMMARY:ヒカリトコカゲ「らぶりー（マタニティクラス）
+ 」
+LOCATION:M’sシティ5階
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=2a40903ac9
+DESCRIPTION:時間：10:00〜\n主催：ヒカリトコカゲ\n詳細：htt
+ ps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&eve
+ nt=2a40903ac9\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:365952c72564@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T010000Z
+DTEND:20261128T023000Z
+SUMMARY:不登校・ひきこもり家族交流会
+LOCATION:水俣市社会福祉協議会多目的ルーム
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=c36b4211ca
+DESCRIPTION:不登校・ひきこもりの悩みを抱える家族の交流
+ 会。助言者：原田直樹氏\n時間：10:00〜11:30\n要申込、11/
+ 26締切、電話またはメールで申込\n主催：みなまた安心
+ センター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_
+ up_vvmv7eo1.pdf#page=13&event=c36b4211ca\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c8c5b9116ef1@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T000000Z
+DTEND:20261128T030000Z
+SUMMARY:令和８年度水俣市健康まつりを開催します！！
+LOCATION:水俣市総合もやい直しセンター もやい館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033860/index.html
+DESCRIPTION:生活習慣病予防をテーマに、健康に関する展示
+ 、相談、体験コーナーを実施。健康づくり作品展示や
+ 表彰式、ハイハイ・よちよちレースも同時開催。\n時間
+ ：09:00〜12:00\n一部要申込、ハイハイ・よちよちレース
+ はWeb申請が必要。詳細は外部リンクを参照\n主催：水俣
+ 市\n詳細：https://www.city.minamata.lg.jp/kiji0033860/index.html\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:134a5de4b7da@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T003000Z
+DTEND:20261128T013000Z
+SUMMARY:水俣環境アカデミア10周年記念式典
+LOCATION:水俣環境アカデミア
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=c4538ff76d
+DESCRIPTION:時間：9:30〜\n詳細：https://www.city.minamata.lg.jp/kiji
+ 0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=c4538ff76d\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:081a9e5bd82c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T050000Z
+DTEND:20261128T063000Z
+SUMMARY:水俣環境アカデミア設立10周年記念特別市民公開
+ 講座「なぜ、私たちは潜るのか？～ダイバーが伝える
+ 、水俣の海の世界～」参加者募集
+LOCATION:水俣環境アカデミア（水俣市南福寺6番1号 旧水俣
+ 高校跡）
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034882/index.html
+DESCRIPTION:水俣の海をテーマにした特別市民公開講座。地
+ 元ダイバーとNHKアナウンサーが、水俣の海の世界や取
+ 材の裏側について語ります。\n時間：14:00〜15:30\n要申込
+ 、11/26締切、専用フォーム、電話、メール、FAXで申込。
+ 先着100名程度\n主催：水俣市\n詳細：https://www.city.minamata
+ .lg.jp/kiji0034882/index.html\nみなまた くらしナビ（非公式）
+ 掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:59c179febc7a@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:「第10回九州のお米食味コンクールin多良木」の開
+ 催のお知らせ
+LOCATION:多良木町多目的研修センター
+URL:https://www.city.minamata.lg.jp/kiji0034892/index.html
+DESCRIPTION:九州産米のPRと地位向上を目的に、九州各地の
+ お米を一堂に集めて食味を競うコンクール。\n主催：多
+ 良木町役場\n詳細：https://www.city.minamata.lg.jp/kiji0034892/inde
+ x.html\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:28826f016709@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T043000Z
+DTEND:20261129T060000Z
+SUMMARY:水俣市観光振興計画策定ワークショップ
+LOCATION:市役所１階多目的室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =8&event=45c8aab2ef
+DESCRIPTION:水俣の資源活用や訪問したくなるモノ・コトに
+ ついて、アイデアを出し合うワークショップです\n時間
+ ：13:30〜15:00\n要申込、11/26締切、申込フォームまたは電
+ 話にて申し込み\n主催：経済観光戦略課\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=8&event=45c8
+ aab2ef\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:e76cc8ce4ae9@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T020000Z
+DTEND:20261129T050000Z
+SUMMARY:第2回26区いきいき物産祭
+LOCATION:越小場公民館
+CATEGORIES:マルシェ・物産
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=3963cb01df
+DESCRIPTION:地元野菜、お米、リサイクル品、手作りグッズ
+ の販売。昼食に豚汁の無料振る舞いあり\n時間：11:00〜1
+ 4:00\n主催：26区自治会\n詳細：https://www.city.minamata.lg.jp/ki
+ ji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=3963cb01df\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:b4195fb86b6d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T000000Z
+DTEND:20261129T060000Z
+SUMMARY:野川白菜まつり
+LOCATION:野川白菜畑横
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=8b7c76796e
+DESCRIPTION:例年大盛況の白菜販売イベント\n時間：09:00〜15
+ :00\n主催：16区GGクラブ\n詳細：https://www.city.minamata.lg.jp/k
+ iji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=8b7c76796e\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c9276c5dca9c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261130T080000Z
+DTEND:20261130T090000Z
+SUMMARY:英語会話テーブル
+LOCATION:市役所1階多目的室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=76cba7d5e7
+DESCRIPTION:時間：17:00〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76cba7d5e7\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:eee827a2e0c5@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261201T093000Z
+DTEND:20261201T103000Z
+SUMMARY:都市計画区域マスタープラン素案住民説明会
+LOCATION:市役所1階多目的室
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =4&event=78adfa0bdd
+DESCRIPTION:水俣都市計画区域マスタープランおよび芦北都
+ 市計画区域マスタープランの見直しに関する住民説明
+ 会\n時間：18:30\n申込不要\n主催：熊本県\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=4&event=78ad
+ fa0bdd\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:f80512ff463b@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261205T010000Z
+DTEND:20261205T020000Z
+SUMMARY:みなまた和紅茶ワークショップ（茶席）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=97e25d07d1
+DESCRIPTION:お茶を飲みながら作り手のこだわりを聞く茶席
+ 。参加料500円。希望する開催日の2日前までに電話で申
+ し込み\n時間：10:00〜11:00\n要申込、12/3締切、電話にて
+ 申し込み\n主催：もやい館\n詳細：https://www.city.minamata.lg
+ .jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=97e25d07d1\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:28e3c5968160@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261205T050000Z
+DTEND:20261205T070000Z
+SUMMARY:りんご教室セミナーｉｎ水俣
+LOCATION:水俣環境アカデミア
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =14&event=e2d5c4b0a2
+DESCRIPTION:在宅医療や在宅介護、地域で支える人たちを対
+ 象としたセミナー。参加無料\n時間：14:00〜16:00\n要申込
+ 、11/30締切、申込フォームより申し込み\n主催：水俣り
+ んごの木\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_
+ up_vvmv7eo1.pdf#page=14&event=e2d5c4b0a2\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:3a81f2a48ffd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261206T000000Z
+DTEND:20261206T040000Z
+SUMMARY:第33回24区ふるさと文化祭
+LOCATION:有木田頭集落センター
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=05b2f66704
+DESCRIPTION:農産品・加工品の販売、伝統芸能の披露。11時3
+ 0分から豚汁付き昼食を販売\n時間：09:00〜13:00\n主催：
+ 実行委員会\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_49
+ 38_up_vvmv7eo1.pdf#page=13&event=05b2f66704\nみなまた くらしナビ
+ （非公式）掲載。日時・内容は変わることがあります
+ 。
+END:VEVENT
+BEGIN:VEVENT
+UID:b05e80430cb7@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261206T000000Z
+DTEND:20261206T030000Z
+SUMMARY:第39回石坂川ふるさと祭り
+LOCATION:石坂川集会所および駐車場
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=700001efc9
+DESCRIPTION:農産物の展示、品評会、卸売りのほか、出品物
+ の競売による即売会\n時間：09:00〜12:00\n主催：12区自治
+ 会\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=13&event=700001efc9\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:a6dcd2194d34@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261208T010000Z
+DTEND:20261208T030000Z
+SUMMARY:65歳以上対象『歩き方教室』開催！
+LOCATION:総合体育館 3階 会議室C
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034924/index.html
+DESCRIPTION:体に負担の少ない歩き方やストレッチ、筋トレ
+ 方法を学び、運動習慣づくりアプリやウォーキングを
+ 通じた地域見守り活動について紹介する教室。\n時間：
+ 10:00〜12:00\n要申込、12/7締切、いきいき健康課へ電話、
+ または申し込みフォームから申し込み\n主催：水俣市い
+ きいき健康課\n詳細：https://www.city.minamata.lg.jp/kiji0034924/i
+ ndex.html\nみなまた くらしナビ（非公式）掲載。日時・
+ 内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:1df9f10fa30f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:おれんじ講座「和紅茶教室」（〜3/13）
+LOCATION:おれんじ館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=04e5410944
+DESCRIPTION:和紅茶の淹れ方と茶葉の違いを学ぶ全4回の講
+ 座。毎月第2土曜日に開催。受講料は計2\,000円（初回集
+ 金）、別途材料費が必要\n時間：13:30〜15:30\n期間：12/12
+ 〜3/13（開催日は元のページでご確認ください）\n要申
+ 込、12/7締切、窓口、電話、FAX、メールで申込。定員5〜
+ 10人程度\n主催：おれんじ館\n詳細：https://www.city.minamata.
+ lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=04e5410944\nみな
+ また くらしナビ（非公式）掲載。日時・内容は変わる
+ ことがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:1fd8eeb5576b@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261213T050000Z
+DTEND:20261213T060000Z
+SUMMARY:「東混ゾリステン」公演
+LOCATION:市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=df97a798e4
+DESCRIPTION:プロの声楽家と地元学生によるコンサート。入
+ 場料：一般3\,000円、高校生以下無料。未就学児入場不
+ 可\n時間：14:00〜\n要申込、チケットを各発売所で購入\n
+ 主催：もやい館\n詳細：https://www.city.minamata.lg.jp/kiji003493
+ 8/3_4938_up_vvmv7eo1.pdf#page=13&event=df97a798e4\nみなまた くらし
+ ナビ（非公式）掲載。日時・内容は変わることがあり
+ ます。
+END:VEVENT
+BEGIN:VEVENT
+UID:7ebc32104cd6@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261219T010000Z
+DTEND:20261219T030000Z
+SUMMARY:ミズノビクトリークリニックin水俣
+LOCATION:エコパーク水俣 潮騒の広場 野球場
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034922/index.html
+DESCRIPTION:水俣市軟式野球連盟が選抜する中学生を対象と
+ した野球教室。参加費は500円で、当日のSNS発信は禁止
+ されています。\n時間：10:00〜12:00\n主催：（一財）熊本
+ 県スポーツ振興事業団\n詳細：https://www.city.minamata.lg.jp/k
+ iji0034922/index.html\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:d96de7b98a91@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261219T070000Z
+DTEND:20261219T080000Z
+SUMMARY:自主文化事業　岸谷香「KAORI PARADISE 2026 -10回目の
+ ひとり旅-」開催のお知らせ
+LOCATION:水俣市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034718/index.html
+DESCRIPTION:歌手・岸谷香によるライブ公演。プリンセス 
+ プリンセスの名曲やソロ楽曲をピアノとアコースティ
+ ックギターで披露する自主文化事業。\n時間：16:00開演
+ （15:15開場）\n要申込、全席指定5\,500円。各プレイガイ
+ ド、ローソンチケット、教育課生涯学習室にて前売券
+ 販売\n主催：水俣市・水俣市教育委員会\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034718/index.html\nみなまた くらしナビ
+ （非公式）掲載。日時・内容は変わることがあります
+ 。
+END:VEVENT
+BEGIN:VEVENT
+UID:f1a55a25d489@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20270919
+DTEND;VALUE=DATE:20270925
+SUMMARY:フライングディスク世界大会の開催決定！！
+LOCATION:エコパーク水俣
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034840/index.html
+DESCRIPTION:個人競技の世界一を決めるフライングディスク
+ の国際大会。日本で初めて水俣市で開催される。\n主催
+ ：世界フライングディスク連盟、日本フライングディ
+ スク協会\n詳細：https://www.city.minamata.lg.jp/kiji0034840/index.h
+ tml\nみなまた くらしナビ（非公式）掲載。日時・内容
+ は変わることがあります。
+END:VEVENT
+END:VCALENDAR

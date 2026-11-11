@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:令和８年度水俣市健康まつりを開催します！
+ ！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c8c5b9116ef1@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T000000Z
+DTEND:20261128T030000Z
+SUMMARY:令和８年度水俣市健康まつりを開催します！！
+LOCATION:水俣市総合もやい直しセンター もやい館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033860/index.html
+DESCRIPTION:生活習慣病予防をテーマに、健康に関する展示
+ 、相談、体験コーナーを実施。健康づくり作品展示や
+ 表彰式、ハイハイ・よちよちレースも同時開催。\n時間
+ ：09:00〜12:00\n一部要申込、ハイハイ・よちよちレース
+ はWeb申請が必要。詳細は外部リンクを参照\n主催：水俣
+ 市\n詳細：https://www.city.minamata.lg.jp/kiji0033860/index.html\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+END:VCALENDAR

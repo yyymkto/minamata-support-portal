@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第33回24区ふるさと文化祭
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:3a81f2a48ffd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261206T000000Z
+DTEND:20261206T040000Z
+SUMMARY:第33回24区ふるさと文化祭
+LOCATION:有木田頭集落センター
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=05b2f66704
+DESCRIPTION:農産品・加工品の販売、伝統芸能の披露。11時3
+ 0分から豚汁付き昼食を販売\n時間：09:00〜13:00\n主催：
+ 実行委員会\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_49
+ 38_up_vvmv7eo1.pdf#page=13&event=05b2f66704\nみなまた くらしナビ
+ （非公式）掲載。日時・内容は変わることがあります
+ 。
+END:VEVENT
+END:VCALENDAR

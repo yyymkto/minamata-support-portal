@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:「東混ゾリステン」公演
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1fd8eeb5576b@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261213T050000Z
+DTEND:20261213T060000Z
+SUMMARY:「東混ゾリステン」公演
+LOCATION:市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=df97a798e4
+DESCRIPTION:プロの声楽家と地元学生によるコンサート。入
+ 場料：一般3\,000円、高校生以下無料。未就学児入場不
+ 可\n時間：14:00〜\n要申込、チケットを各発売所で購入\n
+ 主催：もやい館\n詳細：https://www.city.minamata.lg.jp/kiji003493
+ 8/3_4938_up_vvmv7eo1.pdf#page=13&event=df97a798e4\nみなまた くらし
+ ナビ（非公式）掲載。日時・内容は変わることがあり
+ ます。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:こども地域食堂ポパイ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:b2410a8b3bf2@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T020000Z
+DTEND:20261121T030000Z
+SUMMARY:こども地域食堂ポパイ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=66084e4f10
+DESCRIPTION:時間：11:00〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=66084e4f10\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+END:VCALENDAR

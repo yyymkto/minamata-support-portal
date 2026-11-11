@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:クリスマス飾りを作ろう！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:232a7c4d067f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261123T010000Z
+DTEND:20261123T030000Z
+SUMMARY:クリスマス飾りを作ろう！
+LOCATION:県環境センター
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=564654d4de
+DESCRIPTION:木や森について学びながら、自然の材料を使っ
+ てリースなどのクリスマス飾りを作ります。定員30人程
+ 度（抽選）。参加無料\n時間：10:00〜12:00\n要申込、11/9
+ 締切、申込フォームより申し込み\n主催：県環境センタ
+ ー\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=12&event=564654d4de\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:不登校・ひきこもり家族交流会
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:365952c72564@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T010000Z
+DTEND:20261128T023000Z
+SUMMARY:不登校・ひきこもり家族交流会
+LOCATION:水俣市社会福祉協議会多目的ルーム
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=c36b4211ca
+DESCRIPTION:不登校・ひきこもりの悩みを抱える家族の交流
+ 会。助言者：原田直樹氏\n時間：10:00〜11:30\n要申込、11/
+ 26締切、電話またはメールで申込\n主催：みなまた安心
+ センター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_
+ up_vvmv7eo1.pdf#page=13&event=c36b4211ca\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

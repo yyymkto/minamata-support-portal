@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:英語会話テーブル
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:da65ab6721cd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261111T033000Z
+DTEND:20261111T043000Z
+SUMMARY:英語会話テーブル
+LOCATION:市役所3階会議室C
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=0d9cfa5527
+DESCRIPTION:時間：12:30〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=0d9cfa5527\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+END:VCALENDAR

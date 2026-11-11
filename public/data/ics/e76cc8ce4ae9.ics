@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第2回26区いきいき物産祭
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:e76cc8ce4ae9@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T020000Z
+DTEND:20261129T050000Z
+SUMMARY:第2回26区いきいき物産祭
+LOCATION:越小場公民館
+CATEGORIES:マルシェ・物産
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=3963cb01df
+DESCRIPTION:地元野菜、お米、リサイクル品、手作りグッズ
+ の販売。昼食に豚汁の無料振る舞いあり\n時間：11:00〜1
+ 4:00\n主催：26区自治会\n詳細：https://www.city.minamata.lg.jp/ki
+ ji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=3963cb01df\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+END:VCALENDAR

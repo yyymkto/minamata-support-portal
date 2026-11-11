@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第21回3区自治会「ミニミニ文化祭（作品展）
+ 」
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:413c0c6a4acd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:第21回3区自治会「ミニミニ文化祭（作品展）」
+LOCATION:3区地域リビング館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=def8d433df
+DESCRIPTION:地域の皆さんの趣味や創作活動による作品展示
+ 会\n時間：09:00〜16:00\n主催：3区自治会\n詳細：https://www.
+ city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=def8d
+ 433df\nみなまた くらしナビ（非公式）掲載。日時・内容
+ は変わることがあります。
+END:VEVENT
+END:VCALENDAR

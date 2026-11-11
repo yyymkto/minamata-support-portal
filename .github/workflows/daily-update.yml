@@ -62,10 +62,17 @@ jobs:
           EVENTS_FORM_CSV_URL: ${{ vars.EVENTS_FORM_CSV_URL }}
         run: python scripts/update_events.py
 
+      # カレンダー作成（設計書 docs/agent-notes/design-specs/2026-11-11_event-calendar.md）
+      # events.json から events.ics と ics/<id>.ics を作成する
+      - name: カレンダー情報を作成
+        id: run-calendar
+        continue-on-error: true
+        run: python scripts/build_calendar.py
+
       - name: 変更を検出
         id: git-check
         run: |
-          if [ -z "$(git status --porcelain -- public/data/life_info.json public/data/_checked_urls.json public/data/events.json public/data/_events_auto.json public/data/_events_manual.json public/data/_events_form.json public/data/_events_koho.json)" ]; then
+          if [ -z "$(git status --porcelain -- public/data/life_info.json public/data/_checked_urls.json public/data/events.json public/data/_events_auto.json public/data/_events_manual.json public/data/_events_form.json public/data/_events_koho.json public/data/events.ics public/data/ics)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -81,6 +88,8 @@ jobs:
           if [ -f public/data/_events_manual.json ]; then git add public/data/_events_manual.json; fi
           if [ -f public/data/_events_form.json ]; then git add public/data/_events_form.json; fi
           if [ -f public/data/_events_koho.json ]; then git add public/data/_events_koho.json; fi
+          if [ -f public/data/events.ics ]; then git add public/data/events.ics; fi
+          if [ -d public/data/ics ]; then git add -A public/data/ics; fi
           git commit -m "chore: 生活情報を自動更新 ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
 
           # このジョブは実行に十数分かかるため、その間に他のpush（手動実行や

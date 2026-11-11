@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:11月21日（土曜日）第16回みなまた産業団地ま
+ つりを開催します！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c2ed7159876a@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T003000Z
+DTEND:20261121T060000Z
+SUMMARY:11月21日（土曜日）第16回みなまた産業団地まつり
+ を開催します！
+LOCATION:水俣産業団地ほか（受付・抽選会場：尾上商事）
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033042/index.html
+DESCRIPTION:水俣産業団地の企業を知るイベント。工場見学
+ スタンプラリー、キッチンカー出店、ステージイベン
+ ト、お楽しみ抽選会などが実施されます。\n時間：09:30
+ 〜15:00\n主催：みなまた産業団地まつり実行委員会事務
+ 局\n詳細：https://www.city.minamata.lg.jp/kiji0033042/index.html\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+END:VCALENDAR

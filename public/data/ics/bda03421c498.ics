@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:石川さゆりコンサート
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:bda03421c498@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T050000Z
+DTEND:20261121T060000Z
+SUMMARY:石川さゆりコンサート
+LOCATION:市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=76e09193a7
+DESCRIPTION:時間：①14:00〜 ②18:00〜\n詳細：https://www.city.min
+ amata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76e09193a7\n
+ みなまた くらしナビ（非公式）掲載。日時・内容は変
+ わることがあります。
+END:VEVENT
+END:VCALENDAR

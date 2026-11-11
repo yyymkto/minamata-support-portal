@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:『FLYING DISC CLUB－2nd season－』水俣でディスクプ
+ レイヤーになろう！！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6590c806be25@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:『FLYING DISC CLUB－2nd season－』水俣でディスクプレ
+ イヤーになろう！！（〜12/16）
+LOCATION:エコパーク水俣 潮騒の広場
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034920/index.html
+DESCRIPTION:アルティメット日本代表の丹波大士さんを講師
+ に迎え、初心者でも楽しめるフライングディスク競技
+ を学ぶ全6回の練習会。小学生以上が対象。\n時間：18:00
+ 〜19:30\n期間：11/11〜12/16（開催日は元のページでご確認
+ ください）\n一部要申込、各回2日前までに窓口または
+ 電話(0966-62-7501)で受付。定員20名（先着順）、空きがあ
+ れば当日参加可\n主催：エコパーク水俣管理事務所\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034920/index.html\nみなまた
+  くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+END:VCALENDAR

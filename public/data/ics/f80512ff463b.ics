@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた和紅茶ワークショップ（茶席）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:f80512ff463b@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261205T010000Z
+DTEND:20261205T020000Z
+SUMMARY:みなまた和紅茶ワークショップ（茶席）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=97e25d07d1
+DESCRIPTION:お茶を飲みながら作り手のこだわりを聞く茶席
+ 。参加料500円。希望する開催日の2日前までに電話で申
+ し込み\n時間：10:00〜11:00\n要申込、12/3締切、電話にて
+ 申し込み\n主催：もやい館\n詳細：https://www.city.minamata.lg
+ .jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=97e25d07d1\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+END:VCALENDAR

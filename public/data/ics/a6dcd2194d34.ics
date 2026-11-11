@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:65歳以上対象『歩き方教室』開催！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a6dcd2194d34@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261208T010000Z
+DTEND:20261208T030000Z
+SUMMARY:65歳以上対象『歩き方教室』開催！
+LOCATION:総合体育館 3階 会議室C
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034924/index.html
+DESCRIPTION:体に負担の少ない歩き方やストレッチ、筋トレ
+ 方法を学び、運動習慣づくりアプリやウォーキングを
+ 通じた地域見守り活動について紹介する教室。\n時間：
+ 10:00〜12:00\n要申込、12/7締切、いきいき健康課へ電話、
+ または申し込みフォームから申し込み\n主催：水俣市い
+ きいき健康課\n詳細：https://www.city.minamata.lg.jp/kiji0034924/i
+ ndex.html\nみなまた くらしナビ（非公式）掲載。日時・
+ 内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

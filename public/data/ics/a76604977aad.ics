@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:脳の健康度セルフチェック会
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a76604977aad@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T010000Z
+DTEND:20261112T020000Z
+SUMMARY:脳の健康度セルフチェック会
+LOCATION:市保健センター
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =5&event=16d6a4dff9
+DESCRIPTION:アプリ「のうKNOW」を使用して脳の健康度をセ
+ ルフチェックします。スマートフォンを持参してくだ
+ さい\n時間：10:00\n一部要申込、窓口または電話で申し
+ 込み。当日参加も可能\n主催：いきいき健康課\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&e
+ vent=16d6a4dff9\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

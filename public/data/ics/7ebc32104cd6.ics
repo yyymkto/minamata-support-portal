@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:ミズノビクトリークリニックin水俣
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:7ebc32104cd6@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261219T010000Z
+DTEND:20261219T030000Z
+SUMMARY:ミズノビクトリークリニックin水俣
+LOCATION:エコパーク水俣 潮騒の広場 野球場
+CATEGORIES:スポーツ
+URL:https://www.city.minamata.lg.jp/kiji0034922/index.html
+DESCRIPTION:水俣市軟式野球連盟が選抜する中学生を対象と
+ した野球教室。参加費は500円で、当日のSNS発信は禁止
+ されています。\n時間：10:00〜12:00\n主催：（一財）熊本
+ 県スポーツ振興事業団\n詳細：https://www.city.minamata.lg.jp/k
+ iji0034922/index.html\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

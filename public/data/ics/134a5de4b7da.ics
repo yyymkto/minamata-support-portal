@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:水俣環境アカデミア10周年記念式典
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:134a5de4b7da@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T003000Z
+DTEND:20261128T013000Z
+SUMMARY:水俣環境アカデミア10周年記念式典
+LOCATION:水俣環境アカデミア
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=c4538ff76d
+DESCRIPTION:時間：9:30〜\n詳細：https://www.city.minamata.lg.jp/kiji
+ 0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=c4538ff76d\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+END:VCALENDAR

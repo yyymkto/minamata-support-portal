@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:自主文化事業　岸谷香「KAORI PARADISE 2026 -10回目
+ のひとり旅-」開催のお知らせ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d96de7b98a91@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261219T070000Z
+DTEND:20261219T080000Z
+SUMMARY:自主文化事業　岸谷香「KAORI PARADISE 2026 -10回目の
+ ひとり旅-」開催のお知らせ
+LOCATION:水俣市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034718/index.html
+DESCRIPTION:歌手・岸谷香によるライブ公演。プリンセス 
+ プリンセスの名曲やソロ楽曲をピアノとアコースティ
+ ックギターで披露する自主文化事業。\n時間：16:00開演
+ （15:15開場）\n要申込、全席指定5\,500円。各プレイガイ
+ ド、ローソンチケット、教育課生涯学習室にて前売券
+ 販売\n主催：水俣市・水俣市教育委員会\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034718/index.html\nみなまた くらしナビ
+ （非公式）掲載。日時・内容は変わることがあります
+ 。
+END:VEVENT
+END:VCALENDAR

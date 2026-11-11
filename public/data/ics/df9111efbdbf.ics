@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第59回 蘇峰筆塚顕彰書道展
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:df9111efbdbf@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261117
+SUMMARY:第59回 蘇峰筆塚顕彰書道展
+LOCATION:もやい館３階もやいホール
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=30ed0fdda1
+DESCRIPTION:徳富蘇峰の遺徳と筆塚を顕彰し、水俣市・津奈
+ 木町の小・中・高生の作品を一堂に集め展示します\n時
+ 間：09:00〜17:00（16日は13時まで）\n主催：もやい館\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#p
+ age=12&event=30ed0fdda1\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

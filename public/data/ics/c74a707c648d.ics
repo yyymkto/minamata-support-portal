@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた和紅茶ワークショップ（淹れ方講座
+ ）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:c74a707c648d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T100000Z
+DTEND:20261112T110000Z
+SUMMARY:みなまた和紅茶ワークショップ（淹れ方講座）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=8afe686f1e
+DESCRIPTION:ご家庭でも和紅茶をより美味しく淹れるための
+ 講座。参加料500円。希望する開催日の2日前までに電話
+ で申し込み\n時間：19:00〜20:00\n要申込、11/10締切、電話
+ にて申し込み\n主催：もやい館\n詳細：https://www.city.minam
+ ata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8afe686f1e\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:おれんじ講座「和紅茶教室」
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:1df9f10fa30f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:おれんじ講座「和紅茶教室」（〜3/13）
+LOCATION:おれんじ館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=04e5410944
+DESCRIPTION:和紅茶の淹れ方と茶葉の違いを学ぶ全4回の講
+ 座。毎月第2土曜日に開催。受講料は計2\,000円（初回集
+ 金）、別途材料費が必要\n時間：13:30〜15:30\n期間：12/12
+ 〜3/13（開催日は元のページでご確認ください）\n要申
+ 込、12/7締切、窓口、電話、FAX、メールで申込。定員5〜
+ 10人程度\n主催：おれんじ館\n詳細：https://www.city.minamata.
+ lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=04e5410944\nみな
+ また くらしナビ（非公式）掲載。日時・内容は変わる
+ ことがあります。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:水俣環境アカデミア設立10周年記念特別市民公
+ 開講座「なぜ、私たちは潜るのか？～ダイバーが伝え
+ る、水俣の海の世界～」参加者募集
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:081a9e5bd82c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T050000Z
+DTEND:20261128T063000Z
+SUMMARY:水俣環境アカデミア設立10周年記念特別市民公開
+ 講座「なぜ、私たちは潜るのか？～ダイバーが伝える
+ 、水俣の海の世界～」参加者募集
+LOCATION:水俣環境アカデミア（水俣市南福寺6番1号 旧水俣
+ 高校跡）
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034882/index.html
+DESCRIPTION:水俣の海をテーマにした特別市民公開講座。地
+ 元ダイバーとNHKアナウンサーが、水俣の海の世界や取
+ 材の裏側について語ります。\n時間：14:00〜15:30\n要申込
+ 、11/26締切、専用フォーム、電話、メール、FAXで申込。
+ 先着100名程度\n主催：水俣市\n詳細：https://www.city.minamata
+ .lg.jp/kiji0034882/index.html\nみなまた くらしナビ（非公式）
+ 掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

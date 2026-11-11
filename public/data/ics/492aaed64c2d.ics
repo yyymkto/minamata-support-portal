@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:水俣漁師市
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:492aaed64c2d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261113T235000Z
+DTEND:20261114T005000Z
+SUMMARY:水俣漁師市
+LOCATION:丸島漁港
+CATEGORIES:マルシェ・物産
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=a7f6c543cb
+DESCRIPTION:時間：8:50〜\n詳細：https://www.city.minamata.lg.jp/kiji
+ 0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=a7f6c543cb\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+END:VCALENDAR

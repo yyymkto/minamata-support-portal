@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた茶＆みなまた和紅茶フェア2026
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a0602392470e@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:みなまた茶＆みなまた和紅茶フェア2026（〜12/28）
+LOCATION:市内12店舗
+URL:https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html
+DESCRIPTION:水俣市内の対象12店舗にて、みなまた茶やみな
+ また和紅茶を使用したスイーツが販売されるフェア。
+ 各店舗自慢の味を楽しめる。\n期間：11/14〜12/28（開催
+ 日は元のページでご確認ください）\n主催：みなまた和
+ 紅茶実行委員会\n詳細：https://www.go-minamata.jp/news-events/min
+ a-cha_fair_2026.html\nみなまた くらしナビ（非公式）掲載。
+ 日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

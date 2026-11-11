@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:地域提案事業【一般社団法人　水俣・写真家
+ の眼】
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9f45c4202a7e@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:地域提案事業【一般社団法人　水俣・写真家の眼
+ 】（〜11/13）
+LOCATION:東京外国語大学 研究講義棟1階ガレリア
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html
+DESCRIPTION:写真集『水俣からあなたへ』に収録された写真
+ 家9人の作品から42点を展示する巡回写真展。水俣病公
+ 式確認70年の節目に、水俣から何を学ぶのかを問いかけ
+ る。\n時間：8:30〜20:00\n期間：10/28〜11/13（開催日は元の
+ ページでご確認ください）\n主催：一般社団法人 水俣
+ ・写真家の眼\n詳細：https://www.city.minamata.lg.jp/kankyo/kiji00
+ 34915/index.html\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

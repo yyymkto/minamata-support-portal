@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第39回石坂川ふるさと祭り
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:b05e80430cb7@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261206T000000Z
+DTEND:20261206T030000Z
+SUMMARY:第39回石坂川ふるさと祭り
+LOCATION:石坂川集会所および駐車場
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=700001efc9
+DESCRIPTION:農産物の展示、品評会、卸売りのほか、出品物
+ の競売による即売会\n時間：09:00〜12:00\n主催：12区自治
+ 会\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=13&event=700001efc9\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

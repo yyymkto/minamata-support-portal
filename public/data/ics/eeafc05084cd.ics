@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:深堀ビートルズ講座
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:eeafc05084cd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:深堀ビートルズ講座（〜12/17）
+LOCATION:もやい館 2階ふれあい広場
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=65970da7e1
+DESCRIPTION:ビートルズの映像と音源を楽しみながら語り合
+ う講座。開催日：11/12、19、12/3、10、17\n時間：19:00〜20:3
+ 0\n期間：11/12〜12/17（開催日は元のページでご確認くだ
+ さい）\n要申込、定員15人。電話で申込\n主催：もやい
+ 館\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=13&event=65970da7e1\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:りんご教室セミナーｉｎ水俣
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:28e3c5968160@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261205T050000Z
+DTEND:20261205T070000Z
+SUMMARY:りんご教室セミナーｉｎ水俣
+LOCATION:水俣環境アカデミア
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =14&event=e2d5c4b0a2
+DESCRIPTION:在宅医療や在宅介護、地域で支える人たちを対
+ 象としたセミナー。参加無料\n時間：14:00〜16:00\n要申込
+ 、11/30締切、申込フォームより申し込み\n主催：水俣り
+ んごの木\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_
+ up_vvmv7eo1.pdf#page=14&event=e2d5c4b0a2\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

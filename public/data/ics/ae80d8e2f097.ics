@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:図書館からのおはなし会
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:ae80d8e2f097@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T020000Z
+DTEND:20261114T023000Z
+SUMMARY:図書館からのおはなし会
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=a84180c196
+DESCRIPTION:どなたでも参加できるおはなし会です\n時間：1
+ 1:00〜11:30\n主催：市こどもセンター\n詳細：https://www.city
+ .minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=a84180c19
+ 6\nみなまた くらしナビ（非公式）掲載。日時・内容は
+ 変わることがあります。
+END:VEVENT
+END:VCALENDAR

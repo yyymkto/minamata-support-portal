@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:水俣ローズフェスタ秋2026
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6c0d3b3b2ee2@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:水俣ローズフェスタ秋2026（〜11/15）
+LOCATION:エコパーク水俣バラ園（道の駅みなまた）
+CATEGORIES:お祭り・催し
+URL:https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html
+DESCRIPTION:バラの苗販売やマルシェ、ハロウィンブース、
+ 和紅茶フェアなどが行われる秋の恒例イベント。期間
+ 中、アフタヌーンティーなどの企画も実施されます。\n
+ 期間：10/31〜11/15（開催日は元のページでご確認くださ
+ い）\n一部要申込、アフタヌーンティーのみ電話予約制
+ （0966-62-2003）。定員になり次第終了\n主催：ローズフェ
+ スタ実行委員会（水俣市経済観光戦略課）\n詳細：https:
+ //www.go-minamata.jp/news-events/rose-festa-fall-2026.html\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+END:VCALENDAR

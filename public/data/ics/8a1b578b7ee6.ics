@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまたヒューマンライツ・セミナー
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8a1b578b7ee6@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T043000Z
+DTEND:20261128T053000Z
+SUMMARY:みなまたヒューマンライツ・セミナー
+LOCATION:市公民館２階第一研修室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =6&event=82b0f2c0d8
+DESCRIPTION:人権指導員と一緒に「言葉と人権」をテーマに
+ 話し合う学習会です\n時間：13:30〜14:30\n要申込、11/26締
+ 切、電話または市教育課窓口にて申し込み\n詳細：https:
+ //www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=6&event=
+ 82b0f2c0d8\nみなまた くらしナビ（非公式）掲載。日時・
+ 内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR
