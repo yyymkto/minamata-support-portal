@@ -1428,7 +1428,8 @@
       const icsUrl = new URL('./data/events.ics', location.href).href;
       // webcal: は safeUrl() が通さないため、ページの場所から作ったこのURLは esc() だけで使う
       const webcalUrl = icsUrl.replace(/^https?:/, 'webcal:');
-      const googleSubscribeUrl = 'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(webcalUrl);
+      // cid には webcal の URL をエンコードせずに渡す（エンコードすると「追加しました」と出るのに追加されない。2026-11-12 吉野さんが実機で確認）
+      const googleSubscribeUrl = 'https://calendar.google.com/calendar/r?cid=' + webcalUrl;
 
       subscribeHTML = `
         <div class="bg-white rounded-xl border border-line p-4 sm:p-5 mb-8 shadow-sm">
