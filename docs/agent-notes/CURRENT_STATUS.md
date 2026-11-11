@@ -179,6 +179,7 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-11-12: [Claude Code] 吉野さんの依頼でイベントのカレンダー連携をpush・本番反映（run 43050277593）。本番の `data/events.ics`（56件）が `text/calendar` で開けることを確認。
 - 2026-11-12: [Claude Code] タスク5（Antigravity、`src/index.html`）をレビューし5点修正。iPhone・Macの購読ボタンが `#` になって動かない不具合、375px幅で追加リンクの中身がはみ出す問題など。未push。
 - 2026-11-12: [Claude Code] タスク4（Antigravity、`daily-update.yml`）をレビュー。修正なし。.ics の改行がWindowsでのコミット時に変わらないよう `.gitattributes` を追加。未push。
 - 2026-11-12: [Claude Code] タスク3（Antigravity、`build_calendar.py`）をレビュー。66件の .ics を全件読めることを確認し、壊れた1件でカレンダー全体が作れなくなる問題など2点を修正。未push。
