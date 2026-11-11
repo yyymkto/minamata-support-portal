@@ -1,7 +1,67 @@
 {
-  "last_updated": "2026-11-10T13:00:18.227427+09:00",
+  "last_updated": "2026-11-11T10:46:55.391590+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "990c123d536a",
+      "title": "水俣環境アカデミア ワクワク!!プログラミングクエスト（令和８年１０月１７日）を実施しました！",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "教育・生涯学習",
+        "イベント"
+      ],
+      "organization": "水俣環境アカデミア",
+      "summary": "水俣環境アカデミアにて、子ども向けのプログラミング体験イベント「ワクワク!!プログラミングクエスト」が実施されました。当日の活動報告として、イベントの様子が紹介されています。",
+      "target": "プログラミングに関心のある児童・生徒および保護者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034951/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-10",
+      "collected_at": "2026-11-11T10:46:14.482873+09:00",
+      "status": "active"
+    },
+    {
+      "id": "1c3ade952259",
+      "title": "幸橋架替工事に伴い歩道橋が終日全面通行止めになります。",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "交通"
+      ],
+      "organization": "水俣市",
+      "summary": "幸橋架替工事に伴い、歩道橋が終日全面通行止めとなります。通行の際は周辺の迂回路をご利用ください。",
+      "target": "幸橋付近を通行するすべての住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033904/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-10",
+      "collected_at": "2026-11-11T10:46:43.172090+09:00",
+      "status": "active"
+    },
+    {
+      "id": "fca0032294b4",
+      "title": "移住イベント「よかこつだらけで　くまったもんだ～新しい土地で見つけた　自分にできること～」に水俣市が出展します！",
+      "audience_tags": [
+        "現役世代",
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市への移住を検討している方を対象とした移住イベントに出展します。新しい土地での暮らしや仕事について相談できる機会です。",
+      "target": "水俣市への移住に関心がある方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034952/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-10",
+      "collected_at": "2026-11-11T10:46:49.729574+09:00",
+      "status": "active"
+    },
     {
       "id": "50f66daf0308",
       "title": "南九州西回り自動車道の工事に伴う市道野川・袋線の通行経路変更について",

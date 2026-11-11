@@ -788,6 +788,12 @@
       "schema": 2,
       "event": null
     },
+    "https://www.city.minamata.lg.jp/kiji0034951/index.html": {
+      "is_event": false,
+      "checked_at": "2026-11-11T10:46:57.686836+09:00",
+      "schema": 2,
+      "event": null
+    },
     "https://www.go-minamata.jp/news-events/8th_wakocha_summit_minamata.html": {
       "is_event": true,
       "checked_at": "2026-11-04T11:02:28.448000+09:00",
