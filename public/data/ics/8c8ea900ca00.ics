@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:オリジナルしめ縄飾りワークショップ
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8c8ea900ca00@minamata-support-portal
+DTSTAMP:20261112T024740Z
+DTSTART:20261219T010000Z
+DTEND:20261219T020000Z
+SUMMARY:オリジナルしめ縄飾りワークショップ
+LOCATION:みなまた観光物産協会 喫茶スペース
+CATEGORIES:講座・体験
+URL:https://www.go-minamata.jp/news-events/r8-shimenawa.html
+DESCRIPTION:新年を迎える準備として、お花や飾りを組み合
+ わせてオリジナルのしめ縄飾りを作るワークショップ
+ 。第1部は親子、第2部は高校生以上が対象。\n時間：第1
+ 部 10:00〜11:30、第2部 14:00〜15:30\n要申込、12/6締切、公式
+ InstagramのDMまたは窓口にて申込。各部5組限定\n主催：（
+ 一社）みなまた観光物産協会\n詳細：https://www.go-minamata.
+ jp/news-events/r8-shimenawa.html\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

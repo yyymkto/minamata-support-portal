@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10T13:00:44.361328+09:00",
+  "last_updated": "2026-11-12T11:47:40.223498+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -16,7 +16,13 @@
       "organizer": "エコパーク水俣 管理事務所",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034902/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "sports",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-10-22",
+        "end": "2026-10-23"
+      }
     },
     {
       "registration": null,
@@ -32,7 +38,13 @@
       "organizer": "一般社団法人 水俣・写真家の眼",
       "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "culture",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-10-28",
+        "end": "2026-10-29"
+      }
     },
     {
       "registration": "partial",
@@ -48,7 +60,13 @@
       "organizer": "ローズフェスタ実行委員会（水俣市経済観光戦略課）",
       "source_url": "https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html",
       "source_label": "みなまた観光物産協会",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "festival",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-10-31",
+        "end": "2026-11-01"
+      }
     },
     {
       "registration": "partial",
@@ -64,23 +82,13 @@
       "organizer": "エコパーク水俣管理事務所",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034920/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "da65ab6721cd",
-      "title": "英語会話テーブル",
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-11",
-      "time_text": "12:30〜",
-      "venue": "市役所3階会議室C",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=0d9cfa5527",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
+      "origin": "auto",
+      "category": "sports",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-11",
+        "end": "2026-11-12"
+      }
     },
     {
       "registration": "required",
@@ -96,7 +104,13 @@
       "organizer": "市こどもセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=57d1410d43",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-12T10:30",
+        "end": "2026-11-12T12:00"
+      }
     },
     {
       "registration": null,
@@ -112,7 +126,13 @@
       "organizer": "みなまた安心センター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=b60a163db5",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-12T13:30",
+        "end": "2026-11-12T15:00"
+      }
     },
     {
       "registration": "required",
@@ -128,7 +148,13 @@
       "organizer": "もやい館",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8afe686f1e",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-12T19:00",
+        "end": "2026-11-12T20:00"
+      }
     },
     {
       "registration": "required",
@@ -144,7 +170,13 @@
       "organizer": "もやい館",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=65970da7e1",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-12",
+        "end": "2026-11-13"
+      }
     },
     {
       "registration": "partial",
@@ -160,7 +192,13 @@
       "organizer": "いきいき健康課",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&event=16d6a4dff9",
       "source_label": "広報みなまた11月号（PDF 5ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-12T10:00",
+        "end": "2026-11-12T11:00"
+      }
     },
     {
       "registration": null,
@@ -176,7 +214,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=7&event=8a0d30f385",
       "source_label": "広報みなまた11月号（PDF 7ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "culture",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-13",
+        "end": "2026-11-14"
+      }
     },
     {
       "registration": "partial",
@@ -192,7 +236,13 @@
       "organizer": "いきいき健康課",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&event=badc642c72",
       "source_label": "広報みなまた11月号（PDF 5ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-13T10:00",
+        "end": "2026-11-13T11:00"
+      }
     },
     {
       "registration": null,
@@ -208,7 +258,13 @@
       "organizer": "みなまた和紅茶実行委員会",
       "source_url": "https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html",
       "source_label": "みなまた観光物産協会",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "other",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-14",
+        "end": "2026-11-15"
+      }
     },
     {
       "registration": "required",
@@ -224,7 +280,13 @@
       "organizer": "市こどもセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=29ff576f5c",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-14T10:00",
+        "end": "2026-11-14T11:00"
+      }
     },
     {
       "registration": null,
@@ -240,7 +302,13 @@
       "organizer": "市こどもセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=a84180c196",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-14T11:00",
+        "end": "2026-11-14T11:30"
+      }
     },
     {
       "registration": null,
@@ -256,7 +324,13 @@
       "organizer": "市ふれあいセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=c87b94ae57",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-14T10:30",
+        "end": "2026-11-14T12:30"
+      }
     },
     {
       "registration": null,
@@ -272,7 +346,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=a7f6c543cb",
       "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "market",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-14T08:50",
+        "end": "2026-11-14T09:50"
+      }
     },
     {
       "registration": null,
@@ -288,7 +368,13 @@
       "organizer": "もやい館",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=30ed0fdda1",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "culture",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-14",
+        "end": "2026-11-17"
+      }
     },
     {
       "registration": "required",
@@ -304,7 +390,13 @@
       "organizer": "みなまたパドルフェスティバル実行委員会、水俣市競り舟協会、みなまた競り舟大会実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034896/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "sports",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-15T08:30",
+        "end": "2026-11-15T16:00"
+      }
     },
     {
       "registration": null,
@@ -320,7 +412,13 @@
       "organizer": "水俣市",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034933/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "festival",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-15",
+        "end": "2026-11-16"
+      }
     },
     {
       "registration": null,
@@ -336,7 +434,13 @@
       "organizer": "市役所マルシェ実行委員会",
       "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html",
       "source_label": "みなまた観光物産協会",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "market",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-15T10:00",
+        "end": "2026-11-15T15:00"
+      }
     },
     {
       "registration": "required",
@@ -352,7 +456,13 @@
       "organizer": "市こどもセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=e7e9bf8e4f",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-17T10:30",
+        "end": "2026-11-17T12:00"
+      }
     },
     {
       "registration": "required",
@@ -368,7 +478,13 @@
       "organizer": "市こどもセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=2906ef0d51",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-18T10:30",
+        "end": "2026-11-18T12:00"
+      }
     },
     {
       "registration": null,
@@ -384,7 +500,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=6&event=6564495a20",
       "source_label": "広報みなまた11月号（PDF 6ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "culture",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-20T12:00",
+        "end": "2026-11-20T12:45"
+      }
     },
     {
       "registration": null,
@@ -400,7 +522,13 @@
       "organizer": "3区自治会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=def8d433df",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "festival",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-20",
+        "end": "2026-11-23"
+      }
     },
     {
       "registration": null,
@@ -416,7 +544,13 @@
       "organizer": "みなまた産業団地まつり実行委員会事務局",
       "source_url": "https://www.city.minamata.lg.jp/kiji0033042/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-21T09:30",
+        "end": "2026-11-21T15:00"
+      }
     },
     {
       "registration": null,
@@ -432,7 +566,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=66084e4f10",
       "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-21T11:00",
+        "end": "2026-11-21T12:00"
+      }
     },
     {
       "registration": null,
@@ -448,7 +588,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76e09193a7",
       "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "culture",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-21T14:00",
+        "end": "2026-11-21T15:00"
+      }
     },
     {
       "registration": "partial",
@@ -464,7 +610,13 @@
       "organizer": "みなまた和紅茶実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0033921/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-22T09:30",
+        "end": "2026-11-22T15:00"
+      }
     },
     {
       "registration": null,
@@ -480,7 +632,13 @@
       "organizer": "水俣・芦北地域雇用創造協議会",
       "source_url": null,
       "source_label": "詳細",
-      "origin": "manual"
+      "origin": "manual",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-22T11:30",
+        "end": "2026-11-22T13:00"
+      }
     },
     {
       "registration": "required",
@@ -496,7 +654,13 @@
       "organizer": "県環境センター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=564654d4de",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-23T10:00",
+        "end": "2026-11-23T12:00"
+      }
     },
     {
       "registration": "required",
@@ -512,7 +676,13 @@
       "organizer": "市こどもセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8103274f9c",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-25T10:00",
+        "end": "2026-11-25T11:00"
+      }
     },
     {
       "registration": "required",
@@ -528,7 +698,13 @@
       "organizer": "市こどもセンター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=63a630139f",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-26T14:00",
+        "end": "2026-11-26T15:00"
+      }
     },
     {
       "registration": "required",
@@ -544,7 +720,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=6&event=82b0f2c0d8",
       "source_label": "広報みなまた11月号（PDF 6ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-28T13:30",
+        "end": "2026-11-28T14:30"
+      }
     },
     {
       "registration": "required",
@@ -560,7 +742,13 @@
       "organizer": "もやい館",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=3fb0e61aa1",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-28T14:00",
+        "end": "2026-11-28T15:00"
+      }
     },
     {
       "registration": null,
@@ -576,7 +764,13 @@
       "organizer": "ヒカリトコカゲ",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=2a40903ac9",
       "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "kids",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-28T10:00",
+        "end": "2026-11-28T11:00"
+      }
     },
     {
       "registration": "required",
@@ -592,7 +786,13 @@
       "organizer": "みなまた安心センター",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=c36b4211ca",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-28T10:00",
+        "end": "2026-11-28T11:30"
+      }
     },
     {
       "registration": "partial",
@@ -608,7 +808,13 @@
       "organizer": "水俣市",
       "source_url": "https://www.city.minamata.lg.jp/kiji0033860/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-28T09:00",
+        "end": "2026-11-28T12:00"
+      }
     },
     {
       "registration": null,
@@ -624,7 +830,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=c4538ff76d",
       "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-28T09:30",
+        "end": "2026-11-28T10:30"
+      }
     },
     {
       "registration": "required",
@@ -640,7 +852,13 @@
       "organizer": "水俣市",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034882/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-28T14:00",
+        "end": "2026-11-28T15:30"
+      }
     },
     {
       "registration": null,
@@ -656,7 +874,13 @@
       "organizer": "多良木町役場",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034892/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "other",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-11-29",
+        "end": "2026-11-30"
+      }
     },
     {
       "registration": "required",
@@ -672,7 +896,13 @@
       "organizer": "経済観光戦略課",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=8&event=45c8aab2ef",
       "source_label": "広報みなまた11月号（PDF 8ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-29T13:30",
+        "end": "2026-11-29T15:00"
+      }
     },
     {
       "registration": null,
@@ -688,7 +918,13 @@
       "organizer": "26区自治会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=3963cb01df",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "market",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-29T11:00",
+        "end": "2026-11-29T14:00"
+      }
     },
     {
       "registration": null,
@@ -704,7 +940,13 @@
       "organizer": "16区GGクラブ",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=8b7c76796e",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-29T09:00",
+        "end": "2026-11-29T15:00"
+      }
     },
     {
       "registration": null,
@@ -720,7 +962,13 @@
       "organizer": null,
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76cba7d5e7",
       "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-30T17:00",
+        "end": "2026-11-30T18:00"
+      }
     },
     {
       "registration": "not_required",
@@ -736,7 +984,13 @@
       "organizer": "熊本県",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=4&event=78adfa0bdd",
       "source_label": "広報みなまた11月号（PDF 4ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-01T18:30",
+        "end": "2026-12-01T19:30"
+      }
     },
     {
       "registration": "required",
@@ -752,7 +1006,13 @@
       "organizer": "もやい館",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=97e25d07d1",
       "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-05T10:00",
+        "end": "2026-12-05T11:00"
+      }
     },
     {
       "registration": "required",
@@ -768,7 +1028,13 @@
       "organizer": "水俣りんごの木",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=14&event=e2d5c4b0a2",
       "source_label": "広報みなまた11月号（PDF 14ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-05T14:00",
+        "end": "2026-12-05T16:00"
+      }
     },
     {
       "registration": null,
@@ -784,7 +1050,13 @@
       "organizer": "実行委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=05b2f66704",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-06T09:00",
+        "end": "2026-12-06T13:00"
+      }
     },
     {
       "registration": null,
@@ -800,7 +1072,13 @@
       "organizer": "12区自治会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=700001efc9",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-06T09:00",
+        "end": "2026-12-06T12:00"
+      }
     },
     {
       "registration": "required",
@@ -816,7 +1094,13 @@
       "organizer": "水俣市いきいき健康課",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034924/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "sports",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-08T10:00",
+        "end": "2026-12-08T12:00"
+      }
     },
     {
       "registration": "required",
@@ -832,7 +1116,13 @@
       "organizer": "おれんじ館",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=04e5410944",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "learning",
+      "calendar": {
+        "all_day": true,
+        "start": "2026-12-12",
+        "end": "2026-12-13"
+      }
     },
     {
       "registration": "required",
@@ -848,7 +1138,35 @@
       "organizer": "もやい館",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=df97a798e4",
       "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho"
+      "origin": "koho",
+      "category": "culture",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-13T14:00",
+        "end": "2026-12-13T15:00"
+      }
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-12-06",
+      "registration_note": "公式InstagramのDMまたは窓口にて申込。各部5組限定",
+      "id": "8c8ea900ca00",
+      "title": "オリジナルしめ縄飾りワークショップ",
+      "start_date": "2026-12-19",
+      "end_date": "2026-12-19",
+      "time_text": "第1部 10:00〜11:30、第2部 14:00〜15:30",
+      "venue": "みなまた観光物産協会 喫茶スペース",
+      "summary": "新年を迎える準備として、お花や飾りを組み合わせてオリジナルのしめ縄飾りを作るワークショップ。第1部は親子、第2部は高校生以上が対象。",
+      "organizer": "（一社）みなまた観光物産協会",
+      "source_url": "https://www.go-minamata.jp/news-events/r8-shimenawa.html",
+      "source_label": "みなまた観光物産協会",
+      "origin": "auto",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-19T10:00",
+        "end": "2026-12-19T11:00"
+      }
     },
     {
       "registration": null,
@@ -864,7 +1182,13 @@
       "organizer": "（一財）熊本県スポーツ振興事業団",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034922/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "sports",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-19T10:00",
+        "end": "2026-12-19T12:00"
+      }
     },
     {
       "registration": "required",
@@ -880,7 +1204,13 @@
       "organizer": "水俣市・水俣市教育委員会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034718/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "culture",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-19T16:00",
+        "end": "2026-12-19T17:00"
+      }
     },
     {
       "registration": null,
@@ -896,7 +1226,13 @@
       "organizer": "世界フライングディスク連盟、日本フライングディスク協会",
       "source_url": "https://www.city.minamata.lg.jp/kiji0034840/index.html",
       "source_label": "水俣市",
-      "origin": "auto"
+      "origin": "auto",
+      "category": "sports",
+      "calendar": {
+        "all_day": true,
+        "start": "2027-09-19",
+        "end": "2027-09-25"
+      }
     }
   ]
 }

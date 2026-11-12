@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-11T10:46:55.391590+09:00",
+  "last_updated": "2026-11-12T11:47:03.029297+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -4076,6 +4076,45 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "8c8ea900ca00",
+      "title": "オリジナルしめ縄飾りワークショップ",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "オリジナルのしめ縄飾りを作るワークショップが開催されます。伝統的な正月飾りを自分で手作りできる機会です。",
+      "target": "どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/r8-shimenawa.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-12T11:46:58.526149+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a0ef0a330f49",
+      "title": "温泉総選挙2026　結果発表",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "温泉総選挙2026の結果が発表されました。水俣市の温泉地がどのような評価を受けたか、詳細を公式サイトから確認できます。",
+      "target": "水俣市の観光に関心のある方全般",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/onsen_sousenkyo_2026-2.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-12T11:46:53.010514+09:00",
       "status": "active"
     },
     {

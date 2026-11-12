@@ -872,6 +872,33 @@
       "checked_at": "2026-09-21T23:52:46.861052+09:00",
       "event": null
     },
+    "https://www.go-minamata.jp/news-events/onsen_sousenkyo_2026-2.html": {
+      "is_event": false,
+      "checked_at": "2026-11-12T11:47:22.507843+09:00",
+      "schema": 2,
+      "event": null
+    },
+    "https://www.go-minamata.jp/news-events/r8-shimenawa.html": {
+      "is_event": true,
+      "checked_at": "2026-11-12T11:47:16.481634+09:00",
+      "schema": 2,
+      "event": {
+        "id": "8c8ea900ca00",
+        "title": "オリジナルしめ縄飾りワークショップ",
+        "start_date": "2026-12-19",
+        "end_date": "2026-12-19",
+        "time_text": "第1部 10:00〜11:30、第2部 14:00〜15:30",
+        "venue": "みなまた観光物産協会 喫茶スペース",
+        "summary": "新年を迎える準備として、お花や飾りを組み合わせてオリジナルのしめ縄飾りを作るワークショップ。第1部は親子、第2部は高校生以上が対象。",
+        "organizer": "（一社）みなまた観光物産協会",
+        "source_url": "https://www.go-minamata.jp/news-events/r8-shimenawa.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-12-06",
+        "registration_note": "公式InstagramのDMまたは窓口にて申込。各部5組限定"
+      }
+    },
     "https://www.go-minamata.jp/news-events/r8_hatsukoi-hw-marche.html": {
       "is_event": true,
       "checked_at": "2026-09-21T23:51:00.912471+09:00",
