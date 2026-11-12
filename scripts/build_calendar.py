@@ -245,6 +245,27 @@ def main() -> int:
     else:
         log.info("変更なし: %s", EVENTS_ICS_PATH)
 
+    # 1b. events-<キー>.ics (カテゴリ別全7種)
+    # 0件のカテゴリでも空のカレンダーとして生成し、購読URLの404を防ぐ
+    category_events: dict[str, list[dict]] = {k: [] for k in CATEGORY_DISPLAY_NAMES}
+    for ev in events:
+        # 判定できないイベントも捨てずに other に入れる（全カテゴリの合計を events.ics と揃えるため）
+        try:
+            cat = classify_category(ev)
+        except Exception as err:  # noqa: BLE001
+            log.warning("カテゴリを決められません（%s）: %s", ev.get("id"), err)
+            cat = "other"
+        category_events[cat if cat in category_events else "other"].append(ev)
+
+    for cat_key, disp_name in CATEGORY_DISPLAY_NAMES.items():
+        cat_file = ROOT_DIR / "public" / "data" / f"events-{cat_key}.ics"
+        cat_cal_name = f"みなまた くらしナビ イベント：{disp_name}（非公式）"
+        cat_ics_content = build_calendar_ics(category_events[cat_key], dtstamp, cal_name=cat_cal_name)
+        if write_if_changed(cat_file, cat_ics_content):
+            log.info("更新完了: %s (%d件)", cat_file.name, len(category_events[cat_key]))
+        else:
+            log.info("変更なし: %s (%d件)", cat_file.name, len(category_events[cat_key]))
+
     # 2. 個別 ics/<id>.ics
     ICS_DIR.mkdir(parents=True, exist_ok=True)
     current_valid_ids = set()

@@ -1,0 +1,134 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた くらしナビ イベント：文化・芸術（
+ 非公式）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9f45c4202a7e@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:地域提案事業【一般社団法人　水俣・写真家の眼
+ 】（〜11/13）
+LOCATION:東京外国語大学 研究講義棟1階ガレリア
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html
+DESCRIPTION:写真集『水俣からあなたへ』に収録された写真
+ 家9人の作品から42点を展示する巡回写真展。水俣病公
+ 式確認70年の節目に、水俣から何を学ぶのかを問いかけ
+ る。\n時間：8:30〜20:00\n期間：10/28〜11/13（開催日は元の
+ ページでご確認ください）\n主催：一般社団法人 水俣
+ ・写真家の眼\n詳細：https://www.city.minamata.lg.jp/kankyo/kiji00
+ 34915/index.html\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:e481f08b4d79@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:男女共同参画に関する図書のミニ特設コーナー（
+ 〜11/29）
+LOCATION:図書館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =7&event=8a0d30f385
+DESCRIPTION:男女共同参画に関する図書を集めたミニ特設コ
+ ーナーを設置します\n期間：11/13〜11/29（開催日は元の
+ ページでご確認ください）\n詳細：https://www.city.minamata.l
+ g.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=7&event=8a0d30f385\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:df9111efbdbf@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261117
+SUMMARY:第59回 蘇峰筆塚顕彰書道展
+LOCATION:もやい館３階もやいホール
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=30ed0fdda1
+DESCRIPTION:徳富蘇峰の遺徳と筆塚を顕彰し、水俣市・津奈
+ 木町の小・中・高生の作品を一堂に集め展示します\n時
+ 間：09:00〜17:00（16日は13時まで）\n主催：もやい館\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#p
+ age=12&event=30ed0fdda1\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:015f04d0f311@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261120T030000Z
+DTEND:20261120T034500Z
+SUMMARY:水鳥千鶴子トーク＆ハープライブ演奏会
+LOCATION:市役所１階市民交流フロア
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =6&event=6564495a20
+DESCRIPTION:ハープ演者でミュージックセラピストの水鳥千
+ 鶴子さんによる、心の癒しを届ける演奏会です\n時間：
+ 12:00〜12:45\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938
+ _up_vvmv7eo1.pdf#page=6&event=6564495a20\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:bda03421c498@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T050000Z
+DTEND:20261121T060000Z
+SUMMARY:石川さゆりコンサート
+LOCATION:市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=76e09193a7
+DESCRIPTION:時間：①14:00〜 ②18:00〜\n詳細：https://www.city.min
+ amata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76e09193a7\n
+ みなまた くらしナビ（非公式）掲載。日時・内容は変
+ わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:1fd8eeb5576b@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261213T050000Z
+DTEND:20261213T060000Z
+SUMMARY:「東混ゾリステン」公演
+LOCATION:市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=df97a798e4
+DESCRIPTION:プロの声楽家と地元学生によるコンサート。入
+ 場料：一般3\,000円、高校生以下無料。未就学児入場不
+ 可\n時間：14:00〜\n要申込、チケットを各発売所で購入\n
+ 主催：もやい館\n詳細：https://www.city.minamata.lg.jp/kiji003493
+ 8/3_4938_up_vvmv7eo1.pdf#page=13&event=df97a798e4\nみなまた くらし
+ ナビ（非公式）掲載。日時・内容は変わることがあり
+ ます。
+END:VEVENT
+BEGIN:VEVENT
+UID:d96de7b98a91@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261219T070000Z
+DTEND:20261219T080000Z
+SUMMARY:自主文化事業　岸谷香「KAORI PARADISE 2026 -10回目の
+ ひとり旅-」開催のお知らせ
+LOCATION:水俣市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kiji0034718/index.html
+DESCRIPTION:歌手・岸谷香によるライブ公演。プリンセス 
+ プリンセスの名曲やソロ楽曲をピアノとアコースティ
+ ックギターで披露する自主文化事業。\n時間：16:00開演
+ （15:15開場）\n要申込、全席指定5\,500円。各プレイガイ
+ ド、ローソンチケット、教育課生涯学習室にて前売券
+ 販売\n主催：水俣市・水俣市教育委員会\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034718/index.html\nみなまた くらしナビ
+ （非公式）掲載。日時・内容は変わることがあります
+ 。
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,179 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた くらしナビ イベント：子育て・こど
+ も（非公式）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:37956b8aa4f9@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T013000Z
+DTEND:20261112T030000Z
+SUMMARY:10、11月生まれのお誕生会
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=57d1410d43
+DESCRIPTION:未就学児の親子を対象としたお誕生会です\n時
+ 間：10:30〜12:00\n要申込、要予約。詳細は市こどもセン
+ ターへ問い合わせ\n主催：市こどもセンター\n詳細：http
+ s://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&eve
+ nt=57d1410d43\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:58f064c77087@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T010000Z
+DTEND:20261114T020000Z
+SUMMARY:むかしあそび
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=29ff576f5c
+DESCRIPTION:小学生を対象としたむかしあそび体験です\n時
+ 間：10:00〜11:00\n要申込、要予約。詳細は市こどもセン
+ ターへ問い合わせ\n主催：市こどもセンター\n詳細：http
+ s://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&eve
+ nt=29ff576f5c\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:ae80d8e2f097@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T020000Z
+DTEND:20261114T023000Z
+SUMMARY:図書館からのおはなし会
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=a84180c196
+DESCRIPTION:どなたでも参加できるおはなし会です\n時間：1
+ 1:00〜11:30\n主催：市こどもセンター\n詳細：https://www.city
+ .minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=a84180c19
+ 6\nみなまた くらしナビ（非公式）掲載。日時・内容は
+ 変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:fcd9c43c9523@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261114T013000Z
+DTEND:20261114T033000Z
+SUMMARY:地域・子ども食堂「水俣すまいる食堂」
+LOCATION:市ふれあいセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=c87b94ae57
+DESCRIPTION:食から考える防災ワークショップ。防災食をお
+ いしくいただく方法や、災害時の思いやりについて学
+ びます。参加料：大人300円、子ども無料。持ち物：飲
+ み物、タオル\n時間：10:30〜12:30\n主催：市ふれあいセン
+ ター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvm
+ v7eo1.pdf#page=12&event=c87b94ae57\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:5e8cc052a5a4@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261117T013000Z
+DTEND:20261117T030000Z
+SUMMARY:育児講座「親子ヨガ」
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=e7e9bf8e4f
+DESCRIPTION:未就学児の親子を対象とした親子ヨガ講座です
+ \n時間：10:30〜12:00\n要申込、要予約。詳細は市こどもセ
+ ンターへ問い合わせ\n主催：市こどもセンター\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&
+ event=e7e9bf8e4f\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:b1348f05dd7c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261118T013000Z
+DTEND:20261118T030000Z
+SUMMARY:ママリラ〜首肩マッサージ〜
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=2906ef0d51
+DESCRIPTION:子育て中の保護者を対象とした首肩マッサージ
+ の講座です\n時間：10:30〜12:00\n要申込、要予約。詳細は
+ 市こどもセンターへ問い合わせ\n主催：市こどもセンタ
+ ー\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=12&event=2906ef0d51\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:b2410a8b3bf2@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T020000Z
+DTEND:20261121T030000Z
+SUMMARY:こども地域食堂ポパイ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=66084e4f10
+DESCRIPTION:時間：11:00〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=66084e4f10\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:edecc24c2dca@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261125T010000Z
+DTEND:20261125T020000Z
+SUMMARY:こども若者とつくるアートワークショップ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=8103274f9c
+DESCRIPTION:どなたでも参加できるアートワークショップで
+ す\n時間：午前の部 10:00〜12:00、午後の部 14:00〜16:30\n要
+ 申込、要予約。詳細は市こどもセンターへ問い合わせ\n
+ 主催：市こどもセンター\n詳細：https://www.city.minamata.lg.j
+ p/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8103274f9c\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:3fad1b30453c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261126T050000Z
+DTEND:20261126T060000Z
+SUMMARY:たまひよ
+LOCATION:市こどもセンター
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=63a630139f
+DESCRIPTION:妊婦さん・1歳前後の親子を対象とした交流会
+ です\n時間：14:00〜15:00\n要申込、要予約。詳細は市こど
+ もセンターへ問い合わせ\n主催：市こどもセンター\n詳
+ 細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#p
+ age=12&event=63a630139f\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:9bcf8a5f65b1@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T010000Z
+DTEND:20261128T020000Z
+SUMMARY:ヒカリトコカゲ「らぶりー（マタニティクラス）
+ 」
+LOCATION:M’sシティ5階
+CATEGORIES:子育て・こども
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=2a40903ac9
+DESCRIPTION:時間：10:00〜\n主催：ヒカリトコカゲ\n詳細：htt
+ ps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&eve
+ nt=2a40903ac9\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

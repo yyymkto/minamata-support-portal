@@ -1,0 +1,61 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた くらしナビ イベント：マルシェ・物
+ 産（非公式）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:492aaed64c2d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261113T235000Z
+DTEND:20261114T005000Z
+SUMMARY:水俣漁師市
+LOCATION:丸島漁港
+CATEGORIES:マルシェ・物産
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=a7f6c543cb
+DESCRIPTION:時間：8:50〜\n詳細：https://www.city.minamata.lg.jp/kiji
+ 0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=a7f6c543cb\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:4569d4fb971c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261115T010000Z
+DTEND:20261115T060000Z
+SUMMARY:市役所マルシェ　11月15日開催のお知らせ
+LOCATION:市役所 屋外テラス
+CATEGORIES:マルシェ・物産
+URL:https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html
+DESCRIPTION:弁当・惣菜・野菜・パン・ハンドメイドなどが
+ 集まるマルシェ。今回は休日開催となり、エコパーク
+ のバラ園で開催されるローズフェスタ・ローズマルシ
+ ェと合わせて水俣を周遊できる一日です。\n時間：10:00
+ 〜15:00\n主催：市役所マルシェ実行委員会\n詳細：https://
+ www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:e76cc8ce4ae9@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T020000Z
+DTEND:20261129T050000Z
+SUMMARY:第2回26区いきいき物産祭
+LOCATION:越小場公民館
+CATEGORIES:マルシェ・物産
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=3963cb01df
+DESCRIPTION:地元野菜、お米、リサイクル品、手作りグッズ
+ の販売。昼食に豚汁の無料振る舞いあり\n時間：11:00〜1
+ 4:00\n主催：26区自治会\n詳細：https://www.city.minamata.lg.jp/ki
+ ji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=3963cb01df\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+END:VCALENDAR

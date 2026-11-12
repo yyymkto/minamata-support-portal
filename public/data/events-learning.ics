@@ -1,0 +1,224 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた くらしナビ イベント：講座・体験（
+ 非公式）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:da65ab6721cd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261111T033000Z
+DTEND:20261111T043000Z
+SUMMARY:英語会話テーブル
+LOCATION:市役所3階会議室C
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=0d9cfa5527
+DESCRIPTION:時間：12:30〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=0d9cfa5527\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c74a707c648d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T100000Z
+DTEND:20261112T110000Z
+SUMMARY:みなまた和紅茶ワークショップ（淹れ方講座）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=8afe686f1e
+DESCRIPTION:ご家庭でも和紅茶をより美味しく淹れるための
+ 講座。参加料500円。希望する開催日の2日前までに電話
+ で申し込み\n時間：19:00〜20:00\n要申込、11/10締切、電話
+ にて申し込み\n主催：もやい館\n詳細：https://www.city.minam
+ ata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8afe686f1e\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:eeafc05084cd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:深堀ビートルズ講座（〜12/17）
+LOCATION:もやい館 2階ふれあい広場
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=65970da7e1
+DESCRIPTION:ビートルズの映像と音源を楽しみながら語り合
+ う講座。開催日：11/12、19、12/3、10、17\n時間：19:00〜20:3
+ 0\n期間：11/12〜12/17（開催日は元のページでご確認くだ
+ さい）\n要申込、定員15人。電話で申込\n主催：もやい
+ 館\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=13&event=65970da7e1\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:232a7c4d067f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261123T010000Z
+DTEND:20261123T030000Z
+SUMMARY:クリスマス飾りを作ろう！
+LOCATION:県環境センター
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=564654d4de
+DESCRIPTION:木や森について学びながら、自然の材料を使っ
+ てリースなどのクリスマス飾りを作ります。定員30人程
+ 度（抽選）。参加無料\n時間：10:00〜12:00\n要申込、11/9
+ 締切、申込フォームより申し込み\n主催：県環境センタ
+ ー\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=12&event=564654d4de\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:8a1b578b7ee6@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T043000Z
+DTEND:20261128T053000Z
+SUMMARY:みなまたヒューマンライツ・セミナー
+LOCATION:市公民館２階第一研修室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =6&event=82b0f2c0d8
+DESCRIPTION:人権指導員と一緒に「言葉と人権」をテーマに
+ 話し合う学習会です\n時間：13:30〜14:30\n要申込、11/26締
+ 切、電話または市教育課窓口にて申し込み\n詳細：https:
+ //www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=6&event=
+ 82b0f2c0d8\nみなまた くらしナビ（非公式）掲載。日時・
+ 内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:31ae8b6d4e4f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T050000Z
+DTEND:20261128T060000Z
+SUMMARY:みなまた和紅茶ワークショップ（テイスティング
+ ）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=3fb0e61aa1
+DESCRIPTION:お気に入りのお茶を見つけるテイスティング。
+ 参加料500円。希望する開催日の2日前までに電話で申し
+ 込み\n時間：14:00〜15:00\n要申込、11/26締切、電話にて申
+ し込み\n主催：もやい館\n詳細：https://www.city.minamata.lg.jp
+ /kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=3fb0e61aa1\nみなまた
+  くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:081a9e5bd82c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T050000Z
+DTEND:20261128T063000Z
+SUMMARY:水俣環境アカデミア設立10周年記念特別市民公開
+ 講座「なぜ、私たちは潜るのか？～ダイバーが伝える
+ 、水俣の海の世界～」参加者募集
+LOCATION:水俣環境アカデミア（水俣市南福寺6番1号 旧水俣
+ 高校跡）
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034882/index.html
+DESCRIPTION:水俣の海をテーマにした特別市民公開講座。地
+ 元ダイバーとNHKアナウンサーが、水俣の海の世界や取
+ 材の裏側について語ります。\n時間：14:00〜15:30\n要申込
+ 、11/26締切、専用フォーム、電話、メール、FAXで申込。
+ 先着100名程度\n主催：水俣市\n詳細：https://www.city.minamata
+ .lg.jp/kiji0034882/index.html\nみなまた くらしナビ（非公式）
+ 掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:28826f016709@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T043000Z
+DTEND:20261129T060000Z
+SUMMARY:水俣市観光振興計画策定ワークショップ
+LOCATION:市役所１階多目的室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =8&event=45c8aab2ef
+DESCRIPTION:水俣の資源活用や訪問したくなるモノ・コトに
+ ついて、アイデアを出し合うワークショップです\n時間
+ ：13:30〜15:00\n要申込、11/26締切、申込フォームまたは電
+ 話にて申し込み\n主催：経済観光戦略課\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=8&event=45c8
+ aab2ef\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c9276c5dca9c@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261130T080000Z
+DTEND:20261130T090000Z
+SUMMARY:英語会話テーブル
+LOCATION:市役所1階多目的室
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=76cba7d5e7
+DESCRIPTION:時間：17:00〜\n詳細：https://www.city.minamata.lg.jp/kij
+ i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76cba7d5e7\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:f80512ff463b@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261205T010000Z
+DTEND:20261205T020000Z
+SUMMARY:みなまた和紅茶ワークショップ（茶席）
+LOCATION:もやい館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =12&event=97e25d07d1
+DESCRIPTION:お茶を飲みながら作り手のこだわりを聞く茶席
+ 。参加料500円。希望する開催日の2日前までに電話で申
+ し込み\n時間：10:00〜11:00\n要申込、12/3締切、電話にて
+ 申し込み\n主催：もやい館\n詳細：https://www.city.minamata.lg
+ .jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=97e25d07d1\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:28e3c5968160@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261205T050000Z
+DTEND:20261205T070000Z
+SUMMARY:りんご教室セミナーｉｎ水俣
+LOCATION:水俣環境アカデミア
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =14&event=e2d5c4b0a2
+DESCRIPTION:在宅医療や在宅介護、地域で支える人たちを対
+ 象としたセミナー。参加無料\n時間：14:00〜16:00\n要申込
+ 、11/30締切、申込フォームより申し込み\n主催：水俣り
+ んごの木\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_
+ up_vvmv7eo1.pdf#page=14&event=e2d5c4b0a2\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:1df9f10fa30f@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:おれんじ講座「和紅茶教室」（〜3/13）
+LOCATION:おれんじ館
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=04e5410944
+DESCRIPTION:和紅茶の淹れ方と茶葉の違いを学ぶ全4回の講
+ 座。毎月第2土曜日に開催。受講料は計2\,000円（初回集
+ 金）、別途材料費が必要\n時間：13:30〜15:30\n期間：12/12
+ 〜3/13（開催日は元のページでご確認ください）\n要申
+ 込、12/7締切、窓口、電話、FAX、メールで申込。定員5〜
+ 10人程度\n主催：おれんじ館\n詳細：https://www.city.minamata.
+ lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=04e5410944\nみな
+ また くらしナビ（非公式）掲載。日時・内容は変わる
+ ことがあります。
+END:VEVENT
+END:VCALENDAR

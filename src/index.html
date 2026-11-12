@@ -117,6 +117,14 @@
     </p>
   </section>
 
+  <!-- ===== カレンダー購読バー（イベントタブ表示時） ===== -->
+  <section id="calendar-subscribe-bar" class="hidden max-w-3xl mx-auto px-4 py-3 border-b border-line">
+    <button type="button" id="btn-calendar-subscribe" class="focus-ring w-full sm:w-auto min-h-[44px] rounded-xl border border-bay text-bay hover:bg-baySoft/50 font-medium text-sm px-5 inline-flex items-center justify-center gap-2 transition-colors select-none">
+      <span>📅</span>
+      <span>イベントをカレンダーで受け取る</span>
+    </button>
+  </section>
+
   <!-- ===== ローディング状態 ===== -->
   <div id="loading-view" class="text-center py-16 text-sm text-inkSoft">情報を読み込んでいます…</div>
   <div id="error-view" class="hidden text-center py-16 text-sm text-warnAccent"></div>
@@ -450,6 +458,8 @@
     a2hsNotice: document.getElementById('a2hs-notice'),
     addToHomeSection: document.getElementById('add-to-home'),
     a2hsButton: document.getElementById('a2hs-button'),
+    calendarSubscribeBar: document.getElementById('calendar-subscribe-bar'),
+    btnCalendarSubscribe: document.getElementById('btn-calendar-subscribe'),
 
     // notice & toast ui
     toast: document.getElementById('toast'),
@@ -519,6 +529,18 @@
       el[btn].className = active ? TAB_BTN_ACTIVE : TAB_BTN_INACTIVE;
       el[view].classList.toggle('hidden', !active);
     });
+
+    // カレンダー購読バーの表示制御（イベントタブかつ有効時のみ）
+    if (el.calendarSubscribeBar) {
+      const showBar = (tabId === 'events') && EVENT_CALENDAR_ENABLED;
+      el.calendarSubscribeBar.classList.toggle('hidden', !showBar);
+      // バーが出ているときは「ホーム画面に追加」の下の線と余白をバー側に寄せ、同じ区画に見せる（追加設計E）
+      if (el.addToHomeSection) {
+        el.addToHomeSection.classList.toggle('border-b', !showBar);
+        el.addToHomeSection.classList.toggle('pb-1', showBar);
+      }
+    }
+
     scheduleHeaderOffsetUpdate();
   }
 
@@ -530,6 +552,10 @@
   el.tabConcern.addEventListener('click', () => switchTab('concern'));
   el.tabEvents.addEventListener('click', () => switchTab('events'));
   el.tabYoung.addEventListener('click', () => switchTab('young'));
+
+  if (el.btnCalendarSubscribe) {
+    el.btnCalendarSubscribe.addEventListener('click', openCalendarSubscribeModal);
+  }
 
 
   // ===== Feed View Logic =====
@@ -1422,41 +1448,6 @@
       });
     }
 
-    // 画面仕様A: カレンダー購読案内（#events-content の一番上、EVENT_CALENDAR_ENABLED=true のとき）
-    let subscribeHTML = '';
-    if (EVENT_CALENDAR_ENABLED && typeof location !== 'undefined') {
-      const icsUrl = new URL('./data/events.ics', location.href).href;
-      // webcal: は safeUrl() が通さないため、ページの場所から作ったこのURLは esc() だけで使う
-      const webcalUrl = icsUrl.replace(/^https?:/, 'webcal:');
-      // cid には webcal の URL をエンコードせずに渡す（エンコードすると「追加しました」と出るのに追加されない。2026-11-12 吉野さんが実機で確認）
-      const googleSubscribeUrl = 'https://calendar.google.com/calendar/r?cid=' + webcalUrl;
-
-      subscribeHTML = `
-        <div class="bg-white rounded-xl border border-line p-4 sm:p-5 mb-8 shadow-sm">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-lg" aria-hidden="true">📅</span>
-            <h3 class="font-serif font-bold text-base sm:text-[17px] text-ink leading-snug">
-              イベントをスマホのカレンダーで受け取る
-            </h3>
-          </div>
-          <div class="flex flex-col gap-2.5 mb-3">
-            <a href="${safeUrl(googleSubscribeUrl)}" target="_blank" rel="noopener noreferrer"
-               class="focus-ring flex items-center justify-center min-h-[44px] px-4 py-2.5 rounded-lg bg-bay text-white text-sm font-medium hover:bg-bay/90 transition-colors shadow-sm select-none">
-              Googleカレンダーに追加
-            </a>
-            <a href="${esc(webcalUrl)}"
-               class="focus-ring flex items-center justify-center min-h-[44px] px-4 py-2.5 rounded-lg bg-white border border-line text-ink text-sm font-medium hover:bg-baySoft/30 transition-colors select-none">
-              iPhone・Macのカレンダーに追加
-            </a>
-          </div>
-          <div class="text-xs text-inkSoft leading-relaxed space-y-1">
-            <p><strong class="font-bold text-ink">一度登録すると、新しいイベントは自動で追加されます。</strong></p>
-            <p>毎朝更新します。アプリへの反映は数時間〜1日ほど遅れることがあります。やめるときはアプリの設定から削除できます。</p>
-          </div>
-        </div>
-      `;
-    }
-
     // フィルタリング（selectedCategory）
     const selectedCat = state.eventCategory || 'all';
     const displayEvents = validEvents.filter(item => {
@@ -1466,7 +1457,6 @@
 
     if (!displayEvents.length) {
       el.eventsContent.innerHTML = `
-        ${subscribeHTML}
         <div class="text-center py-12">
           <p class="text-sm text-inkSoft mb-4">このカテゴリのイベントは今はありません。</p>
           <button type="button" id="btn-events-reset-cat"
@@ -1747,7 +1737,6 @@
     `).join('');
 
     el.eventsContent.innerHTML = `
-      ${subscribeHTML}
       ${upcomingDeadlineHTML}
       ${groupsHTML}
       <p class="text-center text-[11px] text-inkSoft pt-4 pb-8 leading-relaxed">
@@ -1768,6 +1757,149 @@
     });
 
     scheduleHeaderOffsetUpdate();
+  }
+
+  // ===== カレンダー購読の確認モーダル（画面仕様F） =====
+  function openCalendarSubscribeModal() {
+    const todayStr = getLocalDateString();
+    const validEvents = (state.events || []).filter(item => {
+      const end = item.end_date || item.start_date;
+      return end >= todayStr;
+    });
+
+    const now = new Date();
+    const thisYear = now.getFullYear();
+    const thisMonth = now.getMonth() + 1; // 1-12
+    const nextDate = new Date(thisYear, thisMonth, 1);
+    const nextYear = nextDate.getFullYear();
+    const nextMonth = nextDate.getMonth() + 1;
+
+    const thisMonthKey = `${thisYear}-${String(thisMonth).padStart(2, '0')}`;
+    const nextMonthKey = `${nextYear}-${String(nextMonth).padStart(2, '0')}`;
+
+    const KNOWN_CATS = new Set(EVENT_CATEGORIES.map(c => c.key));
+    const catOf = (item) => (KNOWN_CATS.has(item.category) ? item.category : 'other');
+
+    // 件数集計（全体、および各カテゴリ）
+    // 今月より前に始まった開催中のイベント（start_date < thisMonthKey）は「今月」に数える
+    const calcCounts = (eventList) => {
+      let thisCount = 0;
+      let nextCount = 0;
+      eventList.forEach(item => {
+        const sd = item.start_date || '';
+        const mKey = sd.slice(0, 7);
+        if (mKey <= thisMonthKey) {
+          thisCount++;
+        } else if (mKey === nextMonthKey) {
+          nextCount++;
+        }
+      });
+      return { total: eventList.length, thisCount, nextCount };
+    };
+
+    const allCounts = calcCounts(validEvents);
+
+    const catOptions = [
+      { key: 'all', name: 'すべて', counts: allCounts }
+    ];
+
+    EVENT_CATEGORIES.forEach(c => {
+      const filtered = validEvents.filter(item => catOf(item) === c.key);
+      if (filtered.length > 0) {
+        catOptions.push({
+          key: c.key,
+          name: c.name,
+          counts: calcCounts(filtered)
+        });
+      }
+    });
+
+    // 初期選択：現在イベントタブの絞り込みで選んでいるカテゴリ（'all' ならすべて）
+    let initialKey = state.eventCategory || 'all';
+    if (!catOptions.some(o => o.key === initialKey)) {
+      initialKey = 'all';
+    }
+
+    const makeFeedUrls = (key) => {
+      const filename = key === 'all' ? 'events.ics' : `events-${key}.ics`;
+      const icsUrl = new URL(`./data/${filename}`, location.href).href;
+      const webcalUrl = icsUrl.replace(/^https?:/, 'webcal:');
+      const googleSubscribeUrl = 'https://calendar.google.com/calendar/r?cid=' + webcalUrl;
+      return { google: googleSubscribeUrl, apple: webcalUrl };
+    };
+
+    const initialUrls = makeFeedUrls(initialKey);
+
+    const html = `
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <h2 class="font-serif font-bold text-lg sm:text-xl leading-snug text-ink flex items-center gap-1.5">
+          <span>📅</span>
+          <span>イベントをカレンダーで受け取る</span>
+        </h2>
+        <button id="modal-close" aria-label="閉じる" class="focus-ring shrink-0 h-8 w-8 flex items-center justify-center rounded-full text-inkSoft hover:bg-line/60">✕</button>
+      </div>
+
+      <div class="text-xs text-inkSoft leading-relaxed mb-4">
+        <p><strong class="font-bold text-ink">一度登録すると、新しいイベントは自動で追加されます。</strong></p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-xs font-bold text-ink mb-2">どれを受け取りますか？</p>
+        <div class="space-y-1.5">
+          ${catOptions.map(opt => {
+            const isChecked = opt.key === initialKey;
+            return `
+              <label class="focus-ring flex items-center gap-3 min-h-[44px] p-2.5 rounded-lg border border-line hover:bg-baySoft/30 cursor-pointer select-none transition-colors">
+                <input type="radio" name="cal-category" value="${esc(opt.key)}" class="h-4 w-4 text-bay focus:ring-bay border-line" ${isChecked ? 'checked' : ''}>
+                <div class="flex-1 min-w-0 flex items-baseline justify-between gap-2 text-xs">
+                  <span class="font-medium text-ink truncate">${esc(opt.name)}</span>
+                  <span class="text-inkSoft text-[11px] shrink-0 tabular">
+                    ${opt.counts.total}件（今月${opt.counts.thisCount}・来月${opt.counts.nextCount}）
+                  </span>
+                </div>
+              </label>
+            `;
+          }).join('')}
+        </div>
+        <p class="text-[11px] text-inkSoft leading-relaxed mt-2.5">
+          全部だと数が多くなります。気になるカテゴリだけを選ぶこともできます。<br>
+          複数受け取るときは1つずつ登録してください（カテゴリごとに別のカレンダーになります）。
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2.5 mb-4 border-t border-line pt-4">
+        <a id="btn-modal-subscribe-google" href="${safeUrl(initialUrls.google)}" target="_blank" rel="noopener noreferrer"
+           class="focus-ring flex items-center justify-center min-h-[44px] px-4 py-2.5 rounded-lg bg-bay text-white text-sm font-medium hover:bg-bay/90 transition-colors shadow-sm select-none">
+          Googleカレンダーに追加
+        </a>
+        <a id="btn-modal-subscribe-apple" href="${esc(initialUrls.apple)}"
+           class="focus-ring flex items-center justify-center min-h-[44px] px-4 py-2.5 rounded-lg bg-white border border-line text-ink text-sm font-medium hover:bg-baySoft/30 transition-colors select-none">
+          iPhone・Macのカレンダーに追加
+        </a>
+      </div>
+
+      <p class="text-[11px] text-inkSoft leading-relaxed">
+        毎朝更新します。アプリへの反映は数時間〜1日ほど遅れることがあります。表示を一時的に消したり、やめたりするのはアプリの設定からできます。
+      </p>
+    `;
+
+    showModal(html);
+
+    // ラジオボタンの切り替えでボタンURLを更新
+    const radios = el.modalContent.querySelectorAll('input[name="cal-category"]');
+    const googleBtn = document.getElementById('btn-modal-subscribe-google');
+    const appleBtn = document.getElementById('btn-modal-subscribe-apple');
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          const urls = makeFeedUrls(e.target.value);
+          if (googleBtn) googleBtn.href = safeUrl(urls.google);
+          // href プロパティへの代入は HTML として解釈されないので esc() は不要
+          if (appleBtn) appleBtn.href = urls.apple;
+        }
+      });
+    });
   }
 
   function renderEventSubmissionGuide() {

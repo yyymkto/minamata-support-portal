@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-11-12 by Antigravity）
+# 現在の状態（最終更新：2026-11-12 by Claude Code）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -10,7 +10,7 @@
 - **本番 `src/index.html` への「子育てこまりごと導線」統合完了**
 - データ側の要確認事項（旧「6件」「9件」いずれも）はAntigravityの対応により解消済み
 - **イベントカレンダー機能の設計・実装フェーズ**：
-  `docs/agent-notes/design-specs/2026-11-11_event-calendar.md` のタスク1（カテゴリ判定・スロット計算モジュール）、タスク2（言葉の表調整）、タスク3（カレンダー生成・RFC 5545検証）、タスク4（`daily-update.yml` への組み込み）、タスク5（`src/index.html` の画面仕様A・B・C実装）が完了。次はタスク6（Claude Code によるレビュー・吉野さん了承後のpush）。
+  `docs/agent-notes/design-specs/2026-11-11_event-calendar.md` の追加設計（タスク8〜10：カテゴリ別の購読ファイル、小さい購読バー、件数つき確認画面）は Antigravity が実装し、Claude Code がレビューして4点修正済み（未push）。次は吉野さんの了承後にpush（タスク11の残り）、その後タスク12（吉野さんの実機確認）。
 - **ストック情報のサイレント更新監視の仕組みを実装済み**：
   `scripts/monitor_stock.py` と週次GitHub Actions（`weekly-monitor.yml`）。
   詳細は `decisions-log/2026-08-23_stock-monitor-design-response.md` を参照。
@@ -98,7 +98,7 @@ minamata-support-portal
 | 子育て支援制度タブの折りたたみ（困りごと単位） | Claude Code（設計・データ）→Antigravity（UI） | 全タスク完了（設計書 `design-specs/2026-10-07_concern-collapse.md`）。Claude Codeによるキャンバス追加・データpush完了に続き、Antigravity担当のタスク1〜5（`src/index.html`：困りごと20個の`<details>`化・閉じた状態の制度名1行プレビュー・開閉状態Set保持・すべて開く/閉じるボタン・共有リンク/全体像リンク時の自動展開・ヘッダー余白連動）を実装完了。2026-10-07にClaude Codeがレビューし1点修正（開閉の印を記号の文字からSVGに）。吉野さんの依頼でpush・本番反映済み（`7e4df35`、run 37495513192）。2026-10-07に吉野さんがスマホで表示を確認し「よさそう」。**完了** |
 | 最新のお知らせの固定部分を小さくする（スマホで読める範囲を広げる） | Claude Code（設計・レビュー）→Antigravity（`src/index.html`） | 全タスク完了（設計書 `design-specs/2026-10-17_feed-header-compact.md`）。最終更新・サイト名・説明文を固定から外し、検索欄・絞り込みだけを固定（案A）。固定部分は約380px→約250px。2026-10-17に本番反映（run 38934542697）、吉野さんがスマホで確認し「良い感じ」。下スクロールで隠す案Cは今は不要。**完了** |
 | 広報みなまたからのイベント自動抽出 | Claude Code（設計・精度確認・レビュー）→Antigravity（収集スクリプト・ワークフロー） | 設計書 `design-specs/2026-11-02_koho-events.md`。タスク1〜6の実装と、タスク3の精度確認（3回目で合格）が完了。Claude Codeがレビューで5点を修正。2026-11-02にpush済み。本番で11月号の45件の表示を確認（52件から重複7件を除外）。Issue起票は本番では確かめない（一覧URLがコード内の定数で、通知は失敗が3日続いたときだけのため）。吉野さんが市役所マルシェの非表示を登録する。12月号の公開後にClaude Codeが抽出結果を確認する。画面の変更なし |
-| イベントカレンダー表示（月間カレンダー＋リスト切り替え） | Claude Code（設計・レビュー）→Antigravity（Python分類・UI実装） | 設計書 `design-specs/2026-11-11_event-calendar.md`。タスク1（カテゴリ判定・スロット計算モジュール）、タスク2（言葉の表調整）、タスク3（カレンダー生成・RFC 5545検証）、タスク4（`daily-update.yml` への組み込み）、タスク5（`src/index.html` の画面仕様A・B・C実装）完了。次はタスク6（Claude Code のレビュー・push） |
+| イベントのカレンダー連携（購読・1件追加・カテゴリ絞り込み） | Claude Code（設計・レビュー）→Antigravity（実装）→吉野さん（実機確認） | 設計書 `design-specs/2026-11-11_event-calendar.md`。タスク1〜7完了・本番反映済み。追加設計のタスク8（カテゴリ別 .ics 7種生成）、タスク9（`daily-update.yml` 更新）、タスク10（購読バー・確認モーダルUI実装・旧案内削除）完了。タスク11のレビュー済み（Claude Codeが4点修正、未push）。次はpush、その後タスク12（実機確認） |
 | 子育て支援制度の固定部分を小さくする | Claude Code（設計）→Antigravity（`src/index.html`） | 全タスク完了（設計書 `design-specs/2026-10-17_concern-header-compact.md`）。Antigravityによりタスク1〜3（`src/index.html`：タイトル・説明文を固定から外し、あてはまるもの・ジャンプボタンのみをsticky固定）を実装完了。**完了** |
 
 ## 未決定の論点（次に議論すべきこと）
@@ -179,6 +179,8 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-11-12: [Claude Code] 追加設計のタスク8〜10（Antigravity）をレビュー。カテゴリ別ファイル7つの合計56件が `events.ics` と一致。4点修正（判定エラーのイベントを捨てずに other へ、選択肢の高さ44px、バーと「ホーム画面に追加」の二重線、`href` 代入の不要な `esc()`）。未push。
+- 2026-11-12: [Claude Code] 吉野さんの指摘（購読の案内が大きい・全部入ると予定が埋もれる）を受け、設計書に追加設計（タスク8〜12）と決定記録 `decisions-log/2026-11-12_event-calendar-category-feeds.md` を作成。月のカレンダーページはやめ、件数を見せる確認画面とカテゴリ別の購読にする。コード変更はまだなし。
 - 2026-11-12: [吉野さん] 修正の本番反映後、サイトの「Googleカレンダーに追加」ボタンで購読が追加されたことを確認（タスク7(3)合格）。残りはiPhone・カードからの1件追加。
 - 2026-11-12: [Claude Code] Androidの購読はまだ確認できていない（訂正）。漁師市が出たのは吉野さんがもともと入れていた別のカレンダーだった。購読用URLで「追加しました」と出るのに一覧に出ない。原因は購読ボタンのリンクの形で、`cid=` に webcal の URL をエンコードせずに渡す形なら追加できることを吉野さんが確認。`src/index.html` を修正。
 - 2026-11-12: [Claude Code] 吉野さんの依頼でイベントのカレンダー連携をpush・本番反映（run 43050277593）。本番の `data/events.ics`（56件）が `text/calendar` で開けることを確認。

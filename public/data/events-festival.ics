@@ -1,0 +1,180 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた くらしナビ イベント：お祭り・催し
+ （非公式）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6c0d3b3b2ee2@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:水俣ローズフェスタ秋2026（〜11/15）
+LOCATION:エコパーク水俣バラ園（道の駅みなまた）
+CATEGORIES:お祭り・催し
+URL:https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html
+DESCRIPTION:バラの苗販売やマルシェ、ハロウィンブース、
+ 和紅茶フェアなどが行われる秋の恒例イベント。期間
+ 中、アフタヌーンティーなどの企画も実施されます。\n
+ 期間：10/31〜11/15（開催日は元のページでご確認くださ
+ い）\n一部要申込、アフタヌーンティーのみ電話予約制
+ （0966-62-2003）。定員になり次第終了\n主催：ローズフェ
+ スタ実行委員会（水俣市経済観光戦略課）\n詳細：https:
+ //www.go-minamata.jp/news-events/rose-festa-fall-2026.html\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:1428a33f9249@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:図書館感謝デー 11月１５日に延期します！
+LOCATION:水俣市立図書館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034933/index.html
+DESCRIPTION:台風の影響で延期となった図書館感謝デー。当
+ 日は皆様の来場をお待ちしています。\n主催：水俣市\n
+ 詳細：https://www.city.minamata.lg.jp/kiji0034933/index.html\nみなま
+ た くらしナビ（非公式）掲載。日時・内容は変わるこ
+ とがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:413c0c6a4acd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:第21回3区自治会「ミニミニ文化祭（作品展）」
+LOCATION:3区地域リビング館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=def8d433df
+DESCRIPTION:地域の皆さんの趣味や創作活動による作品展示
+ 会\n時間：09:00〜16:00\n主催：3区自治会\n詳細：https://www.
+ city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=def8d
+ 433df\nみなまた くらしナビ（非公式）掲載。日時・内容
+ は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c2ed7159876a@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261121T003000Z
+DTEND:20261121T060000Z
+SUMMARY:11月21日（土曜日）第16回みなまた産業団地まつり
+ を開催します！
+LOCATION:水俣産業団地ほか（受付・抽選会場：尾上商事）
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033042/index.html
+DESCRIPTION:水俣産業団地の企業を知るイベント。工場見学
+ スタンプラリー、キッチンカー出店、ステージイベン
+ ト、お楽しみ抽選会などが実施されます。\n時間：09:30
+ 〜15:00\n主催：みなまた産業団地まつり実行委員会事務
+ 局\n詳細：https://www.city.minamata.lg.jp/kiji0033042/index.html\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:f3bc245ffaa7@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261122T003000Z
+DTEND:20261122T060000Z
+SUMMARY:11月22日開催！「第８回九州和紅茶サミットinみな
+ また」
+LOCATION:エコパーク水俣ふるさと広場
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033921/index.html
+DESCRIPTION:九州各地の和紅茶の飲み比べ、みなまたスウィ
+ ーツの販売、アフタヌーンティーや茶席などが楽しめ
+ るイベント。\n時間：09:30〜15:00\n一部要申込、アフタヌ
+ ーンティーと茶席は事前予約制（先着順）。公式ホー
+ ムページのリンクから申込\n主催：みなまた和紅茶実行
+ 委員会\n詳細：https://www.city.minamata.lg.jp/kiji0033921/index.html
+ \nみなまた くらしナビ（非公式）掲載。日時・内容は
+ 変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:m-96ad53f449@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261122T023000Z
+DTEND:20261122T040000Z
+SUMMARY:みなまた和紅茶アフタヌーンティー
+LOCATION:エコパーク水俣ふるさと広場
+CATEGORIES:お祭り・催し
+DESCRIPTION:和紅茶サミットの企画として開かれる、みなま
+ た和紅茶のアフタヌーンティー。参加費5\,500円。\n時間
+ ：11:30〜13:00\n主催：水俣・芦北地域雇用創造協議会\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:c8c5b9116ef1@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T000000Z
+DTEND:20261128T030000Z
+SUMMARY:令和８年度水俣市健康まつりを開催します！！
+LOCATION:水俣市総合もやい直しセンター もやい館
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0033860/index.html
+DESCRIPTION:生活習慣病予防をテーマに、健康に関する展示
+ 、相談、体験コーナーを実施。健康づくり作品展示や
+ 表彰式、ハイハイ・よちよちレースも同時開催。\n時間
+ ：09:00〜12:00\n一部要申込、ハイハイ・よちよちレース
+ はWeb申請が必要。詳細は外部リンクを参照\n主催：水俣
+ 市\n詳細：https://www.city.minamata.lg.jp/kiji0033860/index.html\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:b4195fb86b6d@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261129T000000Z
+DTEND:20261129T060000Z
+SUMMARY:野川白菜まつり
+LOCATION:野川白菜畑横
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=8b7c76796e
+DESCRIPTION:例年大盛況の白菜販売イベント\n時間：09:00〜15
+ :00\n主催：16区GGクラブ\n詳細：https://www.city.minamata.lg.jp/k
+ iji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=8b7c76796e\nみなまた 
+ くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+BEGIN:VEVENT
+UID:3a81f2a48ffd@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261206T000000Z
+DTEND:20261206T040000Z
+SUMMARY:第33回24区ふるさと文化祭
+LOCATION:有木田頭集落センター
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=05b2f66704
+DESCRIPTION:農産品・加工品の販売、伝統芸能の披露。11時3
+ 0分から豚汁付き昼食を販売\n時間：09:00〜13:00\n主催：
+ 実行委員会\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_49
+ 38_up_vvmv7eo1.pdf#page=13&event=05b2f66704\nみなまた くらしナビ
+ （非公式）掲載。日時・内容は変わることがあります
+ 。
+END:VEVENT
+BEGIN:VEVENT
+UID:b05e80430cb7@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261206T000000Z
+DTEND:20261206T030000Z
+SUMMARY:第39回石坂川ふるさと祭り
+LOCATION:石坂川集会所および駐車場
+CATEGORIES:お祭り・催し
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=700001efc9
+DESCRIPTION:農産物の展示、品評会、卸売りのほか、出品物
+ の競売による即売会\n時間：09:00〜12:00\n主催：12区自治
+ 会\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7e
+ o1.pdf#page=13&event=700001efc9\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

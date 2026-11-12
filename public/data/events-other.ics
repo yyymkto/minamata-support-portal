@@ -1,0 +1,137 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:みなまた くらしナビ イベント：その他（非公
+ 式）
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6523e7aeb802@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T043000Z
+DTEND:20261112T060000Z
+SUMMARY:ひきこもりファミリーサロン
+LOCATION:水俣市社会福祉協議会多目的ルーム
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=b60a163db5
+DESCRIPTION:ひきこもっている人を支える家族同士の交流・
+ 情報交換会\n時間：13:30〜15:00\n主催：みなまた安心セン
+ ター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvm
+ v7eo1.pdf#page=13&event=b60a163db5\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:a76604977aad@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261112T010000Z
+DTEND:20261112T020000Z
+SUMMARY:脳の健康度セルフチェック会
+LOCATION:市保健センター
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =5&event=16d6a4dff9
+DESCRIPTION:アプリ「のうKNOW」を使用して脳の健康度をセ
+ ルフチェックします。スマートフォンを持参してくだ
+ さい\n時間：10:00\n一部要申込、窓口または電話で申し
+ 込み。当日参加も可能\n主催：いきいき健康課\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&e
+ vent=16d6a4dff9\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:034013319e12@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261113T010000Z
+DTEND:20261113T020000Z
+SUMMARY:脳の健康度セルフチェック会
+LOCATION:市保健センター
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =5&event=badc642c72
+DESCRIPTION:アプリ「のうKNOW」を使用して脳の健康度をセ
+ ルフチェックします。スマートフォンを持参してくだ
+ さい\n時間：10:00\n一部要申込、窓口または電話で申し
+ 込み。当日参加も可能\n主催：いきいき健康課\n詳細：h
+ ttps://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&e
+ vent=badc642c72\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:a0602392470e@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:みなまた茶＆みなまた和紅茶フェア2026（〜12/28）
+LOCATION:市内12店舗
+URL:https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html
+DESCRIPTION:水俣市内の対象12店舗にて、みなまた茶やみな
+ また和紅茶を使用したスイーツが販売されるフェア。
+ 各店舗自慢の味を楽しめる。\n期間：11/14〜12/28（開催
+ 日は元のページでご確認ください）\n主催：みなまた和
+ 紅茶実行委員会\n詳細：https://www.go-minamata.jp/news-events/min
+ a-cha_fair_2026.html\nみなまた くらしナビ（非公式）掲載。
+ 日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:365952c72564@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T010000Z
+DTEND:20261128T023000Z
+SUMMARY:不登校・ひきこもり家族交流会
+LOCATION:水俣市社会福祉協議会多目的ルーム
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =13&event=c36b4211ca
+DESCRIPTION:不登校・ひきこもりの悩みを抱える家族の交流
+ 会。助言者：原田直樹氏\n時間：10:00〜11:30\n要申込、11/
+ 26締切、電話またはメールで申込\n主催：みなまた安心
+ センター\n詳細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_
+ up_vvmv7eo1.pdf#page=13&event=c36b4211ca\nみなまた くらしナビ（
+ 非公式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:134a5de4b7da@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261128T003000Z
+DTEND:20261128T013000Z
+SUMMARY:水俣環境アカデミア10周年記念式典
+LOCATION:水俣環境アカデミア
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =9&event=c4538ff76d
+DESCRIPTION:時間：9:30〜\n詳細：https://www.city.minamata.lg.jp/kiji
+ 0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=c4538ff76d\nみなまた く
+ らしナビ（非公式）掲載。日時・内容は変わることが
+ あります。
+END:VEVENT
+BEGIN:VEVENT
+UID:59c179febc7a@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:「第10回九州のお米食味コンクールin多良木」の開
+ 催のお知らせ
+LOCATION:多良木町多目的研修センター
+URL:https://www.city.minamata.lg.jp/kiji0034892/index.html
+DESCRIPTION:九州産米のPRと地位向上を目的に、九州各地の
+ お米を一堂に集めて食味を競うコンクール。\n主催：多
+ 良木町役場\n詳細：https://www.city.minamata.lg.jp/kiji0034892/inde
+ x.html\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:eee827a2e0c5@minamata-support-portal
+DTSTAMP:20261110T040044Z
+DTSTART:20261201T093000Z
+DTEND:20261201T103000Z
+SUMMARY:都市計画区域マスタープラン素案住民説明会
+LOCATION:市役所1階多目的室
+URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
+ =4&event=78adfa0bdd
+DESCRIPTION:水俣都市計画区域マスタープランおよび芦北都
+ 市計画区域マスタープランの見直しに関する住民説明
+ 会\n時間：18:30\n申込不要\n主催：熊本県\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=4&event=78ad
+ fa0bdd\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+END:VCALENDAR
