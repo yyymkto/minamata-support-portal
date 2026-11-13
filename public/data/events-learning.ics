@@ -9,41 +9,8 @@ X-WR-TIMEZONE:Asia/Tokyo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:da65ab6721cd@minamata-support-portal
-DTSTAMP:20261110T040044Z
-DTSTART:20261111T033000Z
-DTEND:20261111T043000Z
-SUMMARY:英語会話テーブル
-LOCATION:市役所3階会議室C
-CATEGORIES:講座・体験
-URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
- =9&event=0d9cfa5527
-DESCRIPTION:時間：12:30〜\n詳細：https://www.city.minamata.lg.jp/kij
- i0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=0d9cfa5527\nみなまた く
- らしナビ（非公式）掲載。日時・内容は変わることが
- あります。
-END:VEVENT
-BEGIN:VEVENT
-UID:c74a707c648d@minamata-support-portal
-DTSTAMP:20261110T040044Z
-DTSTART:20261112T100000Z
-DTEND:20261112T110000Z
-SUMMARY:みなまた和紅茶ワークショップ（淹れ方講座）
-LOCATION:もやい館
-CATEGORIES:講座・体験
-URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
- =12&event=8afe686f1e
-DESCRIPTION:ご家庭でも和紅茶をより美味しく淹れるための
- 講座。参加料500円。希望する開催日の2日前までに電話
- で申し込み\n時間：19:00〜20:00\n要申込、11/10締切、電話
- にて申し込み\n主催：もやい館\n詳細：https://www.city.minam
- ata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8afe686f1e\nみ
- なまた くらしナビ（非公式）掲載。日時・内容は変わ
- ることがあります。
-END:VEVENT
-BEGIN:VEVENT
 UID:eeafc05084cd@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART;VALUE=DATE:20261112
 DTEND;VALUE=DATE:20261113
 SUMMARY:深堀ビートルズ講座（〜12/17）
@@ -61,7 +28,7 @@ DESCRIPTION:ビートルズの映像と音源を楽しみながら語り合
 END:VEVENT
 BEGIN:VEVENT
 UID:232a7c4d067f@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261123T010000Z
 DTEND:20261123T030000Z
 SUMMARY:クリスマス飾りを作ろう！
@@ -79,7 +46,7 @@ DESCRIPTION:木や森について学びながら、自然の材料を使っ
 END:VEVENT
 BEGIN:VEVENT
 UID:8a1b578b7ee6@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261128T043000Z
 DTEND:20261128T053000Z
 SUMMARY:みなまたヒューマンライツ・セミナー
@@ -96,7 +63,7 @@ DESCRIPTION:人権指導員と一緒に「言葉と人権」をテーマに
 END:VEVENT
 BEGIN:VEVENT
 UID:31ae8b6d4e4f@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261128T050000Z
 DTEND:20261128T060000Z
 SUMMARY:みなまた和紅茶ワークショップ（テイスティング
@@ -115,7 +82,7 @@ DESCRIPTION:お気に入りのお茶を見つけるテイスティング。
 END:VEVENT
 BEGIN:VEVENT
 UID:081a9e5bd82c@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261128T050000Z
 DTEND:20261128T063000Z
 SUMMARY:水俣環境アカデミア設立10周年記念特別市民公開
@@ -135,7 +102,7 @@ DESCRIPTION:水俣の海をテーマにした特別市民公開講座。地
 END:VEVENT
 BEGIN:VEVENT
 UID:28826f016709@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261129T043000Z
 DTEND:20261129T060000Z
 SUMMARY:水俣市観光振興計画策定ワークショップ
@@ -153,7 +120,7 @@ DESCRIPTION:水俣の資源活用や訪問したくなるモノ・コトに
 END:VEVENT
 BEGIN:VEVENT
 UID:c9276c5dca9c@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261130T080000Z
 DTEND:20261130T090000Z
 SUMMARY:英語会話テーブル
@@ -168,7 +135,7 @@ DESCRIPTION:時間：17:00〜\n詳細：https://www.city.minamata.lg.jp/kij
 END:VEVENT
 BEGIN:VEVENT
 UID:f80512ff463b@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261205T010000Z
 DTEND:20261205T020000Z
 SUMMARY:みなまた和紅茶ワークショップ（茶席）
@@ -186,7 +153,7 @@ DESCRIPTION:お茶を飲みながら作り手のこだわりを聞く茶席
 END:VEVENT
 BEGIN:VEVENT
 UID:28e3c5968160@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART:20261205T050000Z
 DTEND:20261205T070000Z
 SUMMARY:りんご教室セミナーｉｎ水俣
@@ -203,7 +170,7 @@ DESCRIPTION:在宅医療や在宅介護、地域で支える人たちを対
 END:VEVENT
 BEGIN:VEVENT
 UID:1df9f10fa30f@minamata-support-portal
-DTSTAMP:20261110T040044Z
+DTSTAMP:20261113T022953Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
 SUMMARY:おれんじ講座「和紅茶教室」（〜3/13）
@@ -220,5 +187,23 @@ DESCRIPTION:和紅茶の淹れ方と茶葉の違いを学ぶ全4回の講
  lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=04e5410944\nみな
  また くらしナビ（非公式）掲載。日時・内容は変わる
  ことがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:8c8ea900ca00@minamata-support-portal
+DTSTAMP:20261113T022953Z
+DTSTART:20261219T010000Z
+DTEND:20261219T020000Z
+SUMMARY:オリジナルしめ縄飾りワークショップ
+LOCATION:みなまた観光物産協会 喫茶スペース
+CATEGORIES:講座・体験
+URL:https://www.go-minamata.jp/news-events/r8-shimenawa.html
+DESCRIPTION:新年を迎える準備として、お花や飾りを組み合
+ わせてオリジナルのしめ縄飾りを作るワークショップ
+ 。第1部は親子、第2部は高校生以上が対象。\n時間：第1
+ 部 10:00〜11:30、第2部 14:00〜15:30\n要申込、12/6締切、公式
+ InstagramのDMまたは窓口にて申込。各部5組限定\n主催：（
+ 一社）みなまた観光物産協会\n詳細：https://www.go-minamata.
+ jp/news-events/r8-shimenawa.html\nみなまた くらしナビ（非公式
+ ）掲載。日時・内容は変わることがあります。
 END:VEVENT
 END:VCALENDAR

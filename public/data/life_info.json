@@ -1,7 +1,47 @@
 {
-  "last_updated": "2026-11-12T11:47:03.029297+09:00",
+  "last_updated": "2026-11-13T11:29:27.753092+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "8c6b7e8f70d5",
+      "title": "11月は家庭から暴力をなくすキャンペーン月間です",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "11月は「家庭から暴力をなくすキャンペーン月間」です。DV（配偶者等からの暴力）に関する相談窓口の周知や啓発活動が行われます。",
+      "target": "DV被害に悩んでいる方や、相談を希望する市民全般。",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033700/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-13",
+      "collected_at": "2026-11-13T11:29:14.940451+09:00",
+      "status": "active"
+    },
+    {
+      "id": "473c18b9690c",
+      "title": "特定公共賃貸住宅",
+      "audience_tags": [
+        "現役世代",
+        "全世代"
+      ],
+      "topic_tags": [
+        "住まい",
+        "施設案内"
+      ],
+      "organization": "水俣市",
+      "summary": "中堅所得者向けの特定公共賃貸住宅に関する案内です。入居者の募集状況や住宅の概要について確認できます。",
+      "target": "住宅をお探しの中堅所得者層の市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034954/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-13",
+      "collected_at": "2026-11-13T11:29:21.468289+09:00",
+      "status": "active"
+    },
     {
       "id": "990c123d536a",
       "title": "水俣環境アカデミア ワクワク!!プログラミングクエスト（令和８年１０月１７日）を実施しました！",

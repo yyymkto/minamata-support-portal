@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T11:47:40.223498+09:00",
+  "last_updated": "2026-11-13T11:29:53.649499+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -93,72 +93,6 @@
     {
       "registration": "required",
       "registration_deadline": null,
-      "registration_note": "要予約。詳細は市こどもセンターへ問い合わせ",
-      "id": "37956b8aa4f9",
-      "title": "10、11月生まれのお誕生会",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-12",
-      "time_text": "10:30〜12:00",
-      "venue": "市こどもセンター",
-      "summary": "未就学児の親子を対象としたお誕生会です",
-      "organizer": "市こどもセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=57d1410d43",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-12T10:30",
-        "end": "2026-11-12T12:00"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "6523e7aeb802",
-      "title": "ひきこもりファミリーサロン",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-12",
-      "time_text": "13:30〜15:00",
-      "venue": "水俣市社会福祉協議会多目的ルーム",
-      "summary": "ひきこもっている人を支える家族同士の交流・情報交換会",
-      "organizer": "みなまた安心センター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=b60a163db5",
-      "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho",
-      "category": "other",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-12T13:30",
-        "end": "2026-11-12T15:00"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": "2026-11-10",
-      "registration_note": "電話にて申し込み",
-      "id": "c74a707c648d",
-      "title": "みなまた和紅茶ワークショップ（淹れ方講座）",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-12",
-      "time_text": "19:00〜20:00",
-      "venue": "もやい館",
-      "summary": "ご家庭でも和紅茶をより美味しく淹れるための講座。参加料500円。希望する開催日の2日前までに電話で申し込み",
-      "organizer": "もやい館",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8afe686f1e",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "learning",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-12T19:00",
-        "end": "2026-11-12T20:00"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
       "registration_note": "定員15人。電話で申込",
       "id": "eeafc05084cd",
       "title": "深堀ビートルズ講座",
@@ -176,28 +110,6 @@
         "all_day": true,
         "start": "2026-11-12",
         "end": "2026-11-13"
-      }
-    },
-    {
-      "registration": "partial",
-      "registration_deadline": null,
-      "registration_note": "窓口または電話で申し込み。当日参加も可能",
-      "id": "a76604977aad",
-      "title": "脳の健康度セルフチェック会",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-12",
-      "time_text": "10:00",
-      "venue": "市保健センター",
-      "summary": "アプリ「のうKNOW」を使用して脳の健康度をセルフチェックします。スマートフォンを持参してください",
-      "organizer": "いきいき健康課",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=5&event=16d6a4dff9",
-      "source_label": "広報みなまた11月号（PDF 5ページ）",
-      "origin": "koho",
-      "category": "other",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-12T10:00",
-        "end": "2026-11-12T11:00"
       }
     },
     {
