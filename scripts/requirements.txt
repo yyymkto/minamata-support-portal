@@ -1,5 +1,21 @@
-requests>=2.31.0
-beautifulsoup4>=4.12.0
-feedparser>=6.0.10
-python-dateutil>=2.8.2
-pypdf>=5.0.0
+# バージョンは固定する（新しい版が勝手に入って動作が変わったり、
+# 乗っ取られた版が入ったりするのを防ぐため）。
+# 2026-11-15 の自動更新（run 43663978397）で実際に入っていた版に合わせている。
+# 更新するときは、ここを書き換えて手動実行で動作を確認してから main に入れる。
+
+# 直接使っているもの
+requests==2.34.2
+beautifulsoup4==4.15.0
+feedparser==6.0.14
+python-dateutil==4.0.0
+pypdf==7.1.0
+
+# 上の部品が使っているもの
+certifi==2026.10.23
+charset-normalizer==3.5.2
+idna==3.20
+urllib3==2.8.0
+soupsieve==4.1.1
+typing-extensions==4.16.0
+feedparser-sgmllib==2.1.0
+tzdata==2026.6
