@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-14T11:06:50.803293+09:00",
+  "last_updated": "2026-11-15T10:38:29.860506+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -132,94 +132,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "要予約。詳細は市こどもセンターへ問い合わせ",
-      "id": "58f064c77087",
-      "title": "むかしあそび",
-      "start_date": "2026-11-14",
-      "end_date": "2026-11-14",
-      "time_text": "10:00〜11:00",
-      "venue": "市こどもセンター",
-      "summary": "小学生を対象としたむかしあそび体験です",
-      "organizer": "市こどもセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=29ff576f5c",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-14T10:00",
-        "end": "2026-11-14T11:00"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "ae80d8e2f097",
-      "title": "図書館からのおはなし会",
-      "start_date": "2026-11-14",
-      "end_date": "2026-11-14",
-      "time_text": "11:00〜11:30",
-      "venue": "市こどもセンター",
-      "summary": "どなたでも参加できるおはなし会です",
-      "organizer": "市こどもセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=a84180c196",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-14T11:00",
-        "end": "2026-11-14T11:30"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "fcd9c43c9523",
-      "title": "地域・子ども食堂「水俣すまいる食堂」",
-      "start_date": "2026-11-14",
-      "end_date": "2026-11-14",
-      "time_text": "10:30〜12:30",
-      "venue": "市ふれあいセンター",
-      "summary": "食から考える防災ワークショップ。防災食をおいしくいただく方法や、災害時の思いやりについて学びます。参加料：大人300円、子ども無料。持ち物：飲み物、タオル",
-      "organizer": "市ふれあいセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=c87b94ae57",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-14T10:30",
-        "end": "2026-11-14T12:30"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "492aaed64c2d",
-      "title": "水俣漁師市",
-      "start_date": "2026-11-14",
-      "end_date": "2026-11-14",
-      "time_text": "8:50〜",
-      "venue": "丸島漁港",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=a7f6c543cb",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho",
-      "category": "market",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-14T08:50",
-        "end": "2026-11-14T09:50"
       }
     },
     {
