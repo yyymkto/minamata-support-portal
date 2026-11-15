@@ -5,9 +5,9 @@ on:
     - cron: "0 23 * * 0" # 毎週月曜 8:00 JST
   workflow_dispatch: {}
 
+# 既定は読み取りのみ。必要な権限はジョブごとに付ける
 permissions:
-  contents: write
-  issues: write
+  contents: read
 
 concurrency:
   group: "stock-monitor"
@@ -16,12 +16,15 @@ concurrency:
 jobs:
   monitor-stock:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 状態ファイルのpush
+      issues: write   # Issue起票
     steps:
       - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Python セットアップ
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
 
@@ -83,7 +86,7 @@ jobs:
 
       - name: 更新の可能性をIssueとして起票（既存Issueがあれば更新）
         if: steps.run-monitor.outcome == 'success' && steps.run-monitor.outputs.has_findings == 'true'
-        uses: JasonEtco/create-an-issue@v2
+        uses: JasonEtco/create-an-issue@1b14a70e4d8dc185e5cc76d3bec9eab20257b2c5 # v2.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -92,12 +95,15 @@ jobs:
 
   detect-stock-candidates:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write   # Issue起票
     steps:
       - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Python セットアップ
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
 
@@ -132,7 +138,7 @@ jobs:
 
       - name: ストック候補をIssueとして起票（既存Issueがあれば更新）
         if: steps.run-detect.outcome == 'success' && steps.run-detect.outputs.has_findings == 'true'
-        uses: JasonEtco/create-an-issue@v2
+        uses: JasonEtco/create-an-issue@1b14a70e4d8dc185e5cc76d3bec9eab20257b2c5 # v2.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

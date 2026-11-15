@@ -11,11 +11,9 @@ on:
       - "public/**"
       - ".github/workflows/daily-update.yml"
 
+# 既定は読み取りのみ。必要な権限はジョブごとに付ける
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-  issues: write
+  contents: read
 
 concurrency:
   group: "pages"
@@ -24,17 +22,20 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # データ更新のpush
+      issues: write   # 失敗時のIssue起票
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     outputs:
       changed: ${{ steps.git-check.outputs.changed }}
     steps:
       - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
 
       - name: Python セットアップ
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.12"
 
@@ -110,7 +111,7 @@ jobs:
       # デプロイを止めないよう、ワークフローは失敗にしない（前回読み込めた内容で表示を続ける）
       - name: イベントシートの読み込み失敗をIssueとして起票（既存Issueがあれば更新）
         if: steps.run-events.outputs.sheet_error == 'true'
-        uses: JasonEtco/create-an-issue@v2
+        uses: JasonEtco/create-an-issue@1b14a70e4d8dc185e5cc76d3bec9eab20257b2c5 # v2.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SHEET_ERROR_DETAIL: ${{ steps.run-events.outputs.sheet_error_detail }}
@@ -123,7 +124,7 @@ jobs:
       # デプロイを止めないよう、ワークフローは失敗にしない（既存のキャッシュで表示を続ける）
       - name: 広報の自動抽出エラーをIssueとして起票（既存Issueがあれば更新）
         if: steps.run-events.outputs.koho_error == 'true'
-        uses: JasonEtco/create-an-issue@v2
+        uses: JasonEtco/create-an-issue@1b14a70e4d8dc185e5cc76d3bec9eab20257b2c5 # v2.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           KOHO_ERROR_DETAIL: ${{ steps.run-events.outputs.koho_error_detail }}
@@ -140,7 +141,7 @@ jobs:
 
       - name: エラーをIssueとして起票（既存Issueがあれば更新）
         if: steps.run-update.outcome == 'failure'
-        uses: JasonEtco/create-an-issue@v2
+        uses: JasonEtco/create-an-issue@1b14a70e4d8dc185e5cc76d3bec9eab20257b2c5 # v2.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -155,6 +156,10 @@ jobs:
 
   build-and-deploy:
     needs: update-data
+    permissions:
+      contents: read
+      pages: write    # Pagesへのデプロイ
+      id-token: write # Pagesへのデプロイ
     if: always() && (needs.update-data.result == 'skipped' || success())
     runs-on: ubuntu-latest
     environment:
@@ -162,7 +167,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           ref: main
 
@@ -176,10 +181,10 @@ jobs:
           cp -r public/. dist/
 
       - name: Pages 用アーティファクトをアップロード
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: dist
 
       - name: GitHub Pages にデプロイ
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
