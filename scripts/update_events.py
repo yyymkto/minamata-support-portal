@@ -156,6 +156,7 @@ is_event を false にするもの:
   registration が "required" か "partial" でなければ null。
 - registration_note: 申込方法（QRコード・電話・FAX・メール・窓口・各店舗など）と、定員・先着・抽選の別、当日券の有無を50字以内で。
   本文に書いてあることだけを短くまとめ、本文に無い言葉を足さないこと。電話番号は本文に書いてあるものだけ。URLは入れない。
+  携帯電話番号（090・080・070で始まる番号）は入れないこと。
   registration が null なら null。"not_required" なら当日の受付方法など補足があるときだけ。
 """
 
@@ -256,7 +257,10 @@ LIST_PAGE_PATTERN = re.compile(r"/list\d+\.html$")
 KOHO_TITLE_PATTERN = re.compile(
     r"広報みなまた\s*令和\s*(\d+|元)\s*年\s*(\d+)(?:[・/／~〜\-\s]+\d+)?\s*月(?:号|合併号)?"
 )
-MOBILE_PHONE_PATTERN = re.compile(r"0[789]0-?\d{4}-?\d{4}")
+# 区切りは半角・全角のハイフンや長音、空白も許す（「090－1234－5678」「090 1234 5678」など）
+MOBILE_PHONE_PATTERN = re.compile(r"0[789]0[-‐－―ー\s]?\d{4}[-‐－―ー\s]?\d{4}")
+# 番号を消したあとに残る空のかっこ（「協会（）」など）
+EMPTY_BRACKETS_PATTERN = re.compile(r"[（(]\s*[)）]")
 
 
 
@@ -501,6 +505,9 @@ def update_auto_cache(life_items: list[dict], today: dt.date) -> dict[str, dict]
                 break
         time.sleep(GEMINI_REQUEST_INTERVAL_SEC)
 
+    # 新しく判定した分だけでなく、前から残っている分も含めて毎回消す
+    cache = {url: ({**e, "event": sanitize_event_mobile_phones(e["event"])} if e.get("event") else e)
+             for url, e in cache.items()}
     write_json(AUTO_CACHE_PATH, {"entries": dict(sorted(cache.items()))})
     return cache
 
@@ -638,8 +645,23 @@ def sanitize_mobile_phones(text: Optional[str]) -> Optional[str]:
     """個人の携帯電話番号パターンを取り除く。"""
     if not text:
         return None
-    cleaned = MOBILE_PHONE_PATTERN.sub("", text).strip(" 　、。:：,/")
+    cleaned = MOBILE_PHONE_PATTERN.sub("", text)
+    cleaned = EMPTY_BRACKETS_PATTERN.sub("", cleaned).strip(" 　、。:：,/")
     return cleaned or None
+
+
+# 携帯番号を消す対象の項目（市のホームページ分。広報分は validate_koho_event で個別に消している）
+MOBILE_SANITIZE_FIELDS = ("title", "time_text", "venue", "summary", "organizer", "registration_note")
+
+
+def sanitize_event_mobile_phones(event: dict) -> dict:
+    """イベントの文字列項目すべてから携帯番号を消す（2026-11-16、市のホームページ分に出ていたため）。
+
+    番号を含む項目だけを書き換える（sanitize_mobile_phones は文末の「。」も削るため、
+    番号の無い項目まで通すと説明文の文末が変わってしまう）。
+    """
+    return {**event, **{k: sanitize_mobile_phones(v) for k in MOBILE_SANITIZE_FIELDS
+                        if isinstance(v := event.get(k), str) and MOBILE_PHONE_PATTERN.search(v)}}
 
 
 def is_date_supported_in_text(
