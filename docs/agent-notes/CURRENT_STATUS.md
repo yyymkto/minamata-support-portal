@@ -179,6 +179,7 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-11-16: [Claude Code] セキュリティ対策2件目。`weekly-monitor.yml` のレポートを環境変数に渡す区切り文字を毎回ランダムにした（外部ページの文章で後続ステップの環境変数を書き換えられないように）。`update_events.py` の `sheet_error_detail`・`koho_error_detail` から改行を除くようにした。残り：Tailwind CDNへのCSP、Python依存のバージョン固定、公開docs内の個人名。
 - 2026-11-16: [Claude Code] セキュリティ点検。重大な穴はなし。対策1件目として、ワークフロー2つ（`daily-update.yml`・`weekly-monitor.yml`）の外部アクションをタグ指定からコミットSHA指定に固定し、権限を既定は読み取りのみ・ジョブごとに必要な分だけに絞った（2026-11-16にmainへ反映、デプロイ run 43732965929 成功。データ更新・週次監視ジョブは次回の定期実行で初確認）。残りの候補：週次レポートの区切り文字をランダムに、Tailwind CDNへのCSP、Python依存のバージョン固定、公開docs内の個人名。
 - 2026-11-12: [Claude Code] 吉野さんの依頼で追加設計（タスク8〜10）をpush・本番反映（run 43230178689）。本番の `data/events-<キー>.ics` 7つがすべて `text/calendar` で開け、件数も一致（タスク11完了）。
 - 2026-11-12: [Claude Code] 追加設計のタスク8〜10（Antigravity）をレビュー。カテゴリ別ファイル7つの合計56件が `events.ics` と一致。4点修正（判定エラーのイベントを捨てずに other へ、選択肢の高さ44px、バーと「ホーム画面に追加」の二重線、`href` 代入の不要な `esc()`）。

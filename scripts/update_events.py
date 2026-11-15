@@ -1214,6 +1214,11 @@ def load_sheet(url: str, cache_path: Path, name: str, origin: str, id_prefix: st
     return parsed
 
 
+def _one_line(text: str) -> str:
+    """GITHUB_OUTPUT に書く値から改行を除く（改行があると別の出力を差し込めてしまうため）。"""
+    return " ".join(text.splitlines())
+
+
 def report_sheet_failures(failures: list[str]) -> None:
     """シートの読み込み失敗を GitHub Actions のステップ出力に書き出す（ワークフローがIssueを起票する）。"""
     if not failures:
@@ -1225,7 +1230,7 @@ def report_sheet_failures(failures: list[str]) -> None:
         return
     with open(output_path, "a", encoding="utf-8") as f:
         f.write("sheet_error=true\n")
-        f.write(f"sheet_error_detail={' / '.join(failures)}\n")
+        f.write(f"sheet_error_detail={_one_line(' / '.join(failures))}\n")
 
 
 # --------------------------------------------------------------------------
@@ -1398,7 +1403,7 @@ def report_koho_errors(cache: dict, today: dt.date, extra_errors: Optional[list[
     if output_path:
         with open(output_path, "a", encoding="utf-8") as f:
             f.write("koho_error=true\n")
-            f.write(f"koho_error_detail={' / '.join(errors)}\n")
+            f.write(f"koho_error_detail={_one_line(' / '.join(errors))}\n")
 
     return errors
 
