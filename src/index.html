@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<!-- 読み込んでよい場所を制限する（外部スクリプトの差し込み・データの持ち出しを防ぐ）。
+     外部の読み込みを追加するときは、ここにも追記すること。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
 <title>みなまた くらしナビ｜世代別・生活情報まとめ</title>
 <meta name="description" content="水俣市公式サイトの新着情報を自動収集し、世代や立場ごとに整理する非公式ポータルです。" />
 <meta property="og:type" content="website" />
@@ -21,7 +24,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind（Play CDN 3.4.17）をサイト内に置いて読み込む。外部CDNが改ざんされても影響を受けないように。
+     取得元: https://cdn.tailwindcss.com/3.4.17  sha256: 176e894661aa9cdc9a5cba6c720044cbbf7b8bd80d1c9a142a7c24b1b6c50d15 -->
+<script src="./vendor/tailwind-play-3.4.17.js"></script>
 <script>
   tailwind.config = {
     theme: {
