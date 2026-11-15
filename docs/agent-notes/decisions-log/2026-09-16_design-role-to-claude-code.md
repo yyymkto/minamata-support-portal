@@ -1,7 +1,7 @@
 # [2026-09-16] 設計担当をclaude.aiからClaude Codeに変更
 
-**決めた人/エージェント**: 吉野さん（Claude Codeのレビューを受けて）
-**関係者**: 吉野さん、Claude Code
+**決めた人/エージェント**: 運営者（Claude Codeのレビューを受けて）
+**関係者**: 運営者、Claude Code
 
 ## 背景・課題
 

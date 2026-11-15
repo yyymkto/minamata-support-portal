@@ -14,7 +14,7 @@
 2. 手動登録: Googleスプレッドシート（ウェブに公開したCSV）から読み込む。
    最後に読み込めた内容は public/data/_events_manual.json に残し、
    CSVを取得できなかった日はそれを使う（一時的な失敗で手動登録分が消えないように）。
-3. 投稿フォーム: 主催者がGoogleフォームで申し込み、吉野さんが承認した分を、
+3. 投稿フォーム: 主催者がGoogleフォームで申し込み、運営者が承認した分を、
    スプレッドシートの「掲載用」タブ（ウェブに公開したCSV）から読み込む
    （設計書: docs/agent-notes/design-specs/2026-09-28_event-submission-form.md）。
    最後に読み込めた内容は public/data/_events_form.json に残す。

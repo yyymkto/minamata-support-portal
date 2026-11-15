@@ -1,7 +1,7 @@
 # [2026-08-23] ストック情報監視スクリプトの設計確定・実装（Antigravity提案への回答）
 
 **決めた人/エージェント**: Claude（Antigravityからの相談 `2026-08-23_stock-monitor-proposal.md` への回答として）
-**関係者**: Antigravity、Claude、吉野さん
+**関係者**: Antigravity、Claude、運営者
 
 ## 背景・課題
 
