@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:e2472b001432@minamata-support-portal
-DTSTAMP:20261115T013829Z
+DTSTAMP:20261116T014210Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261023
 SUMMARY:「エコパーク仕事終わりのテニスクラブ」が開催
@@ -31,7 +31,7 @@ DESCRIPTION:初心者向けの「はじめてFUNクラス」と経験者向
 END:VEVENT
 BEGIN:VEVENT
 UID:6590c806be25@minamata-support-portal
-DTSTAMP:20261115T013829Z
+DTSTAMP:20261116T014210Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:『FLYING DISC CLUB－2nd season－』水俣でディスクプレ
@@ -51,29 +51,8 @@ DESCRIPTION:アルティメット日本代表の丹波大士さんを講師
  があります。
 END:VEVENT
 BEGIN:VEVENT
-UID:9965012d15bd@minamata-support-portal
-DTSTAMP:20261115T013829Z
-DTSTART:20261114T233000Z
-DTEND:20261115T070000Z
-SUMMARY:みなまたパドルフェスティバル２０２６開催！
-LOCATION:エコパーク水俣（水俣港ビジターバース付近）
-CATEGORIES:スポーツ
-URL:https://www.city.minamata.lg.jp/kiji0034896/index.html
-DESCRIPTION:水俣の伝統「競り舟」と世界で人気の「ドラゴ
- ンボート」のレース大会。国内外から参加者が集まり
- 、200mの速さを競います。個人エントリー枠もあり、チ
- ームに所属していなくても参加可能です。\n時間：08:30
- 〜16:00\n要申込、詳細は大会要項を確認。水俣市競り舟
- 協会（090-1199-8707）または水俣市スポーツ推進課へ連絡\
- n主催：みなまたパドルフェスティバル実行委員会、水
- 俣市競り舟協会、みなまた競り舟大会実行委員会\n詳細
- ：https://www.city.minamata.lg.jp/kiji0034896/index.html\nみなまた 
- くらしナビ（非公式）掲載。日時・内容は変わること
- があります。
-END:VEVENT
-BEGIN:VEVENT
 UID:a6dcd2194d34@minamata-support-portal
-DTSTAMP:20261115T013829Z
+DTSTAMP:20261116T014210Z
 DTSTART:20261208T010000Z
 DTEND:20261208T030000Z
 SUMMARY:65歳以上対象『歩き方教室』開催！
@@ -91,7 +70,7 @@ DESCRIPTION:体に負担の少ない歩き方やストレッチ、筋トレ
 END:VEVENT
 BEGIN:VEVENT
 UID:7ebc32104cd6@minamata-support-portal
-DTSTAMP:20261115T013829Z
+DTSTAMP:20261116T014210Z
 DTSTART:20261219T010000Z
 DTEND:20261219T030000Z
 SUMMARY:ミズノビクトリークリニックin水俣
@@ -107,7 +86,7 @@ DESCRIPTION:水俣市軟式野球連盟が選抜する中学生を対象と
 END:VEVENT
 BEGIN:VEVENT
 UID:f1a55a25d489@minamata-support-portal
-DTSTAMP:20261115T013829Z
+DTSTAMP:20261116T014210Z
 DTSTART;VALUE=DATE:20270919
 DTEND;VALUE=DATE:20270925
 SUMMARY:フライングディスク世界大会の開催決定！！

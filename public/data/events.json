@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-15T10:38:29.860506+09:00",
+  "last_updated": "2026-11-16T10:42:10.226375+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -22,28 +22,6 @@
         "all_day": true,
         "start": "2026-10-22",
         "end": "2026-10-23"
-      }
-    },
-    {
-      "registration": "partial",
-      "registration_deadline": null,
-      "registration_note": "アフタヌーンティーのみ電話予約制（0966-62-2003）。定員になり次第終了",
-      "id": "6c0d3b3b2ee2",
-      "title": "水俣ローズフェスタ秋2026",
-      "start_date": "2026-10-31",
-      "end_date": "2026-11-15",
-      "time_text": null,
-      "venue": "エコパーク水俣バラ園（道の駅みなまた）",
-      "summary": "バラの苗販売やマルシェ、ハロウィンブース、和紅茶フェアなどが行われる秋の恒例イベント。期間中、アフタヌーンティーなどの企画も実施されます。",
-      "organizer": "ローズフェスタ実行委員会（水俣市経済観光戦略課）",
-      "source_url": "https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html",
-      "source_label": "みなまた観光物産協会",
-      "origin": "auto",
-      "category": "festival",
-      "calendar": {
-        "all_day": true,
-        "start": "2026-10-31",
-        "end": "2026-11-01"
       }
     },
     {
@@ -154,72 +132,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-17"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "詳細は大会要項を確認。水俣市競り舟協会（090-1199-8707）または水俣市スポーツ推進課へ連絡",
-      "id": "9965012d15bd",
-      "title": "みなまたパドルフェスティバル２０２６開催！",
-      "start_date": "2026-11-15",
-      "end_date": "2026-11-15",
-      "time_text": "08:30〜16:00",
-      "venue": "エコパーク水俣（水俣港ビジターバース付近）",
-      "summary": "水俣の伝統「競り舟」と世界で人気の「ドラゴンボート」のレース大会。国内外から参加者が集まり、200mの速さを競います。個人エントリー枠もあり、チームに所属していなくても参加可能です。",
-      "organizer": "みなまたパドルフェスティバル実行委員会、水俣市競り舟協会、みなまた競り舟大会実行委員会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034896/index.html",
-      "source_label": "水俣市",
-      "origin": "auto",
-      "category": "sports",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-15T08:30",
-        "end": "2026-11-15T16:00"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "1428a33f9249",
-      "title": "図書館感謝デー 11月１５日に延期します！",
-      "start_date": "2026-11-15",
-      "end_date": "2026-11-15",
-      "time_text": null,
-      "venue": "水俣市立図書館",
-      "summary": "台風の影響で延期となった図書館感謝デー。当日は皆様の来場をお待ちしています。",
-      "organizer": "水俣市",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034933/index.html",
-      "source_label": "水俣市",
-      "origin": "auto",
-      "category": "festival",
-      "calendar": {
-        "all_day": true,
-        "start": "2026-11-15",
-        "end": "2026-11-16"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "4569d4fb971c",
-      "title": "市役所マルシェ　11月15日開催のお知らせ",
-      "start_date": "2026-11-15",
-      "end_date": "2026-11-15",
-      "time_text": "10:00〜15:00",
-      "venue": "市役所 屋外テラス",
-      "summary": "弁当・惣菜・野菜・パン・ハンドメイドなどが集まるマルシェ。今回は休日開催となり、エコパークのバラ園で開催されるローズフェスタ・ローズマルシェと合わせて水俣を周遊できる一日です。",
-      "organizer": "市役所マルシェ実行委員会",
-      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11-1.html",
-      "source_label": "みなまた観光物産協会",
-      "origin": "auto",
-      "category": "market",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-15T10:00",
-        "end": "2026-11-15T15:00"
       }
     },
     {
