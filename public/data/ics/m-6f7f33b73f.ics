@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:還流「水俣と福島で」〜『みなまた食べる』
+ 出版記念イベント〜
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:m-6f7f33b73f@minamata-support-portal
+DTSTAMP:20261117T042337Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261130
+SUMMARY:還流「水俣と福島で」〜『みなまた食べる』出版
+ 記念イベント〜
+LOCATION:おれんじ館（水俣市月浦195-2）
+CATEGORIES:文化・芸術
+DESCRIPTION:水俣と福島で出会った人々の営み、食べもの、
+ 風景を通して「食べること」と地域の未来を考える2日
+ 間。写真展・映画上映・ワークショップ・座談会・出
+ 店販売。参加無料。\n時間：28日10:00〜17:30、29日10:00〜16
+ :00\n主催：水俣食べる通信\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

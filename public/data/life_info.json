@@ -1,7 +1,26 @@
 {
-  "last_updated": "2026-11-13T11:29:27.753092+09:00",
+  "last_updated": "2026-11-17T13:23:12.570086+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "59c8434acc57",
+      "title": "令和８年度水俣市地域防災計画について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年度に向けた水俣市地域防災計画の策定に関する情報です。災害対策の基本方針や計画内容を確認することができます。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034956/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-16",
+      "collected_at": "2026-11-17T13:23:07.003221+09:00",
+      "status": "active"
+    },
     {
       "id": "8c6b7e8f70d5",
       "title": "11月は家庭から暴力をなくすキャンペーン月間です",

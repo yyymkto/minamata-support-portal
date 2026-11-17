@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16T10:42:07.643099+09:00",
+  "fetched_at": "2026-11-17T13:23:34.977716+09:00",
   "events": [
     {
       "id": "m-27a7c8f68f",
@@ -62,6 +62,38 @@
       "source_label": null,
       "origin": "manual",
       "registration": null,
+      "registration_deadline": null,
+      "registration_note": null
+    },
+    {
+      "id": "m-6f7f33b73f",
+      "title": "還流「水俣と福島で」〜『みなまた食べる』出版記念イベント〜",
+      "start_date": "2026-11-28",
+      "end_date": "2026-11-29",
+      "time_text": "28日10:00〜17:30、29日10:00〜16:00",
+      "venue": "おれんじ館（水俣市月浦195-2）",
+      "summary": "水俣と福島で出会った人々の営み、食べもの、風景を通して「食べること」と地域の未来を考える2日間。写真展・映画上映・ワークショップ・座談会・出店販売。参加無料。",
+      "organizer": "水俣食べる通信",
+      "source_url": null,
+      "source_label": null,
+      "origin": "manual",
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null
+    },
+    {
+      "id": "m-ff11d0c90f",
+      "title": "ギブミーベジタブル×不知火テーブル",
+      "start_date": "2026-12-06",
+      "end_date": "2026-12-06",
+      "time_text": "13:00〜18:00（出入り自由）",
+      "venue": "おれんじ館",
+      "summary": "お金の代わりに食材を持ち寄り、料理人が即興でつくる料理をみんなで味わうイベント。入場料は食材（なんでもOK）。対談や音楽ライブも。My皿・Myコップ持参。",
+      "organizer": "不知火ローカルフードネット、ギブミーベジタブル、One Month for the Future",
+      "source_url": null,
+      "source_label": null,
+      "origin": "manual",
+      "registration": "not_required",
       "registration_deadline": null,
       "registration_note": null
     }

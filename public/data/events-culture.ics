@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
 UID:e481f08b4d79@minamata-support-portal
-DTSTAMP:20261116T014210Z
+DTSTAMP:20261117T042337Z
 DTSTART;VALUE=DATE:20261113
 DTEND;VALUE=DATE:20261114
 SUMMARY:男女共同参画に関する図書のミニ特設コーナー（
@@ -27,25 +27,8 @@ DESCRIPTION:男女共同参画に関する図書を集めたミニ特設コ
  とがあります。
 END:VEVENT
 BEGIN:VEVENT
-UID:df9111efbdbf@minamata-support-portal
-DTSTAMP:20261116T014210Z
-DTSTART;VALUE=DATE:20261114
-DTEND;VALUE=DATE:20261117
-SUMMARY:第59回 蘇峰筆塚顕彰書道展
-LOCATION:もやい館３階もやいホール
-CATEGORIES:文化・芸術
-URL:https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page
- =12&event=30ed0fdda1
-DESCRIPTION:徳富蘇峰の遺徳と筆塚を顕彰し、水俣市・津奈
- 木町の小・中・高生の作品を一堂に集め展示します\n時
- 間：09:00〜17:00（16日は13時まで）\n主催：もやい館\n詳
- 細：https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#p
- age=12&event=30ed0fdda1\nみなまた くらしナビ（非公式）掲載
- 。日時・内容は変わることがあります。
-END:VEVENT
-BEGIN:VEVENT
 UID:015f04d0f311@minamata-support-portal
-DTSTAMP:20261116T014210Z
+DTSTAMP:20261117T042337Z
 DTSTART:20261120T030000Z
 DTEND:20261120T034500Z
 SUMMARY:水鳥千鶴子トーク＆ハープライブ演奏会
@@ -61,7 +44,7 @@ DESCRIPTION:ハープ演者でミュージックセラピストの水鳥千
 END:VEVENT
 BEGIN:VEVENT
 UID:bda03421c498@minamata-support-portal
-DTSTAMP:20261116T014210Z
+DTSTAMP:20261117T042337Z
 DTSTART:20261121T050000Z
 DTEND:20261121T060000Z
 SUMMARY:石川さゆりコンサート
@@ -75,8 +58,40 @@ DESCRIPTION:時間：①14:00〜 ②18:00〜\n詳細：https://www.city.min
  わることがあります。
 END:VEVENT
 BEGIN:VEVENT
+UID:m-6f7f33b73f@minamata-support-portal
+DTSTAMP:20261117T042337Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261130
+SUMMARY:還流「水俣と福島で」〜『みなまた食べる』出版
+ 記念イベント〜
+LOCATION:おれんじ館（水俣市月浦195-2）
+CATEGORIES:文化・芸術
+DESCRIPTION:水俣と福島で出会った人々の営み、食べもの、
+ 風景を通して「食べること」と地域の未来を考える2日
+ 間。写真展・映画上映・ワークショップ・座談会・出
+ 店販売。参加無料。\n時間：28日10:00〜17:30、29日10:00〜16
+ :00\n主催：水俣食べる通信\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
+UID:m-ff11d0c90f@minamata-support-portal
+DTSTAMP:20261117T042337Z
+DTSTART:20261206T040000Z
+DTEND:20261206T090000Z
+SUMMARY:ギブミーベジタブル×不知火テーブル
+LOCATION:おれんじ館
+CATEGORIES:文化・芸術
+DESCRIPTION:お金の代わりに食材を持ち寄り、料理人が即興
+ でつくる料理をみんなで味わうイベント。入場料は食
+ 材（なんでもOK）。対談や音楽ライブも。My皿・Myコッ
+ プ持参。\n時間：13:00〜18:00（出入り自由）\n申込不要\n
+ 主催：不知火ローカルフードネット、ギブミーベジタ
+ ブル、One Month for the Future\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
 UID:1fd8eeb5576b@minamata-support-portal
-DTSTAMP:20261116T014210Z
+DTSTAMP:20261117T042337Z
 DTSTART:20261213T050000Z
 DTEND:20261213T060000Z
 SUMMARY:「東混ゾリステン」公演
@@ -94,7 +109,7 @@ DESCRIPTION:プロの声楽家と地元学生によるコンサート。入
 END:VEVENT
 BEGIN:VEVENT
 UID:d96de7b98a91@minamata-support-portal
-DTSTAMP:20261116T014210Z
+DTSTAMP:20261117T042337Z
 DTSTART:20261219T070000Z
 DTEND:20261219T080000Z
 SUMMARY:自主文化事業　岸谷香「KAORI PARADISE 2026 -10回目の

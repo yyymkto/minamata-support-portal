@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:ギブミーベジタブル×不知火テーブル
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:m-ff11d0c90f@minamata-support-portal
+DTSTAMP:20261117T042337Z
+DTSTART:20261206T040000Z
+DTEND:20261206T090000Z
+SUMMARY:ギブミーベジタブル×不知火テーブル
+LOCATION:おれんじ館
+CATEGORIES:文化・芸術
+DESCRIPTION:お金の代わりに食材を持ち寄り、料理人が即興
+ でつくる料理をみんなで味わうイベント。入場料は食
+ 材（なんでもOK）。対談や音楽ライブも。My皿・Myコッ
+ プ持参。\n時間：13:00〜18:00（出入り自由）\n申込不要\n
+ 主催：不知火ローカルフードネット、ギブミーベジタ
+ ブル、One Month for the Future\nみなまた くらしナビ（非公
+ 式）掲載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR
