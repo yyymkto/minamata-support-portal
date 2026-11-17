@@ -522,7 +522,7 @@
   const TAB_BTN_ACTIVE = "focus-ring flex-1 h-full text-sm font-bold border-b-4 border-white transition-colors text-white";
   const TAB_BTN_INACTIVE = "focus-ring flex-1 h-full text-sm font-medium border-b-4 border-transparent text-white/70 hover:text-white transition-colors";
 
-  function switchTab(tabId) {
+  function switchTab(tabId, updateHash = false) {
     state.activeTab = tabId;
     Object.entries(TABS).forEach(([id, { btn, view }]) => {
       if (id === 'young' && !ENABLE_YOUNG_TAB) {
@@ -546,6 +546,18 @@
       }
     }
 
+    if (updateHash && typeof window !== 'undefined') {
+      const targetHash = tabId === 'feed' ? '' : `#${tabId}`;
+      if (window.location.hash !== targetHash) {
+        if (targetHash === '') {
+          // #feed のときはURLからハッシュを取り除く
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        } else {
+          history.replaceState(null, '', targetHash);
+        }
+      }
+    }
+
     scheduleHeaderOffsetUpdate();
   }
 
@@ -553,10 +565,10 @@
     el.tabYoung.classList.add('hidden');
   }
 
-  el.tabFeed.addEventListener('click', () => switchTab('feed'));
-  el.tabConcern.addEventListener('click', () => switchTab('concern'));
-  el.tabEvents.addEventListener('click', () => switchTab('events'));
-  el.tabYoung.addEventListener('click', () => switchTab('young'));
+  el.tabFeed.addEventListener('click', () => switchTab('feed', true));
+  el.tabConcern.addEventListener('click', () => switchTab('concern', true));
+  el.tabEvents.addEventListener('click', () => switchTab('events', true));
+  el.tabYoung.addEventListener('click', () => switchTab('young', true));
 
   if (el.btnCalendarSubscribe) {
     el.btnCalendarSubscribe.addEventListener('click', openCalendarSubscribeModal);
@@ -2125,7 +2137,33 @@
     // データの読み込みに失敗している場合はエラー表示に任せる（制度が無いわけではないため）
     if (!state.mainDataLoaded) return;
     const hash = window.location.hash;
-    if (!hash || !hash.startsWith('#base-')) return;
+    if (!hash) {
+      if (state.activeTab !== 'feed') {
+        switchTab('feed');
+      }
+      return;
+    }
+
+    // タブ指定のハッシュ（#feed, #concern, #events, #young）
+    if (hash === '#feed') {
+      switchTab('feed');
+      return;
+    }
+    if (hash === '#concern') {
+      switchTab('concern');
+      return;
+    }
+    if (hash === '#events') {
+      switchTab('events');
+      return;
+    }
+    if (hash === '#young' && ENABLE_YOUNG_TAB) {
+      switchTab('young');
+      return;
+    }
+
+    // 個別制度のハッシュ（#base-xxx）
+    if (!hash.startsWith('#base-')) return;
     const baseId = hash.slice(6);
     if (!baseId) return;
 
