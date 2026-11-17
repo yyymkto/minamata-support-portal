@@ -11,40 +11,58 @@ JSONデータという最小構成で、GitHub Pagesでホストしています�
 - 「防災・生活再建」ではなく「**世代タグ × ジャンルタグ**」の2軸で分類
 - 新着情報（フロー）だけでなく、制度そのものを常時一覧できるページ（ストック）も持つ
 
-## 画面構成：3タブ
+## 画面構成：3タブ（＋一時停止中の1タブ）
 
 | タブ | 位置づけ | 対象 | データソース |
 |---|---|---|---|
-| 最新のお知らせ | フロー（毎朝自動更新） | 全世代・全立場 | `public/data/life_info.json` |
-| 子育て支援制度 | ストック（人手で更新） | 子育て世帯 | `public/data/child_support_base.json` + `concern_mapping.json` |
-| 一人暮らし・若者支援 | ストック（人手で更新） | 一人暮らし世帯・若者・移住検討者 | `public/data/young_adult_support_base.json` + `young_adult_concern_mapping.json` |
+| 最新のお知らせ（`#feed`） | フロー（毎朝自動更新） | 全世代・全立場 | `public/data/life_info.json` |
+| 子育て支援制度（`#concern`） | ストック（人手で更新） | 子育て世帯 | `public/data/child_support_base.json` + `concern_mapping.json` |
+| イベント（`#events`） | フロー（毎朝自動更新＋手動登録） | 全世代 | `public/data/events.json` |
+| 一人暮らし・若者支援（`#young`） | ストック（**一時停止中**） | 一人暮らし世帯・若者・移住検討者 | `public/data/young_adult_support_base.json` + `young_adult_concern_mapping.json` |
 
-「子育て支援制度」タブには、子どものステージ・世帯状況を選択すると該当しない制度を
-自動的に除外する絞り込み機能があります。選択内容はブラウザのローカルストレージにのみ
-保存され、サーバーには送信されません。
+- 「一人暮らし・若者支援」タブは `src/index.html` の `ENABLE_YOUNG_TAB = false` で非表示にしています。
+  `true` にすると戻ります。
+- 「子育て支援制度」タブでは、子どものステージ・世帯状況を選ぶと該当しない制度を自動で除外します。
+  選択内容はブラウザのローカルストレージにのみ保存され、サーバーには送信されません。
+- 「イベント」タブでは、カレンダーへの購読（全件・カテゴリ別）と、1件ずつのカレンダー追加ができます。
+- URL末尾の `#feed` / `#concern` / `#events` で各タブを直接開けます。制度カードには共有リンクがあります。
+- スマホのホーム画面に追加できます（`public/manifest.webmanifest`、`public/icons/`）。
 
 ```
 .
 ├── .github/
 │   ├── workflows/
-│   │   ├── daily-update.yml           # 毎朝の新着情報収集＆デプロイ
-│   │   └── weekly-monitor.yml         # 毎週のストック情報監視（制度ページの更新・リンク切れ検知）
+│   │   ├── daily-update.yml           # 毎朝の新着情報・イベント収集、カレンダー作成、デプロイ
+│   │   └── weekly-monitor.yml         # 毎週のストック情報監視・ストック候補検出
 │   └── workflow-templates/            # 上記2ワークフローが起票するIssueのテンプレート
-├── docs/agent-notes/                  # AIエージェント向けの運用状況メモ（人間の閲覧は任意）
+├── docs/
+│   ├── events-sheet-guide.md          # イベント登録用スプレッドシート・投稿フォームの準備と使い方
+│   └── agent-notes/                   # AIエージェント向けの運用状況メモ・設計書・決定記録
 ├── scripts/
-│   ├── update_data.py                 # 新着情報の収集〜Gemini判定〜JSON更新
+│   ├── update_data.py                 # 新着情報の収集〜Gemini判定〜life_info.json更新
+│   ├── update_events.py               # イベントの自動抽出・広報抽出・手動登録/フォーム分の統合
+│   ├── build_calendar.py              # events.json からカレンダー(.ics)を作成
+│   ├── event_calendar.py              # イベントのカテゴリ・日時の共通処理
 │   ├── monitor_stock.py               # ストック情報（制度ページ）の更新・リンク切れ監視
+│   ├── detect_stock_candidates.py     # 新着情報からストックに載せる候補を検出
 │   └── requirements.txt
-├── public/data/
-│   ├── life_info.json                 # 新着情報データ本体（自動更新される）
-│   ├── child_support_base.json        # 子育て支援制度データ（人手で更新）
-│   ├── concern_mapping.json           # 子育て支援制度の困りごと分類の定義
-│   ├── young_adult_support_base.json  # 一人暮らし・若者支援制度データ（人手で更新）
-│   ├── young_adult_concern_mapping.json # 同上の困りごと分類の定義
-│   ├── _checked_urls.json             # 自動生成（Gemini判定済みURLの記録、UIからは不参照）
-│   └── _monitor_state.json            # 自動生成（ストック監視の内部状態、UIからは不参照）
+├── public/                            # 丸ごと公開される（デプロイ時に dist/ へコピー）
+│   ├── manifest.webmanifest           # ホーム画面に追加するための設定
+│   ├── icons/                         # ホーム画面用アイコン
+│   ├── vendor/                        # Tailwind（サイト内に置いて読み込む）
+│   └── data/
+│       ├── life_info.json             # 新着情報データ（自動更新）
+│       ├── events.json                # イベント一覧（自動更新）
+│       ├── events.ics                 # 購読用カレンダー（全件、自動生成）
+│       ├── events-<カテゴリ>.ics       # 購読用カレンダー（カテゴリ別7種、自動生成）
+│       ├── ics/                       # 1件ずつのカレンダー（自動生成）
+│       ├── child_support_base.json    # 子育て支援制度データ（人手で更新）
+│       ├── concern_mapping.json       # 子育て支援制度の困りごと分類の定義
+│       ├── young_adult_support_base.json    # 一人暮らし・若者支援制度データ（人手で更新）
+│       ├── young_adult_concern_mapping.json # 同上の困りごと分類の定義
+│       └── _*.json                    # 自動生成の内部状態・キャッシュ（UIからは不参照）
 ├── SPEC.md                            # サイトの現状仕様（詳細版）
-└── src/index.html                     # フロントエンド（3タブ・世代/困りごとの絞り込みUI）
+└── src/index.html                     # フロントエンド（タブ・絞り込みUI）
 ```
 
 ## セットアップ手順
@@ -59,7 +77,15 @@ JSONデータという最小構成で、GitHub Pagesでホストしています�
    - Name: `GEMINI_API_KEY`
    - Secret: 発行したキー
 
-### 3. 動作確認
+### 3. イベントのスプレッドシート連携（任意）
+手動登録・投稿フォームを使う場合は、Settings → Secrets and variables → Actions → **Variables** に
+次の2つを登録します（未設定でも動きます。手動登録・投稿分が出ないだけです）。
+- `EVENTS_SHEET_CSV_URL`：手動登録用シートのCSV公開URL
+- `EVENTS_FORM_CSV_URL`：投稿フォームの「掲載用」タブのCSV公開URL
+
+準備の手順は [`docs/events-sheet-guide.md`](docs/events-sheet-guide.md) にあります。
+
+### 4. 動作確認
 Actions タブ → 「水俣市くらしナビ 自動更新・デプロイ」→ Run workflow で手動実行できます。
 
 ## 新着情報の自動収集（scripts/update_data.py）
@@ -88,6 +114,23 @@ Actions タブ → 「水俣市くらしナビ 自動更新・デプロイ」→
 `scripts/update_data.py` の `SOURCES` にサブサイトの一覧ページを追記すれば、同様に収集対象へ
 追加できます。
 
+## イベントの収集（scripts/update_events.py, build_calendar.py）
+
+毎朝、`update_data.py` の後に実行されます。次の4経路のイベントをまとめて `public/data/events.json` に書き出します。
+
+1. **新着情報からの自動抽出**：`life_info.json` で「イベント」タグの付いた記事をGeminiに読ませ、
+   開催日時・場所・申し込み情報（要否・締切・方法）を取り出します。
+2. **広報みなまたからの自動抽出**：市の広報誌の一覧ページから、各号のイベントを取り出します。
+3. **手動登録**：Googleスプレッドシート（CSV公開）から読み込みます。「非表示」列に何か書くと、
+   どの経路のイベントでも掲載しません。
+4. **投稿フォーム**：主催者がGoogleフォームで申し込み、運営者が承認した分を読み込みます。
+
+- 同じリンクのイベントは、手動登録 ＞ 投稿フォーム ＞ 自動抽出 の順で優先します。終了済みのイベントは除きます。
+- 自動抽出したイベントからは携帯電話番号を消します（手動登録・フォーム分は対象外）。
+- シートを読み込めなかった日は前回分を使い、Issueを起票します。
+
+続いて `build_calendar.py` が `events.json` から購読用（全件・カテゴリ別）と1件ずつのカレンダー（.ics）を作ります。
+
 ## ストック情報の監視（scripts/monitor_stock.py）
 
 `child_support_base.json` / `young_adult_support_base.json` に載せている制度ページは
@@ -95,11 +138,19 @@ Actions タブ → 「水俣市くらしナビ 自動更新・デプロイ」→
 `weekly-monitor.yml`（毎週月曜8:00 JST）が各制度ページの最終更新日・本文を確認し、
 変化があればIssueを自動起票します。データ自体は自動更新せず、通知のみを行います。
 
+同じワークフローで `detect_stock_candidates.py` が、新着情報の中から制度一覧（ストック）に
+載せるべき候補を探し、見つかればIssueで知らせます。
+
 ## エラーの自動検知（Issue起票）
 `GEMINI_API_KEY` 未設定時や、全ソースへのアクセス失敗時には、GitHub Actionsが自動でIssueを
 起票します（宇城市版と同じ仕組み）。「その日は新着が0件だった」だけでは異常とみなしません。
+イベントのシート読み込み失敗・広報の抽出失敗も、それぞれ別のIssueとして起票します。
 
 ## 注意事項
+- このリポジトリは公開されています。個人名・連絡先は書かず、運営している人は「運営者」と書きます。
+- 外部からの読み込みは増やしません。Tailwindは `public/vendor/` のものを使い、`src/index.html` 冒頭の
+  CSP（`Content-Security-Policy`）で読み込み元を自分のサイトとGoogle Fontsに制限しています。
+  外部のスクリプト・画像・通信先を足すときはCSPにも追記してください（追記しないと画面が壊れます）。
 - 本サイトは非公式のまとめサイトです。**申請前には必ず一次情報（公式サイト）を確認する**旨を
   UI上に明記しています。
 - 水俣市サイトの利用規約・robots.txtに従い、過度な高頻度アクセスは避けてください
