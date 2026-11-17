@@ -109,17 +109,21 @@
   </nav>
 
   <!-- ===== ホーム画面に追加 ===== -->
-  <section id="add-to-home" class="max-w-3xl mx-auto px-4 py-4 border-b border-line">
-    <h2 class="font-serif font-bold text-lg mb-2">ホーム画面に追加</h2>
-    <p class="text-sm text-inkSoft leading-relaxed mb-4">このサイトは、スマホのホーム画面に追加できます。</p>
-    <div class="mb-4">
-      <button type="button" id="a2hs-button" class="focus-ring h-11 rounded-xl border border-bay text-bay hover:bg-baySoft/50 font-medium text-sm px-5 inline-flex items-center gap-2 transition-colors">
-        ホーム画面に追加
-      </button>
+  <section id="add-to-home" class="bg-baySoft border-b border-line">
+    <div class="max-w-3xl mx-auto px-4 py-2 flex items-center justify-between gap-2 text-ink min-h-[44px]">
+      <div class="flex items-center gap-1.5 min-w-0 flex-1">
+        <span class="shrink-0" aria-hidden="true">📱</span>
+        <span id="a2hs-banner-text" class="text-sm truncate">ホーム画面に追加できます</span>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button type="button" id="a2hs-button" class="focus-ring h-9 rounded-lg border border-bay text-bay hover:bg-baySoft/50 font-medium text-xs px-3 inline-flex items-center justify-center transition-colors select-none cursor-pointer">
+          追加する
+        </button>
+        <button type="button" id="a2hs-close-button" class="focus-ring min-w-[36px] min-h-[36px] flex items-center justify-center rounded-full text-inkSoft hover:text-ink hover:bg-line/40 transition-colors select-none cursor-pointer" aria-label="閉じる">
+          ✕
+        </button>
+      </div>
     </div>
-    <p class="text-xs text-inkSoft leading-relaxed">
-      ブックマークに入れる場合は、パソコンでは Ctrl + D（Macは ⌘ + D）、スマホではブラウザのメニューから追加できます。
-    </p>
   </section>
 
   <!-- ===== カレンダー購読バー（イベントタブ表示時） ===== -->
@@ -174,18 +178,17 @@
         </div>
       </div>
 
-      <p class="max-w-3xl mx-auto px-4 pt-1 text-[11px] text-inkSoft">世代・立場で絞り込む</p>
+      <p class="max-w-3xl mx-auto px-4 pt-1 text-xs text-inkSoft">世代・立場で絞り込む</p>
       <div class="max-w-3xl mx-auto px-4 pb-2 overflow-x-auto no-scrollbar">
         <div id="audience-chips" class="flex gap-2 w-max"></div>
       </div>
-      <p class="max-w-3xl mx-auto px-4 pt-1 text-[11px] text-inkSoft">ジャンルで絞り込む</p>
+      <p class="max-w-3xl mx-auto px-4 pt-1 text-xs text-inkSoft">ジャンルで絞り込む</p>
       <div class="max-w-3xl mx-auto px-4 pb-3 overflow-x-auto no-scrollbar">
         <div id="topic-chips" class="flex gap-2 w-max"></div>
       </div>
     </header>
 
     <main class="max-w-3xl mx-auto px-4 py-5">
-      <div id="a2hs-notice" class="hidden mb-3"></div>
       <div id="not-found-notice" class="hidden mb-3"></div>
       <p id="result-count" class="text-xs text-inkSoft mb-3 tabular"></p>
       <div id="list" class="flex flex-col gap-3"></div>
@@ -275,6 +278,7 @@
     <ul class="text-sm text-inkSoft leading-relaxed space-y-2 list-disc pl-5">
       <li>本サイトは有志が運営する<strong class="text-ink">非公式の情報まとめサイト</strong>です。水俣市公式サイトの新着情報をもとに、毎朝自動で収集・分類しています。</li>
       <li>世代・ジャンルのタグ付けと要約にはAI（Gemini API）を使用しています。内容の正確性・最新性は保証されません。<strong class="text-ink">申請前に必ず「情報源を見る」から公式ページをご確認ください。</strong></li>
+      <li id="about-a2hs-item">スマホのホーム画面に追加すると、アプリのようにすぐ開けます。<button type="button" id="about-a2hs-btn" class="focus-ring text-bay underline font-medium hover:text-bay/80 cursor-pointer">［追加方法を見る］</button></li>
     </ul>
   </section>
 
@@ -386,10 +390,6 @@
 
   function hideA2HSUI() {
     if (el.addToHomeSection) el.addToHomeSection.classList.add('hidden');
-    if (el.a2hsNotice) {
-      el.a2hsNotice.innerHTML = '';
-      el.a2hsNotice.classList.add('hidden');
-    }
   }
 
   const state = {
@@ -460,9 +460,12 @@
     yaConcernContent: document.getElementById('ya-concern-content'),
 
     // a2hs ui（ホーム画面に追加・案内）
-    a2hsNotice: document.getElementById('a2hs-notice'),
     addToHomeSection: document.getElementById('add-to-home'),
     a2hsButton: document.getElementById('a2hs-button'),
+    a2hsCloseButton: document.getElementById('a2hs-close-button'),
+    a2hsBannerText: document.getElementById('a2hs-banner-text'),
+    aboutA2HSItem: document.getElementById('about-a2hs-item'),
+    aboutA2HSBtn: document.getElementById('about-a2hs-btn'),
     calendarSubscribeBar: document.getElementById('calendar-subscribe-bar'),
     btnCalendarSubscribe: document.getElementById('btn-calendar-subscribe'),
 
@@ -539,10 +542,11 @@
     if (el.calendarSubscribeBar) {
       const showBar = (tabId === 'events') && EVENT_CALENDAR_ENABLED;
       el.calendarSubscribeBar.classList.toggle('hidden', !showBar);
-      // バーが出ているときは「ホーム画面に追加」の下の線と余白をバー側に寄せ、同じ区画に見せる（追加設計E）
+      // ホーム画面追加バーが見えている状態で購読バーも出ているときは、区切り線の重複を防ぐため
+      // ホーム画面追加バーの下線を消す
       if (el.addToHomeSection) {
-        el.addToHomeSection.classList.toggle('border-b', !showBar);
-        el.addToHomeSection.classList.toggle('pb-1', showBar);
+        const a2hsVisible = !el.addToHomeSection.classList.contains('hidden');
+        el.addToHomeSection.classList.toggle('border-b', !(showBar && a2hsVisible));
       }
     }
 
@@ -668,8 +672,8 @@
           <span class="w-1.5 rounded-full ${barClass} shrink-0"></span>
           <div class="min-w-0 flex-1">
             <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
-              ${audTags.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full ${audienceStyleFor([t]).chipOff}">${esc(t)}</span>`).join('')}
-              ${topicTags.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-line/70 text-inkSoft">${esc(t)}</span>`).join('')}
+              ${audTags.map(t => `<span class="text-xs px-2 py-0.5 rounded-full ${audienceStyleFor([t]).chipOff}">${esc(t)}</span>`).join('')}
+              ${topicTags.map(t => `<span class="text-xs px-2 py-0.5 rounded-full bg-line/70 text-inkSoft">${esc(t)}</span>`).join('')}
               ${deadlineBadge(item.deadline)}
             </div>
             <h3 class="font-serif font-semibold text-[15px] leading-snug text-ink mb-1">${esc(item.title)}</h3>
@@ -741,7 +745,7 @@
         公式情報を見る（外部サイト）
         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
       </a>
-      <p class="text-[11px] text-inkSoft text-center mt-3">申請の可否は必ず公式情報でご確認ください。</p>
+      <p class="text-xs text-inkSoft text-center mt-3">申請の可否は必ず公式情報でご確認ください。</p>
     `;
     showModal(html);
   }
@@ -822,6 +826,8 @@
 
   // ===== ホーム画面追加ボタン・お知らせの動作（仕様4の前半） =====
   async function handleA2HSAction() {
+    setA2HSDismissed();
+    hideA2HSUI();
     if (deferredPrompt) {
       const promptEvent = deferredPrompt;
       deferredPrompt = null; // 合図は1回しか使えない
@@ -838,60 +844,46 @@
     openAddToHomeGuide();
   }
 
-  // ===== フィードタブ上部の一行のお知らせ（仕様3） =====
-  function renderA2HSNotice() {
-    if (!el.a2hsNotice) return;
-    const platform = detectPlatform();
-    if (platform.os === 'desktop' || isStandalone() || isA2HSDismissed()) {
-      el.a2hsNotice.innerHTML = '';
-      el.a2hsNotice.classList.add('hidden');
-      return;
-    }
-
-    el.a2hsNotice.innerHTML = `
-      <div class="flex items-center justify-between gap-2 bg-baySoft border border-bay/20 text-xs text-ink px-3.5 py-2.5 rounded-xl">
-        <span class="leading-relaxed">このサイトはホーム画面に追加できます。</span>
-        <div class="flex items-center gap-2 shrink-0">
-          <button type="button" id="a2hs-notice-guide-btn" class="focus-ring text-bay font-medium hover:underline select-none cursor-pointer">［追加方法］</button>
-          <button type="button" id="a2hs-notice-close-btn" class="focus-ring text-inkSoft hover:text-ink select-none cursor-pointer px-1" aria-label="閉じる">✕</button>
-        </div>
-      </div>
-    `;
-    el.a2hsNotice.classList.remove('hidden');
-
-    const guideBtn = document.getElementById('a2hs-notice-guide-btn');
-    if (guideBtn) {
-      guideBtn.addEventListener('click', () => {
-        setA2HSDismissed();
-        if (el.a2hsNotice) {
-          el.a2hsNotice.innerHTML = '';
-          el.a2hsNotice.classList.add('hidden');
-        }
-        handleA2HSAction();
-      });
-    }
-
-    const closeBtn = document.getElementById('a2hs-notice-close-btn');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        setA2HSDismissed();
-        if (el.a2hsNotice) {
-          el.a2hsNotice.innerHTML = '';
-          el.a2hsNotice.classList.add('hidden');
-        }
-      });
-    }
-  }
-
   function initA2HS() {
+    // ホーム画面から開いている場合
     if (isStandalone()) {
       hideA2HSUI();
+      if (el.aboutA2HSItem) el.aboutA2HSItem.classList.add('hidden');
       return;
     }
-    if (el.a2hsButton) {
-      el.a2hsButton.addEventListener('click', handleA2HSAction);
+
+    // 既に閉じた/追加した履歴がある場合
+    if (isA2HSDismissed()) {
+      hideA2HSUI();
+    } else {
+      const platform = detectPlatform();
+      if (platform.os === 'desktop') {
+        if (el.a2hsBannerText) {
+          el.a2hsBannerText.textContent = 'このサイトはブックマークできます（Ctrl＋D／Macは ⌘＋D）';
+        }
+        if (el.a2hsButton) {
+          el.a2hsButton.classList.add('hidden');
+        }
+      } else {
+        if (el.a2hsBannerText) {
+          el.a2hsBannerText.textContent = 'ホーム画面に追加できます';
+        }
+        if (el.a2hsButton) {
+          el.a2hsButton.classList.remove('hidden');
+          el.a2hsButton.addEventListener('click', handleA2HSAction);
+        }
+      }
+      if (el.a2hsCloseButton) {
+        el.a2hsCloseButton.addEventListener('click', () => {
+          setA2HSDismissed();
+          hideA2HSUI();
+        });
+      }
     }
-    renderA2HSNotice();
+
+    if (el.aboutA2HSBtn) {
+      el.aboutA2HSBtn.addEventListener('click', handleA2HSAction);
+    }
   }
 
   function closeModal() {
@@ -1024,7 +1016,7 @@
       parts.push(households.join('・'));
     }
     if (!parts.length) return '';
-    return `<span class="text-[11px] text-inkSoft font-normal">${esc(parts.join(' ／ '))}</span>`;
+    return `<span class="text-xs text-inkSoft font-normal">${esc(parts.join(' ／ '))}</span>`;
   }
 
   function serviceCardHTML(item) {
@@ -1043,9 +1035,9 @@
 
     const targetStage = targetStagesHTML(item);
 
-    const verifiedHTML = item.last_verified ? `<p class="text-[11px] text-inkSoft">最終確認：${esc(item.last_verified)}</p>` : '<span></span>';
+    const verifiedHTML = item.last_verified ? `<p class="text-xs text-inkSoft">最終確認：${esc(item.last_verified)}</p>` : '<span></span>';
     const shareBtnHTML = `
-      <button type="button" class="btn-share focus-ring inline-flex items-center gap-1 text-[11px] text-inkSoft hover:text-bay transition-colors py-0.5 px-1 rounded select-none cursor-pointer shrink-0 ml-auto" data-base-id="${esc(item.base_id)}" data-title="${esc(item.title)}">
+      <button type="button" class="btn-share focus-ring inline-flex items-center gap-1 text-xs text-inkSoft hover:text-bay transition-colors py-0.5 px-1 rounded select-none cursor-pointer shrink-0 ml-auto" data-base-id="${esc(item.base_id)}" data-title="${esc(item.title)}">
         <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
         <span class="share-label">共有</span>
       </button>
@@ -1055,7 +1047,7 @@
       <article id="base-${esc(item.base_id)}" class="bg-white rounded-xl border border-line overflow-hidden scroll-mt-header">
         <div class="p-4">
           <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
-            <span class="text-[11px] px-2 py-0.5 rounded-full bg-${style.accentSoft} text-${style.accent} font-medium">${esc(style.badge)}</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-${style.accentSoft} text-${style.accent} font-medium">${esc(style.badge)}</span>
             ${targetStage}
           </div>
           <h4 class="font-serif font-semibold text-[15px] leading-snug text-ink mb-1.5">${esc(item.title)}</h4>
@@ -1073,7 +1065,7 @@
             ${shareBtnHTML}
           </div>` : `
           <div class="border-t border-line mt-3 pt-2.5">
-            <p class="text-[11px] text-inkSoft leading-relaxed mb-2">
+            <p class="text-xs text-inkSoft leading-relaxed mb-2">
               出典：${esc(item.source_note || '記載なし')}<br>
               ※ この制度は市の公式サイトに専用ページがありません
             </p>
@@ -1092,7 +1084,7 @@
     return `
       <a id="base-${esc(item.base_id)}" href="${safeUrl(item.official_url)}" target="_blank" rel="noopener noreferrer"
          class="focus-ring flex items-center gap-3 bg-guideAccentSoft/50 hover:bg-guideAccentSoft border border-line rounded-xl px-4 py-3 scroll-mt-header">
-        <span class="text-[11px] shrink-0 px-2 py-0.5 rounded-full bg-white text-guideAccent font-medium">${esc(style.badge)}</span>
+        <span class="text-xs shrink-0 px-2 py-0.5 rounded-full bg-white text-guideAccent font-medium">${esc(style.badge)}</span>
         <span class="flex-1 text-sm text-ink leading-snug">${esc(item.title)}</span>
         <svg class="h-4 w-4 text-inkSoft shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </a>
@@ -1309,7 +1301,7 @@
             </li>
           `).join('')}
         </ul>
-        <p class="text-[11px] text-inkSoft mt-3 pt-2 border-t border-line/60 text-right">※ 詳しい条件は下の各制度をご確認ください</p>
+        <p class="text-xs text-inkSoft mt-3 pt-2 border-t border-line/60 text-right">※ 詳しい条件は下の各制度をご確認ください</p>
       </section>
     `;
   }
@@ -1448,7 +1440,7 @@
         return `
           <button type="button" class="btn-event-cat px-3 py-1.5 rounded-full text-xs font-medium border transition-colors shrink-0 ${btnClass}"
                   data-cat="${esc(c.key)}" aria-pressed="${isSelected ? 'true' : 'false'}">
-            ${esc(c.name)} <span class="text-[11px] opacity-80">${c.count}</span>
+            ${esc(c.name)} <span class="text-xs opacity-80">${c.count}</span>
           </button>
         `;
       }).join('');
@@ -1525,14 +1517,14 @@
                   </div>
                   <span class="text-inkSoft/40 text-xs ml-2 select-none shrink-0" aria-hidden="true">›</span>
                 </div>
-                <div class="text-[11px] text-inkSoft mt-1">
+                <div class="text-xs text-inkSoft mt-1">
                   開催 ${esc(dateRange)}
                 </div>
               </button>
             `;
           }).join('')}
         </div>
-        <p class="text-[11px] text-inkSoft mt-2">
+        <p class="text-xs text-inkSoft mt-2">
           ※ 締切は元のページから読み取ったものです。申し込む前に元のページでご確認ください。
         </p>
       </section>
@@ -1609,7 +1601,7 @@
 
       return `
         <div class="flex items-baseline gap-1.5 text-xs text-inkSoft mb-2.5 line-clamp-2 leading-relaxed">
-          <span class="text-[11px] font-bold px-1.5 py-0.5 rounded ${badgeClass} shrink-0 self-center">${esc(badgeText)}</span>
+          <span class="text-xs font-bold px-1.5 py-0.5 rounded ${badgeClass} shrink-0 self-center">${esc(badgeText)}</span>
           ${detailsText ? `<span>${detailsText}</span>` : ''}
         </div>
       `;
@@ -1670,7 +1662,7 @@
       const catKey = catOf(item);
       const catObj = EVENT_CATEGORIES.find(c => c.key === catKey);
       const catBadgeHTML = (catObj && catKey !== 'other')
-        ? `<span class="inline-block text-[11px] font-medium px-2 py-0.5 rounded-full bg-baySoft text-bay border border-bay/20 mr-2 shrink-0">${esc(catObj.name)}</span>`
+        ? `<span class="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-baySoft text-bay border border-bay/20 mr-2 shrink-0">${esc(catObj.name)}</span>`
         : '';
 
       // カレンダー追加（画面仕様C: EVENT_CALENDAR_ENABLED=true のとき）
@@ -1700,7 +1692,7 @@
               </svg>
             </summary>
             <div class="mt-1 max-w-xs bg-white rounded-lg border border-line p-2 space-y-1">
-              <p class="text-[10px] text-inkSoft leading-tight px-2 py-1 bg-baySoft/30 rounded border border-bay/10 mb-1">
+              <p class="text-xs text-inkSoft leading-tight px-2 py-1 bg-baySoft/30 rounded border border-bay/10 mb-1">
                 ※ この1件だけを追加します。後から日時が変わっても自動では直りません。
               </p>
               ${googleLinkHTML}
@@ -1726,7 +1718,7 @@
           </div>` : ''}
           ${eventRegistrationHTML(item)}
           ${item.summary ? `<p class="text-xs sm:text-sm text-inkSoft leading-relaxed line-clamp-3 mb-2.5">${esc(item.summary)}</p>` : ''}
-          ${item.organizer ? `<p class="text-[11px] text-inkSoft mb-3">主催：${esc(item.organizer)}</p>` : ''}
+          ${item.organizer ? `<p class="text-xs text-inkSoft mb-3">主催：${esc(item.organizer)}</p>` : ''}
           <div class="pt-1 flex flex-wrap items-center gap-x-4 gap-y-1">
             ${item.source_url ? `
               <a href="${safeUrl(item.source_url)}" target="_blank" rel="noopener noreferrer"
@@ -1756,7 +1748,7 @@
     el.eventsContent.innerHTML = `
       ${upcomingDeadlineHTML}
       ${groupsHTML}
-      <p class="text-center text-[11px] text-inkSoft pt-4 pb-8 leading-relaxed">
+      <p class="text-center text-xs text-inkSoft pt-4 pb-8 leading-relaxed">
         一部のイベントは、公開されている記事から日時・場所・申し込みの情報を自動で読み取っています。<br>申し込みの要否・締切は、元のページでご確認ください。
       </p>
     `;
@@ -1870,7 +1862,7 @@
                 <input type="radio" name="cal-category" value="${esc(opt.key)}" class="h-4 w-4 text-bay focus:ring-bay border-line" ${isChecked ? 'checked' : ''}>
                 <div class="flex-1 min-w-0 flex items-baseline justify-between gap-2 text-xs">
                   <span class="font-medium text-ink truncate">${esc(opt.name)}</span>
-                  <span class="text-inkSoft text-[11px] shrink-0 tabular">
+                  <span class="text-inkSoft text-xs shrink-0 tabular">
                     ${opt.counts.total}件（今月${opt.counts.thisCount}・来月${opt.counts.nextCount}）
                   </span>
                 </div>
@@ -1878,7 +1870,7 @@
             `;
           }).join('')}
         </div>
-        <p class="text-[11px] text-inkSoft leading-relaxed mt-2.5">
+        <p class="text-xs text-inkSoft leading-relaxed mt-2.5">
           全部だと数が多くなります。気になるカテゴリだけを選ぶこともできます。<br>
           複数受け取るときは1つずつ登録してください（カテゴリごとに別のカレンダーになります）。
         </p>
@@ -1895,7 +1887,7 @@
         </a>
       </div>
 
-      <p class="text-[11px] text-inkSoft leading-relaxed">
+      <p class="text-xs text-inkSoft leading-relaxed">
         毎朝更新します。アプリへの反映は数時間〜1日ほど遅れることがあります。表示を一時的に消したり、やめたりするのはアプリの設定からできます。
       </p>
     `;
@@ -1951,6 +1943,12 @@
 
   // ===== Init =====
   async function init() {
+    // ホーム画面追加・案内の初期化（仕様2・3）。データの読み込みを待たずに最初に行う。
+    // 待ってから行うと、閉じた人・ホーム画面から開いた人にもバーが一瞬出て、消えたときに画面が上にずれる（2026-11-18）
+    try {
+      initA2HS();
+    } catch (_) {}
+
     try {
       const [resLife, resBase, resMap] = await Promise.all([
         fetch(DATA_URL, { cache: 'no-store' }),
@@ -2002,11 +2000,6 @@
       el.error.textContent = 'データの読み込みに失敗しました。時間をおいて再度お試しください。';
       console.error(err);
     }
-
-    // ホーム画面追加・案内の初期化（仕様2・3）
-    try {
-      initA2HS();
-    } catch (_) {}
 
     // イベントタブの初期化（独立したtry/catchで、失敗しても他タブに影響しない）
     try {
