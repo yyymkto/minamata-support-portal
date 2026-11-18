@@ -192,6 +192,9 @@
       <div id="not-found-notice" class="hidden mb-3"></div>
       <p id="result-count" class="text-xs text-inkSoft mb-3 tabular"></p>
       <div id="list" class="flex flex-col gap-3"></div>
+      <button type="button" id="feed-more-btn"
+              class="hidden w-full h-12 rounded-xl border border-bay text-bay bg-white font-medium text-sm mt-4 focus-ring select-none cursor-pointer">
+      </button>
       <div id="empty" class="hidden text-center py-16">
         <p class="font-serif text-lg text-ink mb-1">該当する情報が見つかりません</p>
         <p class="text-sm text-inkSoft">キーワードや絞り込みを変えてお試しください。</p>
@@ -392,9 +395,15 @@
     if (el.addToHomeSection) el.addToHomeSection.classList.add('hidden');
   }
 
+  // ===== 1回あたり表示件数（設計書：2026-11-18_feed-paging.md） =====
+  // state の初期値で使うので、state より前に置く
+  const FEED_PAGE_SIZE = 30;
+
   const state = {
     activeTab: 'feed', // 'feed' | 'concern' | 'young'
     items: [],
+    feedFiltered: [],
+    feedShown: FEED_PAGE_SIZE,
     baseById: {},
     concerns: [],
     categories: [],
@@ -435,6 +444,7 @@
 
     // feed ui
     list: document.getElementById('list'),
+    feedMoreBtn: document.getElementById('feed-more-btn'),
     empty: document.getElementById('empty'),
     count: document.getElementById('result-count'),
     updatedAt: document.getElementById('updated-at'),
@@ -629,10 +639,18 @@
     }).join('');
 
     el.audienceChips.querySelectorAll('.aud-chip').forEach(btn => {
-      btn.addEventListener('click', () => { state.audience = btn.dataset.val; renderFeed(); });
+      btn.addEventListener('click', () => {
+        state.audience = btn.dataset.val;
+        state.feedShown = FEED_PAGE_SIZE;
+        renderFeed();
+      });
     });
     el.topicChips.querySelectorAll('.top-chip').forEach(btn => {
-      btn.addEventListener('click', () => { state.topic = btn.dataset.val; renderFeed(); });
+      btn.addEventListener('click', () => {
+        state.topic = btn.dataset.val;
+        state.feedShown = FEED_PAGE_SIZE;
+        renderFeed();
+      });
     });
   }
 
@@ -691,22 +709,69 @@
   function renderFeed() {
     buildFeedChips();
     const filtered = state.items.filter(matches);
+    state.feedFiltered = filtered;
     el.count.textContent = `${filtered.length}件の生活情報`;
 
     if (filtered.length === 0) {
       el.list.innerHTML = '';
       el.empty.classList.remove('hidden');
+      if (el.feedMoreBtn) el.feedMoreBtn.classList.add('hidden');
     } else {
       el.empty.classList.add('hidden');
-      el.list.innerHTML = filtered.map((item, idx) => cardHTML(item, idx)).join('');
+      const toRender = filtered.slice(0, state.feedShown);
+      el.list.innerHTML = toRender.map((item, idx) => cardHTML(item, idx)).join('');
       el.list.querySelectorAll('.open-detail').forEach(btn => {
-        btn.addEventListener('click', () => openModal(filtered[Number(btn.dataset.idx)]));
+        btn.addEventListener('click', () => openModal(state.feedFiltered[Number(btn.dataset.idx)]));
       });
+
+      if (el.feedMoreBtn) {
+        const remaining = filtered.length - state.feedShown;
+        if (remaining > 0) {
+          el.feedMoreBtn.textContent = `さらに表示（残り${remaining}件）`;
+          el.feedMoreBtn.classList.remove('hidden');
+        } else {
+          el.feedMoreBtn.classList.add('hidden');
+        }
+      }
     }
+  }
+
+  if (el.feedMoreBtn) {
+    el.feedMoreBtn.addEventListener('click', () => {
+      const startIdx = state.feedShown;
+      const nextItems = state.feedFiltered.slice(startIdx, startIdx + FEED_PAGE_SIZE);
+      if (!nextItems.length) return;
+
+      const newCardsHTML = nextItems.map((item, i) => cardHTML(item, startIdx + i)).join('');
+      el.list.insertAdjacentHTML('beforeend', newCardsHTML);
+
+      let firstNewBtn = null;
+      for (let i = 0; i < nextItems.length; i++) {
+        const idx = startIdx + i;
+        const btn = el.list.querySelector(`.open-detail[data-idx="${idx}"]`);
+        if (btn) {
+          if (i === 0) firstNewBtn = btn;
+          btn.addEventListener('click', () => openModal(state.feedFiltered[idx]));
+        }
+      }
+
+      if (firstNewBtn) {
+        firstNewBtn.focus({ preventScroll: true });
+      }
+
+      state.feedShown += nextItems.length;
+      const remaining = state.feedFiltered.length - state.feedShown;
+      if (remaining > 0) {
+        el.feedMoreBtn.textContent = `さらに表示（残り${remaining}件）`;
+      } else {
+        el.feedMoreBtn.classList.add('hidden');
+      }
+    });
   }
 
   el.search.addEventListener('input', (e) => {
     state.query = e.target.value.trim();
+    state.feedShown = FEED_PAGE_SIZE;
     renderFeed();
   });
 
@@ -1552,6 +1617,31 @@
         }
         futureByMonth.get(key).items.push(item);
       }
+    });
+
+    // 今日・開催中のソート（設計書：2026-11-18_events-today-order.md）
+    // 1. 開催期間が短い順（単日 = 0日 が最優先）
+    // 2. 開始時刻が早い順（時刻なしは末尾）
+    // 3. タイトルの五十音順（安定ソート）
+    const getEventDurationDays = (item) => {
+      const s = item.start_date;
+      const e = item.end_date || s;
+      const sD = new Date(s + 'T00:00:00');
+      const eD = new Date(e + 'T00:00:00');
+      return Math.round((eD - sD) / 86400000);
+    };
+    const getEventStartTimeMinutes = (item) => {
+      if (!item.time_text) return 99999;
+      const m = item.time_text.match(/(\d{1,2})[:：](\d{2})/);
+      if (!m) return 99999;
+      return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+    };
+    ongoing.sort((a, b) => {
+      const durDiff = getEventDurationDays(a) - getEventDurationDays(b);
+      if (durDiff !== 0) return durDiff;
+      const timeDiff = getEventStartTimeMinutes(a) - getEventStartTimeMinutes(b);
+      if (timeDiff !== 0) return timeDiff;
+      return (a.title || '').localeCompare(b.title || '', 'ja');
     });
 
     const groups = [];
