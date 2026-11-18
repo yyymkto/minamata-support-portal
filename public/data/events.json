@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-17T13:23:37.309941+09:00",
+  "last_updated": "2026-11-18T12:29:40.574013+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -110,28 +110,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "要予約。詳細は市こどもセンターへ問い合わせ",
-      "id": "5e8cc052a5a4",
-      "title": "育児講座「親子ヨガ」",
-      "start_date": "2026-11-17",
-      "end_date": "2026-11-17",
-      "time_text": "10:30〜12:00",
-      "venue": "市こどもセンター",
-      "summary": "未就学児の親子を対象とした親子ヨガ講座です",
-      "organizer": "市こどもセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=e7e9bf8e4f",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-17T10:30",
-        "end": "2026-11-17T12:00"
       }
     },
     {
@@ -924,6 +902,28 @@
         "all_day": false,
         "start": "2026-12-19T16:00",
         "end": "2026-12-19T17:00"
+      }
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-11-30",
+      "registration_note": "Googleフォームまたは観光物産協会窓口。問合せ0966-63-2079",
+      "id": "m-ae50113dd1",
+      "title": "第1回 湯の児温泉スリッパ卓球大会",
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-16",
+      "time_text": null,
+      "venue": "湯の児温泉 海と夕やけ",
+      "summary": "スリッパをラケットに、3人1チームでラリーする卓球大会。定員16チーム48名（多数の場合は抽選）、参加費1チーム3,000円。1名・2名での参加も可。",
+      "organizer": "（一社）みなまた観光物産協会",
+      "source_url": null,
+      "source_label": "詳細",
+      "origin": "manual",
+      "category": "other",
+      "calendar": {
+        "all_day": true,
+        "start": "2027-01-16",
+        "end": "2027-01-17"
       }
     },
     {

@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第1回 湯の児温泉スリッパ卓球大会
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:m-ae50113dd1@minamata-support-portal
+DTSTAMP:20261118T032940Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:第1回 湯の児温泉スリッパ卓球大会
+LOCATION:湯の児温泉 海と夕やけ
+DESCRIPTION:スリッパをラケットに、3人1チームでラリーす
+ る卓球大会。定員16チーム48名（多数の場合は抽選）、
+ 参加費1チーム3\,000円。1名・2名での参加も可。\n要申込
+ 、11/30締切、Googleフォームまたは観光物産協会窓口。問
+ 合せ0966-63-2079\n主催：（一社）みなまた観光物産協会\n
+ みなまた くらしナビ（非公式）掲載。日時・内容は変
+ わることがあります。
+END:VEVENT
+END:VCALENDAR

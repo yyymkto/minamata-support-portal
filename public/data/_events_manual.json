@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-17T13:23:34.977716+09:00",
+  "fetched_at": "2026-11-18T12:29:39.022834+09:00",
   "events": [
     {
       "id": "m-27a7c8f68f",
@@ -96,6 +96,22 @@
       "registration": "not_required",
       "registration_deadline": null,
       "registration_note": null
+    },
+    {
+      "id": "m-ae50113dd1",
+      "title": "第1回 湯の児温泉スリッパ卓球大会",
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-16",
+      "time_text": null,
+      "venue": "湯の児温泉 海と夕やけ",
+      "summary": "スリッパをラケットに、3人1チームでラリーする卓球大会。定員16チーム48名（多数の場合は抽選）、参加費1チーム3,000円。1名・2名での参加も可。",
+      "organizer": "（一社）みなまた観光物産協会",
+      "source_url": null,
+      "source_label": null,
+      "origin": "manual",
+      "registration": "required",
+      "registration_deadline": "2026-11-30",
+      "registration_note": "Googleフォームまたは観光物産協会窓口。問合せ0966-63-2079"
     }
   ],
   "hidden_urls": [
