@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:エコパーク水俣で「鉄棒教室」が開催されま
+ す！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8676e3bdbfc3@minamata-support-portal
+DTSTAMP:20261119T030324Z
+DTSTART:20261206T023000Z
+DTEND:20261206T033000Z
+SUMMARY:エコパーク水俣で「鉄棒教室」が開催されます！
+LOCATION:エコパーク水俣 ふるさと広場
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034966/index.html
+DESCRIPTION:ミズノ監修の鉄棒教室。年中から小学生を対象
+ に、苦手な子も楽しみながら鉄棒の練習ができる内容
+ です。\n時間：11:30〜12:30\n要申込、12/4締切、電話また
+ はエコパーク水俣窓口にて申込。定員20名（先着順）\n
+ 主催：ハートリンク水俣\n詳細：https://www.city.minamata.lg.j
+ p/kiji0034966/index.html\nみなまた くらしナビ（非公式）掲
+ 載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

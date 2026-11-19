@@ -1,7 +1,109 @@
 {
-  "last_updated": "2026-11-17T13:23:12.570086+09:00",
+  "last_updated": "2026-11-19T12:02:36.683783+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "31b13b5317ab",
+      "title": "令和８年１１月１９日の地震における湯の児フィッシングパークの利用について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "施設案内"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年11月19日に発生した地震に伴う、湯の児フィッシングパークの利用に関するお知らせです。施設の利用可否や安全状況について確認できます。",
+      "target": "湯の児フィッシングパークの利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033358/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-19T12:01:47.995480+09:00",
+      "status": "active"
+    },
+    {
+      "id": "cd73c079d28a",
+      "title": "市環境クリーンセンターへのごみの持ち込みについて",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "くらしの手続き",
+        "環境"
+      ],
+      "organization": "水俣市",
+      "summary": "市環境クリーンセンターへの家庭ごみの直接持ち込みに関する案内です。持ち込みの際のルールや手順について確認できます。",
+      "target": "家庭ごみを直接クリーンセンターへ持ち込みたい市民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034300/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-19T12:01:55.388479+09:00",
+      "status": "active"
+    },
+    {
+      "id": "b602554c0f7d",
+      "title": "地震に伴うごみ収集・施設での受入について（１１月１９日収集分）",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "くらしの手続き",
+        "環境"
+      ],
+      "organization": "水俣市",
+      "summary": "地震の影響による11月19日のごみ収集および施設での受入状況に関するお知らせです。収集の可否や施設利用の変更点について、該当する住民は市公式サイトで詳細を確認してください。",
+      "target": "水俣市内の全住民",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0032990/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-19T12:02:04.649492+09:00",
+      "status": "active"
+    },
+    {
+      "id": "8676e3bdbfc3",
+      "title": "エコパーク水俣で「鉄棒教室」が開催されます！",
+      "audience_tags": [
+        "子育て・妊娠期",
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "エコパーク水俣にて、鉄棒の技術向上を目指す鉄棒教室が開催されます。詳細な開催日時や参加方法については、市の公式サイトをご確認ください。",
+      "target": "鉄棒の練習をしたい児童・生徒",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034966/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-19T12:02:11.864011+09:00",
+      "status": "active"
+    },
+    {
+      "id": "2acf8d657882",
+      "title": "鹿児島県出水市で高病原性鳥インフルエンザウイルスが確認されました",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "環境"
+      ],
+      "organization": "水俣市",
+      "summary": "鹿児島県出水市で高病原性鳥インフルエンザウイルスが確認されました。野鳥が死んでいるのを見つけた場合は、素手で触らず、水俣市役所環境課へ連絡してください。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033962/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-19T12:02:18.860215+09:00",
+      "status": "active"
+    },
     {
       "id": "59c8434acc57",
       "title": "令和８年度水俣市地域防災計画について",
@@ -4135,6 +4237,47 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "c4b35c1ff774",
+      "title": "市役所マルシェ　11月開催のお知らせ",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "11月に市役所マルシェが開催されます。地域の特産品やグルメなどが楽しめるイベントです。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-19T12:02:32.180912+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f53df01494a4",
+      "title": "観光に関するワークショップ開催！",
+      "audience_tags": [
+        "現役世代",
+        "事業者向け",
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント",
+        "産業・事業支援"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "水俣市の観光に関するワークショップが開催されます。観光振興に関心のある住民や事業者はぜひご参加ください。",
+      "target": "観光に関心のある住民および事業者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/minamata_workshop_2026.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-19T12:02:26.176788+09:00",
       "status": "active"
     },
     {

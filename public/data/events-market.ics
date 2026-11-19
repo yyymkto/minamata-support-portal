@@ -9,8 +9,24 @@ X-WR-TIMEZONE:Asia/Tokyo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
+UID:c4b35c1ff774@minamata-support-portal
+DTSTAMP:20261119T030324Z
+DTSTART:20261124T010000Z
+DTEND:20261124T040000Z
+SUMMARY:市役所マルシェ　11月開催のお知らせ
+LOCATION:市役所1階
+CATEGORIES:マルシェ・物産
+URL:https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11.html
+DESCRIPTION:弁当、惣菜、野菜、パン、ハンドメイド、リラ
+ クゼーションなど、水俣市内外から多数の出店者が集
+ まるマルシェ。\n時間：10:00〜13:00\n主催：市役所マルシ
+ ェ実行委員会\n詳細：https://www.go-minamata.jp/news-events/siyaku
+ syo_marche_2026m11.html\nみなまた くらしナビ（非公式）掲載
+ 。日時・内容は変わることがあります。
+END:VEVENT
+BEGIN:VEVENT
 UID:e76cc8ce4ae9@minamata-support-portal
-DTSTAMP:20261118T032940Z
+DTSTAMP:20261119T030324Z
 DTSTART:20261129T020000Z
 DTEND:20261129T050000Z
 SUMMARY:第2回26区いきいき物産祭

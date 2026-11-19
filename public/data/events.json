@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-18T12:29:40.574013+09:00",
+  "last_updated": "2026-11-19T12:03:24.133124+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -110,28 +110,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "要予約。詳細は市こどもセンターへ問い合わせ",
-      "id": "b1348f05dd7c",
-      "title": "ママリラ〜首肩マッサージ〜",
-      "start_date": "2026-11-18",
-      "end_date": "2026-11-18",
-      "time_text": "10:30〜12:00",
-      "venue": "市こどもセンター",
-      "summary": "子育て中の保護者を対象とした首肩マッサージの講座です",
-      "organizer": "市こどもセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=2906ef0d51",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-18T10:30",
-        "end": "2026-11-18T12:00"
       }
     },
     {
@@ -308,6 +286,28 @@
         "all_day": false,
         "start": "2026-11-23T10:00",
         "end": "2026-11-23T12:00"
+      }
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "c4b35c1ff774",
+      "title": "市役所マルシェ　11月開催のお知らせ",
+      "start_date": "2026-11-24",
+      "end_date": "2026-11-24",
+      "time_text": "10:00〜13:00",
+      "venue": "市役所1階",
+      "summary": "弁当、惣菜、野菜、パン、ハンドメイド、リラクゼーションなど、水俣市内外から多数の出店者が集まるマルシェ。",
+      "organizer": "市役所マルシェ実行委員会",
+      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11.html",
+      "source_label": "みなまた観光物産協会",
+      "origin": "auto",
+      "category": "market",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-24T10:00",
+        "end": "2026-11-24T13:00"
       }
     },
     {
@@ -597,6 +597,28 @@
       }
     },
     {
+      "registration": "required",
+      "registration_deadline": "2026-11-26",
+      "registration_note": "QRコードの応募フォームまたは電話（0966-62-1629）にて申し込み",
+      "id": "f53df01494a4",
+      "title": "観光に関するワークショップ開催！",
+      "start_date": "2026-11-29",
+      "end_date": "2026-11-29",
+      "time_text": "13:30〜15:00",
+      "venue": "市役所1階多目的室",
+      "summary": "水俣市観光振興計画の策定に向け、水俣の観光資源活用や魅力向上についてアイデアを出し合うワークショップ。",
+      "organizer": "水俣市経済観光戦略課",
+      "source_url": "https://www.go-minamata.jp/news-events/minamata_workshop_2026.html",
+      "source_label": "みなまた観光物産協会",
+      "origin": "auto",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-11-29T13:30",
+        "end": "2026-11-29T15:00"
+      }
+    },
+    {
       "registration": null,
       "registration_deadline": null,
       "registration_note": null,
@@ -704,6 +726,28 @@
         "all_day": false,
         "start": "2026-12-05T14:00",
         "end": "2026-12-05T16:00"
+      }
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-12-04",
+      "registration_note": "電話またはエコパーク水俣窓口にて申込。定員20名（先着順）",
+      "id": "8676e3bdbfc3",
+      "title": "エコパーク水俣で「鉄棒教室」が開催されます！",
+      "start_date": "2026-12-06",
+      "end_date": "2026-12-06",
+      "time_text": "11:30〜12:30",
+      "venue": "エコパーク水俣 ふるさと広場",
+      "summary": "ミズノ監修の鉄棒教室。年中から小学生を対象に、苦手な子も楽しみながら鉄棒の練習ができる内容です。",
+      "organizer": "ハートリンク水俣",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034966/index.html",
+      "source_label": "水俣市",
+      "origin": "auto",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-06T11:30",
+        "end": "2026-12-06T12:30"
       }
     },
     {
