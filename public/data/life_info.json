@@ -1,7 +1,28 @@
 {
-  "last_updated": "2026-11-19T12:02:36.683783+09:00",
+  "last_updated": "2026-11-20T11:54:39.590481+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "3238a7785536",
+      "title": "令和8年11月19日に発生した地震に伴うイベントの中止等および市関連施設の開館状況について",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害",
+        "イベント",
+        "施設案内"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年11月19日に発生した地震の影響による、市主催イベントの中止情報および市関連施設の開館状況を掲載しています。最新の状況についてはリンク先をご確認ください。",
+      "target": "水俣市民および市関連施設利用者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034843/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-20",
+      "collected_at": "2026-11-20T11:54:16.887784+09:00",
+      "status": "active"
+    },
     {
       "id": "31b13b5317ab",
       "title": "令和８年１１月１９日の地震における湯の児フィッシングパークの利用について",
@@ -102,6 +123,47 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-11-19",
       "collected_at": "2026-11-19T12:02:18.860215+09:00",
+      "status": "active"
+    },
+    {
+      "id": "50f30efe8695",
+      "title": "税務相談（南九州税理士会主催）を開催します。",
+      "audience_tags": [
+        "現役世代",
+        "高齢者",
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "税金・年金",
+        "募集・相談"
+      ],
+      "organization": "南九州税理士会",
+      "summary": "南九州税理士会による税務相談会が開催されます。税金に関する悩みや疑問について、専門家である税理士に直接相談できる機会です。",
+      "target": "税務相談を希望する市民および事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033815/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-20T11:54:25.332058+09:00",
+      "status": "active"
+    },
+    {
+      "id": "9df7e5007457",
+      "title": "石川さゆりコンサートは予定通り開催します",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "石川さゆりコンサートは、予定通り開催されます。詳細は市の環境サイトをご確認ください。",
+      "target": "コンサートの来場予定者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034761/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-20T11:54:32.642350+09:00",
       "status": "active"
     },
     {

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:石川さゆりコンサートは予定通り開催します
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:9df7e5007457@minamata-support-portal
+DTSTAMP:20261120T025543Z
+DTSTART:20261121T050000Z
+DTEND:20261121T060000Z
+SUMMARY:石川さゆりコンサートは予定通り開催します
+LOCATION:水俣市文化会館
+CATEGORIES:文化・芸術
+URL:https://www.city.minamata.lg.jp/kankyo/kiji0034761/index.html
+DESCRIPTION:「若い患者の会」が主催する石川さゆりさんの
+ コンサート。昼夜2回公演で、会場ホワイエでは「私の
+ 生きてきた証し展（仮）」も同時開催されます。\n時間
+ ：14:00〜、18:00〜\n要申込、生協くまもと水光社本店、
+ ブックシティー一心堂、もやい館、ローソンチケット
+ で販売中。当日券あり\n主催：石川さゆりコンサート等
+ 実行委員会\n詳細：https://www.city.minamata.lg.jp/kankyo/kiji00347
+ 61/index.html\nみなまた くらしナビ（非公式）掲載。日時
+ ・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

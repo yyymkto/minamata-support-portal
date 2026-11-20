@@ -1,5 +1,26 @@
 {
   "entries": {
+    "https://www.city.minamata.lg.jp/kankyo/kiji0034761/index.html": {
+      "is_event": true,
+      "checked_at": "2026-11-20T11:55:12.540094+09:00",
+      "schema": 2,
+      "event": {
+        "id": "9df7e5007457",
+        "title": "石川さゆりコンサートは予定通り開催します",
+        "start_date": "2026-11-21",
+        "end_date": "2026-11-21",
+        "time_text": "14:00〜、18:00〜",
+        "venue": "水俣市文化会館",
+        "summary": "「若い患者の会」が主催する石川さゆりさんのコンサート。昼夜2回公演で、会場ホワイエでは「私の生きてきた証し展（仮）」も同時開催されます。",
+        "organizer": "石川さゆりコンサート等実行委員会",
+        "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034761/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": null,
+        "registration_note": "生協くまもと水光社本店、ブックシティー一心堂、もやい館、ローソンチケットで販売中。当日券あり"
+      }
+    },
     "https://www.city.minamata.lg.jp/kankyo/kiji0034915/index.html": {
       "is_event": true,
       "checked_at": "2026-10-20T10:00:02.911608+09:00",
@@ -385,6 +406,12 @@
         "registration_note": "二次元コードから回答、またはチラシ裏面に記入しメールかFAXで申込。各回先着10名程度"
       },
       "schema": 2
+    },
+    "https://www.city.minamata.lg.jp/kiji0034843/index.html": {
+      "is_event": false,
+      "checked_at": "2026-11-20T11:55:04.208388+09:00",
+      "schema": 2,
+      "event": null
     },
     "https://www.city.minamata.lg.jp/kiji0034844/index.html": {
       "is_event": true,

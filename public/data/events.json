@@ -1,29 +1,7 @@
 {
-  "last_updated": "2026-11-19T12:03:24.133124+09:00",
+  "last_updated": "2026-11-20T11:55:43.506799+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
-    {
-      "registration": "required",
-      "registration_deadline": "2026-10-21",
-      "registration_note": "申込書をエコパーク窓口へ提出または電話で申し込み。定員各10名",
-      "id": "e2472b001432",
-      "title": "「エコパーク仕事終わりのテニスクラブ」が開催されます！",
-      "start_date": "2026-10-22",
-      "end_date": "2026-11-19",
-      "time_text": "19:00〜20:30",
-      "venue": "エコパーク水俣 テニスコート",
-      "summary": "初心者向けの「はじめてFUNクラス」と経験者向けの「スキルアップクラス」に分かれ、全5回でテニスを学ぶ教室。11月29日には参加者限定のイベントも予定。",
-      "organizer": "エコパーク水俣 管理事務所",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034902/index.html",
-      "source_label": "水俣市",
-      "origin": "auto",
-      "category": "sports",
-      "calendar": {
-        "all_day": true,
-        "start": "2026-10-22",
-        "end": "2026-10-23"
-      }
-    },
     {
       "registration": "partial",
       "registration_deadline": null,
@@ -201,20 +179,20 @@
       }
     },
     {
-      "registration": null,
+      "registration": "required",
       "registration_deadline": null,
-      "registration_note": null,
-      "id": "bda03421c498",
-      "title": "石川さゆりコンサート",
+      "registration_note": "生協くまもと水光社本店、ブックシティー一心堂、もやい館、ローソンチケットで販売中。当日券あり",
+      "id": "9df7e5007457",
+      "title": "石川さゆりコンサートは予定通り開催します",
       "start_date": "2026-11-21",
       "end_date": "2026-11-21",
-      "time_text": "①14:00〜 ②18:00〜",
-      "venue": "市文化会館",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=76e09193a7",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho",
+      "time_text": "14:00〜、18:00〜",
+      "venue": "水俣市文化会館",
+      "summary": "「若い患者の会」が主催する石川さゆりさんのコンサート。昼夜2回公演で、会場ホワイエでは「私の生きてきた証し展（仮）」も同時開催されます。",
+      "organizer": "石川さゆりコンサート等実行委員会",
+      "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034761/index.html",
+      "source_label": "水俣市",
+      "origin": "auto",
       "category": "culture",
       "calendar": {
         "all_day": false,

@@ -9,29 +9,8 @@ X-WR-TIMEZONE:Asia/Tokyo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:e2472b001432@minamata-support-portal
-DTSTAMP:20261119T030324Z
-DTSTART;VALUE=DATE:20261022
-DTEND;VALUE=DATE:20261023
-SUMMARY:「エコパーク仕事終わりのテニスクラブ」が開催
- されます！（〜11/19）
-LOCATION:エコパーク水俣 テニスコート
-CATEGORIES:スポーツ
-URL:https://www.city.minamata.lg.jp/kiji0034902/index.html
-DESCRIPTION:初心者向けの「はじめてFUNクラス」と経験者向
- けの「スキルアップクラス」に分かれ、全5回でテニス
- を学ぶ教室。11月29日には参加者限定のイベントも予定
- 。\n時間：19:00〜20:30\n期間：10/22〜11/19（開催日は元の
- ページでご確認ください）\n要申込、10/21締切、申込書
- をエコパーク窓口へ提出または電話で申し込み。定員
- 各10名\n主催：エコパーク水俣 管理事務所\n詳細：https:/
- /www.city.minamata.lg.jp/kiji0034902/index.html\nみなまた くらしナ
- ビ（非公式）掲載。日時・内容は変わることがありま
- す。
-END:VEVENT
-BEGIN:VEVENT
 UID:6590c806be25@minamata-support-portal
-DTSTAMP:20261119T030324Z
+DTSTAMP:20261120T025543Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 SUMMARY:『FLYING DISC CLUB－2nd season－』水俣でディスクプレ
@@ -52,7 +31,7 @@ DESCRIPTION:アルティメット日本代表の丹波大士さんを講師
 END:VEVENT
 BEGIN:VEVENT
 UID:a6dcd2194d34@minamata-support-portal
-DTSTAMP:20261119T030324Z
+DTSTAMP:20261120T025543Z
 DTSTART:20261208T010000Z
 DTEND:20261208T030000Z
 SUMMARY:65歳以上対象『歩き方教室』開催！
@@ -70,7 +49,7 @@ DESCRIPTION:体に負担の少ない歩き方やストレッチ、筋トレ
 END:VEVENT
 BEGIN:VEVENT
 UID:7ebc32104cd6@minamata-support-portal
-DTSTAMP:20261119T030324Z
+DTSTAMP:20261120T025543Z
 DTSTART:20261219T010000Z
 DTEND:20261219T030000Z
 SUMMARY:ミズノビクトリークリニックin水俣
@@ -86,7 +65,7 @@ DESCRIPTION:水俣市軟式野球連盟が選抜する中学生を対象と
 END:VEVENT
 BEGIN:VEVENT
 UID:f1a55a25d489@minamata-support-portal
-DTSTAMP:20261119T030324Z
+DTSTAMP:20261120T025543Z
 DTSTART;VALUE=DATE:20270919
 DTEND;VALUE=DATE:20270925
 SUMMARY:フライングディスク世界大会の開催決定！！
