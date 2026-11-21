@@ -842,6 +842,33 @@
         "registration_note": "電話またはエコパーク水俣窓口にて申込。定員20名（先着順）"
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034970/index.html": {
+      "is_event": false,
+      "checked_at": "2026-11-21T12:02:48.275267+09:00",
+      "schema": 2,
+      "event": null
+    },
+    "https://www.city.minamata.lg.jp/kiji0034971/index.html": {
+      "is_event": true,
+      "checked_at": "2026-11-21T12:02:41.014800+09:00",
+      "schema": 2,
+      "event": {
+        "id": "a70507846d0e",
+        "title": "～県南地域の「おいしい」が集まる～ クリスマスマルシェを開催します！",
+        "start_date": "2026-12-12",
+        "end_date": "2026-12-12",
+        "time_text": "16:00〜20:00",
+        "venue": "水俣市湯の児海水浴場 駐車場",
+        "summary": "県南地域の食材を使ったグルメや特産品、クリスマス限定メニューが楽しめるマルシェ。DJミュージックやイルミネーション点灯式、フィナーレには打ち上げ花火も実施されます。",
+        "organizer": "一般社団法人みなまた観光物産協会",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034971/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "not_required",
+        "registration_deadline": null,
+        "registration_note": "予約不要。無料シャトルバスを運行"
+      }
+    },
     "https://www.go-minamata.jp/news-events/8th_wakocha_summit_minamata.html": {
       "is_event": true,
       "checked_at": "2026-11-04T11:02:28.448000+09:00",
@@ -966,6 +993,27 @@
         "registration": "required",
         "registration_deadline": "2026-12-06",
         "registration_note": "公式InstagramのDMまたは窓口にて申込。各部5組限定"
+      }
+    },
+    "https://www.go-minamata.jp/news-events/r8_christmas_marche.html": {
+      "is_event": true,
+      "checked_at": "2026-11-21T12:03:07.616907+09:00",
+      "schema": 2,
+      "event": {
+        "id": "b6f144d4997c",
+        "title": "県南地域の「おいしい」が集まるクリスマスマルシェ開催！",
+        "start_date": "2026-12-12",
+        "end_date": "2026-12-12",
+        "time_text": "16:00〜20:00",
+        "venue": "水俣市湯の児海水浴場 駐車場",
+        "summary": "県南地域のグルメや特産品、クリスマス限定メニューが楽しめるマルシェ。DJミュージックやイルミネーション点灯式、フィナーレには打ち上げ花火も実施されます。",
+        "organizer": "一般社団法人みなまた観光物産協会",
+        "source_url": "https://www.go-minamata.jp/news-events/r8_christmas_marche.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": "not_required",
+        "registration_deadline": null,
+        "registration_note": "予約不要。無料シャトルバスも運行"
       }
     },
     "https://www.go-minamata.jp/news-events/r8_hatsukoi-hw-marche.html": {

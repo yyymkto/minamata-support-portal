@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20T11:55:43.506799+09:00",
+  "last_updated": "2026-11-21T12:03:25.736350+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -88,28 +88,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "015f04d0f311",
-      "title": "水鳥千鶴子トーク＆ハープライブ演奏会",
-      "start_date": "2026-11-20",
-      "end_date": "2026-11-20",
-      "time_text": "12:00〜12:45",
-      "venue": "市役所１階市民交流フロア",
-      "summary": "ハープ演者でミュージックセラピストの水鳥千鶴子さんによる、心の癒しを届ける演奏会です",
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=6&event=6564495a20",
-      "source_label": "広報みなまた11月号（PDF 6ページ）",
-      "origin": "koho",
-      "category": "culture",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-20T12:00",
-        "end": "2026-11-20T12:45"
       }
     },
     {
@@ -836,6 +814,50 @@
         "all_day": true,
         "start": "2026-12-12",
         "end": "2026-12-13"
+      }
+    },
+    {
+      "registration": "not_required",
+      "registration_deadline": null,
+      "registration_note": "予約不要。無料シャトルバスも運行",
+      "id": "b6f144d4997c",
+      "title": "県南地域の「おいしい」が集まるクリスマスマルシェ開催！",
+      "start_date": "2026-12-12",
+      "end_date": "2026-12-12",
+      "time_text": "16:00〜20:00",
+      "venue": "水俣市湯の児海水浴場 駐車場",
+      "summary": "県南地域のグルメや特産品、クリスマス限定メニューが楽しめるマルシェ。DJミュージックやイルミネーション点灯式、フィナーレには打ち上げ花火も実施されます。",
+      "organizer": "一般社団法人みなまた観光物産協会",
+      "source_url": "https://www.go-minamata.jp/news-events/r8_christmas_marche.html",
+      "source_label": "みなまた観光物産協会",
+      "origin": "auto",
+      "category": "market",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-12T16:00",
+        "end": "2026-12-12T20:00"
+      }
+    },
+    {
+      "registration": "not_required",
+      "registration_deadline": null,
+      "registration_note": "予約不要。無料シャトルバスを運行",
+      "id": "a70507846d0e",
+      "title": "～県南地域の「おいしい」が集まる～ クリスマスマルシェを開催します！",
+      "start_date": "2026-12-12",
+      "end_date": "2026-12-12",
+      "time_text": "16:00〜20:00",
+      "venue": "水俣市湯の児海水浴場 駐車場",
+      "summary": "県南地域の食材を使ったグルメや特産品、クリスマス限定メニューが楽しめるマルシェ。DJミュージックやイルミネーション点灯式、フィナーレには打ち上げ花火も実施されます。",
+      "organizer": "一般社団法人みなまた観光物産協会",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034971/index.html",
+      "source_label": "水俣市",
+      "origin": "auto",
+      "category": "market",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-12T16:00",
+        "end": "2026-12-12T20:00"
       }
     },
     {

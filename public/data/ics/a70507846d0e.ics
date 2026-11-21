@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:～県南地域の「おいしい」が集まる～ クリス
+ マスマルシェを開催します！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:a70507846d0e@minamata-support-portal
+DTSTAMP:20261121T030325Z
+DTSTART:20261212T070000Z
+DTEND:20261212T110000Z
+SUMMARY:～県南地域の「おいしい」が集まる～ クリスマス
+ マルシェを開催します！
+LOCATION:水俣市湯の児海水浴場 駐車場
+CATEGORIES:マルシェ・物産
+URL:https://www.city.minamata.lg.jp/kiji0034971/index.html
+DESCRIPTION:県南地域の食材を使ったグルメや特産品、クリ
+ スマス限定メニューが楽しめるマルシェ。DJミュージッ
+ クやイルミネーション点灯式、フィナーレには打ち上
+ げ花火も実施されます。\n時間：16:00〜20:00\n申込不要、
+ 予約不要。無料シャトルバスを運行\n主催：一般社団法
+ 人みなまた観光物産協会\n詳細：https://www.city.minamata.lg.j
+ p/kiji0034971/index.html\nみなまた くらしナビ（非公式）掲
+ 載。日時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

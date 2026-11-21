@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:県南地域の「おいしい」が集まるクリスマス
+ マルシェ開催！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:b6f144d4997c@minamata-support-portal
+DTSTAMP:20261121T030325Z
+DTSTART:20261212T070000Z
+DTEND:20261212T110000Z
+SUMMARY:県南地域の「おいしい」が集まるクリスマスマル
+ シェ開催！
+LOCATION:水俣市湯の児海水浴場 駐車場
+CATEGORIES:マルシェ・物産
+URL:https://www.go-minamata.jp/news-events/r8_christmas_marche.html
+DESCRIPTION:県南地域のグルメや特産品、クリスマス限定メ
+ ニューが楽しめるマルシェ。DJミュージックやイルミネ
+ ーション点灯式、フィナーレには打ち上げ花火も実施
+ されます。\n時間：16:00〜20:00\n申込不要、予約不要。無
+ 料シャトルバスも運行\n主催：一般社団法人みなまた観
+ 光物産協会\n詳細：https://www.go-minamata.jp/news-events/r8_christ
+ mas_marche.html\nみなまた くらしナビ（非公式）掲載。日
+ 時・内容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

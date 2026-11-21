@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20T11:54:39.590481+09:00",
+  "last_updated": "2026-11-21T12:02:35.058830+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -21,6 +21,67 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-11-20",
       "collected_at": "2026-11-20T11:54:16.887784+09:00",
+      "status": "active"
+    },
+    {
+      "id": "a70507846d0e",
+      "title": "～県南地域の「おいしい」が集まる～ クリスマスマルシェを開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "県南地域のグルメが集まるクリスマスマルシェが開催されます。地域の美味しい食を楽しめるイベントです。",
+      "target": "水俣市および県南地域に関心のある方全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034971/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-20",
+      "collected_at": "2026-11-21T12:02:10.919551+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d49fcd3ecff6",
+      "title": "年末「生活困窮お困りごと相談会（無料相談会）」のお知らせです",
+      "audience_tags": [
+        "現役世代",
+        "高齢者",
+        "障がいのある方",
+        "全世代"
+      ],
+      "topic_tags": [
+        "介護・福祉",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "生活困窮や暮らしの悩みに関する無料相談会が開催されます。年末に向けた不安や困りごとについて、専門の相談員に相談できる機会です。",
+      "target": "生活困窮や暮らしの困りごとを抱えている方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034962/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-20",
+      "collected_at": "2026-11-21T12:02:17.632758+09:00",
+      "status": "active"
+    },
+    {
+      "id": "055a82a05076",
+      "title": "サンデーモーニングでディスクゴルフが紹介されます！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "テレビ番組「サンデーモーニング」にて、水俣市で親しまれているディスクゴルフが紹介されます。ぜひご覧ください。",
+      "target": "市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034970/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-20",
+      "collected_at": "2026-11-21T12:02:24.223184+09:00",
       "status": "active"
     },
     {
@@ -4299,6 +4360,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "b6f144d4997c",
+      "title": "県南地域の「おいしい」が集まるクリスマスマルシェ開催！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "県南地域のグルメが集まるクリスマスマルシェが開催されます。地域の美味しい食を楽しめるイベントです。",
+      "target": "どなたでも参加可能です。",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/r8_christmas_marche.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-21T12:02:30.556194+09:00",
       "status": "active"
     },
     {
