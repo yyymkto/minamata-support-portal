@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-21T12:03:25.736350+09:00",
+  "last_updated": "2026-11-22T11:00:08.677970+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -110,72 +110,6 @@
         "all_day": true,
         "start": "2026-11-20",
         "end": "2026-11-23"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "c2ed7159876a",
-      "title": "11月21日（土曜日）第16回みなまた産業団地まつりを開催します！",
-      "start_date": "2026-11-21",
-      "end_date": "2026-11-21",
-      "time_text": "09:30〜15:00",
-      "venue": "水俣産業団地ほか（受付・抽選会場：尾上商事）",
-      "summary": "水俣産業団地の企業を知るイベント。工場見学スタンプラリー、キッチンカー出店、ステージイベント、お楽しみ抽選会などが実施されます。",
-      "organizer": "みなまた産業団地まつり実行委員会事務局",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0033042/index.html",
-      "source_label": "水俣市",
-      "origin": "auto",
-      "category": "festival",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-21T09:30",
-        "end": "2026-11-21T15:00"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "b2410a8b3bf2",
-      "title": "こども地域食堂ポパイ",
-      "start_date": "2026-11-21",
-      "end_date": "2026-11-21",
-      "time_text": "11:00〜",
-      "venue": "市こどもセンター",
-      "summary": null,
-      "organizer": null,
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=9&event=66084e4f10",
-      "source_label": "広報みなまた11月号（PDF 9ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-21T11:00",
-        "end": "2026-11-21T12:00"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "生協くまもと水光社本店、ブックシティー一心堂、もやい館、ローソンチケットで販売中。当日券あり",
-      "id": "9df7e5007457",
-      "title": "石川さゆりコンサートは予定通り開催します",
-      "start_date": "2026-11-21",
-      "end_date": "2026-11-21",
-      "time_text": "14:00〜、18:00〜",
-      "venue": "水俣市文化会館",
-      "summary": "「若い患者の会」が主催する石川さゆりさんのコンサート。昼夜2回公演で、会場ホワイエでは「私の生きてきた証し展（仮）」も同時開催されます。",
-      "organizer": "石川さゆりコンサート等実行委員会",
-      "source_url": "https://www.city.minamata.lg.jp/kankyo/kiji0034761/index.html",
-      "source_label": "水俣市",
-      "origin": "auto",
-      "category": "culture",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-21T14:00",
-        "end": "2026-11-21T15:00"
       }
     },
     {
