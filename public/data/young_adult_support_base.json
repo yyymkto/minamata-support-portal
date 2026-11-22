@@ -1,6 +1,6 @@
 {
   "_schema_note": "この静的データは水俣市の一人暮らし・若者・移住検討者向け支援制度の基礎情報です。child_support_base.jsonと同じ方針（手動キュレーション、年1〜数回更新、Gemini自動収集の対象外）で運用します。child_stage/household_typeフィールドは持たず、プロフィール絞り込み機能の対象外です（2026-08-26新設）。",
-  "last_updated": "2026-08-26",
+  "last_updated": "2026-11-22",
   "items": [
     {
       "base_id": "akiya-bank",
@@ -66,6 +66,22 @@
       "official_url": "https://www.city.minamata.lg.jp/ijyu/kiji0032772/index.html",
       "last_verified": "2026-08-19",
       "verification_status": "確認済み（2026-08-26、WebFetchで実ページを確認）",
+      "entry_type": "service",
+      "permanence": "ongoing",
+      "info_type": "service"
+    },
+    {
+      "base_id": "tokutei-koukyou-chintai",
+      "title": "特定公共賃貸住宅（月浦）",
+      "description": "中堅所得のファミリー層向けに市が整備・管理する賃貸住宅。月浦ニュータウン（月浦250番地10）の鉄筋コンクリート造3階建て、3LDK・10戸。家賃は所得に応じて月43,000円〜62,000円、駐車場は月1,500円。",
+      "conditions_note": "同居者がいること（単身は不可）、世帯の所得（月額）が158,000円以上487,000円以下であることが入居資格です。令和8年9月から所得の上限が引き上げられました。家賃は通常62,000円で、毎年の減額申請により所得に応じて減額される場合があります。空き状況やその他の詳細は市役所窓口で確認が必要です。",
+      "how_to_apply": "市役所窓口に問い合わせて、空き状況と入居資格を確認する（水俣市役所 0966-63-1111）。",
+      "related_tags": [
+        "住まい"
+      ],
+      "official_url": "https://www.city.minamata.lg.jp/kiji0034954/index.html",
+      "last_verified": "2026-11-13",
+      "verification_status": "確認済み（2026-11-22に実ページ本文を確認。Issue #7 で新着情報から検知）。団地概要・入居資格・家賃表を確認。★担当課はページ上で動的に読み込まれるため取得できず、代表電話を記載。★所得の区分表には601,000円までの区分があるが、入居資格は487,000円以下と明記されているためそちらを採用。last_verified はページ自体の最終更新日。",
       "entry_type": "service",
       "permanence": "ongoing",
       "info_type": "service"

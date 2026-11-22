@@ -5,7 +5,8 @@
       "concern_id": "housing-search",
       "label": "水俣市内の空き家・賃貸物件を探したい",
       "base_ids": [
-        "akiya-bank"
+        "akiya-bank",
+        "tokutei-koukyou-chintai"
       ],
       "related_topic_tags": [
         "住まい"
