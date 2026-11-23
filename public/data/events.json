@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-22T11:00:08.677970+09:00",
+  "last_updated": "2026-11-23T11:25:19.438620+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -88,72 +88,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "413c0c6a4acd",
-      "title": "第21回3区自治会「ミニミニ文化祭（作品展）」",
-      "start_date": "2026-11-20",
-      "end_date": "2026-11-22",
-      "time_text": "09:00〜16:00",
-      "venue": "3区地域リビング館",
-      "summary": "地域の皆さんの趣味や創作活動による作品展示会",
-      "organizer": "3区自治会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=13&event=def8d433df",
-      "source_label": "広報みなまた11月号（PDF 13ページ）",
-      "origin": "koho",
-      "category": "festival",
-      "calendar": {
-        "all_day": true,
-        "start": "2026-11-20",
-        "end": "2026-11-23"
-      }
-    },
-    {
-      "registration": "partial",
-      "registration_deadline": null,
-      "registration_note": "アフタヌーンティーと茶席は事前予約制（先着順）。公式ホームページのリンクから申込",
-      "id": "f3bc245ffaa7",
-      "title": "11月22日開催！「第８回九州和紅茶サミットinみなまた」",
-      "start_date": "2026-11-22",
-      "end_date": "2026-11-22",
-      "time_text": "09:30〜15:00",
-      "venue": "エコパーク水俣ふるさと広場",
-      "summary": "九州各地の和紅茶の飲み比べ、みなまたスウィーツの販売、アフタヌーンティーや茶席などが楽しめるイベント。",
-      "organizer": "みなまた和紅茶実行委員会",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0033921/index.html",
-      "source_label": "水俣市",
-      "origin": "auto",
-      "category": "festival",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-22T09:30",
-        "end": "2026-11-22T15:00"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "m-96ad53f449",
-      "title": "みなまた和紅茶アフタヌーンティー",
-      "start_date": "2026-11-22",
-      "end_date": "2026-11-22",
-      "time_text": "11:30〜13:00",
-      "venue": "エコパーク水俣ふるさと広場",
-      "summary": "和紅茶サミットの企画として開かれる、みなまた和紅茶のアフタヌーンティー。参加費5,500円。",
-      "organizer": "水俣・芦北地域雇用創造協議会",
-      "source_url": null,
-      "source_label": "詳細",
-      "origin": "manual",
-      "category": "festival",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-22T11:30",
-        "end": "2026-11-22T13:00"
       }
     },
     {
