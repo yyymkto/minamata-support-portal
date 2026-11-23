@@ -1,4 +1,4 @@
-# 現在の状態（最終更新：2026-11-22 by Claude Code）
+# 現在の状態（最終更新：2026-11-23 by Claude Code）
 
 > このファイルは常に「今の状態」を反映するよう **上書き更新** します。
 > 過去の経緯を追いたい場合は `decisions-log/` を見てください。
@@ -197,6 +197,7 @@ minamata-support-portal
 
 ## 直近の変更履歴（簡易、詳細はdecisions-log参照）
 
+- 2026-11-23: [Claude Code] Pagesデプロイが「No artifacts named "github-pages"」で3回失敗（11/22朝 run 44973948197、11/22 push run 45033943786、11/23朝 run 45100014497）。原因は actions/deploy-pages#451（同じジョブでアップロード直後に検索すると見つからないことがある。再実行するとアーティファクトが2つになり別のエラーになる）。`daily-update.yml` の `build-and-deploy` を `build`（組み立て・アップロード）と `deploy`（デプロイ）の2ジョブに分けた。`deploy` は push 時に update-data のスキップが引き継がれないよう `if: always() && needs.build.result == 'success'` を付けた。11/22 push 分は手動実行（run 45035499481）で反映済み。
 - 2026-11-22: [Claude Code] 定期実行（run 44973948197）が GitHub Pages デプロイで失敗（アップロード済みの成果物を見つけられないGitHub側の一時的な不調）。失敗ジョブの再実行で成功。
 - 2026-11-22: [Claude Code] Issue #6・#7 に対応。child_support_base.json：幼児教育・保育無償化の上限額（預かり保育 月12,300円、認可外 月40,300円、令和8年10月改定）、奨学金2件を「令和9年度分の募集は終了」に、就学援助・こども家庭センター・こどもセンターは本文に実質変化なしで last_verified のみ更新。young_adult_support_base.json に「特定公共賃貸住宅（月浦）」（tokutei-koukyou-chintai）を追加し、young_adult_concern_mapping.json の housing-search に紐付け。
 - 2026-11-16: [Claude Code] 携帯番号の修正を本番反映（run 43870205256）。本番の events.json・.ics・_events_auto.json に番号0件。同日の定期実行（自動更新・デプロイ、ストック監視の2ジョブ）がすべて成功し、セキュリティ対策1・2・4（アクション固定と権限、区切り文字、依存の固定）がCIで動くことも確認済み。
