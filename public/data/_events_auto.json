@@ -821,6 +821,27 @@
       "schema": 2,
       "event": null
     },
+    "https://www.city.minamata.lg.jp/kiji0034963/index.html": {
+      "is_event": true,
+      "checked_at": "2026-11-24T14:48:54.650838+09:00",
+      "schema": 2,
+      "event": {
+        "id": "5a25ee0174c1",
+        "title": "令和９年水俣市「二十歳の集い」の開催について",
+        "start_date": "2027-01-10",
+        "end_date": "2027-01-10",
+        "time_text": "10:30〜12:00",
+        "venue": "水俣市文化会館",
+        "summary": "令和8年4月2日から令和9年4月1日に二十歳を迎える人の門出を祝う式典。対象者およびその家族が参加可能。",
+        "organizer": "水俣市",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034963/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034966/index.html": {
       "is_event": true,
       "checked_at": "2026-11-19T12:02:39.443720+09:00",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T11:25:19.438620+09:00",
+  "last_updated": "2026-11-24T14:49:23.067952+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -88,28 +88,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": "2026-11-09",
-      "registration_note": "申込フォームより申し込み",
-      "id": "232a7c4d067f",
-      "title": "クリスマス飾りを作ろう！",
-      "start_date": "2026-11-23",
-      "end_date": "2026-11-23",
-      "time_text": "10:00〜12:00",
-      "venue": "県環境センター",
-      "summary": "木や森について学びながら、自然の材料を使ってリースなどのクリスマス飾りを作ります。定員30人程度（抽選）。参加無料",
-      "organizer": "県環境センター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=564654d4de",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "learning",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-23T10:00",
-        "end": "2026-11-23T12:00"
       }
     },
     {
@@ -814,6 +792,28 @@
         "all_day": false,
         "start": "2026-12-19T16:00",
         "end": "2026-12-19T17:00"
+      }
+    },
+    {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "5a25ee0174c1",
+      "title": "令和９年水俣市「二十歳の集い」の開催について",
+      "start_date": "2027-01-10",
+      "end_date": "2027-01-10",
+      "time_text": "10:30〜12:00",
+      "venue": "水俣市文化会館",
+      "summary": "令和8年4月2日から令和9年4月1日に二十歳を迎える人の門出を祝う式典。対象者およびその家族が参加可能。",
+      "organizer": "水俣市",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034963/index.html",
+      "source_label": "水俣市",
+      "origin": "auto",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2027-01-10T10:30",
+        "end": "2027-01-10T12:00"
       }
     },
     {

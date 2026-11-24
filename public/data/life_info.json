@@ -1,7 +1,26 @@
 {
-  "last_updated": "2026-11-21T12:02:35.058830+09:00",
+  "last_updated": "2026-11-24T14:48:49.725023+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "5a25ee0174c1",
+      "title": "令和９年水俣市「二十歳の集い」の開催について",
+      "audience_tags": [
+        "学生・若者"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "水俣市",
+      "summary": "令和9年に開催される水俣市「二十歳の集い」に関する案内です。対象となる方や開催概要について確認できます。",
+      "target": "令和9年に二十歳を迎える方",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034963/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-24",
+      "collected_at": "2026-11-24T14:48:43.630429+09:00",
+      "status": "active"
+    },
     {
       "id": "3238a7785536",
       "title": "令和8年11月19日に発生した地震に伴うイベントの中止等および市関連施設の開館状況について",

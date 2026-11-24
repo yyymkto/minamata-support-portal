@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:令和９年水俣市「二十歳の集い」の開催につ
+ いて
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:5a25ee0174c1@minamata-support-portal
+DTSTAMP:20261124T054923Z
+DTSTART:20270110T013000Z
+DTEND:20270110T030000Z
+SUMMARY:令和９年水俣市「二十歳の集い」の開催について
+LOCATION:水俣市文化会館
+URL:https://www.city.minamata.lg.jp/kiji0034963/index.html
+DESCRIPTION:令和8年4月2日から令和9年4月1日に二十歳を迎え
+ る人の門出を祝う式典。対象者およびその家族が参加
+ 可能。\n時間：10:30〜12:00\n主催：水俣市\n詳細：https://ww
+ w.city.minamata.lg.jp/kiji0034963/index.html\nみなまた くらしナビ
+ （非公式）掲載。日時・内容は変わることがあります
+ 。
+END:VEVENT
+END:VCALENDAR
