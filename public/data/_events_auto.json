@@ -1113,6 +1113,27 @@
         "origin": "auto"
       }
     },
+    "https://www.go-minamata.jp/news-events/r8_yunoko_surippa.html": {
+      "is_event": true,
+      "checked_at": "2026-11-25T13:50:29.092820+09:00",
+      "schema": 2,
+      "event": {
+        "id": "6696c6f342c1",
+        "title": "第１回 湯の児温泉 スリッパ卓球大会 開催！",
+        "start_date": "2027-01-16",
+        "end_date": "2027-01-16",
+        "time_text": "10:00〜16:00",
+        "venue": "湯の児温泉 海と夕やけ コンベンションホール「湯の児」",
+        "summary": "スリッパをラケットにして戦う卓球大会。1チーム3名でリーグ形式で競う。卓球経験者や初心者も参加可能で、当日は飲食の出店も予定されている。",
+        "organizer": "一般社団法人みなまた観光物産協会",
+        "source_url": "https://www.go-minamata.jp/news-events/r8_yunoko_surippa.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-11-30",
+        "registration_note": "みなまた観光物産協会ホームページより申込。定員16チームを超えた場合は抽選"
+      }
+    },
     "https://www.go-minamata.jp/news-events/rose-festa-fall-2026.html": {
       "is_event": true,
       "checked_at": "2026-10-08T10:40:16.691940+09:00",

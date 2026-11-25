@@ -1,7 +1,26 @@
 {
-  "last_updated": "2026-11-24T14:48:49.725023+09:00",
+  "last_updated": "2026-11-25T13:49:59.749179+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "85d783fd6ce0",
+      "title": "熊本県では「食品適正表示推進者講習会」を実施します！",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "熊本県",
+      "summary": "食品表示法に基づく適正な表示を推進するため、食品関連事業者を対象とした講習会が開催されます。食品表示のルールや最新情報について学ぶことができます。",
+      "target": "食品関連事業者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034969/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-25",
+      "collected_at": "2026-11-25T13:49:48.017896+09:00",
+      "status": "active"
+    },
     {
       "id": "5a25ee0174c1",
       "title": "令和９年水俣市「二十歳の集い」の開催について",
@@ -4379,6 +4398,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "6696c6f342c1",
+      "title": "第１回 湯の児温泉 スリッパ卓球大会 開催！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "湯の児温泉にて、スリッパを使用したユニークな卓球大会が開催されます。地域住民や観光客が参加できる交流イベントです。",
+      "target": "どなたでも参加可能",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/r8_yunoko_surippa.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-25T13:49:55.245087+09:00",
       "status": "active"
     },
     {

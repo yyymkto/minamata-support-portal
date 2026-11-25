@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T14:49:23.067952+09:00",
+  "last_updated": "2026-11-25T13:50:46.327385+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -88,28 +88,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": null,
-      "registration_deadline": null,
-      "registration_note": null,
-      "id": "c4b35c1ff774",
-      "title": "市役所マルシェ　11月開催のお知らせ",
-      "start_date": "2026-11-24",
-      "end_date": "2026-11-24",
-      "time_text": "10:00〜13:00",
-      "venue": "市役所1階",
-      "summary": "弁当、惣菜、野菜、パン、ハンドメイド、リラクゼーションなど、水俣市内外から多数の出店者が集まるマルシェ。",
-      "organizer": "市役所マルシェ実行委員会",
-      "source_url": "https://www.go-minamata.jp/news-events/siyakusyo_marche_2026m11.html",
-      "source_label": "みなまた観光物産協会",
-      "origin": "auto",
-      "category": "market",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-24T10:00",
-        "end": "2026-11-24T13:00"
       }
     },
     {
@@ -836,6 +814,28 @@
         "all_day": true,
         "start": "2027-01-16",
         "end": "2027-01-17"
+      }
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-11-30",
+      "registration_note": "みなまた観光物産協会ホームページより申込。定員16チームを超えた場合は抽選",
+      "id": "6696c6f342c1",
+      "title": "第１回 湯の児温泉 スリッパ卓球大会 開催！",
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-16",
+      "time_text": "10:00〜16:00",
+      "venue": "湯の児温泉 海と夕やけ コンベンションホール「湯の児」",
+      "summary": "スリッパをラケットにして戦う卓球大会。1チーム3名でリーグ形式で競う。卓球経験者や初心者も参加可能で、当日は飲食の出店も予定されている。",
+      "organizer": "一般社団法人みなまた観光物産協会",
+      "source_url": "https://www.go-minamata.jp/news-events/r8_yunoko_surippa.html",
+      "source_label": "みなまた観光物産協会",
+      "origin": "auto",
+      "category": "other",
+      "calendar": {
+        "all_day": false,
+        "start": "2027-01-16T10:00",
+        "end": "2027-01-16T16:00"
       }
     },
     {

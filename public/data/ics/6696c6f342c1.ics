@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第１回 湯の児温泉 スリッパ卓球大会 開催！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:6696c6f342c1@minamata-support-portal
+DTSTAMP:20261125T045046Z
+DTSTART:20270116T010000Z
+DTEND:20270116T070000Z
+SUMMARY:第１回 湯の児温泉 スリッパ卓球大会 開催！
+LOCATION:湯の児温泉 海と夕やけ コンベンションホール「
+ 湯の児」
+URL:https://www.go-minamata.jp/news-events/r8_yunoko_surippa.html
+DESCRIPTION:スリッパをラケットにして戦う卓球大会。1チ
+ ーム3名でリーグ形式で競う。卓球経験者や初心者も参
+ 加可能で、当日は飲食の出店も予定されている。\n時間
+ ：10:00〜16:00\n要申込、11/30締切、みなまた観光物産協会
+ ホームページより申込。定員16チームを超えた場合は抽
+ 選\n主催：一般社団法人みなまた観光物産協会\n詳細：h
+ ttps://www.go-minamata.jp/news-events/r8_yunoko_surippa.html\nみなまた
+  くらしナビ（非公式）掲載。日時・内容は変わること
+ があります。
+END:VEVENT
+END:VCALENDAR
