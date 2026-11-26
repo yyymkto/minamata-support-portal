@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T13:49:59.749179+09:00",
+  "last_updated": "2026-11-26T13:02:06.471565+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -263,6 +263,27 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-11-19",
       "collected_at": "2026-11-20T11:54:32.642350+09:00",
+      "status": "active"
+    },
+    {
+      "id": "ec8505d9b33a",
+      "title": "令和８年熊本地震で被災された方への国民健康保険税の減免のご案内",
+      "audience_tags": [
+        "現役世代",
+        "高齢者"
+      ],
+      "topic_tags": [
+        "税金・年金",
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "令和8年熊本地震により被災された方を対象とした、国民健康保険税の減免措置に関する案内です。対象となる世帯や減免の要件については、市の窓口へお問い合わせください。",
+      "target": "令和8年熊本地震で被災された国民健康保険加入者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034964/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-19",
+      "collected_at": "2026-11-26T13:02:01.225136+09:00",
       "status": "active"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T13:50:46.327385+09:00",
+  "last_updated": "2026-11-26T13:02:31.000992+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -88,28 +88,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "要予約。詳細は市こどもセンターへ問い合わせ",
-      "id": "edecc24c2dca",
-      "title": "こども若者とつくるアートワークショップ",
-      "start_date": "2026-11-25",
-      "end_date": "2026-11-25",
-      "time_text": "午前の部 10:00〜12:00、午後の部 14:00〜16:30",
-      "venue": "市こどもセンター",
-      "summary": "どなたでも参加できるアートワークショップです",
-      "organizer": "市こどもセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=8103274f9c",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-25T10:00",
-        "end": "2026-11-25T11:00"
       }
     },
     {
