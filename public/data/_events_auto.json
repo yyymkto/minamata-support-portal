@@ -842,6 +842,27 @@
         "registration_note": null
       }
     },
+    "https://www.city.minamata.lg.jp/kiji0034965/index.html": {
+      "is_event": true,
+      "checked_at": "2026-11-27T13:00:45.369060+09:00",
+      "schema": 2,
+      "event": {
+        "id": "8ff403463466",
+        "title": "苦手克服塾「なわとび教室」が開催されます！",
+        "start_date": "2026-12-06",
+        "end_date": "2026-12-06",
+        "time_text": "10:00〜11:00",
+        "venue": "エコパーク水俣 ふれあい広場",
+        "summary": "年中から小学生を対象としたなわとび教室。基礎から丁寧に指導し、体力や集中力の向上を目指して楽しくジャンプに挑戦します。",
+        "organizer": "エコパーク水俣管理事務所",
+        "source_url": "https://www.city.minamata.lg.jp/kiji0034965/index.html",
+        "source_label": "水俣市",
+        "origin": "auto",
+        "registration": "required",
+        "registration_deadline": "2026-12-04",
+        "registration_note": "エコパーク水俣窓口または電話にて申込。定員20名（先着順）"
+      }
+    },
     "https://www.city.minamata.lg.jp/kiji0034966/index.html": {
       "is_event": true,
       "checked_at": "2026-11-19T12:02:39.443720+09:00",
@@ -920,6 +941,27 @@
       "is_event": false,
       "checked_at": "2026-09-21T23:51:25.653092+09:00",
       "event": null
+    },
+    "https://www.go-minamata.jp/news-events/isui_fes2026.html": {
+      "is_event": true,
+      "checked_at": "2026-11-27T13:01:02.471586+09:00",
+      "schema": 2,
+      "event": {
+        "id": "d95ed87ae6ce",
+        "title": "第９回 ISUIフェスティバル2026　開催します！",
+        "start_date": "2026-12-05",
+        "end_date": "2026-12-05",
+        "time_text": "10:00〜14:00",
+        "venue": "エコパーク水俣 ふるさと広場",
+        "summary": "福祉施設や地域グループによる出店、飲食ブース、手作り体験、ステージイベント、抽選会などが楽しめるイベント。くまモンも来場予定。",
+        "organizer": "水俣・芦北地域水俣病被害者等保健福祉ネットワーク",
+        "source_url": "https://www.go-minamata.jp/news-events/isui_fes2026.html",
+        "source_label": "みなまた観光物産協会",
+        "origin": "auto",
+        "registration": null,
+        "registration_deadline": null,
+        "registration_note": null
+      }
     },
     "https://www.go-minamata.jp/news-events/mina-cha_fair_2026.html": {
       "is_event": true,

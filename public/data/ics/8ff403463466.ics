@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:苦手克服塾「なわとび教室」が開催されます
+ ！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:8ff403463466@minamata-support-portal
+DTSTAMP:20261127T040120Z
+DTSTART:20261206T010000Z
+DTEND:20261206T020000Z
+SUMMARY:苦手克服塾「なわとび教室」が開催されます！
+LOCATION:エコパーク水俣 ふれあい広場
+CATEGORIES:講座・体験
+URL:https://www.city.minamata.lg.jp/kiji0034965/index.html
+DESCRIPTION:年中から小学生を対象としたなわとび教室。基
+ 礎から丁寧に指導し、体力や集中力の向上を目指して
+ 楽しくジャンプに挑戦します。\n時間：10:00〜11:00\n要申
+ 込、12/4締切、エコパーク水俣窓口または電話にて申込
+ 。定員20名（先着順）\n主催：エコパーク水俣管理事務
+ 所\n詳細：https://www.city.minamata.lg.jp/kiji0034965/index.html\nみ
+ なまた くらしナビ（非公式）掲載。日時・内容は変わ
+ ることがあります。
+END:VEVENT
+END:VCALENDAR

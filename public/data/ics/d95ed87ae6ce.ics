@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//minamata-support-portal//events//JA
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:第９回 ISUIフェスティバル2026　開催します！
+X-WR-TIMEZONE:Asia/Tokyo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:d95ed87ae6ce@minamata-support-portal
+DTSTAMP:20261127T040120Z
+DTSTART:20261205T010000Z
+DTEND:20261205T050000Z
+SUMMARY:第９回 ISUIフェスティバル2026　開催します！
+LOCATION:エコパーク水俣 ふるさと広場
+CATEGORIES:お祭り・催し
+URL:https://www.go-minamata.jp/news-events/isui_fes2026.html
+DESCRIPTION:福祉施設や地域グループによる出店、飲食ブー
+ ス、手作り体験、ステージイベント、抽選会などが楽
+ しめるイベント。くまモンも来場予定。\n時間：10:00〜1
+ 4:00\n主催：水俣・芦北地域水俣病被害者等保健福祉ネ
+ ットワーク\n詳細：https://www.go-minamata.jp/news-events/isui_fes2
+ 026.html\nみなまた くらしナビ（非公式）掲載。日時・内
+ 容は変わることがあります。
+END:VEVENT
+END:VCALENDAR

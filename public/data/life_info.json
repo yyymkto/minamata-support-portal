@@ -1,7 +1,66 @@
 {
-  "last_updated": "2026-11-26T13:02:06.471565+09:00",
+  "last_updated": "2026-11-27T13:00:40.462168+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
+    {
+      "id": "d94be78c0806",
+      "title": "令和９年度公設学童クラブ利用児童の募集について",
+      "audience_tags": [
+        "子育て・妊娠期"
+      ],
+      "topic_tags": [
+        "子育て",
+        "募集・相談"
+      ],
+      "organization": "水俣市",
+      "summary": "令和9年度の公設学童クラブ利用児童の募集が開始されました。利用を希望する保護者は、募集要項を確認の上、所定の手続きを行ってください。",
+      "target": "令和9年度に公設学童クラブの利用を希望する児童の保護者",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0033506/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-27",
+      "collected_at": "2026-11-27T13:00:11.157680+09:00",
+      "status": "active"
+    },
+    {
+      "id": "8ff403463466",
+      "title": "苦手克服塾「なわとび教室」が開催されます！",
+      "audience_tags": [
+        "子育て・妊娠期"
+      ],
+      "topic_tags": [
+        "イベント",
+        "教育・生涯学習"
+      ],
+      "organization": "水俣市",
+      "summary": "なわとびが苦手な子どもを対象とした「なわとび教室」が開催されます。基礎から練習し、苦手意識の克服を目指すイベントです。",
+      "target": "なわとびが苦手な子ども",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034965/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-27",
+      "collected_at": "2026-11-27T13:00:19.431004+09:00",
+      "status": "active"
+    },
+    {
+      "id": "e32d5f26295f",
+      "title": "水俣市と株式会社トシヒロは「災害時における避難所運営業務等に関する協定」を締結しました",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "防災・災害"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市は株式会社トシヒロと「災害時における避難所運営業務等に関する協定」を締結しました。災害発生時に避難所の円滑な運営を支援するための協力体制を構築します。",
+      "target": "水俣市民全般",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034976/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-27",
+      "collected_at": "2026-11-27T13:00:26.948342+09:00",
+      "status": "active"
+    },
     {
       "id": "85d783fd6ce0",
       "title": "熊本県では「食品適正表示推進者講習会」を実施します！",
@@ -4419,6 +4478,25 @@
       "source_name": "水俣市 防災サイトのお知らせ",
       "published_date": "2018-03-05",
       "collected_at": "2026-08-25T19:40:54.591827+09:00",
+      "status": "active"
+    },
+    {
+      "id": "d95ed87ae6ce",
+      "title": "第９回 ISUIフェスティバル2026　開催します！",
+      "audience_tags": [
+        "全世代"
+      ],
+      "topic_tags": [
+        "イベント"
+      ],
+      "organization": "みなまた観光物産協会",
+      "summary": "第9回ISUIフェスティバル2026が開催されます。地域の魅力や交流を楽しむイベントです。",
+      "target": "水俣市民および来訪者",
+      "deadline": null,
+      "source_url": "https://www.go-minamata.jp/news-events/isui_fes2026.html",
+      "source_name": "みなまた観光物産協会 イベント情報",
+      "published_date": null,
+      "collected_at": "2026-11-27T13:00:35.958308+09:00",
       "status": "active"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26T13:02:31.000992+09:00",
+  "last_updated": "2026-11-27T13:01:20.054257+09:00",
   "generated_by": "scripts/update_events.py",
   "items": [
     {
@@ -88,28 +88,6 @@
         "all_day": true,
         "start": "2026-11-14",
         "end": "2026-11-15"
-      }
-    },
-    {
-      "registration": "required",
-      "registration_deadline": null,
-      "registration_note": "要予約。詳細は市こどもセンターへ問い合わせ",
-      "id": "3fad1b30453c",
-      "title": "たまひよ",
-      "start_date": "2026-11-26",
-      "end_date": "2026-11-26",
-      "time_text": "14:00〜15:00",
-      "venue": "市こどもセンター",
-      "summary": "妊婦さん・1歳前後の親子を対象とした交流会です",
-      "organizer": "市こどもセンター",
-      "source_url": "https://www.city.minamata.lg.jp/kiji0034938/3_4938_up_vvmv7eo1.pdf#page=12&event=63a630139f",
-      "source_label": "広報みなまた11月号（PDF 12ページ）",
-      "origin": "koho",
-      "category": "kids",
-      "calendar": {
-        "all_day": false,
-        "start": "2026-11-26T14:00",
-        "end": "2026-11-26T15:00"
       }
     },
     {
@@ -487,6 +465,28 @@
       }
     },
     {
+      "registration": null,
+      "registration_deadline": null,
+      "registration_note": null,
+      "id": "d95ed87ae6ce",
+      "title": "第９回 ISUIフェスティバル2026　開催します！",
+      "start_date": "2026-12-05",
+      "end_date": "2026-12-05",
+      "time_text": "10:00〜14:00",
+      "venue": "エコパーク水俣 ふるさと広場",
+      "summary": "福祉施設や地域グループによる出店、飲食ブース、手作り体験、ステージイベント、抽選会などが楽しめるイベント。くまモンも来場予定。",
+      "organizer": "水俣・芦北地域水俣病被害者等保健福祉ネットワーク",
+      "source_url": "https://www.go-minamata.jp/news-events/isui_fes2026.html",
+      "source_label": "みなまた観光物産協会",
+      "origin": "auto",
+      "category": "festival",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-05T10:00",
+        "end": "2026-12-05T14:00"
+      }
+    },
+    {
       "registration": "required",
       "registration_deadline": "2026-12-04",
       "registration_note": "電話またはエコパーク水俣窓口にて申込。定員20名（先着順）",
@@ -572,6 +572,28 @@
         "all_day": false,
         "start": "2026-12-06T09:00",
         "end": "2026-12-06T12:00"
+      }
+    },
+    {
+      "registration": "required",
+      "registration_deadline": "2026-12-04",
+      "registration_note": "エコパーク水俣窓口または電話にて申込。定員20名（先着順）",
+      "id": "8ff403463466",
+      "title": "苦手克服塾「なわとび教室」が開催されます！",
+      "start_date": "2026-12-06",
+      "end_date": "2026-12-06",
+      "time_text": "10:00〜11:00",
+      "venue": "エコパーク水俣 ふれあい広場",
+      "summary": "年中から小学生を対象としたなわとび教室。基礎から丁寧に指導し、体力や集中力の向上を目指して楽しくジャンプに挑戦します。",
+      "organizer": "エコパーク水俣管理事務所",
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034965/index.html",
+      "source_label": "水俣市",
+      "origin": "auto",
+      "category": "learning",
+      "calendar": {
+        "all_day": false,
+        "start": "2026-12-06T10:00",
+        "end": "2026-12-06T11:00"
       }
     },
     {
