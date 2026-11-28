@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-27T13:00:40.462168+09:00",
+  "last_updated": "2026-11-28T12:47:44.996055+09:00",
   "generated_by": "scripts/update_data.py",
   "items": [
     {
@@ -59,6 +59,25 @@
       "source_name": "水俣市 新着情報",
       "published_date": "2026-11-27",
       "collected_at": "2026-11-27T13:00:26.948342+09:00",
+      "status": "active"
+    },
+    {
+      "id": "f75bda366c83",
+      "title": "利子補給制度を紹介します",
+      "audience_tags": [
+        "事業者向け"
+      ],
+      "topic_tags": [
+        "産業・事業支援"
+      ],
+      "organization": "水俣市",
+      "summary": "水俣市が実施する利子補給制度について紹介しています。中小企業者等が金融機関から融資を受ける際の利子負担を軽減する制度です。",
+      "target": "市内で事業を営む中小企業者等",
+      "deadline": null,
+      "source_url": "https://www.city.minamata.lg.jp/kiji0034957/index.html",
+      "source_name": "水俣市 新着情報",
+      "published_date": "2026-11-27",
+      "collected_at": "2026-11-28T12:47:38.485683+09:00",
       "status": "active"
     },
     {
